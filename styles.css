@@ -610,6 +610,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   font-size: 18px;
 }
 
+.screenshot__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
 /* Floating badge over screenshot */
 .screenshot-badge {
   position: absolute;

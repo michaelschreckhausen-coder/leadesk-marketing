@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadesk — Ihr Vertriebshebel für LinkedIn</title>
+  <meta name="description" content="Die LinkedIn-Suite für B2B-Teams. Marke, Outreach und CRM in einem Tool — plus KI, die in deiner Stimme schreibt.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Leadesk"><img src="leadesk-logo.png" alt="Leadesk" /></a>
+      <div class="nav__links">
+        <div class="nav__dropdown"><a href="features.html">Funktionen <svg class="nav__dropdown__icon" viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+        <a href="#">KI</a>
+        <a href="#">Kunden</a>
+        <a href="pricing.html">Preise</a>
+        <a href="#">Ressourcen</a>
+      </div>
+      <div class="nav__cta">
+        <a href="#" class="nav__login">Anmelden</a>
+        <a href="#" class="btn btn--primary btn--sm">Kostenlos starten</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__eyebrow reveal">Jetzt mit neuer Content-KI</div>
+      <h1 class="h1-hero hero__title reveal">Endlich eine<br><span class="highlight">LinkedIn-Suite</span>,<br>die B2B-Teams lieben.</h1>
+      <p class="sub hero__sub reveal">Marke, Outreach und CRM in einem Tool — plus KI, die in deiner Stimme schreibt.</p>
+      <div class="hero__ctas reveal">
+        <a href="#" class="btn btn--primary btn--lg">
+          <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
+          Kostenlos starten
+        </a>
+        <a href="features.html" class="link-arrow">Funktionen ansehen</a>
+      </div>
+      <div class="hero__trust reveal">
+        <div class="hero__trust-item"><svg class="hero__trust-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>14 Tage kostenlos</div>
+        <div class="hero__trust-item"><svg class="hero__trust-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Keine Kreditkarte</div>
+        <div class="hero__trust-item"><svg class="hero__trust-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-konform</div>
+      </div>
+
+      <div class="hero__visual reveal">
+        <div class="screenshot" style="max-width: 1080px; margin: 0 auto;">
+          <div class="screenshot__chrome">
+            <span class="screenshot__dot"></span>
+            <span class="screenshot__dot"></span>
+            <span class="screenshot__dot"></span>
+            <span class="screenshot__url">app.leadesk.de</span>
+          </div>
+          <div class="screenshot__body">
+            <div class="screenshot__placeholder">
+              <div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+              <div class="screenshot__label">Dashboard Startseite</div>
+              <div class="screenshot__hint">Screenshot folgt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2. PERSONAS ========== -->
+  <section class="personas section">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Für dein Team</span></div>
+        <h2 class="h2-section">Für jede Rolle im Vertrieb.</h2>
+        <p class="sub section__sub">Egal ob Founder, Sales Lead oder Agentur — Leadesk passt sich deiner Rolle an.</p>
+      </div>
+
+      <div class="personas__tabs reveal">
+        <button class="persona-tab active" data-persona="julia">
+          <div class="persona-tab__avatar">JS</div>
+          <div class="persona-tab__text"><div class="persona-tab__name">Julia</div><div class="persona-tab__role">Sales Lead</div></div>
+        </button>
+        <button class="persona-tab" data-persona="thomas">
+          <div class="persona-tab__avatar">TE</div>
+          <div class="persona-tab__text"><div class="persona-tab__name">Thomas</div><div class="persona-tab__role">Founder</div></div>
+        </button>
+        <button class="persona-tab" data-persona="anna">
+          <div class="persona-tab__avatar">AV</div>
+          <div class="persona-tab__text"><div class="persona-tab__name">Anna</div><div class="persona-tab__role">Marketing</div></div>
+        </button>
+        <button class="persona-tab" data-persona="markus">
+          <div class="persona-tab__avatar">MR</div>
+          <div class="persona-tab__text"><div class="persona-tab__name">Markus</div><div class="persona-tab__role">Agentur</div></div>
+        </button>
+      </div>
+
+      <div class="persona-panel active reveal" data-persona="julia">
+        <div class="persona-panel__caption">Pipeline planen und aktiv steuern — ohne zwischen 5 Tools zu wechseln.</div>
+        <div class="screenshot" style="max-width: 1080px; margin: 0 auto;">
+          <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/sales/pipeline</span></div>
+          <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg></div><div class="screenshot__label">Sales-Pipeline</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+        </div>
+      </div>
+      <div class="persona-panel" data-persona="thomas">
+        <div class="persona-panel__caption">Eine persönliche Marke aufbauen — mit einer KI, die wirklich wie du klingt.</div>
+        <div class="screenshot" style="max-width: 1080px; margin: 0 auto;">
+          <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/branding/voice</span></div>
+          <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div class="screenshot__label">Markenstimme-Editor</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+        </div>
+      </div>
+      <div class="persona-panel" data-persona="anna">
+        <div class="persona-panel__caption">Content skalieren — mit Redaktionsplan, Hook-Bibliothek und KI-Assistent.</div>
+        <div class="screenshot" style="max-width: 1080px; margin: 0 auto;">
+          <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/content/studio</span></div>
+          <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><div class="screenshot__label">Content Studio</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+        </div>
+      </div>
+      <div class="persona-panel" data-persona="markus">
+        <div class="persona-panel__caption">Mehrere Kunden-Marken betreuen — mit Whitelabel und Mandanten-Setup.</div>
+        <div class="screenshot" style="max-width: 1080px; margin: 0 auto;">
+          <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/admin/tenants</span></div>
+          <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="screenshot__label">Whitelabel Admin</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. SOCIAL PROOF / LOGOS ========== -->
+  <section class="logos section--cream">
+    <div class="container">
+      <div class="logos__title reveal">1.000+ B2B-Teams wachsen mit Leadesk</div>
+      <div class="logos__track-wrap">
+        <div class="logos__track">
+          <!-- First set -->
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">A</span>Axentric</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">N</span>Norvo</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">K</span>Kronex</span>
+          <span class="logo-placeholder logo-placeholder--warm"><span class="logo-placeholder__icon">B</span>Brevoria</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">L</span>Luminax</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">V</span>Velfort</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">S</span>Steinberg</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">H</span>Hypercode</span>
+          <span class="logo-placeholder logo-placeholder--warm"><span class="logo-placeholder__icon">R</span>Rayon</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">P</span>Parasol</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">M</span>Muuuh!</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">T</span>Thjnk</span>
+          <!-- Duplicate for seamless scroll -->
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">A</span>Axentric</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">N</span>Norvo</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">K</span>Kronex</span>
+          <span class="logo-placeholder logo-placeholder--warm"><span class="logo-placeholder__icon">B</span>Brevoria</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">L</span>Luminax</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">V</span>Velfort</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">S</span>Steinberg</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">H</span>Hypercode</span>
+          <span class="logo-placeholder logo-placeholder--warm"><span class="logo-placeholder__icon">R</span>Rayon</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">P</span>Parasol</span>
+          <span class="logo-placeholder logo-placeholder--alt"><span class="logo-placeholder__icon">M</span>Muuuh!</span>
+          <span class="logo-placeholder"><span class="logo-placeholder__icon">T</span>Thjnk</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. PROBLEM ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Das Problem</span></div>
+        <h2 class="h2-section">Tool-Chaos stoppt<br>euer LinkedIn-Wachstum.</h2>
+        <p class="sub section__sub">Die meisten B2B-Teams nutzen 5+ unverbundene Tools. Das Ergebnis: Datenlücken, unpersönliche Nachrichten, verlorene Leads.</p>
+      </div>
+
+      <div class="problem-grid reveal">
+        <div class="problem-card problem-card--bad">
+          <div class="problem-card__label">Ohne Leadesk</div>
+          <div class="problem-card__title">Verstreute Tools, verpasste Chancen.</div>
+          <ul class="problem-list">
+            <li><span class="problem-list__icon">✕</span>5 verschiedene Tools für Outreach, CRM und Content</li>
+            <li><span class="problem-list__icon">✕</span>Copy-paste-Nachrichten ohne Persönlichkeit</li>
+            <li><span class="problem-list__icon">✕</span>Pipeline-Status nach Bauchgefühl</li>
+            <li><span class="problem-list__icon">✕</span>Stunden manuelle Klickarbeit täglich</li>
+            <li><span class="problem-list__icon">✕</span>Leads verloren zwischen Excel und LinkedIn</li>
+          </ul>
+        </div>
+        <div class="problem-card problem-card--good">
+          <div class="problem-card__label">Mit Leadesk</div>
+          <div class="problem-card__title">Eine Suite, messbarer Vertriebshebel.</div>
+          <ul class="problem-list">
+            <li><span class="problem-list__icon">✓</span>Kompletter LinkedIn-Workflow in einem Tool</li>
+            <li><span class="problem-list__icon">✓</span>KI schreibt in deiner Stimme — jedes Mal anders</li>
+            <li><span class="problem-list__icon">✓</span>SSI und Deal-Daten in Echtzeit sichtbar</li>
+            <li><span class="problem-list__icon">✓</span>Kampagnen laufen — du führst Gespräche</li>
+            <li><span class="problem-list__icon">✓</span>Profile mit einem Klick im CRM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. SOLUTION: BRANDING ========== -->
+  <section class="chapter section--blue-tint">
+    <div class="container container--wide">
+      <div class="chapter__grid">
+        <div class="chapter__content">
+          <div class="chapter__eyebrow-wrap reveal"><span class="eyebrow">Branding</span></div>
+          <h2 class="h3-block chapter__title reveal">Eine Stimme.<br>Überall konsistent.</h2>
+          <p class="sub chapter__sub reveal">Definiert einmal in natürlicher Sprache. Die KI wendet dein Profil auf jeden Text an — Posts, Nachrichten, Kommentare. Niemand merkt, dass eine Maschine geholfen hat.</p>
+          <ul class="chapter__bullets reveal">
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div><div class="chapter__bullet-title">Persönlich klingen, auch beim 100sten Post</div><div class="chapter__bullet-text">Ton, Wortwahl und Argumentationsstil bleiben identisch.</div></div>
+            </li>
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div><div class="chapter__bullet-title">Kein Prompt-Engineering nötig</div><div class="chapter__bullet-text">Du beschreibst deine Marke in 3 Sätzen — Leadesk macht den Rest.</div></div>
+            </li>
+          </ul>
+          <a href="features.html" class="link-arrow reveal">In Aktion sehen</a>
+        </div>
+        <div class="chapter__visual reveal">
+          <div class="screenshot">
+            <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/branding/voice</span></div>
+            <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div><div class="screenshot__label">Markenstimme-Editor</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. SOLUTION: CRM ========== -->
+  <section class="chapter">
+    <div class="container container--wide">
+      <div class="chapter__grid chapter__grid--reverse">
+        <div class="chapter__content">
+          <div class="chapter__eyebrow-wrap reveal"><span class="eyebrow">Sales & CRM</span></div>
+          <h2 class="h3-block chapter__title reveal">Echtes CRM.<br>Nativ für LinkedIn.</h2>
+          <p class="sub chapter__sub reveal">Pipeline, Deals, Aufgaben und Lead Intelligence — direkt mit deinen LinkedIn-Kontakten verknüpft. Kein CSV-Export mehr, kein Doppelpflegen, kein Context-Switch.</p>
+          <ul class="chapter__bullets reveal">
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M20 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg></div>
+              <div><div class="chapter__bullet-title">Profile per Chrome-Klick als Lead</div><div class="chapter__bullet-text">Name, Firma, SSI, Rolle — alles automatisch im CRM.</div></div>
+            </li>
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+              <div><div class="chapter__bullet-title">Stage-basierte Pipeline</div><div class="chapter__bullet-text">Automatische Aufgaben pro Stage, Forecast pro Quartal.</div></div>
+            </li>
+          </ul>
+          <a href="features.html" class="link-arrow reveal">In Aktion sehen</a>
+        </div>
+        <div class="chapter__visual reveal">
+          <div class="screenshot">
+            <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/sales/pipeline</span></div>
+            <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="screenshot__label">Pipeline Kanban</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. SOLUTION: OUTREACH ========== -->
+  <section class="chapter section--blue-tint">
+    <div class="container container--wide">
+      <div class="chapter__grid">
+        <div class="chapter__content">
+          <div class="chapter__eyebrow-wrap reveal"><span class="eyebrow">Communication</span></div>
+          <h2 class="h3-block chapter__title reveal">Outreach,<br>der nicht auffällt.</h2>
+          <p class="sub chapter__sub reveal">Multi-Step-Kampagnen mit menschlichen Pausen. Pausiert automatisch bei Antwort. Tägliche Limits schützen dein Profil.</p>
+          <ul class="chapter__bullets reveal">
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+              <div><div class="chapter__bullet-title">Verzweigungen je nach Verhalten</div><div class="chapter__bullet-text">Andere Nachricht nach Annahme, anderer Text bei Stille.</div></div>
+            </li>
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="chapter__bullet-title">Sichere Limits, MV3-konform</div><div class="chapter__bullet-text">Keine Session-Hacks. Chrome-Erweiterung respektiert LinkedIn.</div></div>
+            </li>
+          </ul>
+          <a href="features.html" class="link-arrow reveal">In Aktion sehen</a>
+        </div>
+        <div class="chapter__visual reveal">
+          <div class="screenshot">
+            <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/communication/campaigns</span></div>
+            <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><div class="screenshot__label">Kampagnen-Builder</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. SOLUTION: CONTENT ========== -->
+  <section class="chapter">
+    <div class="container container--wide">
+      <div class="chapter__grid chapter__grid--reverse">
+        <div class="chapter__content">
+          <div class="chapter__eyebrow-wrap reveal"><span class="eyebrow">Content</span></div>
+          <h2 class="h3-block chapter__title reveal">Content Studio<br>mit KI.</h2>
+          <p class="sub chapter__sub reveal">Von der Idee bis zum fertigen Post in unter einer Minute. Redaktionsplan, Hook-Bibliothek, Kommentar-Assistent — alles im Kontext deiner Marke.</p>
+          <ul class="chapter__bullets reveal">
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
+              <div><div class="chapter__bullet-title">Ein Artikel → 5 Posts</div><div class="chapter__bullet-text">Re-Purposing in anderer Tonalität, Länge und für andere Zielgruppen.</div></div>
+            </li>
+            <li>
+              <div class="chapter__bullet-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div><div class="chapter__bullet-title">Kommentar-Assistent</div><div class="chapter__bullet-text">Kommentiere fremde Posts in deiner Markenstimme — sichtbar werden, nicht schleimen.</div></div>
+            </li>
+          </ul>
+          <a href="features.html" class="link-arrow reveal">In Aktion sehen</a>
+        </div>
+        <div class="chapter__visual reveal">
+          <div class="screenshot">
+            <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/content/studio</span></div>
+            <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-6-6"/><path d="M2 2l7.586 7.586"/></svg></div><div class="screenshot__label">Content Studio</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. AI GRID ========== -->
+  <section class="section section--cream">
+    <div class="container container--wide">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">KI-Funktionen</span></div>
+        <h2 class="h2-section">KI, die versteht<br>wie Vertrieb funktioniert.</h2>
+        <p class="sub section__sub">Acht Funktionen, ein Assistent. Alle trainiert auf deine Markenstimme und deine Zielgruppen.</p>
+      </div>
+
+      <div class="ai-grid">
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div></div>
+          <div class="ai-card__title">Post-Generator</div>
+          <div class="ai-card__desc">Hook, Body und CTA in unter 30 Sekunden.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
+          <div class="ai-card__title">Nachrichten-Assistent</div>
+          <div class="ai-card__desc">Personalisierte DMs in deinem Ton.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></div></div>
+          <div class="ai-card__title">Kommentar-Responder</div>
+          <div class="ai-card__desc">Auf fremde Posts sichtbar werden, ohne Phrasen.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div></div>
+          <div class="ai-card__title">Lead-Scoring</div>
+          <div class="ai-card__desc">Welche Leads lohnen sich jetzt — datenbasiert.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div></div>
+          <div class="ai-card__title">Pipeline-Insights</div>
+          <div class="ai-card__desc">Wo bleibt Umsatz liegen? Wo drohen Verluste?</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+          <div class="ai-card__title">SSI-Empfehlungen</div>
+          <div class="ai-card__desc">Konkrete Aktionen, die deinen Score heben.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="ai-card__title">Themen-Recherche</div>
+          <div class="ai-card__desc">Trending-Themen in deiner Nische — in Sekunden.</div>
+        </div>
+        <div class="ai-card reveal">
+          <div class="ai-card__thumb"><div class="ai-card__thumb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div></div>
+          <div class="ai-card__title">E-Mail-Sequenzen</div>
+          <div class="ai-card__desc">Follow-ups per E-Mail, sobald der LinkedIn-Kanal reicht.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 10. TESTIMONIAL CAROUSEL ========== -->
+  <section class="section">
+    <div class="container container--wide">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Stimmen</span></div>
+        <h2 class="h2-section">Von B2B-Teams,<br>die liefern.</h2>
+      </div>
+
+      <div class="testimonial-row">
+        <div class="testimonial reveal">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="testimonial__quote">„Wir haben in drei Monaten unseren SSI von 42 auf 71 gesteigert. Das allein hat mehr Inbound gebracht als zwei Jahre LinkedIn-Ads."</div>
+          <div class="testimonial__person">
+            <div class="testimonial__avatar">JB</div>
+            <div>
+              <div class="testimonial__name">Janis Berger</div>
+              <div class="testimonial__meta">CEO @ Axentric Digital</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="testimonial__quote">„Endlich ein Tool, bei dem Outreach und CRM zusammenarbeiten. Wir verlieren keine Leads mehr zwischen Excel und LinkedIn."</div>
+          <div class="testimonial__person">
+            <div class="testimonial__avatar">LF</div>
+            <div>
+              <div class="testimonial__name">Louisa Frühling</div>
+              <div class="testimonial__meta">Head of Sales @ Norvo</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="testimonial__quote">„Die KI trifft meinen Ton so präzise, dass Kunden es nicht merken. Ich spare 8 Stunden pro Woche — und mein Content ist trotzdem authentisch."</div>
+          <div class="testimonial__person">
+            <div class="testimonial__avatar">NH</div>
+            <div>
+              <div class="testimonial__name">Nicole Hörmann</div>
+              <div class="testimonial__meta">Founder @ Kreativ Konzept</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 11. PRIMARY CTA ========== -->
+  <section class="section--blue-tint section--sm" style="text-align:center;">
+    <div class="container">
+      <h2 class="h3-block reveal" style="max-width: 22ch; margin: 0 auto 20px;">Starte kostenlos.<br>14 Tage. Keine Kreditkarte.</h2>
+      <p class="sub reveal" style="max-width: 520px; margin: 0 auto 28px;">Voller Funktionsumfang. Jederzeit kündbar.</p>
+      <div class="reveal">
+        <a href="#" class="btn btn--primary btn--lg">
+          <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
+          Kostenlos starten
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 12. ONBOARDING TIMELINE ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Setup</span></div>
+        <h2 class="h2-section">In 30 Minuten<br>einsatzbereit.</h2>
+        <p class="sub section__sub">Kein aufwändiges Onboarding. Keine Beratertage. Du legst los, sobald die Extension installiert ist.</p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-step">
+          <div class="timeline-step__num">1</div>
+          <div class="timeline-step__time">2 Min</div>
+          <div class="timeline-step__title">Extension installieren</div>
+          <div class="timeline-step__desc">Chrome-Erweiterung aus dem Store laden und mit deinem LinkedIn verbinden.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__num">2</div>
+          <div class="timeline-step__time">10 Min</div>
+          <div class="timeline-step__title">Markenstimme definieren</div>
+          <div class="timeline-step__desc">In natürlicher Sprache beschreiben, wie du klingen willst.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__num">3</div>
+          <div class="timeline-step__time">10 Min</div>
+          <div class="timeline-step__title">Zielgruppe anlegen</div>
+          <div class="timeline-step__desc">Pains, Gains, Trigger — Leadesk macht den Rest.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__num">4</div>
+          <div class="timeline-step__time">8 Min</div>
+          <div class="timeline-step__title">Kampagne starten</div>
+          <div class="timeline-step__desc">Profile auswählen, Ablauf festlegen, laufen lassen.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 13. INTEGRATIONS ========== -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Integrationen</span></div>
+        <h2 class="h2-section">Verbindet sich mit<br>deinen Tools.</h2>
+        <p class="sub section__sub">Native Integrationen zu den wichtigsten Sales-, Marketing- und Automations-Tools.</p>
+      </div>
+
+      <div class="integrations-grid reveal">
+        <div class="integration"><div class="integration__logo" style="background:#0A66C2;">in</div><div><div class="integration__name">LinkedIn</div><div class="integration__cat">Kernintegration</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#EA4335;">M</div><div><div class="integration__name">Gmail</div><div class="integration__cat">E-Mail</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#0078D4;">O</div><div><div class="integration__name">Outlook</div><div class="integration__cat">E-Mail</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#4A154B;">#</div><div><div class="integration__name">Slack</div><div class="integration__cat">Team-Chat</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#FF7A59;">H</div><div><div class="integration__name">HubSpot</div><div class="integration__cat">CRM-Sync</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#1A1A1A;">P</div><div><div class="integration__name">Pipedrive</div><div class="integration__cat">CRM-Sync</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#FF4A00;">Z</div><div><div class="integration__name">Zapier</div><div class="integration__cat">Automation</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#6E4AF7;">m</div><div><div class="integration__name">Make</div><div class="integration__cat">Automation</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#EA4B71;">n8</div><div><div class="integration__name">n8n</div><div class="integration__cat">Automation</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#4285F4;">G</div><div><div class="integration__name">Calendar</div><div class="integration__cat">Kalender</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#5059C9;">T</div><div><div class="integration__name">MS Teams</div><div class="integration__cat">Team-Chat</div></div></div>
+        <div class="integration"><div class="integration__logo" style="background:#22C55E;">{ }</div><div><div class="integration__name">Webhooks</div><div class="integration__cat">Developer</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 14. COMPETITORS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Der Unterschied</span></div>
+        <h2 class="h2-section">Mehr als nur<br>Outreach-Automation.</h2>
+        <p class="sub section__sub">Andere Tools versenden Nachrichten. Leadesk baut deinen kompletten LinkedIn-Vertriebshebel.</p>
+      </div>
+
+      <div class="compare-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="col-primary">Leadesk</th>
+              <th>Waalaxy</th>
+              <th>Expandi</th>
+              <th>HeyReach</th>
+              <th>Lemlist</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Outreach-Automation</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-check">✓</span></td>
+              <td><span class="compare-check">✓</span></td>
+              <td><span class="compare-check">✓</span></td>
+              <td><span class="compare-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>CRM integriert</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>KI-Content (Posts)</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Markenstimme-Profil</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>SSI-Tracking</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Whitelabel</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Deutsch & DSGVO</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>Pipeline-Management</td>
+              <td class="col-primary"><span class="compare-check">✓</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+              <td><span class="compare-dash">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 15. SECURITY / TRUST ========== -->
+  <section class="section section--blue-tint">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Sicherheit</span></div>
+        <h2 class="h2-section">Daten-Sicherheit<br>ohne Kompromisse.</h2>
+      </div>
+
+      <div class="trust-grid reveal">
+        <div class="trust-card">
+          <div class="trust-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="trust-card__title">DSGVO-konform</div>
+          <div class="trust-card__desc">In Deutschland gehostet. Kein Datentransfer in die USA. Verarbeitungsverträge auf Anfrage.</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></div>
+          <div class="trust-card__title">Supabase EU</div>
+          <div class="trust-card__desc">Frankfurt-Rechenzentrum. Ende-zu-Ende verschlüsselt. ISO 27001 zertifiziert.</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="trust-card__title">RLS-gesichert</div>
+          <div class="trust-card__desc">Row-Level-Security auf jeder Tabelle. Deine Daten sind vor anderen Tenants isoliert.</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="trust-card__title">MV3-konform</div>
+          <div class="trust-card__desc">Chrome-Extension ohne Session-Hacks. Respektiert LinkedIn-Limits. Dein Account ist sicher.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 16. FAQ ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">FAQ</span></div>
+        <h2 class="h2-section">Häufig gestellte<br>Fragen.</h2>
+      </div>
+
+      <div class="faq">
+        <div class="faq__item reveal"><button class="faq__q"><span>Was ist Leadesk?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Leadesk ist eine komplette LinkedIn-Suite für B2B-Teams. Sie deckt den gesamten Workflow ab: Markenstimme, Content-Erstellung, Outreach-Automation, CRM mit Pipeline, und Reporting — alles in einem Tool, nativ verzahnt.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Für wen ist Leadesk?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Für alle, die LinkedIn als B2B-Vertriebskanal ernst nehmen: Sales-Teams, Founder, Marketing-Verantwortliche und Agenturen. Vom Solo-Founder bis zum Team mit 50+ Nutzern — es gibt einen passenden Plan.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Ist Leadesk LinkedIn-konform?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Die Chrome-Erweiterung arbeitet innerhalb der LinkedIn-Oberfläche, respektiert alle üblichen Limits und nutzt keine Session-Hacks. Automatisierungen laufen mit menschlichen Pausen und moderaten Tageslimits — um dein Konto zu schützen. Leadesk ist nicht mit LinkedIn affiliiert.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Was passiert mit meinen Daten?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Deine Daten werden verschlüsselt in der EU gespeichert (Frankfurt). Row-Level-Security isoliert dein Tenant von anderen. Du kannst jederzeit einen Export anfordern oder dein Konto komplett löschen lassen. Wir verkaufen keine Daten — nie.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Wie unterscheidet sich Leadesk von Waalaxy oder Lemlist?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Waalaxy, Expandi, HeyReach und Lemlist sind primär <em>Outreach-Tools</em> — sie verschicken Nachrichten. Leadesk ist eine <em>Suite</em>: CRM, KI-Content, Markenstimme, Pipeline-Management und Outreach sind nativ verzahnt. Wenn du nur Nachrichten versenden willst, reicht ein Outreach-Tool. Wenn du LinkedIn als Vertriebskanal aufbauen willst, brauchst du mehr.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Kann ich jederzeit kündigen?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Ja. Monatliche Abos sind zum Monatsende kündbar, Jahresabos zum Jahresende. Kein Klein­gedrucktes. Kein Kündigungs-Hotline-Prozedere — direkt in den Einstellungen.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Was kostet Leadesk?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Drei Pläne: Starter (ab 23€/Monat), Professional (ab 63€/Nutzer/Monat) und Business (ab 159€/Nutzer/Monat). Bei jährlicher Zahlung sparst du 20%. <a href="pricing.html">Alle Details auf der Preise-Seite</a>.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Brauche ich eine Kreditkarte für den Test?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Nein. 14 Tage voller Funktionsumfang, ohne Kreditkarte, ohne automatische Verlängerung. Nach Ablauf entscheidest du, ob du weitermachen willst.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Was kann die KI genau?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Die KI schreibt Posts, Direktnachrichten, Kommentare und E-Mail-Sequenzen — alle basierend auf deiner Markenstimme, deinen Zielgruppen und deiner Wissensdatenbank. Zusätzlich liefert sie Lead-Scoring, Pipeline-Insights und SSI-Empfehlungen. Ohne Prompt-Engineering.</div></div></div>
+
+        <div class="faq__item reveal"><button class="faq__q"><span>Bietet ihr Onboarding an?</span><span class="faq__icon"></span></button><div class="faq__a"><div class="faq__a-inner">Beim Business-Plan ist eine 60-minütige Onboarding-Session inklusive. Für Starter und Professional gibt es Video-Tutorials, eine durchsuchbare Dokumentation und E-Mail-Support.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 17a. LONGER TESTIMONIAL CARDS ========== -->
+  <section class="section section--cream">
+    <div class="container container--wide">
+      <div class="section__head reveal">
+        <div class="section__eyebrow-wrap"><span class="eyebrow">Kundenstimmen</span></div>
+        <h2 class="h2-section">Warum Teams Leadesk wählen.</h2>
+      </div>
+
+      <div class="testimonial-carousel">
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„Unsere Pipeline ist endlich transparent. Vorher hatten wir Leads in 3 Spreadsheets — jetzt liegt alles zusammen mit den LinkedIn-Aktivitäten."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">SS</div><div><div class="testimonial__name">Sebastian Smieja</div><div class="testimonial__meta">CEO @ Brand Factory Digital</div></div></div>
+        </div>
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„Die Kombination aus Automatisierung und KI ist das, was Leadesk besonders macht. Andere Tools machen eins oder das andere — nie beides auf diesem Niveau."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">VH</div><div><div class="testimonial__name">Vincent Hartig</div><div class="testimonial__meta">CEO @ Rayon</div></div></div>
+        </div>
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„Ich dachte KI-Content klingt immer generisch. Leadesk hat mich vom Gegenteil überzeugt. Meine Follower merken nichts — mein Team hat 80% weniger Schreibzeit."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">SB</div><div><div class="testimonial__name">Sofia Bavas</div><div class="testimonial__meta">Agency Lead @ Parasol Island</div></div></div>
+        </div>
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„Mit Whitelabel betreuen wir jetzt 12 Kunden-Brands aus einer Oberfläche — pro Kunde eigene Stimme, eigene Pipeline, eigene Reports. Unschlagbar."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">BE</div><div><div class="testimonial__name">Ben Ellermann</div><div class="testimonial__meta">Founder @ Muuuh!</div></div></div>
+        </div>
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„Dass Leadesk deutsch ist und DSGVO-konform, war für uns entscheidend. Waalaxy konnten wir wegen Compliance nie ausrollen."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">AM</div><div><div class="testimonial__name">Ayleen Merz</div><div class="testimonial__meta">Sales Director @ von Mende</div></div></div>
+        </div>
+        <div class="testimonial-compact reveal">
+          <div class="testimonial-compact__quote">„SSI von 38 auf 74 in sechs Monaten. Die Empfehlungen aus Leadesk sind konkret und machbar — nicht das übliche 'poste regelmäßig'-Geschwätz."</div>
+          <div class="testimonial-compact__person"><div class="testimonial__avatar">HW</div><div><div class="testimonial__name">Horst Wagner</div><div class="testimonial__meta">Growth Lead @ Thjnk</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 17b. FOOTER CTA (blue flat) ========== -->
+  <section class="footer-cta">
+    <div class="container footer-cta__inner">
+      <div class="footer-cta__avatars reveal">
+        <div class="footer-cta__avatar">JB</div>
+        <div class="footer-cta__avatar">LF</div>
+        <div class="footer-cta__avatar">NH</div>
+        <div class="footer-cta__avatar">SS</div>
+        <div class="footer-cta__avatar">VH</div>
+      </div>
+      <h2 class="footer-cta__title reveal">Mehr Pipeline.<br>Weniger Stress.</h2>
+      <p class="footer-cta__sub reveal">Starte heute kostenlos — 14 Tage voller Funktionsumfang, ohne Kreditkarte.</p>
+      <div class="reveal">
+        <a href="#" class="btn btn--on-blue btn--lg">
+          <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
+          Kostenlos starten
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="brand brand--footer"><img src="leadesk-logo-white.png" alt="Leadesk" /></div>
+          <div class="footer__tagline">Die LinkedIn-Suite für B2B-Teams. Marke, Outreach und CRM in einem Tool.</div>
+          <div class="footer__trust">
+            <span class="footer__trust-badge">🇩🇪 DSGVO</span>
+            <span class="footer__trust-badge">🔒 ISO 27001</span>
+            <span class="footer__trust-badge">⚡ 99,9% Uptime</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Produkt</div>
+          <ul class="footer__links">
+            <li><a href="features.html">Funktionen</a></li>
+            <li><a href="pricing.html">Preise</a></li>
+            <li><a href="#">Chrome-Extension</a></li>
+            <li><a href="#">Integrationen</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Ressourcen</div>
+          <ul class="footer__links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Webinare</a></li>
+            <li><a href="#">Templates</a></li>
+            <li><a href="#">Dokumentation</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Unternehmen</div>
+          <ul class="footer__links">
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Karriere</a></li>
+            <li><a href="#">Partner</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Rechtliches</div>
+          <ul class="footer__links">
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+            <li><a href="#">AV-Vertrag</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 Leadesk. Alle Rechte vorbehalten.</div>
+        <div class="footer__legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Persona tabs
+    document.querySelectorAll('.persona-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.persona;
+        document.querySelectorAll('.persona-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.persona-panel').forEach(p => {
+          p.classList.toggle('active', p.dataset.persona === key);
+        });
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq__q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -66,7 +66,10 @@ FOOTER = dedent(f"""\
     </div>
   </footer>""")
 
-def page(title, description, body, active=None, scripts=""):
+def page(title, description, body, active=None, scripts="", filename=""):
+    slug = filename[:-5] if filename.endswith('.html') else filename
+    url = f"https://www.leadesk.de/{slug}" if slug else "https://www.leadesk.de/"
+    og_image = "https://www.leadesk.de/screenshot-dashboard.png"
     return dedent(f"""\
     <!DOCTYPE html>
     <html lang="de">
@@ -75,6 +78,21 @@ def page(title, description, body, active=None, scripts=""):
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>{title}</title>
       <meta name="description" content="{description}">
+      <link rel="canonical" href="{url}">
+      <link rel="icon" type="image/png" href="/Leadesk_Favicon.png">
+      <!-- Open Graph -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="{url}">
+      <meta property="og:title" content="{title}">
+      <meta property="og:description" content="{description}">
+      <meta property="og:image" content="{og_image}">
+      <meta property="og:locale" content="de_DE">
+      <meta property="og:site_name" content="Leadesk">
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{title}">
+      <meta name="twitter:description" content="{description}">
+      <meta name="twitter:image" content="{og_image}">
       <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -731,7 +749,7 @@ pages = {
 }
 
 for filename, (title, desc, body, active) in pages.items():
-    html = page(title, desc, body, active=active)
+    html = page(title, desc, body, active=active, filename=filename)
     with open(os.path.join(OUT, filename), 'w', encoding='utf-8') as f:
         f.write(html)
     print(f'Wrote {filename} ({len(html):,} bytes)')

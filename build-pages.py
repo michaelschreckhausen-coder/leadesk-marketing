@@ -14,9 +14,7 @@ def nav(active=None):
     items = [
         ('funktionen', 'Funktionen', 'features.html'),
         ('ki',         'KI',         'ki.html'),
-        ('kunden',     'Kunden',     'kunden.html'),
         ('preise',     'Preise',     'pricing.html'),
-        ('ressourcen', 'Ressourcen', 'ressourcen.html'),
     ]
     links = ''.join(
         f'<a href="{href}"{" class=\"active\"" if active == key else ""}>{label}</a>\n        '
@@ -51,8 +49,8 @@ FOOTER = dedent(f"""\
           </div>
         </div>
         <div><div class="footer__col-title">Produkt</div><ul class="footer__links"><li><a href="features.html">Funktionen</a></li><li><a href="pricing.html">Preise</a></li><li><a href="chrome-extension.html">Chrome-Extension</a></li><li><a href="integrationen.html">Integrationen</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
-        <div><div class="footer__col-title">Ressourcen</div><ul class="footer__links"><li><a href="blog.html">Blog</a></li><li><a href="webinare.html">Webinare</a></li><li><a href="templates.html">Templates</a></li><li><a href="dokumentation.html">Dokumentation</a></li><li><a href="support.html">Support</a></li></ul></div>
-        <div><div class="footer__col-title">Unternehmen</div><ul class="footer__links"><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="partner.html">Partner</a></li></ul></div>
+        <div><div class="footer__col-title">Hilfe</div><ul class="footer__links"><li><a href="support.html">Support</a></li></ul></div>
+        <div><div class="footer__col-title">Unternehmen</div><ul class="footer__links"><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
         <div><div class="footer__col-title">Rechtliches</div><ul class="footer__links"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li><li><a href="av-vertrag.html">AV-Vertrag</a></li></ul></div>
       </div>
       <div class="footer__bottom">

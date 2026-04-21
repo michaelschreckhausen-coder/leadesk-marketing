@@ -14,7 +14,6 @@ def nav(active=None):
     items = [
         ('funktionen', 'Funktionen', 'features.html'),
         ('ki',         'KI',         'ki.html'),
-        ('preise',     'Preise',     'pricing.html'),
     ]
     links = ''.join(
         f'<a href="{href}"{" class=\"active\"" if active == key else ""}>{label}</a>\n        '
@@ -29,7 +28,7 @@ def nav(active=None):
         </div>
         <div class="nav__cta">
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
-          <a href="{APP_URL}/register" class="btn btn--primary btn--sm">Kostenlos starten</a>
+          <span class="btn btn--primary btn--sm btn--coming-soon" aria-disabled="true">Bald verfügbar</span>
         </div>
       </div>
     </nav>
@@ -140,7 +139,7 @@ def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage koste
         <h2 class="footer-cta__title reveal">{title_html}</h2>
         <p class="footer-cta__sub reveal">{sub}</p>
         <div class="reveal">
-          <a href="{APP_URL}/register" class="btn btn--on-blue btn--lg">
+          <span class="btn btn--on-blue btn--lg btn--coming-soon" aria-disabled="true">
             <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
             {cta_label}
           </a>

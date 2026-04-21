@@ -1975,3 +1975,17 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   .persona-tab__text { display: none; }
   .footer__grid { grid-template-columns: 1fr; }
 }
+
+/* Coming-Soon CTA — disabled look, nicht klickbar */
+.btn--coming-soon {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+  filter: grayscale(0.3);
+}
+.btn--coming-soon:hover,
+.btn--coming-soon:focus {
+  transform: none !important;
+  box-shadow: none !important;
+}

@@ -555,7 +555,7 @@ ueber_uns_body = hero(
 
       <h2>Die Firma</h2>
       <p>
-        Leadesk GbR<br>
+        Leadesk GmbH i.G.<br>
         Goldbacher Straße 100<br>
         63741 Aschaffenburg<br>
         Deutschland
@@ -610,7 +610,7 @@ kontakt_body = hero(
     <div style="margin-top: 32px;" class="reveal">
       <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.015em;">Postanschrift</h3>
       <p style="color: var(--ink-muted); line-height: 1.55;">
-        Leadesk GbR<br>
+        Leadesk GmbH i.G.<br>
         Goldbacher Straße 100<br>
         63741 Aschaffenburg<br>
         Deutschland
@@ -677,7 +677,7 @@ support_body = coming_soon(
 
 agb_sections = [
     ("§ 1 Geltungsbereich", """\
-<p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der Leadesk GbR (nachfolgend „Anbieter") und ihren Kunden (nachfolgend „Nutzer") über die Nutzung der Leadesk-Plattform (app.leadesk.de, inkl. Chrome-Erweiterung).</p>
+<p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der Leadesk GmbH i.G. (nachfolgend „Anbieter") und ihren Kunden (nachfolgend „Nutzer") über die Nutzung der Leadesk-Plattform (app.leadesk.de, inkl. Chrome-Erweiterung).</p>
 <p>Abweichende Bedingungen des Nutzers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>"""),
 
     ("§ 2 Vertragsschluss", """\
@@ -754,7 +754,7 @@ av_sections = [
 <p>Einzelne Selbstnutzer, die ausschließlich ihre eigenen Daten verwalten, brauchen keinen AV-Vertrag — aber sobald du Leads, Kunden oder Kontakte verarbeitest, solltest du einen haben.</p>"""),
 
     ("Eckdaten des AV-Vertrags", """\
-<p><strong>Auftragsverarbeiter:</strong> Leadesk GbR, Goldbacher Straße 100, 63741 Aschaffenburg, Deutschland</p>
+<p><strong>Auftragsverarbeiter:</strong> Leadesk GmbH i.G., Goldbacher Straße 100, 63741 Aschaffenburg, Deutschland</p>
 <p><strong>Verantwortlicher:</strong> Der Kunde (du).</p>
 <p><strong>Ort der Verarbeitung:</strong> EU (Frankfurt am Main, Supabase-Hosting). Keine Drittlandsübermittlungen außerhalb der EU/EWR ohne geeignete Garantien nach Art. 46 DSGVO.</p>
 <p><strong>Dauer:</strong> Laufzeit des Hauptvertrags.</p>

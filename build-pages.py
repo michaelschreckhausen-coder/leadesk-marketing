@@ -15,10 +15,10 @@ def nav(active=None):
         ('funktionen', 'Funktionen', 'features.html'),
         ('ki',         'KI',         'ki.html'),
     ]
-    links = ''.join(
-        f'<a href="{href}"{" class=\"active\"" if active == key else ""}>{label}</a>\n        '
-        for key, label, href in items
-    )
+    def _link(key, label, href):
+        cls = ' class="active"' if active == key else ''
+        return f'<a href="{href}"{cls}>{label}</a>'
+    links = '\n        '.join(_link(k, l, h) for k, l, h in items)
     return dedent(f"""\
     <nav class="nav">
       <div class="nav__inner">
@@ -28,7 +28,7 @@ def nav(active=None):
         </div>
         <div class="nav__cta">
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
-          <span class="btn btn--primary btn--sm btn--coming-soon" aria-disabled="true">Bald verfügbar</span>
+          <a href="https://app.leadesk.de/signup" class="btn btn--primary btn--sm">7 Tage kostenlos testen</a>
         </div>
       </div>
     </nav>
@@ -132,17 +132,17 @@ def hero(eyebrow, title_html, sub, max_title_ch=20):
     </section>
     """)
 
-def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="Bald verfügbar"):
+def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="7 Tage kostenlos testen", cta_href="https://app.leadesk.de/signup"):
     return dedent(f"""\
     <section class="footer-cta">
       <div class="container footer-cta__inner">
         <h2 class="footer-cta__title reveal">{title_html}</h2>
         <p class="footer-cta__sub reveal">{sub}</p>
         <div class="reveal">
-          <span class="btn btn--on-blue btn--lg btn--coming-soon" aria-disabled="true">
+          <a href="{cta_href}" class="btn btn--on-blue btn--lg">
             <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
             {cta_label}
-          </span>
+          </a>
         </div>
       </div>
     </section>
@@ -319,7 +319,6 @@ kunden_body = coming_soon_hero(
 """) + footer_cta(
     title_html="Selbst ein Case Study werden.",
     sub="Die ersten 50 Kunden, die eine Case Study erlauben, bekommen 6 Monate Professional-Plan kostenlos.",
-    cta_label="Bald verfügbar"
 )
 
 # ─── CHROME-EXTENSION.HTML ────────────────────────────────────────────────────

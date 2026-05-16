@@ -227,7 +227,7 @@ ki_body = hero(
           <span style="width: 32px; height: 32px; background: rgb(204, 120, 92); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</span>
           <div style="font-weight: 700; font-size: 17px;">Anthropic Claude</div>
         </div>
-        <div style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">Lange Kontexte, nuancierte Argumente. Stark bei Strategie-Texten, Sales-Battlecards, mehrteiligen Outreach-Sequenzen.</div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Lange Kontexte, nuancierte Argumente. Stark bei Strategie-Texten, Sales-Battlecards, mehrteiligen Outreach-Sequenzen.</div>
       </div>
 
       <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
@@ -235,7 +235,7 @@ ki_body = hero(
           <span style="width: 32px; height: 32px; background: rgb(16, 163, 127); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">O</span>
           <div style="font-weight: 700; font-size: 17px;">OpenAI GPT</div>
         </div>
-        <div style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">Kreative Hooks, virale Post-Anfänge, schneller Output. Bewährt für Content Studio und Kommentar-Responder.</div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Kreative Hooks, virale Post-Anfänge, schneller Output. Bewährt für Content Studio und Kommentar-Responder.</div>
       </div>
 
       <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
@@ -243,7 +243,7 @@ ki_body = hero(
           <span style="width: 32px; height: 32px; background: rgb(66, 133, 244); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">G</span>
           <div style="font-weight: 700; font-size: 17px;">Google Gemini</div>
         </div>
-        <div style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">Multi-modal, breite Recherche-Tiefe. Ideal für Themen-Recherche, Marktanalyse, Trend-Erkennung.</div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Multi-modal, breite Recherche-Tiefe. Ideal für Themen-Recherche, Marktanalyse, Trend-Erkennung.</div>
       </div>
 
       <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
@@ -251,7 +251,7 @@ ki_body = hero(
           <span style="width: 32px; height: 32px; background: rgb(255, 107, 0); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">M</span>
           <div style="font-weight: 700; font-size: 17px;">Mistral Large</div>
         </div>
-        <div style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">EU-souverän, schnell, kosteneffizient. Für DSGVO-sensible Workflows oder hohen Volumen-Output.</div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">EU-souverän, schnell, kosteneffizient. Für DSGVO-sensible Workflows oder hohen Volumen-Output.</div>
       </div>
 
     </div>

@@ -28,7 +28,7 @@ def nav(active=None):
         </div>
         <div class="nav__cta">
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
-          <a href="https://app.leadesk.de/signup" class="btn btn--primary btn--sm">7 Tage kostenlos testen</a>
+          <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">7 Tage kostenlos testen</a>
         </div>
       </div>
     </nav>
@@ -132,7 +132,7 @@ def hero(eyebrow, title_html, sub, max_title_ch=20):
     </section>
     """)
 
-def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="7 Tage kostenlos testen", cta_href="https://app.leadesk.de/signup"):
+def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="7 Tage kostenlos testen", cta_href="https://app.leadesk.de/register"):
     return dedent(f"""\
     <section class="footer-cta">
       <div class="container footer-cta__inner">

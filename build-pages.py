@@ -15,10 +15,10 @@ def nav(active=None):
         ('funktionen', 'Funktionen', 'features.html'),
         ('ki',         'KI',         'ki.html'),
     ]
-    links = ''.join(
-        f'<a href="{href}"{" class=\"active\"" if active == key else ""}>{label}</a>\n        '
-        for key, label, href in items
-    )
+    def _link(key, label, href):
+        cls = ' class="active"' if active == key else ''
+        return f'<a href="{href}"{cls}>{label}</a>'
+    links = '\n        '.join(_link(k, l, h) for k, l, h in items)
     return dedent(f"""\
     <nav class="nav">
       <div class="nav__inner">
@@ -28,7 +28,7 @@ def nav(active=None):
         </div>
         <div class="nav__cta">
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
-          <span class="btn btn--primary btn--sm btn--coming-soon" aria-disabled="true">Bald verfügbar</span>
+          <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">7 Tage kostenlos testen</a>
         </div>
       </div>
     </nav>
@@ -132,17 +132,17 @@ def hero(eyebrow, title_html, sub, max_title_ch=20):
     </section>
     """)
 
-def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="Bald verfügbar"):
+def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="7 Tage kostenlos testen", cta_href="https://app.leadesk.de/register"):
     return dedent(f"""\
     <section class="footer-cta">
       <div class="container footer-cta__inner">
         <h2 class="footer-cta__title reveal">{title_html}</h2>
         <p class="footer-cta__sub reveal">{sub}</p>
         <div class="reveal">
-          <span class="btn btn--on-blue btn--lg btn--coming-soon" aria-disabled="true">
+          <a href="{cta_href}" class="btn btn--on-blue btn--lg">
             <svg class="btn__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
             {cta_label}
-          </span>
+          </a>
         </div>
       </div>
     </section>
@@ -208,9 +208,64 @@ def legal_prose(heading, intro, sections):
 ki_body = hero(
     "KI-Funktionen",
     'KI, die <span class="highlight">versteht</span>,<br>wie Vertrieb funktioniert.',
-    "Acht trainierte Funktionen, ein Assistent — alle auf deine Markenstimme und Zielgruppen abgestimmt.",
+    "Acht Funktionen, vier KI-Provider, ein Assistent — alle abgestimmt auf deine Markenstimme und deine Zielgruppen.",
     20
 ) + dedent("""\
+
+<section class="section section--blue-tint">
+  <div class="container container--wide">
+    <div class="section__head reveal">
+      <div class="section__eyebrow-wrap"><span class="eyebrow">Multi-Provider-KI</span></div>
+      <h2 class="h2-section">Vier Modelle.<br>Ein Workflow.</h2>
+      <p class="sub section__sub">Anthropic, OpenAI, Google und Mistral — alle integriert. Du wechselst pro Aufgabe, ohne das Tool zu verlassen. Pro Generierung das Modell, das am besten passt.</p>
+    </div>
+
+    <div class="provider-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 48px 0;">
+
+      <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="width: 32px; height: 32px; background: rgb(204, 120, 92); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</span>
+          <div style="font-weight: 700; font-size: 17px;">Anthropic Claude</div>
+        </div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Lange Kontexte, nuancierte Argumente. Stark bei Strategie-Texten, Sales-Battlecards, mehrteiligen Outreach-Sequenzen.</div>
+      </div>
+
+      <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="width: 32px; height: 32px; background: rgb(16, 163, 127); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">O</span>
+          <div style="font-weight: 700; font-size: 17px;">OpenAI GPT</div>
+        </div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Kreative Hooks, virale Post-Anfänge, schneller Output. Bewährt für Content Studio und Kommentar-Responder.</div>
+      </div>
+
+      <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="width: 32px; height: 32px; background: rgb(66, 133, 244); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">G</span>
+          <div style="font-weight: 700; font-size: 17px;">Google Gemini</div>
+        </div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">Multi-modal, breite Recherche-Tiefe. Ideal für Themen-Recherche, Marktanalyse, Trend-Erkennung.</div>
+      </div>
+
+      <div class="provider-card" style="background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="width: 32px; height: 32px; background: rgb(255, 107, 0); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 700;">M</span>
+          <div style="font-weight: 700; font-size: 17px;">Mistral Large</div>
+        </div>
+        <div style="color: var(--ink-muted); font-size: 15px; line-height: 1.6;">EU-souverän, schnell, kosteneffizient. Für DSGVO-sensible Workflows oder hohen Volumen-Output.</div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="max-width: 940px; margin: 0 auto;">
+      <div class="screenshot">
+        <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">app.leadesk.de/content/studio</span></div>
+        <div class="screenshot__body"><svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block; background: #F8F9FB;" font-family="Geist, -apple-system, BlinkMacSystemFont, sans-serif"><rect x="0" y="0" width="800" height="450" rx="0" fill="#FFFFFF"  opacity="1"/><rect x="0" y="0" width="140" height="450" rx="0" fill="#F8F9FB"  opacity="1"/><line x1="140" y1="0" x2="140" y2="450" stroke="#E4E5EB" stroke-width="1"/><circle cx="28" cy="24" r="8" fill="#003060" /><circle cx="36" cy="24" r="8" fill="#30A0D0" /><text x="48" y="28" font-size="11" fill="#0E1633" font-weight="700" text-anchor="start">Leadesk</text><text x="20" y="62" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Startseite</text><text x="20" y="90" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Assistent</text><text x="20" y="118" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Branding</text><text x="20" y="146" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">CRM</text><text x="20" y="174" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">LinkedIn</text><rect x="8" y="188" width="124" height="22" rx="6" fill="rgba(0,48,96,0.08)"  opacity="1"/><text x="20" y="202" font-size="10" fill="#003060" font-weight="600" text-anchor="start">Content</text><text x="20" y="230" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Projektumsetzung</text><text x="20" y="258" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Reporting</text><rect x="140" y="0" width="660" height="36" rx="0" fill="#FFFFFF"  opacity="1"/><line x1="140" y1="36" x2="800" y2="36" stroke="#E4E5EB" stroke-width="1"/><rect x="156" y="10" width="140" height="18" rx="9" fill="#F8F9FB" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="168" y="22" font-size="9" fill="#9096A3" font-weight="400" text-anchor="start">Suche…</text><rect x="280" y="14" width="14" height="10" rx="2" fill="#EEEFF4"  opacity="1"/><rect x="600" y="8" width="130" height="22" rx="11" fill="#F8F9FB" stroke="#E4E5EB" stroke-width="1" opacity="1"/><circle cx="612" cy="19" r="6" fill="#78C3E1" /><text x="622" y="22" font-size="9" fill="#6A6D7A" font-weight="400" text-anchor="start">[DEMO] Brand Voice</text><circle cx="750" cy="18" r="11" fill="#003060" /><text x="750" y="22" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">VL</text><text x="160" y="60" font-size="8" fill="#30A0D0" font-weight="700" text-anchor="start">CONTENT / STUDIO</text><text x="160" y="90" font-size="18" fill="#0E1633" font-weight="700" text-anchor="start">Content Studio</text><rect x="388" y="70" width="180" height="24" rx="12" fill="rgba(0,48,96,0.08)"  opacity="1"/><circle cx="404" cy="82" r="6" fill="#30A0D0" /><text x="416" y="86" font-size="9" fill="#003060" font-weight="600" text-anchor="start">Brand Voice: Leadesk DE</text><rect x="580" y="70" width="180" height="24" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><circle cx="596" cy="82" r="5" fill="#CC785C" /><text x="606" y="86" font-size="9" fill="#0E1633" font-weight="600" text-anchor="start">Claude Opus 4.6  ▼</text><rect x="160" y="124" width="380" height="240" rx="10" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="176" y="146" font-size="9" fill="#6A6D7A" font-weight="600" text-anchor="start">Hook</text><rect x="176" y="154" width="348" height="28" rx="6" fill="#F8F9FB"  opacity="1"/><text x="186" y="172" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">Ihr habt zwei CRMs und drei Outreach-Tools…</text><text x="176" y="200" font-size="9" fill="#6A6D7A" font-weight="600" text-anchor="start">Body</text><rect x="176" y="208" width="348" height="130" rx="6" fill="#F8F9FB"  opacity="1"/><text x="186" y="224" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">...und immer noch verliert ihr Leads zwischen den Stacks.</text><text x="186" y="236" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start"></text><text x="186" y="248" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">Eine konsolidierte Plattform spart euch nicht nur Lizenz-</text><text x="186" y="260" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">kosten — sie macht eure Pipeline lesbar.</text><text x="186" y="272" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start"></text><text x="186" y="284" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">Drei Dinge, die wir bei B2B-Teams sehen:</text><text x="186" y="296" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">1. Dubletten zwischen LinkedIn und Salesforce</text><text x="186" y="308" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">2. Manuelle Nachpflege nach jedem Discovery-Call</text><text x="186" y="320" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">3. SSI-Daten in Excel statt im CRM</text><rect x="556" y="124" width="204" height="240" rx="10" fill="#F8F9FB" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="572" y="144" font-size="10" fill="#0E1633" font-weight="700" text-anchor="start">✨ KI-Aktionen</text><rect x="572" y="160" width="172" height="24" rx="12" fill="#003060"  opacity="1"/><text x="658" y="176" font-size="9" fill="#FFFFFF" font-weight="600" text-anchor="middle">Neu generieren</text><rect x="572" y="192" width="172" height="24" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="658" y="208" font-size="9" fill="#0E1633" font-weight="600" text-anchor="middle">Verkürzen</text><rect x="572" y="224" width="172" height="24" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="658" y="240" font-size="9" fill="#0E1633" font-weight="600" text-anchor="middle">Persönlicher</text><rect x="572" y="256" width="172" height="24" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="658" y="272" font-size="9" fill="#0E1633" font-weight="600" text-anchor="middle">Andere Hook</text><rect x="572" y="288" width="172" height="24" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="658" y="304" font-size="9" fill="#0E1633" font-weight="600" text-anchor="middle">In LinkedIn-Post umwandeln</text></svg></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="section section--cream">
   <div class="container container--wide">
     <div class="ai-grid">
@@ -319,7 +374,6 @@ kunden_body = coming_soon_hero(
 """) + footer_cta(
     title_html="Selbst ein Case Study werden.",
     sub="Die ersten 50 Kunden, die eine Case Study erlauben, bekommen 6 Monate Professional-Plan kostenlos.",
-    cta_label="Bald verfügbar"
 )
 
 # ─── CHROME-EXTENSION.HTML ────────────────────────────────────────────────────
@@ -348,7 +402,7 @@ chrome_body = hero(
       <div class="feature-block__visual reveal">
         <div class="screenshot">
           <div class="screenshot__chrome"><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__dot"></span><span class="screenshot__url">linkedin.com/in/...</span></div>
-          <div class="screenshot__body"><div class="screenshot__placeholder"><div class="screenshot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M11 7h.01M15 7h.01"/></svg></div><div class="screenshot__label">Chrome-Extension</div><div class="screenshot__hint">Screenshot folgt</div></div></div>
+          <div class="screenshot__body"><svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block; background: #F8F9FB;" font-family="Geist, -apple-system, BlinkMacSystemFont, sans-serif"><rect x="0" y="0" width="800" height="450" rx="0" fill="#F3F2EF"  opacity="1"/><rect x="0" y="0" width="800" height="40" rx="0" fill="#FFFFFF"  opacity="1"/><rect x="20" y="12" width="22" height="16" rx="2" fill="#0A66C2"  opacity="1"/><text x="48" y="24" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">in</text><rect x="60" y="10" width="180" height="22" rx="4" fill="#EEF3F8"  opacity="1"/><text x="72" y="24" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Suche…</text><rect x="80" y="56" width="540" height="200" rx="8" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><rect x="80" y="56" width="540" height="80" rx="8" fill="#30A0D0"  opacity="1"/><rect x="80" y="110" width="540" height="26" rx="0" fill="#30A0D0"  opacity="1"/><circle cx="140" cy="130" r="30" fill="#FFFFFF" /><circle cx="140" cy="130" r="26" fill="#003060" /><text x="140" y="138" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">AB</text><text x="180" y="168" font-size="14" fill="#0E1633" font-weight="700" text-anchor="start">Anna Beispiel</text><text x="180" y="188" font-size="10" fill="#6A6D7A" font-weight="400" text-anchor="start">Head of Marketing · Demo Capital SE</text><text x="180" y="206" font-size="9" fill="#9096A3" font-weight="400" text-anchor="start">München · 500+ Kontakte</text><rect x="180" y="220" width="100" height="24" rx="12" fill="#0A66C2"  opacity="1"/><text x="230" y="236" font-size="10" fill="#FFFFFF" font-weight="700" text-anchor="middle">Vernetzen</text><rect x="290" y="220" width="90" height="24" rx="12" fill="#FFFFFF" stroke="#0A66C2" stroke-width="1" opacity="1"/><text x="335" y="236" font-size="10" fill="#0A66C2" font-weight="700" text-anchor="middle">Folgen</text><rect x="630" y="56" width="160" height="360" rx="12" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><rect x="630" y="56" width="160" height="40" rx="12" fill="#003060"  opacity="1"/><circle cx="648" cy="76" r="6" fill="#30A0D0" /><text x="660" y="80" font-size="11" fill="#FFFFFF" font-weight="700" text-anchor="start">Leadesk</text><text x="710" y="80" font-size="8" fill="#78C3E1" font-weight="400" text-anchor="start">✨ AI</text><text x="648" y="122" font-size="7" fill="#9096A3" font-weight="600" text-anchor="start">LEAD SCORE</text><text x="648" y="148" font-size="24" fill="#0E1633" font-weight="700" text-anchor="start">84</text><text x="684" y="148" font-size="11" fill="#6A6D7A" font-weight="400" text-anchor="start">/100</text><text x="648" y="168" font-size="9" fill="#EF4444" font-weight="600" text-anchor="start">↑ Hot Intent</text><rect x="648" y="184" width="124" height="28" rx="6" fill="#003060"  opacity="1"/><text x="710" y="202" font-size="9" fill="#FFFFFF" font-weight="600" text-anchor="middle">+ Als Lead speichern</text><rect x="648" y="220" width="124" height="28" rx="6" fill="#FFFFFF" stroke="#E4E5EB" stroke-width="1" opacity="1"/><text x="710" y="238" font-size="9" fill="#0E1633" font-weight="600" text-anchor="middle">✨ AI Analyse starten</text><text x="648" y="270" font-size="7" fill="#9096A3" font-weight="600" text-anchor="start">SSI-SCORE</text><text x="648" y="290" font-size="18" fill="#0E1633" font-weight="700" text-anchor="start">78</text><text x="680" y="290" font-size="8" fill="#22C55E" font-weight="600" text-anchor="start">+4 dieser Woche</text><text x="648" y="320" font-size="7" fill="#9096A3" font-weight="600" text-anchor="start">PROFIL-INFO</text><text x="648" y="336" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">• CMO seit 2024</text><text x="648" y="352" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">• Buying Intent: hoch</text><text x="648" y="368" font-size="9" fill="#0E1633" font-weight="400" text-anchor="start">• 23 ggs. Kontakte</text></svg></div></div>
         </div>
       </div>
     </div>

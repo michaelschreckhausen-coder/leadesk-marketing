@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build all Leadesk marketing site subpages with a shared nav/footer."""
 
-import os, re
+import os, re, json
+from datetime import datetime
 from textwrap import dedent
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -9,6 +10,54 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 # ─── SHARED NAV + FOOTER ──────────────────────────────────────────────────────
 
 APP_URL = "https://app.leadesk.de"
+SITE_URL = "https://www.leadesk.de"
+
+# Google Search Console Verification — User trägt den Code aus der GSC ein
+# (Search Console → Property hinzufügen → "HTML-Tag"-Methode → Code copy/paste).
+# Leerstring = kein Tag wird gerendert.
+GOOGLE_SITE_VERIFICATION = "aHaDCUTMyO7zlPsvJ6lGQTlagwgqI_yIDreJqZXBx9g"
+
+# ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
+
+ORGANIZATION_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Leadesk",
+    "url": SITE_URL,
+    "logo": f"{SITE_URL}/leadesk-logo.png",
+    "description": "Die LinkedIn-Suite für B2B-Teams. Marke, Outreach und CRM in einem Tool — plus KI, die in deiner Stimme schreibt.",
+    "foundingDate": "2026",
+    "areaServed": "DE",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "hallo@leadesk.de",
+        "availableLanguage": ["German", "English"],
+    },
+}
+
+WEBSITE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Leadesk",
+    "url": SITE_URL,
+    "inLanguage": "de-DE",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": f"{SITE_URL}/?q={{search_term_string}}",
+        "query-input": "required name=search_term_string",
+    },
+}
+
+def schema_script(schema_obj):
+    """Render JSON-LD <script> block."""
+    return f'<script type="application/ld+json">{json.dumps(schema_obj, ensure_ascii=False)}</script>'
+
+def gsc_meta_tag():
+    """Optional google-site-verification meta tag (leer wenn GSC_VERIFICATION nicht gesetzt)."""
+    if not GOOGLE_SITE_VERIFICATION:
+        return ""
+    return f'<meta name="google-site-verification" content="{GOOGLE_SITE_VERIFICATION}">'
 
 def nav(active=None):
     items = [
@@ -64,10 +113,20 @@ FOOTER = dedent(f"""\
     </div>
   </footer>""")
 
-def page(title, description, body, active=None, scripts="", filename=""):
+def page(title, description, body, active=None, scripts="", filename="", extra_schemas=None):
     slug = filename[:-5] if filename.endswith('.html') else filename
     url = f"https://www.leadesk.de/{slug}" if slug else "https://www.leadesk.de/"
     og_image = "https://www.leadesk.de/screenshot-dashboard.png"
+
+    # JSON-LD Schemas: Organization site-weit, plus seitenspezifische extras
+    schemas = [ORGANIZATION_SCHEMA]
+    if not slug:  # nur auf der Home-Page
+        schemas.append(WEBSITE_SCHEMA)
+    if extra_schemas:
+        schemas.extend(extra_schemas)
+    schema_blocks = "\n      ".join(schema_script(s) for s in schemas)
+    gsc_block = gsc_meta_tag()
+
     return dedent(f"""\
     <!DOCTYPE html>
     <html lang="de">
@@ -78,6 +137,7 @@ def page(title, description, body, active=None, scripts="", filename=""):
       <meta name="description" content="{description}">
       <link rel="canonical" href="{url}">
       <link rel="icon" type="image/png" href="/Leadesk_Favicon.png">
+      {gsc_block}
       <!-- Open Graph -->
       <meta property="og:type" content="website">
       <meta property="og:url" content="{url}">
@@ -92,6 +152,8 @@ def page(title, description, body, active=None, scripts="", filename=""):
       <meta name="twitter:description" content="{description}">
       <meta name="twitter:image" content="{og_image}">
       <link rel="stylesheet" href="styles.css">
+      <!-- JSON-LD Structured Data -->
+      {schema_blocks}
     </head>
     <body>
 
@@ -801,3 +863,48 @@ for filename, (title, desc, body, active) in pages.items():
     print(f'Wrote {filename} ({len(html):,} bytes)')
 
 print(f'\n✓ {len(pages)} pages generated')
+
+# ─── SITEMAP.XML ──────────────────────────────────────────────────────────────
+# Dynamisch generiert mit dem aktuellen Datum als <lastmod>. Signalisiert
+# Google bei jedem Deploy "es hat sich was geändert, bitte re-crawlen".
+
+SITEMAP_URLS = [
+    ('/',                  '1.0', 'weekly'),
+    ('/features',          '0.9', 'weekly'),
+    ('/pricing',           '0.9', 'weekly'),
+    ('/ki',                '0.8', 'monthly'),
+    ('/kunden',            '0.8', 'monthly'),
+    ('/chrome-extension',  '0.8', 'monthly'),
+    ('/integrationen',     '0.7', 'monthly'),
+    ('/ressourcen',        '0.7', 'monthly'),
+    ('/blog',              '0.7', 'weekly'),
+    ('/webinare',          '0.6', 'monthly'),
+    ('/templates',         '0.6', 'monthly'),
+    ('/dokumentation',     '0.6', 'monthly'),
+    ('/support',           '0.6', 'monthly'),
+    ('/changelog',         '0.6', 'weekly'),
+    ('/ueber-uns',         '0.5', 'monthly'),
+    ('/kontakt',           '0.5', 'monthly'),
+    ('/karriere',          '0.5', 'monthly'),
+    ('/partner',           '0.5', 'monthly'),
+    ('/impressum',         '0.3', 'yearly'),
+    ('/datenschutz',       '0.3', 'yearly'),
+    ('/agb',               '0.3', 'yearly'),
+    ('/av-vertrag',        '0.3', 'yearly'),
+]
+
+today = datetime.now().strftime('%Y-%m-%d')
+sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+for path, prio, freq in SITEMAP_URLS:
+    sitemap_xml += '  <url>\n'
+    sitemap_xml += f'    <loc>{SITE_URL}{path}</loc>\n'
+    sitemap_xml += f'    <lastmod>{today}</lastmod>\n'
+    sitemap_xml += f'    <changefreq>{freq}</changefreq>\n'
+    sitemap_xml += f'    <priority>{prio}</priority>\n'
+    sitemap_xml += '  </url>\n'
+sitemap_xml += '</urlset>\n'
+
+with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    f.write(sitemap_xml)
+print(f'Wrote sitemap.xml ({len(SITEMAP_URLS)} URLs, lastmod={today})')

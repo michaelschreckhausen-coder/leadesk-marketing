@@ -460,18 +460,9 @@ def integration_card(letter, color, name, desc, cat):
     </div>'''
 
 integrations_list = [
-    ("in", "#0A66C2", "LinkedIn",  "Kernintegration", "Profile, Nachrichten, Vernetzungen, SSI — direkt aus deinem Browser ins CRM."),
-    ("M",  "#EA4335", "Gmail",     "E-Mail", "Gmail-Threads pro Lead verknüpft. Follow-ups aus Leadesk versenden."),
-    ("O",  "#0078D4", "Outlook",   "E-Mail", "Microsoft 365 Anbindung für E-Mail-Workflows."),
-    ("#",  "#4A154B", "Slack",     "Team-Chat", "Benachrichtigungen bei Hot Leads, Antworten, Deal-Updates — direkt in Slack."),
-    ("H",  "#FF7A59", "HubSpot",   "CRM-Sync", "Bidirektionaler Lead- und Deal-Sync mit HubSpot."),
-    ("P",  "#1A1A1A", "Pipedrive", "CRM-Sync", "Automatischer Sync deiner Pipedrive-Deals mit Leadesk."),
-    ("Z",  "#FF4A00", "Zapier",    "Automation", "5.000+ Apps via Zapier anbinden — Trigger und Actions."),
-    ("m",  "#6E4AF7", "Make",      "Automation", "Komplexe Workflows mit Make.com bauen."),
-    ("n8", "#EA4B71", "n8n",       "Automation", "Self-hosted Automations für Datenschutz-bewusste Teams."),
-    ("G",  "#4285F4", "Google Calendar", "Kalender", "Meetings direkt aus dem Lead anlegen — mit Kontext."),
-    ("T",  "#5059C9", "MS Teams",  "Team-Chat", "Microsoft Teams-Channels für Lead-Updates."),
-    ("{ }","#22C55E", "Webhooks",  "Developer", "Custom Webhooks für alle Events. REST API für deine Integrationen."),
+    ("in", "#0A66C2", "LinkedIn", "Kernintegration", "Profile, Nachrichten, Vernetzungen, SSI — direkt aus deinem Browser ins CRM."),
+    ("#",  "#4A154B", "Slack",    "Marketplace-Add-on · 9 €/Monat", "Benachrichtigungen bei Hot Leads, Antworten und Deal-Updates direkt in deinen Slack-Kanal."),
+    ("sd", "#76B729", "sevDesk",  "Marketplace-Add-on · 9,99 €/Monat", "Kunden und Rechnungen automatisch mit sevDesk synchronisieren. Gewonnene Deals legen direkt Angebote an."),
 ]
 
 integrations_body = hero(
@@ -484,6 +475,9 @@ integrations_body = hero(
   <div class="container container--wide">
     <div class="ai-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1080px;">
       {chr(10).join(integration_card(*x) for x in integrations_list)}
+    </div>
+    <div class="reveal" style="text-align:center; margin-top: 32px; font-size: 14px; color: var(--ink-muted);">
+      Weitere Add-ons im <a href="https://app.leadesk.de/marketplace" style="color: var(--primary); font-weight: 600;">Marketplace</a> verfügbar.
     </div>
   </div>
 </section>
@@ -784,7 +778,7 @@ pages = {
     'ki.html':               ('KI-Funktionen — Leadesk',       'Die acht KI-Funktionen von Leadesk: Post-Generator, Nachrichten-Assistent, Kommentar-Responder, Lead-Scoring, Pipeline-Insights, SSI-Empfehlungen, Themen-Recherche, E-Mail-Sequenzen.', ki_body, 'ki'),
     'kunden.html':           ('Kunden — Leadesk',              'B2B-Teams, die mit Leadesk wachsen. Case Studies folgen.', kunden_body, 'kunden'),
     'chrome-extension.html': ('Chrome-Extension — Leadesk',    'Die Leadesk Chrome-Erweiterung: Profile importieren, SSI tracken, Vernetzungen direkt aus LinkedIn.', chrome_body, None),
-    'integrationen.html':    ('Integrationen — Leadesk',       '12 native Integrationen: LinkedIn, Gmail, HubSpot, Slack, Pipedrive, Zapier, Make, n8n, Webhooks und mehr.', integrations_body, None),
+    'integrationen.html':    ('Integrationen — Leadesk',       'Native Integrationen: LinkedIn, Slack und sevDesk. Weitere Add-ons im Leadesk-Marketplace verfügbar.', integrations_body, None),
     'ressourcen.html':       ('Ressourcen — Leadesk',          'Blog, Webinare, Templates und Dokumentation — alles um das Meiste aus Leadesk herauszuholen.', ressourcen_body, 'ressourcen'),
     'ueber-uns.html':        ('Über uns — Leadesk',            'Leadesk wird von Julian Wolf und Michael Schreck gebaut. Hier die Geschichte hinter dem Tool.', ueber_uns_body, None),
     'kontakt.html':          ('Kontakt — Leadesk',             'E-Mail, Telefon, Postanschrift. Antwort binnen 1 Arbeitstag.', kontakt_body, None),

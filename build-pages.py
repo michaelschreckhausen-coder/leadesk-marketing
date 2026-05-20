@@ -13,6 +13,7 @@ APP_URL = "https://app.leadesk.de"
 def nav(active=None):
     items = [
         ('funktionen', 'Funktionen', 'features.html'),
+        ('preise',     'Preise',     'pricing.html'),
         ('ki',         'KI',         'ki.html'),
     ]
     def _link(key, label, href):

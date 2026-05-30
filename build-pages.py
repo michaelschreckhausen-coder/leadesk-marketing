@@ -78,7 +78,7 @@ def nav(active=None):
         </div>
         <div class="nav__cta">
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
-          <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">7 Tage kostenlos testen</a>
+          <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
         </div>
       </div>
     </nav>
@@ -195,7 +195,7 @@ def hero(eyebrow, title_html, sub, max_title_ch=20):
     </section>
     """)
 
-def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="7 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="7 Tage kostenlos testen", cta_href="https://app.leadesk.de/register"):
+def footer_cta(title_html="Mehr Pipeline.<br>Weniger Stress.", sub="3 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.", cta_label="3 Tage kostenlos testen", cta_href="https://app.leadesk.de/register"):
     return dedent(f"""\
     <section class="footer-cta">
       <div class="container footer-cta__inner">
@@ -436,7 +436,7 @@ kunden_body = coming_soon_hero(
 </section>
 """) + footer_cta(
     title_html="Selbst ein Case Study werden.",
-    sub="Die ersten 50 Kunden, die eine Case Study erlauben, bekommen 6 Monate Professional-Plan kostenlos.",
+    sub="Die ersten 50 Kunden, die eine Case Study erlauben, bekommen 6 Monate Marketing-Plan kostenlos.",
 )
 
 # ─── CHROME-EXTENSION.HTML ────────────────────────────────────────────────────
@@ -549,7 +549,7 @@ integrations_body = hero(
     <div class="section__head reveal">
       <div class="section__eyebrow-wrap"><span class="eyebrow">Dein eigenes Tool dabei?</span></div>
       <h2 class="h2-section">Webhooks &amp; REST API.</h2>
-      <p class="sub section__sub">Jedes Event in Leadesk kann per Webhook weitergereicht werden. Volle REST-API verfügbar ab dem Professional-Plan. <a href="dokumentation.html" class="link-arrow">Zur API-Dokumentation</a></p>
+      <p class="sub section__sub">Jedes Event in Leadesk kann per Webhook weitergereicht werden. Volle REST-API verfügbar ab dem All-In-Plan. <a href="dokumentation.html" class="link-arrow">Zur API-Dokumentation</a></p>
     </div>
   </div>
 </section>
@@ -727,7 +727,7 @@ dokumentation_body = coming_soon(
 support_body = coming_soon(
     "Support",
     "Support, wenn du ihn brauchst.",
-    "Schick uns eine E-Mail an info@leadesk.de — wir antworten innerhalb eines Arbeitstags. Für Enterprise-Kunden: dedicated Success Manager im Business-Plan inklusive."
+    "Schick uns eine E-Mail an info@leadesk.de — wir antworten innerhalb eines Arbeitstags. Für Customized-Team-Kunden: dedicated Success Manager inklusive."
 )
 
 # ─── LEGAL: AGB ───────────────────────────────────────────────────────────────
@@ -738,7 +738,7 @@ agb_sections = [
 <p>Abweichende Bedingungen des Nutzers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>"""),
 
     ("§ 2 Vertragsschluss", """\
-<p>Der Nutzer kann sich über die Website registrieren und einen Leadesk-Plan (Starter, Professional, Business) abschließen. Mit der Bestätigung der Plan-Auswahl und Eingabe der Zahlungsdaten kommt der Vertrag zustande.</p>
+<p>Der Nutzer kann sich über die Website registrieren und einen Leadesk-Plan (Sales, Marketing, All-In, Sales-Team, Marketing-Team, KMU, oder Customized Team) abschließen. Mit der Bestätigung der Plan-Auswahl und Eingabe der Zahlungsdaten kommt der Vertrag zustande.</p>
 <p>Die Anbieter-Eingaben in der Plan-Auswahl stellen kein rechtlich bindendes Angebot dar, sondern eine Aufforderung zur Angebotsabgabe (invitatio ad offerendum).</p>"""),
 
     ("§ 3 Leistungsumfang", """\
@@ -747,7 +747,7 @@ agb_sections = [
 
     ("§ 4 Vergütung und Zahlungsbedingungen", """\
 <p>Die Vergütung richtet sich nach dem gewählten Plan. Alle Preise sind Nettopreise zuzüglich der gesetzlichen Mehrwertsteuer.</p>
-<p>Die Abrechnung erfolgt monatlich oder jährlich im Voraus. Der Nutzer kann per Kreditkarte oder SEPA-Lastschrift zahlen. Ab dem Business-Plan ist auf Anfrage Rechnungszahlung möglich.</p>
+<p>Die Abrechnung erfolgt monatlich oder jährlich im Voraus. Der Nutzer kann per Kreditkarte oder SEPA-Lastschrift zahlen. Ab dem Team-Plan ist auf Anfrage Rechnungszahlung möglich.</p>
 <p>Bei Zahlungsverzug kann der Anbieter den Zugang zur Plattform nach vorheriger Mahnung einschränken oder sperren.</p>"""),
 
     ("§ 5 Laufzeit und Kündigung", """\

@@ -59,12 +59,18 @@
   <section class="section" style="padding-top: 20px;">
     <div class="container container--wide">
       <div style="text-align:center;" class="reveal">
+        <div class="pricing-toggle" style="margin-bottom: 12px;">
+          <button class="pricing-toggle__btn active" data-audience="single">Einzelperson</button>
+          <button class="pricing-toggle__btn" data-audience="team">Team</button>
+        </div>
         <div class="pricing-toggle">
           <button class="pricing-toggle__btn active" data-period="monthly">Monatlich</button>
           <button class="pricing-toggle__btn" data-period="yearly">Jährlich <span class="pricing-toggle__save">−20%</span></button>
         </div>
       </div>
 
+      <!-- ─── SINGLE-LIZENZEN ─── -->
+      <div class="audience-block" data-audience="single">
       <div style="text-align:center; margin: 28px 0 16px; font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em;" class="reveal">Single-Lizenzen</div>
 
       <div class="pricing-grid">
@@ -82,14 +88,11 @@
           </div>
           <div class="price-card__feat-label">Enthalten:</div>
           <ul class="price-card__feats">
-            <li><strong>5.000 KI-Credits</strong> pro Monat</li>
+            <li><strong>5.000 KI-Credits</strong> / Monat</li>
             <li><strong>5 GB</strong> Speicher</li>
             <li>250 Unternehmen · 1.000 Kontakte</li>
-            <li>1 Brand Voice · 3 Zielgruppen · 10 Wissensressourcen</li>
-            <li>LinkedIn-Vernetzung + Nachrichten</li>
-            <li>Sales-Reporting + SSI-Tracker</li>
-            <li>KI-Assistent (Datenabfragen)</li>
-            <li><strong>Premium-AI-Modelle</strong> als Add-On +15 €/Monat</li>
+            <li>LinkedIn-Vernetzung + Nachrichten + SSI-Tracker</li>
+            <li><strong>Premium-AI-Modelle</strong> als Add-On (+15 €/Mo)</li>
           </ul>
         </div>
 
@@ -107,14 +110,11 @@
           </div>
           <div class="price-card__feat-label">Enthalten:</div>
           <ul class="price-card__feats">
-            <li><strong>15.000 KI-Credits</strong> pro Monat</li>
+            <li><strong>15.000 KI-Credits</strong> / Monat</li>
             <li><strong>25 GB</strong> Speicher</li>
-            <li>3 Brand Voices · 3 Zielgruppen · 10 Wissensressourcen</li>
-            <li>Content-Studio + Redaktionsplan</li>
-            <li>KI-Bilder (Standard + Nano Banana)</li>
-            <li>LinkedIn-Vernetzung + Nachrichten</li>
-            <li>Content-Reporting + SSI-Tracker</li>
-            <li><strong>Premium-AI-Modelle</strong> inkludiert (Opus, GPT-5, Gemini Pro)</li>
+            <li>3 Brand Voices · Content-Studio · Redaktionsplan</li>
+            <li>KI-Bilder + LinkedIn-Posting</li>
+            <li><strong>Premium-AI-Modelle inkludiert</strong> (Opus, GPT-5, Gemini Pro)</li>
           </ul>
         </div>
 
@@ -132,18 +132,21 @@
           </div>
           <div class="price-card__feat-label">Alles in Sales + Marketing, plus:</div>
           <ul class="price-card__feats">
-            <li><strong>25.000 KI-Credits</strong> pro Monat</li>
-            <li><strong>50 GB</strong> Speicher</li>
-            <li><strong>Unbegrenzte</strong> CRM-Datensätze, Brand Voices, Zielgruppen</li>
-            <li><strong>Premium-KI-Modelle</strong>: Claude Opus 4.7, GPT-5, Gemini 2.5 Pro, GPT-Image-1 High, Gemini 3 Pro Image</li>
+            <li><strong>25.000 KI-Credits</strong> / Monat · <strong>50 GB</strong> Speicher</li>
+            <li><strong>Unbegrenzte</strong> CRM-Datensätze + Brand Voices</li>
+            <li><strong>Premium-KI komplett</strong>: Opus 4.7, GPT-5, Gemini 2.5 Pro + Premium-Bild-Modelle</li>
             <li>Projektumsetzung + Zeiterfassung</li>
             <li>Prioritäts-Support</li>
           </ul>
         </div>
       </div>
 
-      <div style="text-align:center; margin: 48px 0 16px; font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em;" class="reveal">Team-Pakete</div>
-      <p style="text-align:center; margin: 0 auto 24px; max-width: 600px; font-size: 14px; color: var(--ink-2);" class="reveal">Gemeinsamer Credit- und Storage-Pool, zentrale Verwaltung. Rabatt 15–30 % gegenüber Einzellizenzen.</p>
+      </div><!-- /audience-block single -->
+
+      <!-- ─── TEAM-PAKETE ─── -->
+      <div class="audience-block" data-audience="team" style="display:none;">
+      <div style="text-align:center; margin: 28px 0 16px; font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em;" class="reveal">Team-Pakete</div>
+      <p style="text-align:center; margin: 0 auto 24px; max-width: 600px; font-size: 14px; color: var(--ink-2);" class="reveal">Gemeinsamer Credit- und Storage-Pool, zentrale Verwaltung. Rabatt 12–24 % gegenüber Einzellizenzen.</p>
 
       <div class="pricing-grid">
         <!-- SALES TEAM -->
@@ -161,9 +164,8 @@
           <ul class="price-card__feats">
             <li><strong>10.000 Credits-Pool</strong> · 10 GB Speicher</li>
             <li>500 Unternehmen · 2.000 Kontakte</li>
-            <li>2 Brand Voices · 3 Zielgruppen</li>
-            <li>Wie Sales, geteilt auf 2 Seats</li>
-            <li>Premium-AI-Modelle als Add-On pro Seat</li>
+            <li>2 Sales-Seats mit gemeinsamem Pool</li>
+            <li>Premium-AI als Add-On pro Seat (+15 €/Mo)</li>
             <li><strong>Spart 9 €/Monat</strong> vs. 2× Sales-Single</li>
           </ul>
         </div>
@@ -182,8 +184,8 @@
           </div>
           <ul class="price-card__feats">
             <li><strong>30.000 Credits-Pool</strong> · 50 GB Speicher</li>
-            <li>6 Brand Voices · 6 Zielgruppen · 30 Wissensressourcen</li>
-            <li>Wie Marketing, geteilt auf 2 Seats — Premium-AI inkludiert</li>
+            <li>6 Brand Voices · 2 Marketing-Seats</li>
+            <li><strong>Premium-AI-Modelle inkludiert</strong> (Opus, GPT-5, Gemini Pro)</li>
             <li><strong>Spart 19 €/Monat</strong> vs. 2× Marketing-Single</li>
           </ul>
         </div>
@@ -202,14 +204,15 @@
           </div>
           <ul class="price-card__feats">
             <li><strong>35.000 Credits-Pool</strong> · 60 GB Speicher</li>
-            <li><strong>Unbegrenzte</strong> Unternehmen + Kontakte</li>
-            <li><strong>Unbegrenzte</strong> Brand Voices + Zielgruppen</li>
-            <li><strong>Premium-KI-Modelle</strong> für den All-In-Seat</li>
-            <li>Sales-Seats sehen Redaktionsplan (read-only — Upgrade-Pfad)</li>
-            <li><strong>Spart 48 €/Monat</strong> vs. Sum-of-Singles (-24 %)</li>
+            <li><strong>Unbegrenzte</strong> Unternehmen, Kontakte + Brand Voices</li>
+            <li>3 Seats: 2 Sales + 1 All-In (mit Premium-AI)</li>
+            <li>Sales-Seats sehen Redaktionsplan (read-only)</li>
+            <li><strong>Spart 48 €/Monat</strong> vs. Solo-Summe (-24 %)</li>
           </ul>
         </div>
       </div>
+
+      </div><!-- /audience-block team -->
 
       <div style="text-align:center; margin-top: 32px; font-size: 14px; color: var(--ink-muted);" class="reveal">
         Alle Preise netto. Jährliche Zahlung spart 20 %. Jederzeit kündbar.
@@ -409,14 +412,27 @@
       });
     });
 
-    // Pricing toggle
-    document.querySelectorAll('.pricing-toggle__btn').forEach(btn => {
+    // Pricing toggle — Period (monthly/yearly)
+    document.querySelectorAll('.pricing-toggle__btn[data-period]').forEach(btn => {
       btn.addEventListener('click', () => {
         const period = btn.dataset.period;
-        document.querySelectorAll('.pricing-toggle__btn').forEach(b => b.classList.remove('active'));
+        // Nur Period-Buttons toggeln, nicht Audience
+        document.querySelectorAll('.pricing-toggle__btn[data-period]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         document.querySelectorAll('.price-card__amount').forEach(el => {
           el.textContent = el.dataset[period] + ' €';
+        });
+      });
+    });
+
+    // Pricing toggle — Audience (single/team)
+    document.querySelectorAll('.pricing-toggle__btn[data-audience]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const audience = btn.dataset.audience;
+        document.querySelectorAll('.pricing-toggle__btn[data-audience]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.audience-block').forEach(block => {
+          block.style.display = (block.dataset.audience === audience) ? '' : 'none';
         });
       });
     });

@@ -39,8 +39,20 @@
       <a href="https://app.leadesk.de/login" class="nav__login">Anmelden</a>
       <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
     </div>
+    <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile">
+    <a href="features.html">Funktionen</a>
+    <a href="pricing.html">Preise</a>
+    <a href="ki.html">KI</a>
+    <div class="nav__mobile__divider"></div>
+    <div class="nav__mobile__cta">
+      <a href="https://app.leadesk.de/login" class="btn btn--ghost btn--sm">Anmelden</a>
+      <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
+    </div>
   </div>
 </nav>
+<script>(function(){var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.nav__burger'),m=n.querySelector('.nav__mobile');if(!b||!m)return;b.addEventListener('click',function(){var o=n.classList.toggle('nav--open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('nav--open');b.setAttribute('aria-expanded','false');});});})();</script>
 
     <section class="legal-hero">
       <div class="container">

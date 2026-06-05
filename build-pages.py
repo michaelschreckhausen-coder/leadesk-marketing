@@ -69,6 +69,7 @@ def nav(active=None):
         cls = ' class="active"' if active == key else ''
         return f'<a href="{href}"{cls}>{label}</a>'
     links = '\n        '.join(_link(k, l, h) for k, l, h in items)
+    mobile_links = '\n        '.join(f'<a href="{h}">{l}</a>' for k, l, h in items)
     return dedent(f"""\
     <nav class="nav">
       <div class="nav__inner">
@@ -80,8 +81,18 @@ def nav(active=None):
           <a href="{APP_URL}/login" class="nav__login">Anmelden</a>
           <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
         </div>
+        <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+      <div class="nav__mobile">
+        {mobile_links.strip()}
+        <div class="nav__mobile__divider"></div>
+        <div class="nav__mobile__cta">
+          <a href="{APP_URL}/login" class="btn btn--ghost btn--sm">Anmelden</a>
+          <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
+        </div>
       </div>
     </nav>
+    <script>(function(){{var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.nav__burger'),m=n.querySelector('.nav__mobile');if(!b||!m)return;b.addEventListener('click',function(){{var o=n.classList.toggle('nav--open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');}});m.querySelectorAll('a').forEach(function(a){{a.addEventListener('click',function(){{n.classList.remove('nav--open');b.setAttribute('aria-expanded','false');}});}});}})();</script>
     """)
 
 FOOTER = dedent(f"""\
@@ -838,7 +849,7 @@ av_body = legal_prose(
 
 pages = {
     'ki.html':               ('KI-Funktionen — Leadesk',       'Die acht KI-Funktionen von Leadesk: Post-Generator, Nachrichten-Assistent, Kommentar-Responder, Lead-Scoring, Pipeline-Insights, SSI-Empfehlungen, Themen-Recherche, E-Mail-Sequenzen.', ki_body, 'ki'),
-    'kunden.html':           ('Kunden — Leadesk',              'B2B-Teams, die mit Leadesk wachsen. Case Studies folgen.', kunden_body, 'kunden'),
+    # 'kunden.html' bewusst ausgeblendet — Case Studies folgen, bis echte Kundenergebnisse freigegeben sind
     'chrome-extension.html': ('Chrome-Extension — Leadesk',    'Die Leadesk Chrome-Erweiterung: Profile importieren, SSI tracken, Vernetzungen direkt aus LinkedIn.', chrome_body, None),
     'integrationen.html':    ('Integrationen — Leadesk',       'Native Integrationen: LinkedIn, Slack und sevDesk. Weitere Add-ons im Leadesk-Marketplace verfügbar.', integrations_body, None),
     'ressourcen.html':       ('Ressourcen — Leadesk',          'Blog, Webinare, Templates und Dokumentation — alles um das Meiste aus Leadesk herauszuholen.', ressourcen_body, 'ressourcen'),
@@ -873,7 +884,6 @@ SITEMAP_URLS = [
     ('/features',          '0.9', 'weekly'),
     ('/pricing',           '0.9', 'weekly'),
     ('/ki',                '0.8', 'monthly'),
-    ('/kunden',            '0.8', 'monthly'),
     ('/chrome-extension',  '0.8', 'monthly'),
     ('/integrationen',     '0.7', 'monthly'),
     ('/ressourcen',        '0.7', 'monthly'),

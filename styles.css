@@ -1989,3 +1989,185 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   transform: none !important;
   box-shadow: none !important;
 }
+
+/* =============================================
+   WAALAXY-INSPIRED BAUSTEINE (Trust-Badges, Stats, Steps)
+   Leadesk-Navy/Sky-Palette, rundere/hellere Optik
+   ============================================= */
+
+/* --- Trust-/Rating-Badges (Hero + Social-Proof-Band) --- */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.trust-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.trust-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  flex: none;
+}
+.trust-badge__icon svg { width: 14px; height: 14px; }
+.trust-badge--accent .trust-badge__icon { background: var(--accent-glow); color: var(--primary); }
+.trust-badge__stars { color: var(--warm); letter-spacing: 1px; font-size: 13px; }
+.trust-badge strong { font-weight: 600; }
+.trust-badge span.muted { color: var(--ink-muted); font-weight: 400; }
+
+/* Social-Proof-Band (ersetzt die Logo-Wall) */
+.trust-band { padding: 56px 0; }
+.trust-band__title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+/* --- Stats-Band --- */
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-blue) 160%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-blue);
+}
+.stat { text-align: center; color: #fff; }
+.stat__num {
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat__label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--ink-on-blue-muted);
+  font-weight: 500;
+}
+
+/* --- Steps (How-it-works, 3 Karten) --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+.step-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.step-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+.step-card:nth-child(2) .step-card__num { background: var(--accent-blue); }
+.step-card:nth-child(3) .step-card__num { background: var(--warm); }
+.step-card__title { font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.015em; }
+.step-card__desc { font-size: 15px; color: var(--ink-muted); line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .stats-band { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .stats-band { grid-template-columns: 1fr; padding: 28px 22px; }
+  .trust-badge { font-size: 13px; padding: 8px 13px; }
+  .trust-badge .muted { display: none; } /* sekundäres Label auf kleinen Phones ausblenden, hält Badges kompakt */
+}
+
+/* =============================================
+   MOBILE NAV (Hamburger + Ausklapp-Panel)
+   ============================================= */
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  flex: none;
+}
+.nav__burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav--open .nav__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav--open .nav__burger span:nth-child(2) { opacity: 0; }
+.nav--open .nav__burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: 10px 24px 22px;
+}
+.nav--open .nav__mobile { display: flex; }
+.nav__mobile a {
+  padding: 13px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  border-radius: 10px;
+}
+.nav__mobile a:hover,
+.nav__mobile a:active { background: var(--blue-tint); color: var(--primary); }
+.nav__mobile__divider { height: 1px; background: var(--border-soft); margin: 10px 0; }
+.nav__mobile__cta { display: flex; flex-direction: column; gap: 10px; }
+.nav__mobile__cta .btn { width: 100%; justify-content: center; }
+
+@media (max-width: 960px) {
+  .nav__burger { display: flex; }
+  .nav__cta { display: none; }
+}

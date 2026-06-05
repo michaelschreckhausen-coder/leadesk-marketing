@@ -41,8 +41,20 @@
         <a href="https://app.leadesk.de/login" class="nav__login">Anmelden</a>
         <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
       </div>
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile">
+      <a href="features.html">Funktionen</a>
+      <a href="pricing.html">Preise</a>
+      <a href="ki.html">KI</a>
+      <div class="nav__mobile__divider"></div>
+      <div class="nav__mobile__cta">
+        <a href="https://app.leadesk.de/login" class="btn btn--ghost btn--sm">Anmelden</a>
+        <a href="https://app.leadesk.de/register" class="btn btn--primary btn--sm">3 Tage kostenlos testen</a>
+      </div>
     </div>
   </nav>
+  <script>(function(){var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.nav__burger'),m=n.querySelector('.nav__mobile');if(!b||!m)return;b.addEventListener('click',function(){var o=n.classList.toggle('nav--open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('nav--open');b.setAttribute('aria-expanded','false');});});})();</script>
 
   <!-- HERO -->
   <section class="hero" style="padding-bottom: 40px;">
@@ -50,6 +62,11 @@
       <div class="hero__eyebrow reveal">Funktionen im Überblick</div>
       <h1 class="h1-hero hero__title reveal" style="max-width: 20ch;">Alles, was dein <span class="highlight">LinkedIn-Workflow</span> braucht.</h1>
       <p class="sub hero__sub reveal">Eine Suite statt fünf Tools. Jedes Modul sauber verzahnt, von der Markenstimme bis zum Deal-Abschluss.</p>
+      <div class="trust-row reveal">
+        <span class="trust-badge"><span class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><strong>6&nbsp;Module</strong><span class="muted">ein Login</span></span>
+        <span class="trust-badge trust-badge--accent"><span class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></span><strong>Multi-Provider-KI</strong><span class="muted">Claude · GPT · Gemini · Mistral</span></span>
+        <span class="trust-badge"><span class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><strong>DSGVO</strong><span class="muted">EU-Hosting</span></span>
+      </div>
     </div>
   </section>
 
@@ -94,6 +111,7 @@
             <li><span class="feature-list__check">✓</span>Aufgaben mit automatischen Fälligkeiten</li>
             <li><span class="feature-list__check">✓</span>Deals mit Produkten, Dateien und Notizen</li>
             <li><span class="feature-list__check">✓</span>Forecast pro Quartal und Stage</li>
+            <li><span class="feature-list__check">✓</span>Gespeicherte Ansichten, Bulk-Bearbeitung &amp; Schnell-Vorschau pro Kontakt</li>
           </ul>
           <span class="link-arrow reveal btn--coming-soon" aria-disabled="true">Bald verfügbar</span>
         </div>

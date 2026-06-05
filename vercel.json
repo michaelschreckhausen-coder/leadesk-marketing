@@ -7,6 +7,11 @@
       "has": [{ "type": "host", "value": "leadesk.de" }],
       "destination": "https://www.leadesk.de/$1",
       "permanent": true
+    },
+    {
+      "source": "/kunden",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "headers": [

@@ -110,7 +110,7 @@ FOOTER = dedent(f"""\
         </div>
         <div><div class="footer__col-title">Produkt</div><ul class="footer__links"><li><a href="features.html">Funktionen</a></li><li><a href="pricing.html">Preise</a></li><li><a href="chrome-extension.html">Chrome-Extension</a></li><li><a href="integrationen.html">Integrationen</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
         <div><div class="footer__col-title">Hilfe</div><ul class="footer__links"><li><a href="support.html">Support</a></li></ul></div>
-        <div><div class="footer__col-title">Unternehmen</div><ul class="footer__links"><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+        <div><div class="footer__col-title">Unternehmen</div><ul class="footer__links"><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="affiliate-programm.html">Affiliate-Programm</a></li></ul></div>
         <div><div class="footer__col-title">Rechtliches</div><ul class="footer__links"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li><li><a href="av-vertrag.html">AV-Vertrag</a></li></ul></div>
       </div>
       <div class="footer__bottom">
@@ -845,9 +845,264 @@ av_body = legal_prose(
     av_sections
 )
 
+# ─── AFFILIATE-PROGRAMM.HTML ──────────────────────────────────────────────────
+# Öffentliche Bewerbungs-Pipeline (Phase 12). Form POSTet an die Edge-Function
+# `submit-affiliate-application` auf dem PROD-Backend (supabase.leadesk.de) —
+# selbe SUPABASE_URL/ANON_KEY wie das Pricing-Checkout-Modal.
+# reCAPTCHA v3: SITE-Key ist öffentlich (im HTML), Secret liegt in der EF-Env.
+#   ⚠️ RECAPTCHA_SITE_KEY unten ist die ANNAHME (Google-Dashboard-Reihenfolge
+#   Site-zuerst). Vor Scharfschaltung gegen das reCAPTCHA-Admin gegenchecken.
+# Client-seitig ist reCAPTCHA bewusst NON-BLOCKING: fehlt/failt grecaptcha,
+# wird mit leerem Token gesendet (die EF überspringt die Prüfung, solange
+# RECAPTCHA_SECRET nicht gesetzt ist → sauberer schrittweiser Rollout).
+
+affiliate_intro = hero(
+    "Affiliate-Programm",
+    'Empfiehl Leadesk. <span class="highlight">Verdiene mit.</span>',
+    "20 % wiederkehrende Provision auf jeden geworbenen Kunden – 12 Monate lang, monatlich per Stripe ausgezahlt.",
+    24,
+)
+
+affiliate_html = """
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="section__eyebrow-wrap"><span class="eyebrow">Warum mitmachen</span></div>
+      <h2 class="h2-section">Faire, wiederkehrende Provisionen</h2>
+      <p class="sub section__sub">Keine Einmalzahlung, die nach dem ersten Monat versiegt. Du verdienst, solange dein Kunde bleibt – ein volles Jahr.</p>
+    </div>
+    <div class="ai-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:40px;">
+      <div class="ai-card reveal">
+        <div class="ai-card__title">20 % für 12 Monate</div>
+        <div class="ai-card__desc">Auf jede Zahlung deines geworbenen Kunden im ersten Jahr – nicht nur auf den ersten Monat.</div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card__title">Monatliche Auszahlung</div>
+        <div class="ai-card__desc">Automatisch per Stripe, sobald deine Provisionen die Mindestschwelle erreichen. Volle Transparenz.</div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card__title">Eigenes Dashboard</div>
+        <div class="ai-card__desc">Klicks, Anmeldungen, bestätigte Provisionen und Auszahlungen in Echtzeit – plus fertige Marketing-Assets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="section__eyebrow-wrap"><span class="eyebrow">So läuft's</span></div>
+      <h2 class="h2-section">In drei Schritten zur Provision</h2>
+    </div>
+    <div class="ai-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:40px;">
+      <div class="ai-card reveal"><div class="ai-card__title">1 · Bewerben</div><div class="ai-card__desc">Formular ausfüllen, E-Mail bestätigen. Wir prüfen deine Bewerbung und schalten dich frei.</div></div>
+      <div class="ai-card reveal"><div class="ai-card__title">2 · Teilen</div><div class="ai-card__desc">Du bekommst deinen persönlichen Empfehlungs-Link und Marketing-Material. Teile ihn mit deinem Netzwerk.</div></div>
+      <div class="ai-card reveal"><div class="ai-card__title">3 · Verdienen</div><div class="ai-card__desc">Jeder Kunde, der über deinen Link bucht, bringt dir 12 Monate lang 20 % – monatlich ausgezahlt.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bewerben">
+  <div class="container" style="max-width:640px;">
+    <div class="section__head reveal">
+      <div class="section__eyebrow-wrap"><span class="eyebrow">Bewerbung</span></div>
+      <h2 class="h2-section">Jetzt Partner werden</h2>
+      <p class="sub section__sub">Erzähl uns kurz von dir. Nach dem Absenden bestätigst du deine E-Mail – danach prüfen wir deine Bewerbung.</p>
+    </div>
+
+    <form id="aff-form" class="reveal" style="margin-top:36px;display:grid;gap:18px;text-align:left;" novalidate>
+      <div>
+        <label class="aff-label" for="aff-name">Name *</label>
+        <input class="aff-input" id="aff-name" name="name" type="text" autocomplete="name" required placeholder="Vor- und Nachname">
+      </div>
+      <div>
+        <label class="aff-label" for="aff-email">E-Mail *</label>
+        <input class="aff-input" id="aff-email" name="email" type="email" autocomplete="email" required placeholder="du@beispiel.de">
+      </div>
+      <div>
+        <label class="aff-label" for="aff-company">Firma / Kanal <span class="aff-opt">(optional)</span></label>
+        <input class="aff-input" id="aff-company" name="company" type="text" placeholder="z. B. deine Agentur oder dein YouTube-Kanal">
+      </div>
+      <div>
+        <label class="aff-label">Wo erreichst du dein Publikum? <span class="aff-opt">(Mehrfachauswahl)</span></label>
+        <div class="aff-channels">
+          <label><input type="checkbox" name="reach" value="linkedin"> LinkedIn</label>
+          <label><input type="checkbox" name="reach" value="youtube"> YouTube</label>
+          <label><input type="checkbox" name="reach" value="instagram"> Instagram</label>
+          <label><input type="checkbox" name="reach" value="newsletter"> Newsletter</label>
+          <label><input type="checkbox" name="reach" value="blog"> Blog / Website</label>
+          <label><input type="checkbox" name="reach" value="podcast"> Podcast</label>
+          <label><input type="checkbox" name="reach" value="community"> Community</label>
+          <label><input type="checkbox" name="reach" value="other"> Sonstiges</label>
+        </div>
+      </div>
+      <div>
+        <label class="aff-label" for="aff-audience">Wie groß ist deine Reichweite? *</label>
+        <select class="aff-input" id="aff-audience" name="audience_size" required>
+          <option value="" disabled selected>Bitte wählen…</option>
+          <option value="&lt;1k">unter 1.000</option>
+          <option value="1-10k">1.000 – 10.000</option>
+          <option value="10-100k">10.000 – 100.000</option>
+          <option value="100k+">über 100.000</option>
+        </select>
+      </div>
+      <div>
+        <label class="aff-label" for="aff-code">Wunsch-Code für deinen Link *</label>
+        <input class="aff-input" id="aff-code" name="code_wish" type="text" required placeholder="z. B. dein-name" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="aff-hint">Erscheint in deinem Empfehlungs-Link: leadesk.de/?ref=<strong><span id="aff-code-preview">dein-name</span></strong> · 4–30 Zeichen, nur Kleinbuchstaben, Zahlen und Bindestrich.</div>
+      </div>
+      <div>
+        <label class="aff-label" for="aff-motivation">Warum passt du zu Leadesk? *</label>
+        <textarea class="aff-input" id="aff-motivation" name="motivation" required rows="5" placeholder="Erzähl uns von deinem Publikum und wie du Leadesk empfehlen würdest (mind. 200 Zeichen)."></textarea>
+        <div class="aff-hint"><span id="aff-motiv-count">0</span> / 200–1000 Zeichen</div>
+      </div>
+
+      <div id="aff-error" class="aff-alert aff-alert--error" style="display:none;"></div>
+      <button type="submit" id="aff-submit" class="btn btn--primary btn--lg" style="width:100%;justify-content:center;">Bewerbung absenden</button>
+      <p class="aff-legal">Mit dem Absenden stimmst du unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu. Diese Seite ist durch reCAPTCHA geschützt; es gelten die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a> und <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Nutzungsbedingungen</a> von Google.</p>
+    </form>
+
+    <div id="aff-success" class="reveal" style="display:none;text-align:center;padding:48px 24px;">
+      <div style="font-size:48px;line-height:1;margin-bottom:16px;">📬</div>
+      <h3 class="h3-block" style="margin-bottom:12px;">Fast geschafft!</h3>
+      <p class="sub">Wir haben dir eine E-Mail geschickt. Bitte bestätige deine Adresse über den Link darin – danach prüfen wir deine Bewerbung und melden uns innerhalb von 48 Stunden.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aff-label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px;}
+  .aff-opt{font-weight:400;color:var(--ink-muted);}
+  .aff-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--white);transition:border-color .15s,box-shadow .15s;box-sizing:border-box;}
+  .aff-input:focus{outline:none;border-color:var(--accent-blue);box-shadow:0 0 0 3px var(--accent-glow);}
+  textarea.aff-input{resize:vertical;min-height:120px;line-height:1.5;}
+  .aff-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;}
+  .aff-channels label{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);cursor:pointer;font-weight:400;}
+  .aff-channels input{accent-color:var(--primary);width:16px;height:16px;}
+  .aff-hint{font-size:12.5px;color:var(--ink-muted);margin-top:6px;line-height:1.5;}
+  .aff-alert{padding:12px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.5;}
+  .aff-alert--error{background:var(--danger-soft);border:1px solid var(--danger);color:#991B1B;}
+  .aff-legal{font-size:12px;color:var(--ink-soft);line-height:1.6;margin:0;}
+  .aff-legal a{color:var(--ink-muted);text-decoration:underline;}
+</style>
+
+<script src="https://www.google.com/recaptcha/api.js?render=__RECAPTCHA_SITE_KEY__"></script>
+<script>
+(function(){
+  var SUPABASE_URL = 'https://supabase.leadesk.de';
+  var SUPABASE_ANON_KEY = '__SUPABASE_ANON_KEY__';
+  var RECAPTCHA_SITE_KEY = '__RECAPTCHA_SITE_KEY__';
+
+  var form = document.getElementById('aff-form');
+  if(!form) return;
+  var submitBtn = document.getElementById('aff-submit');
+  var errBox = document.getElementById('aff-error');
+  var successBox = document.getElementById('aff-success');
+  var motiv = document.getElementById('aff-motivation');
+  var motivCount = document.getElementById('aff-motiv-count');
+  var codeInput = document.getElementById('aff-code');
+  var codePreview = document.getElementById('aff-code-preview');
+
+  motiv.addEventListener('input', function(){ motivCount.textContent = motiv.value.trim().length; });
+  codeInput.addEventListener('input', function(){
+    codeInput.value = codeInput.value.toLowerCase().replace(/[^a-z0-9-]/g,'');
+    codePreview.textContent = codeInput.value || 'dein-name';
+  });
+
+  var ERRORS = {
+    invalid_email:'Bitte gib eine gültige E-Mail-Adresse an.',
+    name_required:'Bitte gib deinen Namen an.',
+    invalid_audience:'Bitte wähle deine Reichweite aus.',
+    motivation_length:'Deine Begründung muss zwischen 200 und 1000 Zeichen lang sein.',
+    invalid_code:'Wunsch-Code ungültig: 4–30 Zeichen, nur a–z, 0–9 und Bindestrich, Beginn mit Buchstabe oder Zahl.',
+    code_taken:'Dieser Code ist leider schon vergeben. Bitte wähle einen anderen.',
+    email_already_applied:'Für diese E-Mail liegt bereits eine Bewerbung vor – schau in dein Postfach.',
+    recaptcha_failed:'Spam-Schutz fehlgeschlagen. Bitte lade die Seite neu und versuche es erneut.',
+    insert_failed:'Etwas ist schiefgelaufen. Bitte versuche es später erneut.',
+    server_error:'Etwas ist schiefgelaufen. Bitte versuche es später erneut.'
+  };
+  function showError(msg){ errBox.textContent = msg; errBox.style.display='block'; errBox.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+  function getToken(){
+    return new Promise(function(resolve){
+      if(typeof grecaptcha==='undefined' || !RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('__')===0){ resolve(''); return; }
+      try{
+        grecaptcha.ready(function(){
+          grecaptcha.execute(RECAPTCHA_SITE_KEY,{action:'affiliate_apply'}).then(resolve).catch(function(){resolve('');});
+        });
+      }catch(e){ resolve(''); }
+    });
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    errBox.style.display='none';
+
+    var name = document.getElementById('aff-name').value.trim();
+    var email = document.getElementById('aff-email').value.trim();
+    var audience = document.getElementById('aff-audience').value;
+    var code = codeInput.value.trim();
+    var motivation = motiv.value.trim();
+    var reach = Array.prototype.slice.call(form.querySelectorAll('input[name="reach"]:checked')).map(function(c){return c.value;});
+
+    if(!name){ showError(ERRORS.name_required); return; }
+    if(!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email)){ showError(ERRORS.invalid_email); return; }
+    if(!audience){ showError(ERRORS.invalid_audience); return; }
+    if(!/^[a-z0-9][a-z0-9-]{3,29}$/.test(code)){ showError(ERRORS.invalid_code); return; }
+    if(motivation.length<200 || motivation.length>1000){ showError(ERRORS.motivation_length); return; }
+
+    submitBtn.disabled=true;
+    var origLabel = submitBtn.textContent;
+    submitBtn.textContent='Wird gesendet…';
+
+    var token = await getToken();
+    try{
+      var res = await fetch(SUPABASE_URL+'/functions/v1/submit-affiliate-application',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON_KEY},
+        body:JSON.stringify({
+          name:name, email:email, company_or_channel:document.getElementById('aff-company').value.trim()||null,
+          reach_channels:reach, audience_size:audience, code_wish:code, motivation:motivation, recaptcha_token:token
+        })
+      });
+      var data = await res.json().catch(function(){return {};});
+      if(res.ok && data.success){
+        form.style.display='none';
+        successBox.style.display='block';
+        successBox.classList.add('is-visible');
+        successBox.scrollIntoView({behavior:'smooth',block:'center'});
+        return;
+      }
+      showError(ERRORS[data.error] || ERRORS.server_error);
+    }catch(err){
+      showError(ERRORS.server_error);
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.textContent=origLabel;
+    }
+  });
+})();
+</script>
+"""
+
+# Konstanten injizieren (kein f-string/format wegen der vielen JS-{}-Klammern)
+_AFF_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzc2ODYyNDcyLCJleHAiOjIwOTIyMjI0NzJ9.w8HbycX4Dx5Uu1UCp9ER__cv4T3oldej3BDHgck_WC8'
+_AFF_RECAPTCHA_SITE_KEY = '6Lf8qi0tAAAAAHQOEOx3osUHAX_2swR8RJW46u5L'  # ⚠️ ANNAHME – gegen reCAPTCHA-Admin gegenchecken
+affiliate_html = (affiliate_html
+                  .replace('__SUPABASE_ANON_KEY__', _AFF_ANON_KEY)
+                  .replace('__RECAPTCHA_SITE_KEY__', _AFF_RECAPTCHA_SITE_KEY))
+
+affiliate_body = affiliate_intro + affiliate_html + footer_cta(
+    title_html="Bereit, mitzuverdienen?",
+    sub="Bewirb dich in zwei Minuten und teile Leadesk mit deinem Netzwerk.",
+    cta_label="Zur Bewerbung",
+    cta_href="#bewerben",
+)
+
 # ─── ALLE SEITEN SCHREIBEN ────────────────────────────────────────────────────
 
 pages = {
+    'affiliate-programm.html': ('Affiliate-Programm — Leadesk', 'Empfiehl Leadesk und verdiene 20 % wiederkehrende Provision – 12 Monate lang, monatlich per Stripe ausgezahlt. Jetzt als Partner bewerben.', affiliate_body, None),
     'ki.html':               ('KI-Funktionen — Leadesk',       'Die acht KI-Funktionen von Leadesk: Post-Generator, Nachrichten-Assistent, Kommentar-Responder, Lead-Scoring, Pipeline-Insights, SSI-Empfehlungen, Themen-Recherche, E-Mail-Sequenzen.', ki_body, 'ki'),
     # 'kunden.html' bewusst ausgeblendet — Case Studies folgen, bis echte Kundenergebnisse freigegeben sind
     'chrome-extension.html': ('Chrome-Extension — Leadesk',    'Die Leadesk Chrome-Erweiterung: Profile importieren, SSI tracken, Vernetzungen direkt aus LinkedIn.', chrome_body, None),
@@ -884,6 +1139,7 @@ SITEMAP_URLS = [
     ('/features',          '0.9', 'weekly'),
     ('/pricing',           '0.9', 'weekly'),
     ('/ki',                '0.8', 'monthly'),
+    ('/affiliate-programm', '0.7', 'monthly'),
     ('/chrome-extension',  '0.8', 'monthly'),
     ('/integrationen',     '0.7', 'monthly'),
     ('/ressourcen',        '0.7', 'monthly'),

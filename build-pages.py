@@ -64,6 +64,7 @@ def nav(active=None):
         ('funktionen', 'Funktionen', 'features.html'),
         ('preise',     'Preise',     'pricing.html'),
         ('ki',         'KI',         'ki.html'),
+        ('affiliate',  'Affiliate-Programm', 'affiliate-programm.html'),
     ]
     def _link(key, label, href):
         cls = ' class="active"' if active == key else ''
@@ -1102,7 +1103,7 @@ affiliate_body = affiliate_intro + affiliate_html + footer_cta(
 # ─── ALLE SEITEN SCHREIBEN ────────────────────────────────────────────────────
 
 pages = {
-    'affiliate-programm.html': ('Affiliate-Programm — Leadesk', 'Empfiehl Leadesk und verdiene 20 % wiederkehrende Provision – 12 Monate lang, monatlich per Stripe ausgezahlt. Jetzt als Partner bewerben.', affiliate_body, None),
+    'affiliate-programm.html': ('Affiliate-Programm — Leadesk', 'Empfiehl Leadesk und verdiene 20 % wiederkehrende Provision – 12 Monate lang, monatlich per Stripe ausgezahlt. Jetzt als Partner bewerben.', affiliate_body, 'affiliate'),
     'ki.html':               ('KI-Funktionen — Leadesk',       'Die acht KI-Funktionen von Leadesk: Post-Generator, Nachrichten-Assistent, Kommentar-Responder, Lead-Scoring, Pipeline-Insights, SSI-Empfehlungen, Themen-Recherche, E-Mail-Sequenzen.', ki_body, 'ki'),
     # 'kunden.html' bewusst ausgeblendet — Case Studies folgen, bis echte Kundenergebnisse freigegeben sind
     'chrome-extension.html': ('Chrome-Extension — Leadesk',    'Die Leadesk Chrome-Erweiterung: Profile importieren, SSI tracken, Vernetzungen direkt aus LinkedIn.', chrome_body, None),

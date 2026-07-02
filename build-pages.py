@@ -5,6 +5,8 @@ import os, re, json
 from datetime import datetime
 from textwrap import dedent
 
+from api_docs_body import api_docs_body
+
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # ─── SHARED NAV + FOOTER ──────────────────────────────────────────────────────
@@ -109,7 +111,7 @@ FOOTER = dedent(f"""\
             <span class="footer__trust-badge">⚡ 99,9% Uptime</span>
           </div>
         </div>
-        <div><div class="footer__col-title">Produkt</div><ul class="footer__links"><li><a href="features.html">Funktionen</a></li><li><a href="pricing.html">Preise</a></li><li><a href="chrome-extension.html">Chrome-Extension</a></li><li><a href="integrationen.html">Integrationen</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+        <div><div class="footer__col-title">Produkt</div><ul class="footer__links"><li><a href="features.html">Funktionen</a></li><li><a href="pricing.html">Preise</a></li><li><a href="chrome-extension.html">Chrome-Extension</a></li><li><a href="integrationen.html">Integrationen</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="api-docs.html">API-Dokumentation</a></li></ul></div>
         <div><div class="footer__col-title">Hilfe</div><ul class="footer__links"><li><a href="support.html">Support</a></li></ul></div>
         <div><div class="footer__col-title">Unternehmen</div><ul class="footer__links"><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="affiliate-programm.html">Affiliate-Programm</a></li></ul></div>
         <div><div class="footer__col-title">Rechtliches</div><ul class="footer__links"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li><li><a href="av-vertrag.html">AV-Vertrag</a></li></ul></div>
@@ -1118,6 +1120,7 @@ pages = {
     'partner.html':          ('Partner — Leadesk',             'Agentur-Partnerprogramm für Whitelabel-Kunden — startet Q3 2026.', partner_body, None),
     'changelog.html':        ('Changelog — Leadesk',           'Was neu ist in Leadesk — öffentliche Release Notes folgen.', changelog_body, None),
     'dokumentation.html':    ('Dokumentation — Leadesk',       'Feature-Guides, API-Referenz, Best Practices — öffentliche Docs folgen.', dokumentation_body, None),
+    'api-docs.html':         ('API-Dokumentation — Leadesk',   'REST-API von Leadesk: Kontakte, Deals, Unternehmen, Content und Reports per API anbinden. Auth via API-Key oder OAuth2.', api_docs_body, None),
     'support.html':          ('Support — Leadesk',             'Hilfe, wenn du sie brauchst. E-Mail, FAQ, dedicated Success Manager.', support_body, None),
     'agb.html':              ('AGB — Leadesk',                 'Allgemeine Geschäftsbedingungen für die Nutzung der Leadesk-Plattform.', agb_body, None),
     'av-vertrag.html':       ('AV-Vertrag — Leadesk',          'Auftragsverarbeitungsvertrag nach Art. 28 DSGVO — auf Anfrage.', av_body, None),
@@ -1143,6 +1146,7 @@ SITEMAP_URLS = [
     ('/affiliate-programm', '0.7', 'monthly'),
     ('/chrome-extension',  '0.8', 'monthly'),
     ('/integrationen',     '0.7', 'monthly'),
+    ('/api-docs',          '0.7', 'monthly'),
     ('/ressourcen',        '0.7', 'monthly'),
     ('/blog',              '0.7', 'weekly'),
     ('/webinare',          '0.6', 'monthly'),

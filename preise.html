@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preise | Leadesk</title>
+<meta name="description" content="Drei Single-Lizenzen und drei Team-Pakete. Transparente Credits, keine versteckten Limits. 3 Tage kostenlos testen, jederzeit kündbar.">
+<link rel="stylesheet" href="assets/leadesk.css">
+<style>
+  .seg-row{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px}
+  .plan .price{display:flex;align-items:baseline;gap:3px;flex-wrap:wrap}
+  .plan .price .amt{font-size:46px;line-height:1;color:var(--ink);font-weight:800}
+  .plan .price .cur{font-size:20px;color:var(--muted);font-weight:700}
+  .plan .price .per{font-size:15px;color:var(--muted);font-weight:600}
+  .plan .seats{font-size:14px;color:var(--muted);font-weight:600;margin-left:4px}
+  .plan .save-tag{display:inline-block;margin-top:6px;font-size:12px;font-weight:800;color:var(--success);background:#e4f6ee;padding:4px 10px;border-radius:999px}
+  .plan-group[hidden]{display:none}
+  .cust{background:var(--ink);color:#fff;border-radius:var(--radius);padding:30px 34px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:var(--shadow-hover)}
+  .cust h3{color:#fff;font-size:22px;margin-bottom:6px}
+  .cust p{color:rgba(255,255,255,.8);font-size:14.5px;max-width:560px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
+    <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
+  </linearGradient>
+</defs></svg>
+
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="leadly.html">Leadly</a><a href="linkedin.html">LinkedIn</a><a href="content.html">Content</a><a href="instagram.html">Instagram</a><a href="agenturen.html">Agenturen</a><a href="preise.html" class="active">Preise</a></nav>
+  <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+</div></header>
+
+<!-- HERO -->
+<section class="page-hero" style="background:var(--tint-blue);text-align:center;padding-bottom:50px">
+  <div class="wrap" style="max-width:800px;margin:0 auto">
+    <div class="reveal">
+      <div class="mark-wrap med" style="margin:0 auto 18px"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+      <div class="eyebrow center">Preise & Pläne</div>
+      <h1>Ein Tool.<br><span class="grad-text">Transparente Credits.</span></h1>
+      <p class="lead" style="margin:0 auto 8px">Drei Single-Lizenzen und drei Team-Pakete. KI-Verbrauch wird transparent in Credits abgerechnet — keine versteckten Limits. 3 Tage kostenlos testen.</p>
+      <div class="seg-row reveal d1">
+        <div class="seg" id="audience"><span class="on" data-g="single">Einzelperson</span><span data-g="team">Team</span></div>
+        <div class="seg" id="billing"><span class="on" data-p="mo">Monatlich</span><span data-p="yr">Jährlich</span><span class="save">−20 %</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="pad" style="padding-top:64px">
+  <!-- SINGLE -->
+  <div class="wrap plans plan-group" data-g="single">
+    <div class="plan reveal">
+      <h3>Sales</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="39">39</span><span class="per"> / Monat</span></div>
+      <p style="color:var(--muted);font-size:14px">Solo-Vertriebler, Sales-Consultants, Outbound-fokussierte Founder.</p>
+      <ul>
+        <li><b>5.000 KI-Credits</b> / Monat</li>
+        <li><b>5 GB</b> Speicher</li>
+        <li>250 Unternehmen · 1.000 Kontakte</li>
+        <li>LinkedIn-Vernetzung + Nachrichten + SSI-Tracker</li>
+        <li>Premium-AI-Modelle als Add-On (+15 €/Mo)</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=sales">3 Tage testen</a>
+    </div>
+    <div class="plan pop reveal d1">
+      <h3>Marketing</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="79">79</span><span class="per"> / Monat</span></div>
+      <p style="color:var(--muted);font-size:14px">Personal-Brand-Builder, Content-Creator, Marketing-Verantwortliche.</p>
+      <ul>
+        <li><b>15.000 KI-Credits</b> / Monat</li>
+        <li><b>25 GB</b> Speicher</li>
+        <li>3 Brand Voices · Content-Studio · Redaktionsplan</li>
+        <li>KI-Bilder + LinkedIn-Posting</li>
+        <li><b>Premium-AI inkludiert</b> (Opus, GPT-5, Gemini Pro)</li>
+      </ul>
+      <a class="btn btn-primary" href="https://app.leadesk.de/register?plan=marketing">3 Tage testen</a>
+    </div>
+    <div class="plan reveal d2">
+      <h3>All-In</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="119">119</span><span class="per"> / Monat</span></div>
+      <p style="color:var(--muted);font-size:14px">Solo-Founder und Personal-Brand-Berater, die den ganzen Funnel selbst betreiben.</p>
+      <ul>
+        <li><b>25.000 KI-Credits</b> / Monat · <b>50 GB</b></li>
+        <li><b>Unbegrenzte</b> CRM-Datensätze + Brand Voices</li>
+        <li><b>Premium-KI komplett</b>: Opus 4.7, GPT-5, Gemini 2.5 Pro + Premium-Bild-Modelle</li>
+        <li>Projektumsetzung + Zeiterfassung</li>
+        <li>Prioritäts-Support</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=all-in">3 Tage testen</a>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="wrap plans plan-group" data-g="team" hidden>
+    <div class="plan reveal">
+      <h3>Sales Team</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="69">69</span><span class="per"> / Monat</span><span class="seats">· 2 Seats</span></div>
+      <p style="color:var(--muted);font-size:14px">Zwei Vertriebler mit geteiltem Pool und zentraler Verwaltung.</p>
+      <ul>
+        <li><b>10.000 Credits-Pool</b> · 10 GB Speicher</li>
+        <li>500 Unternehmen · 2.000 Kontakte</li>
+        <li>2 Sales-Seats mit gemeinsamem Pool</li>
+        <li>Premium-AI als Add-On pro Seat (+15 €/Mo)</li>
+      </ul>
+      <span class="save-tag">Spart 9 €/Monat vs. 2× Sales</span>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=sales-team" style="margin-top:14px">3 Tage testen</a>
+    </div>
+    <div class="plan reveal d1">
+      <h3>Marketing Team</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="139">139</span><span class="per"> / Monat</span><span class="seats">· 2 Seats</span></div>
+      <p style="color:var(--muted);font-size:14px">Zwei Marketing-User mit Brand-Voice-Diversität.</p>
+      <ul>
+        <li><b>30.000 Credits-Pool</b> · 50 GB Speicher</li>
+        <li>6 Brand Voices · 2 Marketing-Seats</li>
+        <li><b>Premium-AI inkludiert</b> (Opus, GPT-5, Gemini Pro)</li>
+      </ul>
+      <span class="save-tag">Spart 19 €/Monat vs. 2× Marketing</span>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=marketing-team" style="margin-top:14px">3 Tage testen</a>
+    </div>
+    <div class="plan pop reveal d2">
+      <h3>KMU</h3>
+      <div class="price"><span class="cur">€</span><span class="amt" data-mo="149">149</span><span class="per"> / Monat</span><span class="seats">· 3 Seats</span></div>
+      <p style="color:var(--muted);font-size:14px">Typisches 3-Personen-B2B-Setup: 2 Sales + 1 All-In.</p>
+      <ul>
+        <li><b>35.000 Credits-Pool</b> · 60 GB Speicher</li>
+        <li><b>Unbegrenzte</b> Unternehmen, Kontakte + Brand Voices</li>
+        <li>3 Seats: 2 Sales + 1 All-In (mit Premium-AI)</li>
+        <li>Sales-Seats sehen Redaktionsplan (read-only)</li>
+      </ul>
+      <span class="save-tag">Spart 48 €/Monat (−24 %)</span>
+      <a class="btn btn-primary" href="https://app.leadesk.de/register?plan=kmu" style="margin-top:14px">3 Tage testen</a>
+    </div>
+  </div>
+
+  <div class="wrap" style="text-align:center;margin-top:22px;color:var(--muted);font-size:14px">Alle Preise netto. Jährliche Zahlung spart 20 %. Jederzeit kündbar. 3 Tage kostenlos testen, danach dauerhaft kostenloser Free-Plan.</div>
+
+  <!-- CUSTOMIZED -->
+  <div class="wrap" style="margin-top:34px">
+    <div class="cust reveal">
+      <div>
+        <h3>Customized Team — ab 4 Seats, ab 199 € / Monat</h3>
+        <p>Individuelles Setup mit eigener Modell-Allowlist, Single-Sign-On (SAML), dediziertem Account-Manager und maßgeschneidertem Lizenz-Mix.</p>
+      </div>
+      <a class="btn btn-primary" href="kontakt.html" style="white-space:nowrap">Beratung anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section class="pad soft">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Wie Credits funktionieren</div>
+    <h2 class="big">Transparent. Pro Aktion. <span class="grad-text">Keine versteckten Limits.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Jede KI-Aktion verbraucht Credits. Ein Credit entspricht etwa $0,001 unserer echten Provider-API-Kosten — du zahlst nur für tatsächliche Nutzung. Top-Ups jederzeit verfügbar.</p>
+  </div>
+  <div class="wrap cmp-wrap reveal">
+    <table class="cmp">
+      <thead><tr><th>Operation</th><th>Credits</th><th>Verfügbar in</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">LinkedIn-Vernetzungs-Nachricht</th><td>~6</td><td>Alle Lizenzen</td></tr>
+        <tr><th scope="row">LinkedIn-Direktnachricht</th><td>~11</td><td>Alle Lizenzen</td></tr>
+        <tr><th scope="row">Profil-Text (Bio / Headline / About)</th><td>~18</td><td>Alle Lizenzen</td></tr>
+        <tr><th scope="row">Brainstorming (6 Themen)</th><td>~29</td><td>Marketing + All-In</td></tr>
+        <tr><th scope="row">Voller Post (Text-Werkstatt)</th><td>~32</td><td>Marketing + All-In</td></tr>
+        <tr><th scope="row">KI-Bild Standard (GPT-Image-Mini)</th><td>~11</td><td>Marketing + All-In</td></tr>
+        <tr><th scope="row">KI-Bild HD (Nano Banana)</th><td>~40</td><td>Marketing + All-In</td></tr>
+        <tr><th scope="row">KI-Bild Premium (GPT-Image-1 High)</th><td>~167</td><td>Nur All-In</td></tr>
+        <tr><th scope="row">Sprach-Transkription (Whisper)</th><td>~6 / Min</td><td>Alle Lizenzen</td></tr>
+        <tr><th scope="row">Assistent-Konversation (5 Turns)</th><td>~62</td><td>Alle Lizenzen</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="wrap" style="text-align:center;margin-top:20px;color:var(--muted);font-size:14px">
+    <b style="color:var(--ink)">Top-Ups:</b> +1.000 Credits 6 € · +5.000 Credits 25 € · +20.000 Credits 89 € · +50.000 Credits 199 €.<br>
+    Storage (+10 GB ab 3 €/Mo) und CRM-Datensätze (+100 Unternehmen 3 €/Mo, +500 Kontakte 5 €/Mo) ebenfalls zubuchbar.
+  </div>
+</section>
+
+<!-- ENTSCHEIDUNGSHILFE -->
+<section class="pad">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Wer zu welchem Plan passt</div>
+    <h2 class="big">Kurze <span class="grad-text">Entscheidungshilfe.</span></h2>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">🎯</div><h3>Sales</h3><p>Solo-Vertriebler und Consultants. Schwerpunkt CRM, LinkedIn-Vernetzung und Sales-Reporting.</p></div>
+    <div class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1"><div class="ic">✍️</div><h3>Marketing</h3><p>Personal-Brand-Builder und Content-Creator. Schwerpunkt Brand-Voice-Vielfalt und Content-Produktion.</p></div>
+    <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🚀</div><h3>All-In</h3><p>Solo-Founder, die selbst verkaufen und Marketing machen; Berater, die den ganzen Funnel betreiben.</p></div>
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">👥</div><h3>Sales Team</h3><p>Zwei-Personen-Vertriebs-Teams mit gemeinsamer Pipeline, geteilten Credits und Storage.</p></div>
+    <div class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1"><div class="ic">🎙️</div><h3>Marketing Team</h3><p>Content-Teams mit mehreren Brand Voices — z. B. Agentur für mehrere Kundenmarken.</p></div>
+    <div class="card reveal d2" style="--acc:var(--purple);--accbg:#efedff"><div class="ic">🏢</div><h3>KMU</h3><p>B2B-Mittelständler: zwei Vertriebler + ein Founder mit Marketing. 3 Seats inkl. Premium-Modelle.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad soft">
+  <div class="wrap center-head reveal" style="margin-bottom:24px">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="big">Fragen zu Preisen <span class="grad-text">& Plänen.</span></h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open><summary>Kann ich Leadesk vorher testen?</summary><p>Ja, 3 Tage kostenlos mit komplettem All-In-Funktionsumfang inkl. Premium-AI-Modelle (Claude Opus, GPT-5, Gemini Pro), 500 Credits und 5 GB Speicher. Ohne Kreditkarte, ohne automatische Verlängerung.</p></details>
+    <details><summary>Was passiert nach den 3 Tagen?</summary><p>Du wechselst automatisch auf den dauerhaft kostenlosen Free-Plan: 100 Credits einmalig, 1 GB Speicher, alle Standard-Funktionen (CRM, LinkedIn, Brand Voice, Content, Reporting), LinkedIn-Posting auf 1 Post/Monat begrenzt, keine Premium-AI. Oder du wählst einen kostenpflichtigen Plan. Keine automatische Abrechnung.</p></details>
+    <details><summary>Was sind Credits?</summary><p>Jede KI-Aktion verbraucht Credits — transparent, ohne versteckte Limits. Ein Credit entspricht etwa $0,001 unserer echten Provider-API-Kosten. Beispiele: LinkedIn-Vernetzungs-Nachricht ~6, voller Post ~32, KI-Bild Standard ~11.</p></details>
+    <details><summary>Was passiert, wenn meine Credits aufgebraucht sind?</summary><p>Warnung bei 80 %. Bei 100 % sind KI-Funktionen pausiert — CRM, LinkedIn-Anzeige und alle nicht-KI-Funktionen bleiben verfügbar. Du kannst sofort ein Top-Up kaufen (ab 6 € für 1.000 Credits) oder auf den nächsten Monat warten. Plan-Credits resetten am 1.</p></details>
+    <details><summary>Kann ich zwischen Plänen wechseln?</summary><p>Jederzeit. Upgrades wirken sofort, die Differenz wird tagesgenau berechnet. Downgrades gelten ab der nächsten Abrechnungsperiode — deine Daten bleiben erhalten.</p></details>
+    <details><summary>Was spare ich bei jährlicher Zahlung?</summary><p>20 % gegenüber monatlicher Zahlung. Die Rechnung kommt einmal pro Jahr, du kannst jederzeit zum Jahresende kündigen.</p></details>
+    <details><summary>Bekomme ich eine Rechnung für die Buchhaltung?</summary><p>Ja, automatisch als PDF per E-Mail. USt-ausweisbar, mit Firmenadresse und Steuernummer. Für EU-Unternehmen mit gültiger USt-ID stellen wir Reverse-Charge aus.</p></details>
+    <details><summary>Gibt es Rabatte für Non-Profits oder Startups?</summary><p>Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns einfach an.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad-s">
+  <div class="wrap"><div class="cta-band reveal">
+    <h2>Mehr Pipeline. Weniger Stress.</h2>
+    <p>3 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.</p>
+    <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">3 Tage kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Beratung buchen</a></div>
+  </div></div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><a class="logo" href="index.html"><span>Lea</span><svg class="mk" width="34" height="26" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+      <p style="max-width:280px;margin-top:12px">Deine KI-Sales-Suite. LinkedIn, Instagram, Content, CRM und Delivery — in einer App.</p></div>
+    <div><h4>Produkt</h4><a href="funktionen.html">Funktionen</a><a href="leadly.html">Leadly</a><a href="linkedin.html">LinkedIn</a><a href="content.html">Content</a><a href="instagram.html">Instagram</a><a href="crm.html">CRM</a></div>
+    <div><h4>Unternehmen</h4><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a><a href="ki.html">KI</a><a href="sicherheit.html">Sicherheit</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a></div>
+    <div><h4>Ressourcen</h4><a href="chrome-extension.html">Chrome-Extension</a><a href="integrationen.html">Integrationen</a><a href="changelog.html">Changelog</a><a href="api-docs.html">API-Docs</a><a href="affiliate.html">Affiliate</a><a href="support.html">Support</a></div>
+  </div>
+  <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
+</div></footer>
+<script src="assets/leadesk.js"></script>
+<script>
+  (function(){
+    var aud=document.getElementById('audience'), bill=document.getElementById('billing');
+    function setAudience(g){
+      document.querySelectorAll('.plan-group').forEach(function(el){ el.hidden = el.getAttribute('data-g')!==g; });
+      aud.querySelectorAll('span[data-g]').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-g')===g); });
+    }
+    function setBilling(p){
+      document.querySelectorAll('.amt').forEach(function(a){
+        var mo=parseFloat(a.getAttribute('data-mo'));
+        a.textContent = p==='yr' ? Math.round(mo*0.8) : mo;
+      });
+      document.querySelectorAll('.per').forEach(function(e){ e.textContent = p==='yr' ? ' / Monat, jährl.' : ' / Monat'; });
+      bill.querySelectorAll('span[data-p]').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-p')===p); });
+    }
+    aud.querySelectorAll('span[data-g]').forEach(function(s){ s.addEventListener('click',function(){ setAudience(s.getAttribute('data-g')); }); });
+    bill.querySelectorAll('span[data-p]').forEach(function(s){ s.addEventListener('click',function(){ setBilling(s.getAttribute('data-p')); }); });
+  })();
+</script>
+</body>
+</html>

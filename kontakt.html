@@ -54,9 +54,6 @@
       <p style="margin-top:22px;color:var(--muted);font-size:15px">Lieber direkt? <a href="mailto:hello@leadesk.de" style="color:var(--cyan-mid);font-weight:600">hello@leadesk.de</a></p>
     </div>
     <form id="contactForm" class="form reveal d1">
-      <input type="hidden" name="_subject" value="Neue Kontakt-/Demo-Anfrage über leadesk.de">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
       <div><label for="n">Name</label><input id="n" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
       <div><label for="e">E-Mail</label><input id="e" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
@@ -97,12 +94,12 @@
     var btn=f.querySelector('button[type=submit]');
     btn.disabled=true; s.style.color='var(--muted)'; s.textContent='Wird gesendet …';
     var data=Object.fromEntries(new FormData(f).entries());
-    fetch('https://formsubmit.co/ajax/info@leadesk.de',{
+    fetch('/api/contact',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
     }).then(function(r){return r.json();}).then(function(j){
-      if(j.success===true||j.success==='true'){
+      if(j.success===true){
         f.reset();
         s.style.color='#0a7d3c';
         s.textContent='Danke! Deine Anfrage ist bei uns — wir melden uns in der Regel innerhalb eines Werktags.';

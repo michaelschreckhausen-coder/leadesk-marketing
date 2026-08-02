@@ -53,13 +53,17 @@
       </ul>
       <p style="margin-top:22px;color:var(--muted);font-size:15px">Lieber direkt? <a href="mailto:hello@leadesk.de" style="color:var(--cyan-mid);font-weight:600">hello@leadesk.de</a></p>
     </div>
-    <form class="form reveal d1" onsubmit="return false">
-      <div><label for="n">Name</label><input id="n" type="text" placeholder="Dein Name" autocomplete="name"></div>
-      <div><label for="e">E-Mail</label><input id="e" type="email" placeholder="du@firma.de" autocomplete="email"></div>
-      <div><label for="c">Unternehmen</label><input id="c" type="text" placeholder="Firma (optional)"></div>
-      <div><label for="m">Nachricht</label><textarea id="m" rows="4" placeholder="Worum geht's?"></textarea></div>
+    <form id="contactForm" class="form reveal d1">
+      <input type="hidden" name="_subject" value="Neue Kontakt-/Demo-Anfrage über leadesk.de">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <div><label for="n">Name</label><input id="n" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
+      <div><label for="e">E-Mail</label><input id="e" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
+      <div><label for="c">Unternehmen</label><input id="c" name="company" type="text" placeholder="Firma (optional)"></div>
+      <div><label for="m">Nachricht</label><textarea id="m" name="message" rows="4" placeholder="Worum geht's?" required></textarea></div>
       <button class="btn btn-primary" type="submit">Demo anfragen</button>
-      <p style="font-size:12.5px;color:var(--muted)">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Kontaktaufnahme zu. Prototyp — Formular ist noch nicht angebunden.</p>
+      <p id="formStatus" role="status" aria-live="polite" style="font-size:12.5px;color:var(--muted)">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Kontaktaufnahme zu.</p>
     </form>
   </div>
 </section>
@@ -83,5 +87,37 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('contactForm');
+  if(!f) return;
+  var s=document.getElementById('formStatus');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]');
+    btn.disabled=true; s.style.color='var(--muted)'; s.textContent='Wird gesendet …';
+    var data=Object.fromEntries(new FormData(f).entries());
+    fetch('https://formsubmit.co/ajax/info@leadesk.de',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j.success===true||j.success==='true'){
+        f.reset();
+        s.style.color='#0a7d3c';
+        s.textContent='Danke! Deine Anfrage ist bei uns — wir melden uns in der Regel innerhalb eines Werktags.';
+      } else {
+        s.style.color='#c0392b';
+        s.textContent='Das hat leider nicht geklappt. Schreib uns bitte direkt an hello@leadesk.de.';
+        btn.disabled=false;
+      }
+    }).catch(function(){
+      s.style.color='#c0392b';
+      s.textContent='Netzwerkfehler — schreib uns bitte direkt an hello@leadesk.de.';
+      btn.disabled=false;
+    });
+  });
+})();
+</script>
 </body>
 </html>

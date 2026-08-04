@@ -3,28 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRM & Pipeline | Leadesk</title>
-<meta name="description" content="Jeder Kontakt, jeder Deal — an einem Ort. Mit KI-Lead-Intelligence, Pipeline, Aufgaben und Saved Views.">
+<title>CRM: Kontakte, Deals, Aufgaben &amp; Reporting | Leadesk</title>
+<meta name="description" content="Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort.">
 <link rel="canonical" href="https://www.leadesk.de/crm.html">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Leadesk">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="CRM &amp; Pipeline | Leadesk">
-<meta property="og:description" content="Jeder Kontakt, jeder Deal — an einem Ort. Mit KI-Lead-Intelligence, Pipeline, Aufgaben und Saved Views.">
+<meta property="og:title" content="CRM: Kontakte, Deals, Aufgaben &amp; Reporting | Leadesk">
+<meta property="og:description" content="Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — das CRM, das direkt an deinem LinkedIn-Outbound hängt.">
 <meta property="og:url" content="https://www.leadesk.de/crm.html">
 <meta property="og:image" content="https://www.leadesk.de/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CRM &amp; Pipeline | Leadesk">
-<meta name="twitter:description" content="Jeder Kontakt, jeder Deal — an einem Ort. Mit KI-Lead-Intelligence, Pipeline, Aufgaben und Saved Views.">
+<meta name="twitter:title" content="CRM: Kontakte, Deals & Reporting | Leadesk">
+<meta name="twitter:description" content="Kontakte, Pipeline, Aufgaben, KI-Lead-Score und Reporting — an einem Ort.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
 <meta name="theme-color" content="#0A6FB0">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<style>
+  .cc{border:1px solid var(--border);border-radius:12px;background:#fff;padding:16px}
+  .cc-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .cc-av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;background:linear-gradient(135deg,#16A8DC,#003060)}
+  .cc-nm{font-size:15px;font-weight:800;color:var(--ink)}
+  .cc-rl{font-size:12.5px;color:var(--muted)}
+  .cc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .tg{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--tint-navy);color:var(--navy)}
+  .tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--border);margin-left:6px}
+  .tl li{position:relative;padding:0 0 10px 16px;font-size:13px;color:var(--ink)}
+  .tl li::before{content:"";position:absolute;left:-5px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+  .tl li span{color:var(--muted);font-size:11.5px}
+  .kb{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .kb-col{background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:8px}
+  .kb-h{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .kb-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 9px;margin-bottom:7px;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .kb-card b{display:block;font-size:11px;font-weight:700;color:var(--navy);margin-top:3px}
+  .tasks{list-style:none;margin:0;padding:0}
+  .tasks li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--ink)}
+  .tasks li:last-child{border-bottom:0}
+  .tasks .box{width:16px;height:16px;border-radius:5px;border:2px solid var(--cyan);flex:0 0 auto}
+  .tasks .due{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--muted)}
+  .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+  .kpi{border:1px solid var(--border);border-radius:10px;background:#fff;padding:12px 14px}
+  .kpi .v{font-size:22px;font-weight:800;line-height:1}
+  .kpi .l{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:120px;padding-top:6px}
+  .bars .b{flex:1;border-radius:7px 7px 0 0;background:linear-gradient(180deg,#16A8DC,#0A6FB0)}
+  .bars-x{display:flex;gap:10px;margin-top:6px}
+  .bars-x span{flex:1;text-align:center;font-size:11px;color:var(--muted)}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -35,17 +66,18 @@
 
 <header id="hdr"><div class="wrap nav">
   <a class="logo" href="index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
-  <nav class="nav-links"><a href="index.html">Home</a><a href="leadly.html">Leadly</a><a href="linkedin.html">LinkedIn</a><a href="content.html">Content</a><a href="instagram.html">Instagram</a><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a></nav>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="leadly.html">Leadly</a><a href="linkedin.html">LinkedIn</a><a href="content.html">Content</a><a href="instagram.html">Instagram</a><a href="corporate-influencer.html">Corporate Influencer</a><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a></nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
 </div></header>
 
+<!-- HERO -->
 <section class="page-hero" style="background:var(--tint-navy)">
   <div class="wrap ph-grid">
     <div class="reveal">
       <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
-      <div class="eyebrow">CRM & Pipeline</div>
+      <div class="eyebrow">CRM &amp; Pipeline</div>
       <h1>Jeder Kontakt.<br>Jeder Deal.<br><span class="grad-text">Ein Ort.</span></h1>
-      <p class="lead">Kontakte und Unternehmen, Deals im Pipeline-Board, Aufgaben und KI-Anreicherung — das CRM, das direkt an deinem LinkedIn-Outbound hängt.</p>
+      <p class="lead">Kontakte und Unternehmen, Deals im Pipeline-Board, Aufgaben, KI-Lead-Score und Reporting mit Forecast — das CRM, das direkt an deinem LinkedIn-Outbound hängt. Neue Leads landen automatisch hier, sauber verknüpft.</p>
       <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
     </div>
     <div class="mock reveal d1">
@@ -60,28 +92,121 @@
   </div>
 </section>
 
+<!-- OVERVIEW -->
 <section class="pad">
   <div class="wrap center-head reveal">
     <div class="eyebrow center">Was drinsteckt</div>
     <h2 class="big">Vertrieb, der sich <span class="grad-text">selbst sortiert.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Ein vollwertiges CRM — kein zusätzliches Tool nötig. Von der ersten Vernetzung bis zum gewonnenen Deal läuft alles an einem Ort.</p>
   </div>
   <div class="wrap grid3">
-    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">👥</div><h3>Kontakte & Unternehmen</h3><p>Alle Beziehungen verknüpft — Personen, Firmen, Deals in einem Graph.</p></div>
-    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">📊</div><h3>Deals & Pipeline</h3><p>Drag-&-Drop-Board mit Phasen, Werten und nächsten Schritten.</p></div>
-    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">✅</div><h3>Aufgaben</h3><p>Fällige To-dos je Kontakt und Deal — nichts fällt hinten runter.</p></div>
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">👥</div><h3>Kontakte &amp; Unternehmen</h3><p>Personen, Firmen und Deals in einem Beziehungsgraph — mit voller Historie.</p></div>
+    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">📊</div><h3>Deals &amp; Pipeline</h3><p>Drag-&amp;-Drop-Board mit Phasen, Werten, Wahrscheinlichkeit und nächstem Schritt.</p></div>
+    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">✅</div><h3>Aufgaben &amp; Aktivitäten</h3><p>Fällige To-dos und lückenlose Timeline je Kontakt und Deal.</p></div>
     <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🧠</div><h3>Lead Intelligence</h3><p>KI reichert Leads an und vergibt einen Lead-Score — automatisch, aktuell.</p></div>
-    <div class="card reveal d1" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🔖</div><h3>Saved Views</h3><p>Gespeicherte Filter und Sichten für jeden Workflow im Team.</p></div>
-    <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">⚡</div><h3>Bulk-Actions</h3><p>Tags, Status und Zuweisungen für viele Leads auf einmal.</p></div>
+    <div class="card reveal d1" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">📈</div><h3>Reporting &amp; Forecast</h3><p>Pipeline-Wert, Conversion, Aktivität und Prognose auf einen Blick.</p></div>
+    <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🔖</div><h3>Saved Views &amp; Bulk-Actions</h3><p>Gespeicherte Sichten und Massen-Aktionen für jeden Team-Workflow.</p></div>
   </div>
 </section>
 
-<section class="pad soft">
+<!-- KONTAKTE -->
+<section class="pad soft" id="kontakte">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Kontakte &amp; Unternehmen</div>
+    <h2 class="big">Jede Beziehung — <span class="grad-text">im Zusammenhang.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Öffne einen Kontakt und du siehst alles: woher er kam, was besprochen wurde, welche Deals laufen — inklusive der LinkedIn-Aktivität aus deinem Outbound. Keine isolierten Listen, sondern ein echter Beziehungsgraph.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Personen und Unternehmen verknüpft — inklusive Kolleg:innen, Rollen und Zuständigkeiten</li>
+        <li>Vollständige Historie: Nachrichten, Notizen, Aufgaben und Deals an einem Ort</li>
+        <li>Direkt mit dem LinkedIn-Outbound verbunden — neue Leads landen automatisch im CRM</li>
+        <li>Tags, benutzerdefinierte Felder und gespeicherte Sichten für jeden Workflow</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="cc">
+        <div class="cc-head"><span class="cc-av">SA</span><div><div class="cc-nm">Sarah Adler</div><div class="cc-rl">Head of Sales · Auralis GmbH</div></div><b class="grad-text" style="margin-left:auto;font-size:18px">86</b></div>
+        <div class="cc-tags"><span class="tg">Warm</span><span class="tg">Sales Navigator</span><span class="tg">Deal offen</span></div>
+        <ul class="tl">
+          <li>Vernetzung angenommen <span>· vor 6 Tagen</span></li>
+          <li>Antwort auf Erstnachricht <span>· vor 4 Tagen</span></li>
+          <li>Deal „Auralis · Team-Lizenz" angelegt <span>· vor 2 Tagen</span></li>
+          <li>Aufgabe: Angebot senden <span>· heute fällig</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="pad" id="deals">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Deals &amp; Pipeline</div>
+    <h2 class="big">Deine Pipeline, <span class="grad-text">im Griff.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Ein Drag-&amp;-Drop-Board zeigt jeden Deal in seiner Phase — mit Wert, Wahrscheinlichkeit und nächstem Schritt. Du siehst den gewichteten Pipeline-Wert und was heute dran ist, ohne dich durch Tabellen zu wühlen.</p>
+  </div>
+  <div class="wrap split">
+    <div class="mock reveal" style="order:2">
+      <div class="k-lab">Deal-Board</div>
+      <div class="kb">
+        <div class="kb-col"><div class="kb-h">Neu</div><div class="kb-card">Horizont AG<b>12.000 €</b></div><div class="kb-card">Nordkap<b>7.500 €</b></div></div>
+        <div class="kb-col"><div class="kb-h">Qualifiziert</div><div class="kb-card">Auralis<b>24.000 €</b></div></div>
+        <div class="kb-col"><div class="kb-h">Angebot</div><div class="kb-card">Marketing-Lead<b>18.000 €</b></div></div>
+        <div class="kb-col"><div class="kb-h">Gewonnen</div><div class="kb-card">Belex<b>9.000 €</b></div></div>
+      </div>
+      <div class="stat-strip">Gewichteter Pipeline-Wert: <span class="count grad-text" data-to="52">0</span>k €</div>
+    </div>
+    <div class="reveal" style="order:1">
+      <ul class="checklist">
+        <li>Kanban-Board mit frei definierbaren Phasen</li>
+        <li>Deal-Wert, Abschluss-Wahrscheinlichkeit und gewichteter Forecast</li>
+        <li>Nächster Schritt und Fälligkeit an jedem Deal</li>
+        <li>Verlorene Deals mit Grund erfassen — für sauberes Win/Loss</li>
+      </ul>
+      <div style="margin-top:22px"><a class="btn btn-navy" href="https://app.leadesk.de/register">Pipeline starten →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUFGABEN -->
+<section class="pad soft" id="aufgaben">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Aufgaben &amp; Aktivitäten</div>
+    <h2 class="big">Nichts fällt mehr <span class="grad-text">hinten runter.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Jeder Kontakt und jeder Deal hat offene To-dos und eine lückenlose Aktivitäts-Historie. Leadly, der KI-Agent, erinnert dich an fällige Schritte — und schlägt vor, was als Nächstes dran ist.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Aufgaben je Kontakt und Deal — mit Fälligkeit und Zuständigkeit</li>
+        <li>Aktivitäts-Timeline: Nachrichten, Anrufe, Notizen, Statuswechsel</li>
+        <li>Erinnerungen und Vorschläge über Leadly, den KI-Agenten</li>
+        <li>Bulk-Actions: Status, Tags und Zuweisungen für viele Einträge auf einmal</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Heute fällig</div>
+      <ul class="tasks">
+        <li><span class="box"></span>Angebot an Auralis senden<span class="due">heute</span></li>
+        <li><span class="box"></span>Follow-up Horizont AG<span class="due">heute</span></li>
+        <li><span class="box"></span>Termin mit Nordkap bestätigen<span class="due">morgen</span></li>
+        <li><span class="box"></span>Marketing-Lead nachfassen<span class="due">Fr</span></li>
+      </ul>
+      <div class="stat-strip">Leadly schlägt <span class="count grad-text" data-to="3">0</span> nächste Schritte vor</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD INTELLIGENCE -->
+<section class="pad" id="lead-score">
   <div class="wrap split">
     <div class="reveal">
       <div class="eyebrow">KI-Lead-Score</div>
-      <h2 class="big">Der Score, der dir sagt,<br>wen du zuerst anrufst.</h2>
-      <p class="lead" style="margin-top:18px">Leadesk analysiert jeden Lead und vergibt einen KI-Score — datenbasiert und laufend aktualisiert. Du siehst auf einen Blick, wo sich der nächste Schritt lohnt.</p>
-      <ul class="checklist"><li>Automatische Anreicherung neuer Leads</li><li>Score aus echten Signalen, nicht aus Bauchgefühl</li><li>Direkt sortier- und filterbar</li></ul>
+      <h2 class="big">Der Score, der dir sagt,<br>wen du <span class="grad-text">zuerst anrufst.</span></h2>
+      <p class="lead" style="margin-top:18px">Leadesk analysiert jeden Lead und vergibt einen KI-Score — datenbasiert und laufend aktualisiert. Du siehst auf einen Blick, wo sich der nächste Schritt lohnt, und sortierst die Pipeline nach echtem Potenzial.</p>
+      <ul class="checklist"><li>Automatische Anreicherung neuer Leads</li><li>Score aus echten Signalen, nicht aus Bauchgefühl</li><li>Direkt sortier- und filterbar, auch in Saved Views</li></ul>
     </div>
     <div class="mock reveal">
       <div class="k-lab">Lead Intelligence</div>
@@ -94,10 +219,45 @@
   </div>
 </section>
 
+<!-- REPORTING -->
+<section class="pad soft" id="reporting">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Reporting</div>
+    <h2 class="big">Zahlen, die zeigen, <span class="grad-text">was wirkt.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Pipeline-Wert, Conversion-Raten, Aktivität und Forecast — auf einen Blick. Sieh, welche Kanäle, Sequenzen und Personen Umsatz bringen, und wo es hakt. Vom Aktivitäts-Report bis zur Win/Loss-Analyse.</p>
+  </div>
+  <div class="wrap split">
+    <div class="mock reveal" style="order:2">
+      <div class="k-lab">Pipeline-Entwicklung</div>
+      <div class="kpis">
+        <div class="kpi"><div class="v grad-text"><span class="count" data-to="182">0</span>k €</div><div class="l">Pipeline-Wert</div></div>
+        <div class="kpi"><div class="v grad-text"><span class="count" data-to="31">0</span>%</div><div class="l">Win-Rate</div></div>
+        <div class="kpi"><div class="v grad-text"><span class="count" data-to="14">0</span>k €</div><div class="l">Ø Deal-Größe</div></div>
+        <div class="kpi"><div class="v grad-text"><span class="count" data-to="21">0</span> Tage</div><div class="l">Ø Sales-Zyklus</div></div>
+      </div>
+      <div class="bars">
+        <div class="b" style="height:46%"></div><div class="b" style="height:62%"></div><div class="b" style="height:54%"></div><div class="b" style="height:78%"></div><div class="b" style="height:88%"></div><div class="b" style="height:100%"></div>
+      </div>
+      <div class="bars-x"><span>Mär</span><span>Apr</span><span>Mai</span><span>Jun</span><span>Jul</span><span>Aug</span></div>
+    </div>
+    <div class="reveal" style="order:1">
+      <ul class="checklist">
+        <li>Pipeline &amp; Forecast: gewichteter Wert und erwarteter Abschluss pro Monat</li>
+        <li>Conversion-Funnel: von Lead über Qualifiziert bis Gewonnen</li>
+        <li>Aktivitäts-Reports: Outbound, Antworten und Termine je Person und Team</li>
+        <li>Win/Loss-Analyse: warum Deals gewonnen oder verloren gehen</li>
+        <li>Exportierbar und als Saved View teilbar</li>
+      </ul>
+      <div style="margin-top:22px"><a class="btn btn-navy" href="reporting.html">Zum Reporting-Modul →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="pad">
   <div class="wrap"><div class="cta-band reveal">
     <h2>Bring Ordnung in deine Pipeline.</h2>
-    <p>Kostenlos testen. Keine Kreditkarte.</p>
+    <p>Kontakte, Deals, Aufgaben und Reporting an einem Ort — kostenlos testen, keine Kreditkarte.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
   </div></div>
 </section>

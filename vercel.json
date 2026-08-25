@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/datenschutz", "destination": "/datenschutz.html", "permanent": false },
+    { "source": "/agb",         "destination": "/agb.html",         "permanent": false },
+    { "source": "/impressum",   "destination": "/impressum.html",   "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",

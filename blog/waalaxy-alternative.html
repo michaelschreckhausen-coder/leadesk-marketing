@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/leadesk.css">
+<link rel="stylesheet" href="/assets/leadesk-redesign.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,7 +64,29 @@
   <a class="logo" href="/index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
   <nav class="nav-links"><a href="/index.html">Home</a><a href="/leadly.html">Leadly</a><a href="/app.html">App</a><a href="/linkedin.html">LinkedIn</a><a href="/content.html">Content</a><a href="/instagram.html">Instagram</a><a href="/agenturen.html">Agenturen</a><a href="/preise.html">Preise</a></nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <a href="/index.html">Home</a>
+      <a href="/leadly.html">Leadly</a>
+      <a href="/app.html">App</a>
+      <a href="/linkedin.html">LinkedIn</a>
+      <a href="/content.html">Content</a>
+      <a href="/instagram.html">Instagram</a>
+      <a href="/agenturen.html">Agenturen</a>
+      <a href="/preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <section class="page-hero" style="background:var(--tint-blue);padding-bottom:36px">
   <div class="wrap prose reveal" style="margin:0 auto">
@@ -139,5 +162,6 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/agb.html">AGB</a> · <a href="/av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="/assets/leadesk.js"></script>
+<script src="/assets/leadesk-redesign.js"></script>
 </body>
 </html>

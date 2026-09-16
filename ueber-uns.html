@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,9 +108,34 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
 
-<section class="page-hero" style="background:var(--tint-lav);text-align:center">
+
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-lav);text-align:center">
   <div class="wrap" style="max-width:800px;margin:0 auto">
     <div class="reveal">
       <div class="mark-wrap big" style="margin-bottom:20px"><span class="ring"></span><span class="ring r2"></span>
@@ -119,6 +145,27 @@
       <div class="eyebrow center">Über Leadesk</div>
       <h1>Vertrieb sollte sich<br><span class="grad-text">nicht wie Chaos anfühlen.</span></h1>
       <p class="lead" style="margin:0 auto">Wir bauen Leadesk, weil B2B-Teams zwischen zu vielen Tools ihre besten Leads verlieren. Eine Suite, die den ganzen Weg abdeckt — mit einem KI-Agenten, der mitdenkt, aber die Kontrolle beim Menschen lässt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Vertrieb sollte sich nicht wie Chaos anfühlen — <grad>eine Suite für den ganzen Weg</grad>, mit dem Menschen an der Kontrolle.</p>
+  </div>
+</section>
+
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>📍</span> Aschaffenburg</span>
+      <span class="mitem"><span>🏢</span> Leadesk UG</span>
+      <span class="mitem"><span>🇩🇪</span> Daten in Deutschland</span>
+      <span class="mitem"><span>👨‍💻</span> Zwei Geschäftsführer</span>
+      <span class="mitem"><span>📍</span> Aschaffenburg</span>
+      <span class="mitem"><span>🏢</span> Leadesk UG</span>
+      <span class="mitem"><span>🇩🇪</span> Daten in Deutschland</span>
+      <span class="mitem"><span>👨‍💻</span> Zwei Geschäftsführer</span>
     </div>
   </div>
 </section>
@@ -206,7 +253,7 @@
 </section>
 
 <section class="pad">
-  <div class="wrap"><div class="cta-band reveal">
+  <div class="wrap"><div class="cta-band dot-texture reveal">
     <h2>Lust, Leadesk auszuprobieren?</h2>
     <p>Kostenlos testen oder direkt mit uns sprechen.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Kontakt</a></div>
@@ -224,5 +271,6 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

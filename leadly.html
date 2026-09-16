@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,10 +80,35 @@
     <a href="leadly.html" class="active">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- PAGE HERO -->
-<section class="page-hero" style="background:var(--tint-lav)">
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-lav)">
   <div class="hero-bg"><div class="blob b1"></div><div class="blob b2"></div></div>
   <div class="wrap ph-grid">
     <div class="reveal">
@@ -97,6 +123,27 @@
         <svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true">
         <rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/>
         <rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Leadly liest deine Pipeline, deinen Content-Plan und deine LinkedIn-Aktivität — <grad>und bereitet jeden Morgen die drei Züge vor, die heute zählen</grad>.</p>
+  </div>
+</section>
+
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>🔒</span> Nichts ohne Freigabe</span>
+      <span class="mitem"><span>✅</span> Entwurf-only</span>
+      <span class="mitem"><span>📋</span> Audit-Trail</span>
+      <span class="mitem"><span>↩️</span> Ein Klick rückgängig</span>
+      <span class="mitem"><span>🔒</span> Nichts ohne Freigabe</span>
+      <span class="mitem"><span>✅</span> Entwurf-only</span>
+      <span class="mitem"><span>📋</span> Audit-Trail</span>
+      <span class="mitem"><span>↩️</span> Ein Klick rückgängig</span>
     </div>
   </div>
 </section>
@@ -159,15 +206,46 @@
     <p class="lead" style="margin:16px auto 0">Ein KI-Agent mit Guardrails: schreibende Aktionen werden als Entwurf vorbereitet und warten auf deine Bestätigung. E-Mails immer als Entwurf. Jede Aktion wird protokolliert.</p>
   </div>
   <div class="wrap grid3">
-    <div class="card reveal" style="--acc:var(--success);--accbg:#e4f6ee"><div class="ic">✅</div><h3>Entwurf-only</h3><p>Nachrichten und E-Mails entstehen als Entwurf — nichts geht ungefragt raus.</p></div>
+    <div class="card reveal" style="--acc:var(--success);--accbg:#e4f6ee"><div class="ic">✅</div><h3>Entwurf-only</h3><p>Nachrichten und E-Mails entstehen als Entwurf — nichts geht ungefragt raus.</p>
+      <div class="tile-preview" style="--acc:var(--success)">
+        <div class="tp-row"><span class="dot"></span>Follow-up Hendrik R. — Entwurf</div>
+        <div class="tp-row"><span class="dot"></span>3 neue Leads — Entwurf</div>
+      </div>
+    </div>
     <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">📋</div><h3>Audit-Trail</h3><p>Jede von Leadly vorbereitete Aktion ist nachvollziehbar protokolliert.</p></div>
     <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">↩️</div><h3>Rückgängig</h3><p>Übernommen und doch anders gewollt? Ein Klick macht es rückgängig.</p></div>
   </div>
 </section>
 
+<!-- REDESIGN: Story-Panel mit KI-Schalter-Demo — zeigt den Leadly-Freigabe-Ablauf beim
+     Einscrollen. Gleiches Muster wie auf index.html, hier mit Leadly-eigenem Wortlaut aus
+     den Blöcken "Briefing" und "Kontrolle" weiter oben auf dieser Seite (keine neuen Fakten). -->
+<section class="pad">
+  <div class="wrap">
+    <div class="story-panel tinted dot-texture on-tint reveal">
+      <div class="center-head" style="margin-bottom:0">
+        <div class="eyebrow center">Leadly · KI-Agent</div>
+        <p class="word-reveal" style="margin:0 auto">Ein Schalter, der zeigt, <grad>was beim Einschalten wirklich passiert</grad> — Schritt für Schritt, mit deiner Freigabe an jeder Stelle.</p>
+      </div>
+      <div style="margin-top:44px">
+        <div class="ai-demo">
+          <div class="ai-switch" role="img" aria-label="Leadly-Aktivierung, animiert beim Einscrollen"></div>
+          <p style="color:var(--muted);font-size:15px">Schalter kippt automatisch, wenn dieser Bereich in den Blick scrollt.</p>
+          <ul class="checklist">
+            <li>Pipeline, Content-Plan und LinkedIn-Aktivität werden verbunden</li>
+            <li>Priorisierte Vorschläge aus CRM, LinkedIn, Content und Aufgaben entstehen</li>
+            <li>Schreibende Aktionen liegen als Entwurf vor — nichts geht ungefragt raus</li>
+            <li>Du gibst pro Vorschlag einzeln die Freigabe, alles wird protokolliert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="pad">
-  <div class="wrap"><div class="cta-band reveal">
+  <div class="wrap"><div class="cta-band dot-texture reveal">
     <h2>Lass Leadly morgen früh schon anfangen.</h2>
     <p>Kostenlos testen. Keine Kreditkarte. In 2 Minuten startklar.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
@@ -185,5 +263,6 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

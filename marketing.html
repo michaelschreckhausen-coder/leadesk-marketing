@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <style>
   .plan{border:1px solid var(--border);border-radius:10px;background:#fff;padding:11px 13px;margin-bottom:8px;display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink)}
   .plan .d{font-size:11px;font-weight:800;color:var(--content);width:34px;flex:0 0 auto}
@@ -84,10 +85,35 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO -->
-<section class="page-hero" style="background:var(--tint-green)">
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-green)">
   <div class="wrap ph-grid">
     <div class="reveal">
       <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
@@ -102,6 +128,27 @@
       <div class="plan"><span class="d">Mi</span>Karussell: 5 Outbound-Fehler<span class="ch">LinkedIn</span></div>
       <div class="plan"><span class="d">Do</span>Reel: Behind the Scenes<span class="ch">Instagram</span></div>
       <div class="stat-strip">Reichweite +<span class="count grad-text" data-to="128">0</span>% · neue Leads <span class="count grad-text" data-to="17">0</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Ein Cockpit für Content, Kanäle und Marke — <grad>Erstellung, Verteilung und Wirkung aus einem Guss, statt fünf Insellösungen</grad>.</p>
+  </div>
+</section>
+
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>✍️</span> Brand Voice</span>
+      <span class="mitem"><span>🗓️</span> Ein Redaktionsplan</span>
+      <span class="mitem"><span>📈</span> Reichweite +128%</span>
+      <span class="mitem"><span>🧠</span> KI-Sichtbarkeit</span>
+      <span class="mitem"><span>✍️</span> Brand Voice</span>
+      <span class="mitem"><span>🗓️</span> Ein Redaktionsplan</span>
+      <span class="mitem"><span>📈</span> Reichweite +128%</span>
+      <span class="mitem"><span>🧠</span> KI-Sichtbarkeit</span>
     </div>
   </div>
 </section>
@@ -131,7 +178,9 @@
   </div>
   <div class="wrap grid3">
     <a class="card reveal" style="--acc:var(--content);--accbg:#e6f7f1" href="content.html"><div class="ic">✍️</div><h3>Content in deiner Marke</h3><p>Content-Studio, Brand Voice (Personal &amp; Company) und Visual Builder — Text und Bild aus einem Guss.</p></a>
-    <a class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1" href="instagram.html"><div class="ic">🗓️</div><h3>Alle Kanäle, ein Plan</h3><p>Ein Redaktionsplan, mit einem Klick zu LinkedIn und Instagram veröffentlicht.</p></a>
+    <a class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1" href="instagram.html"><div class="ic">🗓️</div><h3>Alle Kanäle, ein Plan</h3><p>Ein Redaktionsplan, mit einem Klick zu LinkedIn und Instagram veröffentlicht.</p>
+      <div class="tile-preview" style="--acc:var(--content)"><div class="tp-row"><span class="dot"></span>Mo · Case-Study: Auralis</div><div class="tp-row"><span class="dot"></span>Mi · Karussell: 5 Fehler</div><div class="tp-row"><span class="dot"></span>Do · Reel: Behind the Scenes</div></div>
+    </a>
     <a class="card reveal d2" style="--acc:var(--content);--accbg:#e6f7f1" href="corporate-influencer.html"><div class="ic">🗣️</div><h3>Reichweite über dein Team</h3><p>Mitarbeitende als Corporate Influencer — mehr Reichweite als jede Unternehmensseite.</p></a>
     <a class="card reveal" style="--acc:#7A5AF8;--accbg:#efedff" href="ki.html"><div class="ic">🧠</div><h3>Auffindbar in KI</h3><p>KI-Sichtbarkeit: Content, der auch in ChatGPT, Perplexity und Google-KI zitiert wird.</p></a>
     <a class="card reveal d1" style="--acc:#7A5AF8;--accbg:#efedff" href="reporting.html"><div class="ic">📈</div><h3>Wirkung messen</h3><p>Reichweite, Engagement und Leads je Kanal und Beitrag — bis zur Pipeline.</p></a>
@@ -194,7 +243,7 @@ Die meisten schreiben an Firmen. Wir schreiben an Menschen. Der Unterschied? Ant
 
 <!-- CTA -->
 <section class="pad-s soft">
-  <div class="wrap"><div class="cta-band reveal" style="background:linear-gradient(135deg,#2ee0a5,#0c9d72)">
+  <div class="wrap"><div class="cta-band reveal dot-texture" style="background:linear-gradient(135deg,#2ee0a5,#0c9d72)">
     <h2>Marketing, das messbar Pipeline bringt.</h2>
     <p>Content, Kanäle, Reichweite und Wirkung in einem Cockpit — kostenlos testen, keine Kreditkarte.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
@@ -212,5 +261,6 @@ Die meisten schreiben an Firmen. Wir schreiben an Menschen. Der Unterschied? Ant
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

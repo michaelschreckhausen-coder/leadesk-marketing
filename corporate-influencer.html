@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <style>
   .mrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:8px}
   .mrow .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px}
@@ -89,10 +90,35 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO -->
-<section class="page-hero" style="background:var(--tint-lav)">
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-lav)">
   <div class="wrap ph-grid">
     <div class="reveal">
       <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
@@ -107,6 +133,27 @@
       <div class="mrow"><span class="av" style="background:linear-gradient(135deg,#16A8DC,#0A6FB0)">TM</span><div><div class="nm">Tobias M.</div><div class="rl">Product</div></div><span class="rc">+31k</span></div>
       <div class="mrow"><span class="av" style="background:linear-gradient(135deg,#12B886,#0e7c5a)">LR</span><div><div class="nm">Lena R.</div><div class="rl">HR / Recruiting</div></div><span class="rc">+27k</span></div>
       <div class="stat-strip">Team-Reichweite <span class="count grad-text" data-to="128">0</span>k · aktive Stimmen <span class="count grad-text" data-to="14">0</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Menschen folgen Menschen, nicht Logos — <grad>dein Team wird zur stärksten Stimme der Marke</grad>.</p>
+  </div>
+</section>
+
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>🇪🇺</span> EU-Hosting</span>
+      <span class="mitem"><span>🔐</span> DSGVO</span>
+      <span class="mitem"><span>🛡️</span> Rollen &amp; Rechte</span>
+      <span class="mitem"><span>📋</span> Audit-Trail</span>
+      <span class="mitem"><span>🇪🇺</span> EU-Hosting</span>
+      <span class="mitem"><span>🔐</span> DSGVO</span>
+      <span class="mitem"><span>🛡️</span> Rollen &amp; Rechte</span>
+      <span class="mitem"><span>📋</span> Audit-Trail</span>
     </div>
   </div>
 </section>
@@ -230,10 +277,23 @@
     <div class="eyebrow center" style="color:#7A5AF8">Wofür</div>
     <h2 class="big">Ein Programm, <span class="grad-text">viele Ziele.</span></h2>
   </div>
-  <div class="wrap personas">
-    <div class="persona reveal" style="--acc:#7A5AF8"><h3>Employer Branding &amp; Recruiting</h3><p>Echte Stimmen aus dem Team ziehen Talente an — glaubwürdiger als jede Karriereseite.</p></div>
-    <div class="persona reveal d1" style="--acc:var(--li)"><h3>Vertrieb &amp; Thought Leadership</h3><p>Sichtbarkeit bei Entscheidern, Vertrauen vor dem ersten Call — Social Selling mit System.</p></div>
-    <div class="persona reveal d2" style="--acc:var(--navy)"><h3>Geschäftsführung als Gesicht</h3><p>Führungskräfte als Markenbotschafter — Haltung und Expertise sichtbar gemacht.</p></div>
+  <div class="wrap persona-tabs reveal">
+    <div class="seg" style="display:flex;justify-content:center;margin:0 auto 28px;width:fit-content">
+      <span class="on" data-target="p-recruiting">Recruiting</span>
+      <span data-target="p-sales-lead">Vertrieb</span>
+      <span data-target="p-leadership">Geschäftsführung</span>
+    </div>
+    <div class="persona-panels">
+      <div class="persona-panel show" id="p-recruiting" style="--acc:#7A5AF8">
+        <div><h3>Employer Branding &amp; Recruiting</h3><p>Echte Stimmen aus dem Team ziehen Talente an — glaubwürdiger als jede Karriereseite.</p></div>
+      </div>
+      <div class="persona-panel" id="p-sales-lead" style="--acc:var(--li)">
+        <div><h3>Vertrieb &amp; Thought Leadership</h3><p>Sichtbarkeit bei Entscheidern, Vertrauen vor dem ersten Call — Social Selling mit System.</p></div>
+      </div>
+      <div class="persona-panel" id="p-leadership" style="--acc:var(--navy)">
+        <div><h3>Geschäftsführung als Gesicht</h3><p>Führungskräfte als Markenbotschafter — Haltung und Expertise sichtbar gemacht.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -253,7 +313,7 @@
 
 <!-- CTA -->
 <section class="pad-s soft">
-  <div class="wrap"><div class="cta-band reveal" style="background:linear-gradient(135deg,#7A5AF8,#4F7BFF)">
+  <div class="wrap"><div class="cta-band reveal dot-texture" style="background:linear-gradient(135deg,#7A5AF8,#4F7BFF)">
     <h2>Macht dein Team zur Stimme eurer Marke.</h2>
     <p>Eigene Stimmen, zentrale Steuerung, echte Reichweite — kostenlos testen, keine Kreditkarte.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
@@ -271,5 +331,6 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

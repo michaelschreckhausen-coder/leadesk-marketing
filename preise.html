@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <style>
   .seg-row{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px}
   .plan .price{display:flex;align-items:baseline;gap:3px;flex-wrap:wrap}
@@ -126,10 +127,35 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html" class="active">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO -->
-<section class="page-hero" style="background:var(--tint-blue);text-align:center;padding-bottom:50px">
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-blue);text-align:center;padding-bottom:50px">
   <div class="wrap" style="max-width:800px;margin:0 auto">
     <div class="reveal">
       <div class="mark-wrap med" style="margin:0 auto 18px"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
@@ -141,6 +167,29 @@
         <div class="seg" id="billing"><span class="on" data-p="mo">Monatlich</span><span data-p="yr">Jährlich</span><span class="save">−20 %</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- REDESIGN: Marquee/Vertrauens-Leiste mit echten Preis-Fakten dieser Seite -->
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>🎁</span> 3 Tage kostenlos testen</span>
+      <span class="mitem"><span>🔓</span> Jederzeit kündbar</span>
+      <span class="mitem"><span>💳</span> Keine Kreditkarte nötig</span>
+      <span class="mitem"><span>📉</span> −20 % bei jährlicher Zahlung</span>
+      <span class="mitem"><span>🎁</span> 3 Tage kostenlos testen</span>
+      <span class="mitem"><span>🔓</span> Jederzeit kündbar</span>
+      <span class="mitem"><span>💳</span> Keine Kreditkarte nötig</span>
+      <span class="mitem"><span>📉</span> −20 % bei jährlicher Zahlung</span>
+    </div>
+  </div>
+</section>
+
+<!-- REDESIGN: Wort-für-Wort Scroll-Reveal -->
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Ein Plan pro Bedarf, <grad>ein transparentes Credit-System</grad> für jede KI-Aktion — ohne versteckte Limits, ohne Verlängerungsfalle.</p>
   </div>
 </section>
 
@@ -311,7 +360,7 @@
 
 <!-- CTA -->
 <section class="pad-s">
-  <div class="wrap"><div class="cta-band reveal">
+  <div class="wrap"><div class="cta-band dot-texture reveal">
     <h2>Mehr Pipeline. Weniger Stress.</h2>
     <p>3 Tage kostenlos testen. Keine Kreditkarte, keine Verlängerungsfalle.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">3 Tage kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Beratung buchen</a></div>
@@ -329,6 +378,7 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 <script>
   (function(){
     var aud=document.getElementById('audience'), bill=document.getElementById('billing');

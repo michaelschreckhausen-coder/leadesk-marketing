@@ -25,6 +25,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.css -->
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <style>
   .cc{border:1px solid var(--border);border-radius:12px;background:#fff;padding:16px}
   .cc-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -110,7 +112,34 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+
+<!-- REDESIGN: dieselbe Vollbild-Mobile-Nav wie auf der Startseite — einmal gebaut,
+     gilt für alle Unterseiten, da Header/Footer ohnehin pro Seite kopiert werden. -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="page-hero" style="background:var(--tint-navy)">
@@ -145,7 +174,16 @@
     <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">👥</div><h3>Kontakte &amp; Unternehmen</h3><p>Personen, Firmen und Deals in einem Beziehungsgraph — mit voller Historie.</p></div>
     <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">📊</div><h3>Deals &amp; Pipeline</h3><p>Drag-&amp;-Drop-Board mit Phasen, Werten, Wahrscheinlichkeit und nächstem Schritt.</p></div>
     <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">✅</div><h3>Aufgaben &amp; Aktivitäten</h3><p>Fällige To-dos und lückenlose Timeline je Kontakt und Deal.</p></div>
-    <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🧠</div><h3>Lead Intelligence</h3><p>KI reichert Leads an und vergibt einen Lead-Score — automatisch, aktuell.</p></div>
+    <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)">
+      <div class="ic">🧠</div><h3>Lead Intelligence</h3><p>KI reichert Leads an und vergibt einen Lead-Score — automatisch, aktuell.</p>
+      <!-- REDESIGN: Fade-Mask-Vorschau, analog zu humeras Kernfähigkeiten-Karten. -->
+      <div class="tile-preview" style="--acc:var(--cyan)">
+        <div class="tp-row"><span class="dot"></span>Auralis GmbH — Score 86</div>
+        <div class="tp-row"><span class="dot"></span>Horizont AG — Score 72</div>
+        <div class="tp-row"><span class="dot"></span>Nordkap — Score 58</div>
+        <div class="tp-row"><span class="dot"></span>Marketing-Lead — Score 44</div>
+      </div>
+    </div>
     <div class="card reveal d1" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">📈</div><h3>Reporting &amp; Forecast</h3><p>Pipeline-Wert, Conversion, Aktivität und Prognose auf einen Blick.</p></div>
     <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🔖</div><h3>Saved Views &amp; Bulk-Actions</h3><p>Gespeicherte Sichten und Massen-Aktionen für jeden Team-Workflow.</p></div>
   </div>
@@ -315,5 +353,7 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.js -->
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

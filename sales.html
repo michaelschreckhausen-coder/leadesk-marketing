@@ -25,6 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
 <style>
   .stage{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
   .stage .s{font-size:12.5px;font-weight:700;color:var(--li);background:#e8f0fe;border-radius:999px;padding:5px 12px}
@@ -84,10 +85,35 @@
     <a href="leadly.html">Leadly</a><a href="app.html">App</a><a href="preise.html">Preise</a>
   </nav>
   <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </div></header>
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Anwendungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="corporate-influencer.html">Corporate Influencer</a><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Funktionen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><a href="crm.html">CRM</a><a href="content.html">Content</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="app.html">App</a>
+      <a href="preise.html">Preise</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO -->
-<section class="page-hero" style="background:var(--tint-blue)">
+<section class="page-hero dot-texture on-tint" style="background:var(--tint-blue)">
   <div class="wrap ph-grid">
     <div class="reveal">
       <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
@@ -105,6 +131,27 @@
         <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">Nordkap · Neu <b class="grad-text">58</b></div>
       </div>
       <div class="stat-strip">Gewichtete Pipeline: <span class="count grad-text" data-to="52">0</span>k € · offene Aufgaben <span class="count grad-text" data-to="6">0</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <p class="word-reveal">Finden, ansprechen, nachfassen, abschließen — <grad>alles an einem Ort statt in einem Flickenteppich aus Tools</grad>.</p>
+  </div>
+</section>
+
+<section class="pad-s" style="padding:44px 0">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mitem"><span>🔗</span> Sales Navigator</span>
+      <span class="mitem"><span>📊</span> KI-Lead-Score</span>
+      <span class="mitem"><span>🔮</span> Gewichteter Forecast</span>
+      <span class="mitem"><span>1️⃣</span> Ein Login statt 5</span>
+      <span class="mitem"><span>🔗</span> Sales Navigator</span>
+      <span class="mitem"><span>📊</span> KI-Lead-Score</span>
+      <span class="mitem"><span>🔮</span> Gewichteter Forecast</span>
+      <span class="mitem"><span>1️⃣</span> Ein Login statt 5</span>
     </div>
   </div>
 </section>
@@ -190,7 +237,9 @@
     <p class="lead" style="margin:14px auto 0">Ein Drag-&amp;-Drop-Board zeigt jeden Deal in seiner Phase, mit Wert, Wahrscheinlichkeit und nächstem Schritt. Gewichteter Forecast und Win/Loss inklusive — für ein Reporting, das zeigt, was wirkt.</p>
   </div>
   <div class="wrap grid3">
-    <div class="card reveal" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic">📊</div><h3>Deal-Pipeline</h3><p>Kanban mit Phasen, Werten und nächstem Schritt an jedem Deal.</p></div>
+    <div class="card reveal" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic">📊</div><h3>Deal-Pipeline</h3><p>Kanban mit Phasen, Werten und nächstem Schritt an jedem Deal.</p>
+      <div class="tile-preview" style="--acc:var(--li)"><div class="tp-row"><span class="dot"></span>Auralis GmbH — Score 86</div><div class="tp-row"><span class="dot"></span>Horizont AG — Score 72</div><div class="tp-row"><span class="dot"></span>Nordkap — Score 58</div></div>
+    </div>
     <div class="card reveal d1" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic">🔮</div><h3>Forecast</h3><p>Gewichteter Pipeline-Wert und erwarteter Abschluss pro Monat.</p></div>
     <div class="card reveal d2" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic">📈</div><h3>Reporting</h3><p>Conversion, Aktivität und Win/Loss je Person und Team.</p></div>
   </div>
@@ -199,7 +248,7 @@
 
 <!-- CTA -->
 <section class="pad-s soft">
-  <div class="wrap"><div class="cta-band reveal" style="background:linear-gradient(135deg,#16A8DC,#003060)">
+  <div class="wrap"><div class="cta-band reveal dot-texture" style="background:linear-gradient(135deg,#16A8DC,#003060)">
     <h2>Weniger Tools. Mehr Abschlüsse.</h2>
     <p>Outbound, Pipeline und Forecast in einer App — kostenlos testen, keine Kreditkarte.</p>
     <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
@@ -217,5 +266,6 @@
   <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="assets/leadesk.js"></script>
+<script src="assets/leadesk-redesign.js"></script>
 </body>
 </html>

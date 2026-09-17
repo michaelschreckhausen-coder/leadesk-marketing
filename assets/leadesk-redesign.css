@@ -137,6 +137,14 @@ body.nav-locked{overflow:hidden}
 .app-badge{display:inline-flex;line-height:0}
 .app-badge img{height:48px;width:auto;display:block}
 
+/* ---------- 11) Mobile-Overflow: Grid-Items duerfen unter ihre Inhaltsbreite ----------
+   .split ist ein Grid (1fr 1fr, s. leadesk.css). Grid-Items haben per Default
+   min-width:auto und schrumpfen nicht unter ihren Inhalt. Das horizontal
+   scrollbare Karussell (#appHomeGal) sprengt damit auf Mobil den Viewport
+   (gemessen: Kind 1388px statt 358px). min-width:0 gibt das Schrumpfen frei;
+   das Karussell scrollt weiterhin intern. */
+.split > * { min-width: 0 }
+
 @media(prefers-reduced-motion:reduce){
   .word-reveal .w{opacity:1!important}
 }

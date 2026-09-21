@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Preise | Leadesk</title>
-<meta name="description" content="Drei Single-Lizenzen und drei Team-Pakete. Transparente Credits, keine versteckten Limits. 3 Tage kostenlos testen, jederzeit kündbar.">
+<meta name="description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
 <link rel="canonical" href="https://www.leadesk.de/preise.html">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Leadesk">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Preise | Leadesk">
-<meta property="og:description" content="Drei Single-Lizenzen und drei Team-Pakete. Transparente Credits, keine versteckten Limits. 3 Tage kostenlos testen, jederzeit kündbar.">
+<meta property="og:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
 <meta property="og:url" content="https://www.leadesk.de/preise.html">
 <meta property="og:image" content="https://www.leadesk.de/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Preise | Leadesk">
-<meta name="twitter:description" content="Drei Single-Lizenzen und drei Team-Pakete. Transparente Credits, keine versteckten Limits. 3 Tage kostenlos testen, jederzeit kündbar.">
+<meta name="twitter:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
 <meta name="theme-color" content="#0A6FB0">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -38,6 +38,64 @@
   .cust{background:var(--ink);color:#fff;border-radius:var(--radius);padding:30px 34px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:var(--shadow-hover)}
   .cust h3{color:#fff;font-size:22px;margin-bottom:6px}
   .cust p{color:rgba(255,255,255,.8);font-size:14.5px;max-width:560px}
+
+  /* ===== Team-Baukasten (ersetzt die drei festen Team-Bundles) ===== */
+  .team-builder{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-hover);
+    padding:40px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;max-width:980px;margin:0 auto}
+  @media(max-width:860px){.team-builder{grid-template-columns:1fr;padding:28px}}
+  .tb-head h3{font-size:24px;margin-bottom:8px}
+  .tb-head p{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+  .tb-seats{display:flex;flex-direction:column;gap:14px}
+  .tb-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border:1px solid var(--border);
+    border-radius:var(--radius-sm);background:var(--bg-soft)}
+  .tb-info{display:flex;align-items:flex-start;gap:11px}
+  .tb-dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex:0 0 auto}
+  .tb-info b{display:block;font-size:15px;color:var(--ink)}
+  .tb-info span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+  .tb-info .tb-price-each{display:block;font-size:12px;color:var(--navy);font-weight:700;margin-top:3px}
+  .tb-stepper{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+  .tb-stepper button{width:32px;height:32px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--ink);
+    font-size:17px;font-weight:700;cursor:pointer;line-height:1;transition:background .2s var(--ease),border-color .2s var(--ease)}
+  .tb-stepper button:hover{background:var(--tint-cyan);border-color:var(--cyan)}
+  .tb-stepper button:disabled{opacity:.4;cursor:not-allowed}
+  .tb-stepper .tb-count{min-width:22px;text-align:center;font-weight:800;font-size:16px;color:var(--ink)}
+  .tb-check{display:flex;align-items:flex-start;gap:10px;margin-top:20px;font-size:13.5px;color:var(--muted);cursor:pointer}
+  .tb-check input{margin-top:2px}
+  .tb-summary{background:var(--tint-cyan);border-radius:var(--radius-sm);padding:26px;text-align:center;position:sticky;top:118px}
+  .tb-summary .price{display:flex;justify-content:center;align-items:baseline;gap:3px}
+  .tb-summary .price .amt{font-size:42px;font-weight:800;color:var(--ink);line-height:1}
+  .tb-summary .price .cur{font-size:19px;color:var(--muted);font-weight:700}
+  .tb-summary .price .per{font-size:14px;color:var(--muted);font-weight:600}
+  .tb-meta{font-size:13px;color:var(--navy);font-weight:700;margin-top:8px;min-height:18px}
+  .tb-sub{font-size:12px;color:var(--muted);margin-top:4px}
+  .tb-selection-list{list-style:none;margin:16px 0 0;padding:0;text-align:left;display:flex;flex-direction:column;gap:6px}
+  .tb-selection-list[hidden]{display:none}
+  .tb-selection-list li{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink);background:#fff;border-radius:8px;padding:8px 12px}
+  .tb-selection-list li b{color:var(--navy)}
+
+  /* ---- Schritt-für-Schritt-Konfigurator: Fortschrittsanzeige + Panels ---- */
+  .tb-progress{display:flex;align-items:center;margin-bottom:28px}
+  .tb-pstep{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+  .tb-pnum{width:28px;height:28px;border-radius:50%;background:var(--bg-soft);border:2px solid var(--border);color:var(--muted);
+    font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+  .tb-plabel{font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap;transition:color .25s var(--ease)}
+  .tb-pline{flex:1 1 auto;height:2px;background:var(--border);margin:0 10px;min-width:14px}
+  .tb-pstep.on .tb-pnum{background:var(--grad);border-color:transparent;color:#fff}
+  .tb-pstep.on .tb-plabel,.tb-pstep.done .tb-plabel{color:var(--ink)}
+  .tb-pstep.done .tb-pnum{background:var(--navy);border-color:var(--navy);color:#fff}
+  @media(max-width:520px){.tb-plabel{display:none}}
+
+  .tb-panel[hidden]{display:none}
+  .tb-notes{margin-top:22px}
+  .tb-notes label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .tb-notes textarea{width:100%;min-height:90px;border:1px solid var(--border);border-radius:var(--radius-sm);
+    padding:12px 14px;font-family:inherit;font-size:14px;color:var(--ink);resize:vertical;box-sizing:border-box}
+  .tb-notes textarea:focus{outline:2px solid var(--cyan);outline-offset:1px}
+  #teamForm{margin-top:4px}
+  .tb-nav{display:flex;justify-content:flex-end;gap:12px;margin-top:28px}
+  #tbBack{margin-right:auto}
+  #tbBack[hidden],#tbNext[hidden]{display:none}
 </style>
 <script type="application/ld+json">
 {
@@ -107,6 +165,14 @@
         "@type": "Answer",
         "text": "Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns einfach an."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert der Team-Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr schickt die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein."
+      }
     }
   ]
 }
@@ -161,35 +227,12 @@
       <div class="mark-wrap med" style="margin:0 auto 18px"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
       <div class="eyebrow center">Preise & Pläne</div>
       <h1>Ein Tool.<br><span class="grad-text">Transparente Credits.</span></h1>
-      <p class="lead" style="margin:0 auto 8px">Drei Single-Lizenzen und drei Team-Pakete. KI-Verbrauch wird transparent in Credits abgerechnet — keine versteckten Limits. 3 Tage kostenlos testen.</p>
+      <p class="lead" style="margin:0 auto 8px">Für Einzelpersonen: drei Lizenzen, sofort startklar. Für Teams: euren Seat-Mix selbst zusammenstellen, Mengenrabatt live sehen — wir richten den Plan danach persönlich für euch ein. KI-Verbrauch wird transparent in Credits abgerechnet, keine versteckten Limits.</p>
       <div class="seg-row reveal d1">
         <div class="seg" id="audience"><span class="on" data-g="single">Einzelperson</span><span data-g="team">Team</span></div>
         <div class="seg" id="billing"><span class="on" data-p="mo">Monatlich</span><span data-p="yr">Jährlich</span><span class="save">−20 %</span></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- REDESIGN: Marquee/Vertrauens-Leiste mit echten Preis-Fakten dieser Seite -->
-<section class="pad-s" style="padding:44px 0">
-  <div class="marquee">
-    <div class="marquee-track">
-      <span class="mitem"><span>🎁</span> 3 Tage kostenlos testen</span>
-      <span class="mitem"><span>🔓</span> Jederzeit kündbar</span>
-      <span class="mitem"><span>💳</span> Keine Kreditkarte nötig</span>
-      <span class="mitem"><span>📉</span> −20 % bei jährlicher Zahlung</span>
-      <span class="mitem"><span>🎁</span> 3 Tage kostenlos testen</span>
-      <span class="mitem"><span>🔓</span> Jederzeit kündbar</span>
-      <span class="mitem"><span>💳</span> Keine Kreditkarte nötig</span>
-      <span class="mitem"><span>📉</span> −20 % bei jährlicher Zahlung</span>
-    </div>
-  </div>
-</section>
-
-<!-- REDESIGN: Wort-für-Wort Scroll-Reveal -->
-<section class="pad-s">
-  <div class="wrap" style="max-width:780px;text-align:center">
-    <p class="word-reveal">Ein Plan pro Bedarf, <grad>ein transparentes Credit-System</grad> für jede KI-Aktion — ohne versteckte Limits, ohne Verlängerungsfalle.</p>
   </div>
 </section>
 
@@ -238,60 +281,98 @@
     </div>
   </div>
 
-  <!-- TEAM -->
-  <div class="wrap plans plan-group" data-g="team" hidden>
-    <div class="plan reveal">
-      <h3>Sales Team</h3>
-      <div class="price"><span class="cur">€</span><span class="amt" data-mo="69">69</span><span class="per"> / Monat</span><span class="seats">· 2 Seats</span></div>
-      <p style="color:var(--muted);font-size:14px">Zwei Vertriebler mit geteiltem Pool und zentraler Verwaltung.</p>
-      <ul>
-        <li><b>10.000 Credits-Pool</b> · 10 GB Speicher</li>
-        <li>500 Unternehmen · 2.000 Kontakte</li>
-        <li>2 Sales-Seats mit gemeinsamem Pool</li>
-        <li>Premium-AI als Add-On pro Seat (+15 €/Mo)</li>
-      </ul>
-      <span class="save-tag">Spart 9 €/Monat vs. 2× Sales</span>
-      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=sales-team" style="margin-top:14px">3 Tage testen</a>
-    </div>
-    <div class="plan reveal d1">
-      <h3>Marketing Team</h3>
-      <div class="price"><span class="cur">€</span><span class="amt" data-mo="139">139</span><span class="per"> / Monat</span><span class="seats">· 2 Seats</span></div>
-      <p style="color:var(--muted);font-size:14px">Zwei Marketing-User mit Brand-Voice-Diversität.</p>
-      <ul>
-        <li><b>30.000 Credits-Pool</b> · 50 GB Speicher</li>
-        <li>6 Brand Voices · 2 Marketing-Seats</li>
-        <li><b>Premium-AI inkludiert</b> (Opus, GPT-5, Gemini Pro)</li>
-      </ul>
-      <span class="save-tag">Spart 19 €/Monat vs. 2× Marketing</span>
-      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=marketing-team" style="margin-top:14px">3 Tage testen</a>
-    </div>
-    <div class="plan pop reveal d2">
-      <h3>KMU</h3>
-      <div class="price"><span class="cur">€</span><span class="amt" data-mo="149">149</span><span class="per"> / Monat</span><span class="seats">· 3 Seats</span></div>
-      <p style="color:var(--muted);font-size:14px">Typisches 3-Personen-B2B-Setup: 2 Sales + 1 All-In.</p>
-      <ul>
-        <li><b>35.000 Credits-Pool</b> · 60 GB Speicher</li>
-        <li><b>Unbegrenzte</b> Unternehmen, Kontakte + Brand Voices</li>
-        <li>3 Seats: 2 Sales + 1 All-In (mit Premium-AI)</li>
-        <li>Sales-Seats sehen Redaktionsplan (read-only)</li>
-      </ul>
-      <span class="save-tag">Spart 48 €/Monat (−24 %)</span>
-      <a class="btn btn-primary" href="https://app.leadesk.de/register?plan=kmu" style="margin-top:14px">3 Tage testen</a>
+  <!-- TEAM — Baukasten statt fester Bundles: Seat-Mix selbst zusammenstellen,
+       Ergebnis geht immer als Anfrage raus (kein Self-Service-Checkout hier),
+       weil Leadesk den Plan aktuell persönlich für das Team einrichtet. -->
+  <div class="wrap plan-group" data-g="team" hidden>
+    <div class="team-builder reveal">
+      <div>
+        <div class="tb-head">
+          <h3>Baut euren Team-Plan</h3>
+          <p>Drei kurze Schritte: Seats wählen, Zusatzwünsche angeben, Kontakt hinterlassen. Der Preis passt sich rechts im Verlauf live an — am Ende schickt ihr die Anfrage ab, und wir richten den Plan persönlich für euch ein.</p>
+        </div>
+
+        <div class="tb-progress" aria-hidden="true">
+          <div class="tb-pstep on" data-pstep="1"><span class="tb-pnum">1</span><span class="tb-plabel">Seats</span></div>
+          <div class="tb-pline"></div>
+          <div class="tb-pstep" data-pstep="2"><span class="tb-pnum">2</span><span class="tb-plabel">Zusatzwünsche</span></div>
+          <div class="tb-pline"></div>
+          <div class="tb-pstep" data-pstep="3"><span class="tb-pnum">3</span><span class="tb-plabel">Kontakt</span></div>
+        </div>
+
+        <!-- Schritt 1: Seats -->
+        <div class="tb-panel" data-step="1">
+          <div class="tb-seats">
+            <div class="tb-row" data-seat="sales" data-price="39">
+              <div class="tb-info"><span class="tb-dot" style="background:var(--navy)"></span>
+                <div><b>Sales-Seat</b><span>CRM, LinkedIn-Vernetzung &amp; Nachrichten, Reporting</span><span class="tb-price-each">39 € / Monat pro Seat</span></div>
+              </div>
+              <div class="tb-stepper">
+                <button type="button" data-step="-1" aria-label="Weniger Sales-Seats">−</button>
+                <span class="tb-count" data-count="sales" aria-live="polite">0</span>
+                <button type="button" data-step="1" aria-label="Mehr Sales-Seats">+</button>
+              </div>
+            </div>
+            <div class="tb-row" data-seat="marketing" data-price="79">
+              <div class="tb-info"><span class="tb-dot" style="background:var(--content)"></span>
+                <div><b>Marketing-Seat</b><span>Brand Voice, Content-Studio, KI-Bilder, LinkedIn-Posting</span><span class="tb-price-each">79 € / Monat pro Seat</span></div>
+              </div>
+              <div class="tb-stepper">
+                <button type="button" data-step="-1" aria-label="Weniger Marketing-Seats">−</button>
+                <span class="tb-count" data-count="marketing" aria-live="polite">0</span>
+                <button type="button" data-step="1" aria-label="Mehr Marketing-Seats">+</button>
+              </div>
+            </div>
+            <div class="tb-row" data-seat="allin" data-price="119">
+              <div class="tb-info"><span class="tb-dot" style="background:var(--cyan)"></span>
+                <div><b>All-In-Seat</b><span>Alles aus Sales + Marketing, Premium-KI komplett, Projekte</span><span class="tb-price-each">119 € / Monat pro Seat</span></div>
+              </div>
+              <div class="tb-stepper">
+                <button type="button" data-step="-1" aria-label="Weniger All-In-Seats">−</button>
+                <span class="tb-count" data-count="allin" aria-live="polite">0</span>
+                <button type="button" data-step="1" aria-label="Mehr All-In-Seats">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schritt 2: Zusatzwünsche -->
+        <div class="tb-panel" data-step="2" hidden>
+          <label class="tb-check"><input type="checkbox" id="tbSso"> Wir brauchen Single-Sign-On (SAML) und/oder einen dedizierten Ansprechpartner</label>
+          <div class="tb-notes">
+            <label for="tbNotes">Sonstige Wünsche (optional)</label>
+            <textarea id="tbNotes" placeholder="z. B. gewünschter Start-Termin, Umzug von einem anderen Tool, Sonderwünsche zur Rechnungsstellung …"></textarea>
+          </div>
+        </div>
+
+        <!-- Schritt 3: Kontakt -->
+        <div class="tb-panel" data-step="3" hidden>
+          <form id="teamForm" class="form">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <input type="hidden" id="tbMessage" name="message">
+            <div><label for="tbName">Name</label><input id="tbName" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
+            <div><label for="tbEmail">E-Mail</label><input id="tbEmail" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
+            <div><label for="tbCompany">Unternehmen</label><input id="tbCompany" name="company" type="text" placeholder="Firma" autocomplete="organization" required></div>
+            <button class="btn btn-primary" type="submit">Anfrage senden</button>
+            <p id="tbFormStatus" role="status" aria-live="polite" style="font-size:12.5px;color:var(--muted)">Wir melden uns in der Regel innerhalb eines Werktags und richten den Plan gemeinsam mit euch ein.</p>
+          </form>
+        </div>
+
+        <div class="tb-nav">
+          <button type="button" class="btn btn-ghost" id="tbBack" hidden>← Zurück</button>
+          <button type="button" class="btn btn-primary" id="tbNext">Weiter →</button>
+        </div>
+      </div>
+      <div class="tb-summary">
+        <div class="price"><span class="cur">€</span><span class="amt" id="tbAmt" data-mo="0">0</span><span class="per"> / Monat</span></div>
+        <div class="tb-meta" id="tbMeta">Wählt Seats, um euren Preis zu sehen.</div>
+        <ul class="tb-selection-list" id="tbSelectionList" hidden></ul>
+        <div class="tb-sub" id="tbSub">Alle Preise netto · jährliche Zahlung spart zusätzlich 20 %</div>
+      </div>
     </div>
   </div>
 
   <div class="wrap" style="text-align:center;margin-top:22px;color:var(--muted);font-size:14px">Alle Preise netto. Jährliche Zahlung spart 20 %. Jederzeit kündbar. 3 Tage kostenlos testen, danach dauerhaft kostenloser Free-Plan.</div>
-
-  <!-- CUSTOMIZED -->
-  <div class="wrap" style="margin-top:34px">
-    <div class="cust reveal">
-      <div>
-        <h3>Customized Team — ab 4 Seats, ab 199 € / Monat</h3>
-        <p>Individuelles Setup mit eigener Modell-Allowlist, Single-Sign-On (SAML), dediziertem Account-Manager und maßgeschneidertem Lizenz-Mix.</p>
-      </div>
-      <a class="btn btn-primary" href="kontakt.html" style="white-space:nowrap">Beratung anfragen</a>
-    </div>
-  </div>
 </section>
 
 <!-- CREDITS -->
@@ -334,9 +415,7 @@
     <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">🎯</div><h3>Sales</h3><p>Solo-Vertriebler und Consultants. Schwerpunkt CRM, LinkedIn-Vernetzung und Sales-Reporting.</p></div>
     <div class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1"><div class="ic">✍️</div><h3>Marketing</h3><p>Personal-Brand-Builder und Content-Creator. Schwerpunkt Brand-Voice-Vielfalt und Content-Produktion.</p></div>
     <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🚀</div><h3>All-In</h3><p>Solo-Founder, die selbst verkaufen und Marketing machen; Berater, die den ganzen Funnel betreiben.</p></div>
-    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">👥</div><h3>Sales Team</h3><p>Zwei-Personen-Vertriebs-Teams mit gemeinsamer Pipeline, geteilten Credits und Storage.</p></div>
-    <div class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1"><div class="ic">🎙️</div><h3>Marketing Team</h3><p>Content-Teams mit mehreren Brand Voices — z. B. Agentur für mehrere Kundenmarken.</p></div>
-    <div class="card reveal d2" style="--acc:var(--purple);--accbg:#efedff"><div class="ic">🏢</div><h3>KMU</h3><p>B2B-Mittelständler: zwei Vertriebler + ein Founder mit Marketing. 3 Seats inkl. Premium-Modelle.</p></div>
+    <div class="card reveal" style="--acc:var(--purple);--accbg:#efedff"><div class="ic">🧩</div><h3>Team</h3><p>Ab 2 Personen: stellt euren eigenen Mix aus Sales-, Marketing- und All-In-Seats zusammen — mit Mengenrabatt und persönlichem Einrichten statt festem Bundle.</p></div>
   </div>
 </section>
 
@@ -355,6 +434,7 @@
     <details><summary>Was spare ich bei jährlicher Zahlung?</summary><p>20 % gegenüber monatlicher Zahlung. Die Rechnung kommt einmal pro Jahr, du kannst jederzeit zum Jahresende kündigen.</p></details>
     <details><summary>Bekomme ich eine Rechnung für die Buchhaltung?</summary><p>Ja, automatisch als PDF per E-Mail. USt-ausweisbar, mit Firmenadresse und Steuernummer. Für EU-Unternehmen mit gültiger USt-ID stellen wir Reverse-Charge aus.</p></details>
     <details><summary>Gibt es Rabatte für Non-Profits oder Startups?</summary><p>Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns einfach an.</p></details>
+    <details><summary>Wie funktioniert der Team-Plan?</summary><p>Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr schickt die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein.</p></details>
   </div>
 </section>
 
@@ -397,6 +477,216 @@
     aud.querySelectorAll('span[data-g]').forEach(function(s){ s.addEventListener('click',function(){ setAudience(s.getAttribute('data-g')); }); });
     bill.querySelectorAll('span[data-p]').forEach(function(s){ s.addEventListener('click',function(){ setBilling(s.getAttribute('data-p')); }); });
   })();
+</script>
+
+<!-- REDESIGN: Team-Baukasten — Seat-Mix + Mengenrabatt live berechnen, Ergebnis
+     geht als Anfrage über das bestehende /api/contact (keine Backend-Änderung
+     nötig). Eigenständiges IIFE, unabhängig vom Skript oben. -->
+<script>
+(function(){
+  var rows = document.querySelectorAll('.tb-row');
+  if(!rows.length) return;
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var labels = {sales:'Sales', marketing:'Marketing', allin:'All-In'};
+  var prices = {}, counts = {sales:0, marketing:0, allin:0};
+  var billSeg = document.getElementById('billing');
+  var amtEl = document.getElementById('tbAmt');
+  var metaEl = document.getElementById('tbMeta');
+  var selectionListEl = document.getElementById('tbSelectionList');
+  var ssoEl = document.getElementById('tbSso');
+  var notesEl = document.getElementById('tbNotes');
+  var messageEl = document.getElementById('tbMessage');
+
+  var panels = document.querySelectorAll('.tb-panel');
+  var pstepEls = document.querySelectorAll('.tb-pstep');
+  var backEl = document.getElementById('tbBack');
+  var nextEl = document.getElementById('tbNext');
+  var builderEl = document.querySelector('.team-builder');
+  var step = 1;
+
+  rows.forEach(function(row){
+    var type = row.getAttribute('data-seat');
+    prices[type] = parseFloat(row.getAttribute('data-price'));
+    row.querySelectorAll('.tb-stepper button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var d = parseInt(btn.getAttribute('data-step'), 10);
+        counts[type] = Math.max(0, Math.min(99, counts[type] + d));
+        row.querySelector('.tb-count').textContent = counts[type];
+        recalc();
+      });
+    });
+  });
+
+  function discountFor(total){
+    if(total >= 10) return 0.25;
+    if(total >= 5) return 0.20;
+    if(total >= 3) return 0.15;
+    if(total >= 2) return 0.10;
+    return 0;
+  }
+
+  function currentBillingMode(){
+    var on = billSeg.querySelector('span.on[data-p]');
+    return on ? on.getAttribute('data-p') : 'mo';
+  }
+
+  function updateSelectionList(total){
+    selectionListEl.innerHTML = '';
+    if(total === 0){ selectionListEl.hidden = true; return; }
+    selectionListEl.hidden = false;
+    ['sales','marketing','allin'].forEach(function(type){
+      if(counts[type] > 0){
+        var li = document.createElement('li');
+        li.innerHTML = '<span>' + labels[type] + '-Seat</span><b>' + counts[type] + '×</b>';
+        selectionListEl.appendChild(li);
+      }
+    });
+  }
+
+  function updateNextState(){
+    if(!nextEl) return;
+    if(step === 1){
+      var total = counts.sales + counts.marketing + counts.allin;
+      nextEl.disabled = total === 0;
+      nextEl.textContent = total === 0 ? 'Erst Seats wählen' : 'Weiter →';
+    } else {
+      nextEl.disabled = false;
+      nextEl.textContent = 'Weiter →';
+    }
+  }
+
+  function showStep(n){
+    step = n;
+    panels.forEach(function(p){ p.hidden = parseInt(p.getAttribute('data-step'), 10) !== n; });
+    pstepEls.forEach(function(el){
+      var idx = parseInt(el.getAttribute('data-pstep'), 10);
+      el.classList.toggle('on', idx === n);
+      el.classList.toggle('done', idx < n);
+    });
+    if(backEl) backEl.hidden = n === 1;
+    if(nextEl) nextEl.hidden = n === 3;
+    updateNextState();
+    if(n === 3){
+      composeMessage();
+      var nameField = document.getElementById('tbName');
+      if(nameField) nameField.focus({preventScroll:true});
+    }
+  }
+
+  function scrollToBuilder(){
+    if(builderEl) builderEl.scrollIntoView({behavior: rm ? 'auto' : 'smooth', block: 'start'});
+  }
+
+  function recalc(){
+    var total = counts.sales + counts.marketing + counts.allin;
+    var raw = counts.sales*prices.sales + counts.marketing*prices.marketing + counts.allin*prices.allin;
+    var discount = discountFor(total);
+    var discounted = raw * (1 - discount);
+    var mode = currentBillingMode();
+    var displayed = Math.round(mode === 'yr' ? discounted * 0.8 : discounted);
+
+    amtEl.setAttribute('data-mo', discounted.toFixed(2));
+    amtEl.textContent = displayed;
+
+    rows.forEach(function(row){
+      var type = row.getAttribute('data-seat');
+      var minus = row.querySelector('button[data-step="-1"]');
+      if(minus) minus.disabled = counts[type] === 0;
+    });
+
+    if(total === 0){
+      metaEl.textContent = 'Wählt Seats, um euren Preis zu sehen.';
+    } else if(total === 1){
+      metaEl.textContent = 'Für 1 Person lohnt sich meist eine Single-Lizenz oben — der Team-Rabatt greift ab 2 Seats.';
+    } else {
+      var saved = Math.round(raw - discounted);
+      metaEl.textContent = 'Mengenrabatt: −' + Math.round(discount*100) + ' % · spart ' + saved + ' €/Monat gegenüber Einzelpreisen';
+    }
+
+    updateSelectionList(total);
+    updateNextState();
+    composeMessage(total, raw, discount, discounted, mode);
+  }
+
+  function composeMessage(total, raw, discount, discounted, mode){
+    if(total === undefined){
+      total = counts.sales + counts.marketing + counts.allin;
+      raw = counts.sales*prices.sales + counts.marketing*prices.marketing + counts.allin*prices.allin;
+      discount = discountFor(total);
+      discounted = raw * (1 - discount);
+      mode = currentBillingMode();
+    }
+    var lines = ['Team-Anfrage über den Preis-Konfigurator auf leadesk.de/preise.html', ''];
+    ['sales','marketing','allin'].forEach(function(type){
+      if(counts[type] > 0){ lines.push(counts[type] + '× ' + labels[type] + '-Seat (' + prices[type] + ' €/Monat pro Seat)'); }
+    });
+    lines.push('');
+    lines.push('Seats gesamt: ' + total);
+    lines.push('Listenpreis vor Rabatt: ' + Math.round(raw) + ' €/Monat');
+    lines.push('Mengenrabatt: ' + (discount > 0 ? ('−' + Math.round(discount*100) + ' %') : 'keiner (ab 2 Seats)'));
+    lines.push('Geschätzter Preis: ' + Math.round(mode === 'yr' ? discounted*0.8 : discounted) + ' €/Monat (netto, ' + (mode === 'yr' ? 'jährliche Zahlung' : 'monatliche Zahlung') + ')');
+    lines.push('SSO / dedizierter Ansprechpartner gewünscht: ' + (ssoEl.checked ? 'Ja' : 'Nein'));
+    if(notesEl && notesEl.value.trim()){
+      lines.push('');
+      lines.push('Zusatzwünsche/Notizen:');
+      lines.push(notesEl.value.trim());
+    }
+    if(messageEl) messageEl.value = lines.join('\n');
+  }
+
+  ssoEl.addEventListener('change', function(){ recalc(); });
+  if(notesEl) notesEl.addEventListener('input', function(){ composeMessage(); });
+  billSeg.querySelectorAll('span[data-p]').forEach(function(s){ s.addEventListener('click', function(){ setTimeout(recalc, 0); }); });
+
+  if(nextEl){
+    nextEl.addEventListener('click', function(){
+      if(nextEl.disabled || step >= 3) return;
+      showStep(step + 1);
+      scrollToBuilder();
+    });
+  }
+  if(backEl){
+    backEl.addEventListener('click', function(){
+      if(step <= 1) return;
+      showStep(step - 1);
+      scrollToBuilder();
+    });
+  }
+
+  var tf = document.getElementById('teamForm');
+  if(tf){
+    var ts = document.getElementById('tbFormStatus');
+    tf.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = tf.querySelector('button[type=submit]');
+      btn.disabled = true; ts.style.color = 'var(--muted)'; ts.textContent = 'Wird gesendet …';
+      var data = Object.fromEntries(new FormData(tf).entries());
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(data)
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if(j.success === true){
+          ts.style.color = '#0a7d3c';
+          ts.textContent = 'Danke! Eure Team-Anfrage ist bei uns — wir melden uns in der Regel innerhalb eines Werktags und richten den Plan gemeinsam mit euch ein.';
+          tf.querySelectorAll('#tbName,#tbEmail,#tbCompany').forEach(function(i){ i.disabled = true; });
+          if(backEl) backEl.hidden = true;
+        } else {
+          ts.style.color = '#c0392b';
+          ts.textContent = 'Das hat leider nicht geklappt. Schreib uns bitte direkt an hello@leadesk.de.';
+          btn.disabled = false;
+        }
+      }).catch(function(){
+        ts.style.color = '#c0392b';
+        ts.textContent = 'Netzwerkfehler — schreib uns bitte direkt an hello@leadesk.de.';
+        btn.disabled = false;
+      });
+    });
+  }
+
+  showStep(1);
+  recalc();
+})();
 </script>
 </body>
 </html>

@@ -96,6 +96,32 @@
   .tb-nav{display:flex;justify-content:flex-end;gap:12px;margin-top:28px}
   #tbBack{margin-right:auto}
   #tbBack[hidden],#tbNext[hidden]{display:none}
+
+  /* ---- Info-Icon je Seat + Overlay mit Plan-Details ---- */
+  .tb-name-row{display:flex;align-items:center;gap:7px}
+  .tb-info .tb-name-row b{display:inline;font-size:15px;color:var(--ink)}
+  .tb-infobtn{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--muted);background:#fff;color:var(--muted);
+    font-size:11px;font-weight:800;line-height:1;display:inline-flex;align-items:center;justify-content:center;
+    cursor:pointer;padding:0;flex:0 0 auto;transition:border-color .2s var(--ease),color .2s var(--ease)}
+  .tb-infobtn:hover,.tb-infobtn:focus-visible{border-color:var(--cyan);color:var(--cyan-mid)}
+
+  .tb-modal-backdrop{position:fixed;inset:0;background:rgba(14,22,51,.55);display:flex;align-items:center;
+    justify-content:center;padding:20px;z-index:300;opacity:0;visibility:hidden;transition:opacity .2s var(--ease)}
+  .tb-modal-backdrop.open{opacity:1;visibility:visible}
+  .tb-modal{background:#fff;border-radius:var(--radius);max-width:480px;width:100%;max-height:85vh;overflow-y:auto;
+    padding:30px 30px 26px;box-shadow:var(--shadow-hover);position:relative;transform:translateY(12px);
+    transition:transform .2s var(--ease)}
+  .tb-modal-backdrop.open .tb-modal{transform:translateY(0)}
+  .tb-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);
+    background:#fff;color:var(--muted);font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;
+    justify-content:center}
+  .tb-modal-close:hover{background:var(--bg-soft)}
+  .tb-modal h3{font-size:21px;margin-bottom:4px;padding-right:32px}
+  .tb-modal-price{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:18px}
+  .tb-modal-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .tb-modal-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink);line-height:1.45}
+  .tb-modal-list li::before{content:"✓";color:var(--success);font-weight:800;flex:0 0 auto}
+  @media(prefers-reduced-motion:reduce){.tb-modal-backdrop,.tb-modal{transition:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -305,7 +331,7 @@
           <div class="tb-seats">
             <div class="tb-row" data-seat="sales" data-price="39">
               <div class="tb-info"><span class="tb-dot" style="background:var(--navy)"></span>
-                <div><b>Sales-Seat</b><span>Komplettes LinkedIn-Modul + volles CRM · 1 LinkedIn-Vernetzungsanfrage pro Lizenz</span><span class="tb-price-each">39 € / Monat pro Seat</span></div>
+                <div><span class="tb-name-row"><b>Sales-Seat</b><button type="button" class="tb-infobtn" data-plan="sales" aria-haspopup="dialog" aria-label="Mehr Infos zum Sales-Seat">i</button></span><span>Komplettes LinkedIn-Modul + volles CRM · 1 LinkedIn-Vernetzungsanfrage pro Lizenz</span><span class="tb-price-each">39 € / Monat pro Seat</span></div>
               </div>
               <div class="tb-stepper">
                 <button type="button" data-step="-1" aria-label="Weniger Sales-Seats">−</button>
@@ -315,7 +341,7 @@
             </div>
             <div class="tb-row" data-seat="marketing" data-price="79">
               <div class="tb-info"><span class="tb-dot" style="background:var(--content)"></span>
-                <div><b>Marketing-Seat</b><span>Komplettes Content-Modul (Personal + Company Brand) — kein CRM, kein LinkedIn-Modul</span><span class="tb-price-each">79 € / Monat pro Seat</span></div>
+                <div><span class="tb-name-row"><b>Marketing-Seat</b><button type="button" class="tb-infobtn" data-plan="marketing" aria-haspopup="dialog" aria-label="Mehr Infos zum Marketing-Seat">i</button></span><span>Komplettes Content-Modul (Personal + Company Brand) — kein CRM, kein LinkedIn-Modul</span><span class="tb-price-each">79 € / Monat pro Seat</span></div>
               </div>
               <div class="tb-stepper">
                 <button type="button" data-step="-1" aria-label="Weniger Marketing-Seats">−</button>
@@ -325,7 +351,7 @@
             </div>
             <div class="tb-row" data-seat="allin" data-price="119">
               <div class="tb-info"><span class="tb-dot" style="background:var(--cyan)"></span>
-                <div><b>All-In-Seat</b><span>Alles inklusive: LinkedIn-Modul + CRM + Content-Modul, Premium-KI komplett, Projekte</span><span class="tb-price-each">119 € / Monat pro Seat</span></div>
+                <div><span class="tb-name-row"><b>All-In-Seat</b><button type="button" class="tb-infobtn" data-plan="allin" aria-haspopup="dialog" aria-label="Mehr Infos zum All-In-Seat">i</button></span><span>Alles inklusive: LinkedIn-Modul + CRM + Content-Modul, Premium-KI komplett, Projekte</span><span class="tb-price-each">119 € / Monat pro Seat</span></div>
               </div>
               <div class="tb-stepper">
                 <button type="button" data-step="-1" aria-label="Weniger All-In-Seats">−</button>
@@ -374,6 +400,17 @@
 
   <div class="wrap" style="text-align:center;margin-top:22px;color:var(--muted);font-size:14px">Alle Preise netto. Jährliche Zahlung spart 20 %. Jederzeit kündbar. 3 Tage kostenlos testen, danach dauerhaft kostenloser Free-Plan.</div>
 </section>
+
+<!-- REDESIGN: Overlay mit Plan-Details, geöffnet über das Info-Icon je Seat im
+     Team-Konfigurator. Ein gemeinsames Modal, Inhalt wird per JS aus PLAN_INFO befüllt. -->
+<div class="tb-modal-backdrop" id="tbInfoBackdrop" aria-hidden="true">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbInfoTitle">
+    <button type="button" class="tb-modal-close" id="tbInfoClose" aria-label="Schließen">✕</button>
+    <h3 id="tbInfoTitle">Plan</h3>
+    <div class="tb-modal-price" id="tbInfoPrice"></div>
+    <ul class="tb-modal-list" id="tbInfoList"></ul>
+  </div>
+</div>
 
 <!-- CREDITS -->
 <section class="pad soft">
@@ -686,6 +723,94 @@
 
   showStep(1);
   recalc();
+})();
+</script>
+
+<!-- REDESIGN: Info-Overlay je Seat im Team-Konfigurator — eigenständiges IIFE,
+     unabhängig vom Wizard-Skript oben. -->
+<script>
+(function(){
+  var infoBtns = document.querySelectorAll('.tb-infobtn');
+  if(!infoBtns.length) return;
+
+  var PLAN_INFO = {
+    sales: {
+      title: 'Sales-Seat',
+      price: '39 € / Monat pro Seat',
+      items: [
+        '<b>Komplettes LinkedIn-Modul</b> + <b>volles CRM</b> — kein Content-Modul',
+        'Sales Navigator &amp; Classic-Suche, Kampagnen-Builder (Cloud), Engagement-Automation',
+        'CRM: Kontakte &amp; Unternehmen, Pipeline, Aufgaben, KI-Lead-Score, Reporting',
+        '250 Unternehmen · 1.000 Kontakte · <b>5.000 KI-Credits</b> / Monat · 5 GB',
+        '1 LinkedIn-Vernetzungsanfrage pro Lizenz · Premium-AI als Add-On (+15 €/Mo)'
+      ]
+    },
+    marketing: {
+      title: 'Marketing-Seat',
+      price: '79 € / Monat pro Seat',
+      items: [
+        '<b>Komplettes Content-Modul</b> — kein CRM, kein LinkedIn-Modul',
+        'Personal Brand &amp; Company Brand, ohne Limit auf die Anzahl',
+        'Dokumenten-Editor, Visual Builder, Wissensdatenbank',
+        'Zielgruppen-Profile, Ideen-Generator &amp; Redaktionsplan (Posting zu LinkedIn &amp; Instagram)',
+        '<b>15.000 KI-Credits</b> / Monat · 25 GB · <b>Premium-AI inkludiert</b> (Opus, GPT-5, Gemini Pro)'
+      ]
+    },
+    allin: {
+      title: 'All-In-Seat',
+      price: '119 € / Monat pro Seat',
+      items: [
+        '<b>Alles inklusive:</b> LinkedIn-Modul + CRM + Content-Modul',
+        '<b>Unbegrenzte</b> CRM-Datensätze · Personal &amp; Company Brand ohne Limit',
+        '<b>25.000 KI-Credits</b> / Monat · <b>50 GB</b>',
+        '<b>Premium-KI komplett</b>: Opus 4.7, GPT-5, Gemini 2.5 Pro + Premium-Bild-Modelle',
+        'Projektumsetzung + Zeiterfassung · Prioritäts-Support · 1 LinkedIn-Vernetzungsanfrage pro Lizenz'
+      ]
+    }
+  };
+
+  var backdrop = document.getElementById('tbInfoBackdrop');
+  var titleEl = document.getElementById('tbInfoTitle');
+  var priceEl = document.getElementById('tbInfoPrice');
+  var listEl = document.getElementById('tbInfoList');
+  var closeBtn = document.getElementById('tbInfoClose');
+  var lastTrigger = null;
+
+  function openInfo(key, trigger){
+    var data = PLAN_INFO[key];
+    if(!data || !backdrop) return;
+    titleEl.textContent = data.title;
+    priceEl.textContent = data.price;
+    listEl.innerHTML = data.items.map(function(html){ return '<li><span>' + html + '</span></li>'; }).join('');
+    lastTrigger = trigger || null;
+    backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if(closeBtn) closeBtn.focus({preventScroll: true});
+  }
+
+  function closeInfo(){
+    if(!backdrop) return;
+    backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if(lastTrigger) lastTrigger.focus({preventScroll: true});
+  }
+
+  infoBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openInfo(btn.getAttribute('data-plan'), btn);
+    });
+  });
+  if(backdrop){
+    backdrop.addEventListener('click', function(e){ if(e.target === backdrop) closeInfo(); });
+  }
+  if(closeBtn) closeBtn.addEventListener('click', closeInfo);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && backdrop && backdrop.classList.contains('open')) closeInfo();
+  });
 })();
 </script>
 </body>

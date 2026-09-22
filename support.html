@@ -26,6 +26,15 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
 <link rel="stylesheet" href="assets/leadesk-redesign.css">
+<style>
+  .faq-nav{display:flex;flex-wrap:wrap;gap:8px 10px;justify-content:center;margin:0 auto 40px;max-width:900px}
+  .faq-nav a{font-size:13px;font-weight:600;color:var(--cyan-mid);background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-btn);padding:7px 14px;text-decoration:none;transition:background .2s var(--ease),border-color .2s var(--ease)}
+  .faq-nav a:hover{background:var(--tint-cyan);border-color:var(--cyan)}
+  .faq{margin-bottom:52px;scroll-margin-top:96px}
+  .faq:last-of-type{margin-bottom:0}
+  .faq-cat{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--cyan-mid);margin:0 0 6px}
+  @media(max-width:640px){.faq-nav{margin-bottom:28px}}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,6 +69,334 @@
           "item": "https://www.leadesk.de/support.html"
         }
       ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie starte ich mit Leadesk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Registrieren und 3 Tage kostenlos mit komplettem All-In-Funktionsumfang testen — inklusive Premium-AI-Modellen, 500 Credits und 5 GB Speicher. Danach die Chrome-Extension installieren und die Onboarding-Tour durch die App folgen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich eine Kreditkarte für die Testphase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die 3-Tage-Testphase startet ohne Kreditkarte und ohne automatische Verlängerung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert nach den 3 Testtagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du wechselst automatisch auf den dauerhaft kostenlosen Free-Plan: 100 Credits einmalig, 1 GB Speicher, alle Standard-Funktionen (CRM, LinkedIn, Brand Voice, Content, Reporting), LinkedIn-Posting auf 1 Post/Monat begrenzt, keine Premium-AI. Oder du wählst direkt einen kostenpflichtigen Plan — eine automatische Abrechnung findet ohne deine aktive Auswahl nicht statt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie installiere ich die Chrome-Extension?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kostenlos über den Chrome Web Store hinzufügen und einmal mit deinem Leadesk-Konto verbinden. Details auf der Extension-Seite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Leadesk auch für Privatpersonen geeignet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Leadesk richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB — Verbraucher im Sinne des § 13 BGB sind laut unseren AGB vom Angebot ausgeschlossen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Pläne gibt es?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales (39 €/Monat), Sales Team (69 €, 2 Seats), Marketing (79 €), All-In (119 €), Marketing Team (139 €, 2 Seats), KMU (149 €, 3 Seats) sowie Customized Team ab 199 € ab 4 Seats. Alle Details auf der Preise-Seite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Sales, Marketing und All-In?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales umfasst das komplette LinkedIn-Modul plus volles CRM, aber kein Content-Modul. Marketing umfasst das komplette Content-Modul, aber kein CRM und kein LinkedIn-Modul. All-In vereint alle drei Bereiche — LinkedIn, CRM und Content — in einer Lizenz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was sind Credits und was kosten sie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jede KI-Aktion verbraucht Credits — transparent, ohne versteckte Limits. Ein Credit entspricht etwa $0,001 unserer echten Provider-API-Kosten, zum Beispiel rund 6 Credits für eine LinkedIn-Vernetzungsnachricht oder rund 32 Credits für einen vollen Post."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn meine Credits aufgebraucht sind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du bekommst bei 80 % Verbrauch eine Warnung. Bei 100 % pausieren die KI-Funktionen — CRM, LinkedIn-Anzeige und alle nicht-KI-Funktionen bleiben verfügbar. Du kannst sofort ein Top-up kaufen (ab 6 € für 1.000 Credits) oder bis zum nächsten Monatsersten warten, wenn die Plan-Credits zurücksetzen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert der Team-Preis-Konfigurator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Statt fester Pakete stellst du dir deinen Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort live angezeigt. Du schickst die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich jederzeit zwischen Plänen wechseln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Upgrades wirken sofort, die Differenz wird tagesgenau berechnet. Downgrades gelten ab der nächsten Abrechnungsperiode — deine Daten bleiben in jedem Fall erhalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was spare ich bei jährlicher Zahlung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20 % gegenüber monatlicher Zahlung. Die Rechnung kommt einmal pro Jahr, kündbar zum Jahresende."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie kündige ich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Direkt in den Kontoeinstellungen mit einem Klick — ohne Kontakt zum Support nötig. Monatsabos enden zum Monatsende, Jahresabos zum Jahresende."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bekomme ich eine Rechnung für die Buchhaltung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, automatisch als PDF per E-Mail — USt-ausweisbar, mit Firmenadresse und Steuernummer. Für EU-Unternehmen mit gültiger USt-ID stellen wir Reverse-Charge aus. Die Abrechnung läuft über Stripe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Rabatte für Non-Profits oder Startups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns dazu einfach an support@leadesk.de."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet „1 LinkedIn-Vernetzungsanfrage pro Lizenz“?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jede Lizenz mit LinkedIn-Modul (Sales, All-In) ist auf eine LinkedIn-Vernetzungsanfrage begrenzt — das schützt dein LinkedIn-Konto vor Spam-Mustern und Einschränkungen durch LinkedIn selbst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nutzt Leadesk einen Bot oder fremde Server für LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die Chrome-Extension läuft direkt in deinem eigenen Browser und deiner eigenen, ganz regulären LinkedIn-Session — kein Scraping über fremde Server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer trägt das Risiko, wenn LinkedIn mein Konto einschränkt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Einschränkungen oder Sperren durch LinkedIn oder Instagram liegen laut unseren AGB im eigenen Risikobereich des Kunden — wir bauen die 1-Anfrage-Begrenzung und weitere Schutzmechanismen genau deshalb bewusst konservativ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funktioniert Leadesk mit dem LinkedIn Sales Navigator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Sales Navigator- und Classic-Suche sind Teil des LinkedIn-Moduls, und Leads aus dem Sales Navigator landen automatisch — inklusive Deduplizierung gegen bereits archivierte Kontakte — in deiner Import-Inbox."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich LinkedIn und Instagram aus einem Redaktionsplan heraus bespielen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Ein Redaktionsplan für alle Kanäle — Beiträge werden dort freigegeben und direkt auf LinkedIn und Instagram veröffentlicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kann das CRM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kontakte und Unternehmen verwalten, Pipeline, Aufgaben, KI-gestütztes Lead-Scoring und Reporting — alles im Sales- und All-In-Plan enthalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die Anzahl an Kontakten im CRM begrenzt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Im Sales-Plan sind es 250 Unternehmen und 1.000 Kontakte. Im All-In-Plan sind die CRM-Datensätze unbegrenzt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist das CRM auch mobil nutzbar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, über die kostenlose Leadesk-App für iOS, iPadOS und macOS — mit denselben Berechtigungen wie in der Web-App."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Personal Brand und Company Brand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beide sind in jedem Content-Plan ohne Zähl-Limit enthalten — du kannst Personal Brand und Company Brand nebeneinander pflegen, ohne dafür eine bestimmte Anzahl an „Brand Voices“ zu buchen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was gehört zum Content-Modul?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dokumenten-Editor, Visual Builder für KI-Bilder in Markenfarben, eine Wissensdatenbank als Kontext für jede Generierung, Zielgruppen-Profile sowie Ideen-Generator und Redaktionsplan für LinkedIn und Instagram."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche KI-Modelle stehen mir zur Verfügung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard-Modelle sind in jeder Lizenz enthalten. Premium-Modelle (Claude Opus, GPT-5, Gemini 2.5 Pro) sind im Marketing- und All-In-Plan inkludiert, im Sales-Plan als Add-on für +15 €/Monat buchbar. Premium-Bildmodelle sind dem All-In-Plan vorbehalten. Du kannst deinen bevorzugten Anbieter selbst wählen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was macht Leadly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leadly ist dein KI-Agent: Er liest Pipeline, Redaktionsplan und LinkedIn-Aktivität und bereitet täglich Vorschläge auf. Wichtigste Regel: Nichts wird ohne deine Freigabe abgeschickt — Leadly liefert nur Entwürfe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind meine Daten bei Leadesk sicher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — EU-Hosting, durchgehend DSGVO-konform und Row-Level-Security auf Datenbankebene. Mehr Details auf der Sicherheits-Seite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verwendet die Leadesk-Website Cookies oder Tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die Website selbst nutzt keine Cookies, kein Analyse- oder Tracking-Tool und keine Drittanbieter-Skripte — Schriftarten werden lokal ausgeliefert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verwendet die Leadesk-App Cookies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Anwendung nutzt ausschließlich technisch notwendige Cookies bzw. lokalen Speicher, etwa für deine Login-Sitzung. Dafür ist nach § 25 Abs. 2 TDDDG keine Einwilligung erforderlich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Leadesk ISO-27001-zertifiziert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Noch nicht — unser Informationssicherheits-Managementsystem (ISMS) befindet sich aktuell in Vorbereitung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wem gehören meine Daten und kann ich sie exportieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deine Daten gehören dir. Export-Funktionen stehen jederzeit zur Verfügung, und nach Vertragsende werden Daten gemäß unserem AV-Vertrag für eine angemessene Frist zum Export vorgehalten und danach gelöscht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Schließt ihr einen Auftragsverarbeitungsvertrag (AVV) ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, jederzeit auf Anfrage über datenschutz@leadesk.de. Details im AV-Vertrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ab wie vielen Seats gibt es ein individuelles Angebot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ab 4 Seats greift die Customized-Team-Stufe ab 199 €/Monat — der genaue Preis hängt vom gewählten Seat-Mix ab und wird über den Team-Preis-Konfigurator ermittelt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist Whitelabel bei Leadesk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agenturen können Leadesk unter eigener Marke, eigener Farbe und eigener Subdomain pro Endkunde ausliefern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich mehrere Marken oder Kunden getrennt verwalten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — im Team- bzw. Agentur-Kontext lassen sich Marken und Kunden getrennt führen, in der mobilen App direkt inklusive Team-Wechsel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine mobile App?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kostenlos für iOS 16+, iPadOS, macOS (Apple Silicon) und visionOS — mit CRM, Content-Werkstatt (derselben Brand Voice wie im Web) und Leadly unterwegs. Aktuell ohne Android-Unterstützung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Integrationen bietet Leadesk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn über die Chrome-Extension, Instagram über die Growth-Suite-Partner-API, Wix per Webhook-Lead-Erfassung, Stripe und sevDesk für Abrechnung/Buchhaltung sowie eine öffentliche REST-API. Details auf der Integrationen-Seite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine öffentliche API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Die vollständige Referenz inklusive Rate-Limits bekommst du auf Anfrage über support@leadesk.de — ein Auszug steht auf der API-Docs-Seite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie zuverlässig ist die Verfügbarkeit von Leadesk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir betreiben Leadesk nach bestem Bemühen (Best-Effort) auf EU-Infrastruktur, ohne vertraglich garantierte Uptime-SLA. Details dazu in unseren AGB."
+      }
     }
   ]
 }
@@ -152,13 +489,80 @@
     <div class="eyebrow center">FAQ</div>
     <h2 class="big">Häufige Fragen.</h2>
   </div>
-  <div class="wrap faq reveal">
-    <details open><summary>Wie starte ich mit Leadesk?</summary><p>Registrieren, 3 Tage kostenlos mit vollem Funktionsumfang testen und die Chrome-Extension installieren. Danach führt dich die Onboarding-Tour durch die App.</p></details>
-    <details><summary>Wie installiere ich die Chrome-Extension?</summary><p>Über den Chrome Web Store hinzufügen und einmal mit Leadesk verbinden. Details auf der <a href="chrome-extension.html" style="color:var(--cyan-mid)">Extension-Seite</a>.</p></details>
-    <details><summary>Was sind Credits und was kosten sie?</summary><p>Jede KI-Aktion verbraucht Credits. Ein Credit entspricht etwa $0,001 echter API-Kosten. Alle Details auf der <a href="preise.html" style="color:var(--cyan-mid)">Preise-Seite</a>.</p></details>
-    <details><summary>Sind meine Daten sicher?</summary><p>Ja — EU-Hosting, DSGVO-konform, Row-Level-Security. Mehr auf der <a href="sicherheit.html" style="color:var(--cyan-mid)">Sicherheits-Seite</a>.</p></details>
-    <details><summary>Wie kündige ich?</summary><p>Direkt in den Einstellungen mit einem Klick. Monatsabos zum Monatsende, Jahresabos zum Jahresende.</p></details>
-  </div>
+  <div class="wrap faq-nav reveal">
+    <a href="#faq-start">Erste Schritte &amp; Testphase</a>
+    <a href="#faq-preise">Pläne, Preise &amp; Abrechnung</a>
+    <a href="#faq-linkedin">LinkedIn-Modul &amp; Automatisierung</a>
+    <a href="#faq-crm">CRM</a>
+    <a href="#faq-content">Content &amp; Brand Voice</a>
+    <a href="#faq-sicherheit">Sicherheit &amp; Datenschutz</a>
+    <a href="#faq-team">Team, Agenturen &amp; Whitelabel</a>
+    <a href="#faq-technik">Technisches, App &amp; Integrationen</a>
+    </div>
+    <div class="wrap faq reveal" id="faq-start">
+    <div class="faq-cat">Erste Schritte &amp; Testphase</div>
+    <details open><summary>Wie starte ich mit Leadesk?</summary><p>Registrieren und 3 Tage kostenlos mit komplettem All-In-Funktionsumfang testen — inklusive Premium-AI-Modellen, 500 Credits und 5 GB Speicher. Danach die Chrome-Extension installieren und die Onboarding-Tour durch die App folgen.</p></details>
+    <details><summary>Brauche ich eine Kreditkarte für die Testphase?</summary><p>Nein. Die 3-Tage-Testphase startet ohne Kreditkarte und ohne automatische Verlängerung.</p></details>
+    <details><summary>Was passiert nach den 3 Testtagen?</summary><p>Du wechselst automatisch auf den dauerhaft kostenlosen Free-Plan: 100 Credits einmalig, 1 GB Speicher, alle Standard-Funktionen (CRM, LinkedIn, Brand Voice, Content, Reporting), LinkedIn-Posting auf 1 Post/Monat begrenzt, keine Premium-AI. Oder du wählst direkt einen kostenpflichtigen Plan — eine automatische Abrechnung findet ohne deine aktive Auswahl nicht statt.</p></details>
+    <details><summary>Wie installiere ich die Chrome-Extension?</summary><p>Kostenlos über den Chrome Web Store hinzufügen und einmal mit deinem Leadesk-Konto verbinden. Details auf der <a href="chrome-extension.html" style="color:var(--cyan-mid)">Extension-Seite</a>.</p></details>
+    <details><summary>Ist Leadesk auch für Privatpersonen geeignet?</summary><p>Nein. Leadesk richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB — Verbraucher im Sinne des § 13 BGB sind laut unseren <a href="agb.html" style="color:var(--cyan-mid)">AGB</a> vom Angebot ausgeschlossen.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-preise">
+    <div class="faq-cat">Pläne, Preise &amp; Abrechnung</div>
+    <details><summary>Welche Pläne gibt es?</summary><p>Sales (39 €/Monat), Sales Team (69 €, 2 Seats), Marketing (79 €), All-In (119 €), Marketing Team (139 €, 2 Seats), KMU (149 €, 3 Seats) sowie Customized Team ab 199 € ab 4 Seats. Alle Details auf der <a href="preise.html" style="color:var(--cyan-mid)">Preise-Seite</a>.</p></details>
+    <details><summary>Was ist der Unterschied zwischen Sales, Marketing und All-In?</summary><p>Sales umfasst das komplette LinkedIn-Modul plus volles CRM, aber kein Content-Modul. Marketing umfasst das komplette Content-Modul, aber kein CRM und kein LinkedIn-Modul. All-In vereint alle drei Bereiche — LinkedIn, CRM und Content — in einer Lizenz.</p></details>
+    <details><summary>Was sind Credits und was kosten sie?</summary><p>Jede KI-Aktion verbraucht Credits — transparent, ohne versteckte Limits. Ein Credit entspricht etwa $0,001 unserer echten Provider-API-Kosten, zum Beispiel rund 6 Credits für eine LinkedIn-Vernetzungsnachricht oder rund 32 Credits für einen vollen Post.</p></details>
+    <details><summary>Was passiert, wenn meine Credits aufgebraucht sind?</summary><p>Du bekommst bei 80 % Verbrauch eine Warnung. Bei 100 % pausieren die KI-Funktionen — CRM, LinkedIn-Anzeige und alle nicht-KI-Funktionen bleiben verfügbar. Du kannst sofort ein Top-up kaufen (ab 6 € für 1.000 Credits) oder bis zum nächsten Monatsersten warten, wenn die Plan-Credits zurücksetzen.</p></details>
+    <details><summary>Wie funktioniert der Team-Preis-Konfigurator?</summary><p>Statt fester Pakete stellst du dir deinen Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort live angezeigt. Du schickst die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein.</p></details>
+    <details><summary>Kann ich jederzeit zwischen Plänen wechseln?</summary><p>Ja. Upgrades wirken sofort, die Differenz wird tagesgenau berechnet. Downgrades gelten ab der nächsten Abrechnungsperiode — deine Daten bleiben in jedem Fall erhalten.</p></details>
+    <details><summary>Was spare ich bei jährlicher Zahlung?</summary><p>20 % gegenüber monatlicher Zahlung. Die Rechnung kommt einmal pro Jahr, kündbar zum Jahresende.</p></details>
+    <details><summary>Wie kündige ich?</summary><p>Direkt in den Kontoeinstellungen mit einem Klick — ohne Kontakt zum Support nötig. Monatsabos enden zum Monatsende, Jahresabos zum Jahresende.</p></details>
+    <details><summary>Bekomme ich eine Rechnung für die Buchhaltung?</summary><p>Ja, automatisch als PDF per E-Mail — USt-ausweisbar, mit Firmenadresse und Steuernummer. Für EU-Unternehmen mit gültiger USt-ID stellen wir Reverse-Charge aus. Die Abrechnung läuft über Stripe.</p></details>
+    <details><summary>Gibt es Rabatte für Non-Profits oder Startups?</summary><p>Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns dazu einfach an <a href="mailto:support@leadesk.de" style="color:var(--cyan-mid)">support@leadesk.de</a>.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-linkedin">
+    <div class="faq-cat">LinkedIn-Modul &amp; Automatisierung</div>
+    <details><summary>Was bedeutet „1 LinkedIn-Vernetzungsanfrage pro Lizenz“?</summary><p>Jede Lizenz mit LinkedIn-Modul (Sales, All-In) ist auf eine LinkedIn-Vernetzungsanfrage begrenzt — das schützt dein LinkedIn-Konto vor Spam-Mustern und Einschränkungen durch LinkedIn selbst.</p></details>
+    <details><summary>Nutzt Leadesk einen Bot oder fremde Server für LinkedIn?</summary><p>Nein. Die Chrome-Extension läuft direkt in deinem eigenen Browser und deiner eigenen, ganz regulären LinkedIn-Session — kein Scraping über fremde Server.</p></details>
+    <details><summary>Wer trägt das Risiko, wenn LinkedIn mein Konto einschränkt?</summary><p>Einschränkungen oder Sperren durch LinkedIn oder Instagram liegen laut unseren <a href="agb.html" style="color:var(--cyan-mid)">AGB</a> im eigenen Risikobereich des Kunden — wir bauen die 1-Anfrage-Begrenzung und weitere Schutzmechanismen genau deshalb bewusst konservativ.</p></details>
+    <details><summary>Funktioniert Leadesk mit dem LinkedIn Sales Navigator?</summary><p>Ja. Sales Navigator- und Classic-Suche sind Teil des LinkedIn-Moduls, und Leads aus dem Sales Navigator landen automatisch — inklusive Deduplizierung gegen bereits archivierte Kontakte — in deiner Import-Inbox.</p></details>
+    <details><summary>Kann ich LinkedIn und Instagram aus einem Redaktionsplan heraus bespielen?</summary><p>Ja. Ein Redaktionsplan für alle Kanäle — Beiträge werden dort freigegeben und direkt auf LinkedIn und Instagram veröffentlicht.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-crm">
+    <div class="faq-cat">CRM</div>
+    <details><summary>Was kann das CRM?</summary><p>Kontakte und Unternehmen verwalten, Pipeline, Aufgaben, KI-gestütztes Lead-Scoring und Reporting — alles im Sales- und All-In-Plan enthalten.</p></details>
+    <details><summary>Ist die Anzahl an Kontakten im CRM begrenzt?</summary><p>Im Sales-Plan sind es 250 Unternehmen und 1.000 Kontakte. Im All-In-Plan sind die CRM-Datensätze unbegrenzt.</p></details>
+    <details><summary>Ist das CRM auch mobil nutzbar?</summary><p>Ja, über die kostenlose Leadesk-App für iOS, iPadOS und macOS — mit denselben Berechtigungen wie in der Web-App.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-content">
+    <div class="faq-cat">Content &amp; Brand Voice</div>
+    <details><summary>Was ist der Unterschied zwischen Personal Brand und Company Brand?</summary><p>Beide sind in jedem Content-Plan ohne Zähl-Limit enthalten — du kannst Personal Brand und Company Brand nebeneinander pflegen, ohne dafür eine bestimmte Anzahl an „Brand Voices“ zu buchen.</p></details>
+    <details><summary>Was gehört zum Content-Modul?</summary><p>Dokumenten-Editor, Visual Builder für KI-Bilder in Markenfarben, eine Wissensdatenbank als Kontext für jede Generierung, Zielgruppen-Profile sowie Ideen-Generator und Redaktionsplan für LinkedIn und Instagram.</p></details>
+    <details><summary>Welche KI-Modelle stehen mir zur Verfügung?</summary><p>Standard-Modelle sind in jeder Lizenz enthalten. Premium-Modelle (Claude Opus, GPT-5, Gemini 2.5 Pro) sind im Marketing- und All-In-Plan inkludiert, im Sales-Plan als Add-on für +15 €/Monat buchbar. Premium-Bildmodelle sind dem All-In-Plan vorbehalten. Du kannst deinen bevorzugten Anbieter selbst wählen.</p></details>
+    <details><summary>Was macht Leadly?</summary><p>Leadly ist dein KI-Agent: Er liest Pipeline, Redaktionsplan und LinkedIn-Aktivität und bereitet täglich Vorschläge auf. Wichtigste Regel: Nichts wird ohne deine Freigabe abgeschickt — Leadly liefert nur Entwürfe.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-sicherheit">
+    <div class="faq-cat">Sicherheit &amp; Datenschutz</div>
+    <details><summary>Sind meine Daten bei Leadesk sicher?</summary><p>Ja — EU-Hosting, durchgehend DSGVO-konform und Row-Level-Security auf Datenbankebene. Mehr Details auf der <a href="sicherheit.html" style="color:var(--cyan-mid)">Sicherheits-Seite</a>.</p></details>
+    <details><summary>Verwendet die Leadesk-Website Cookies oder Tracking?</summary><p>Nein. Die Website selbst nutzt keine Cookies, kein Analyse- oder Tracking-Tool und keine Drittanbieter-Skripte — Schriftarten werden lokal ausgeliefert.</p></details>
+    <details><summary>Verwendet die Leadesk-App Cookies?</summary><p>Die Anwendung nutzt ausschließlich technisch notwendige Cookies bzw. lokalen Speicher, etwa für deine Login-Sitzung. Dafür ist nach § 25 Abs. 2 TDDDG keine Einwilligung erforderlich.</p></details>
+    <details><summary>Ist Leadesk ISO-27001-zertifiziert?</summary><p>Noch nicht — unser Informationssicherheits-Managementsystem (ISMS) befindet sich aktuell in Vorbereitung.</p></details>
+    <details><summary>Wem gehören meine Daten und kann ich sie exportieren?</summary><p>Deine Daten gehören dir. Export-Funktionen stehen jederzeit zur Verfügung, und nach Vertragsende werden Daten gemäß unserem <a href="av-vertrag.html" style="color:var(--cyan-mid)">AV-Vertrag</a> für eine angemessene Frist zum Export vorgehalten und danach gelöscht.</p></details>
+    <details><summary>Schließt ihr einen Auftragsverarbeitungsvertrag (AVV) ab?</summary><p>Ja, jederzeit auf Anfrage über <a href="mailto:datenschutz@leadesk.de" style="color:var(--cyan-mid)">datenschutz@leadesk.de</a>. Details im <a href="av-vertrag.html" style="color:var(--cyan-mid)">AV-Vertrag</a>.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-team">
+    <div class="faq-cat">Team, Agenturen &amp; Whitelabel</div>
+    <details><summary>Ab wie vielen Seats gibt es ein individuelles Angebot?</summary><p>Ab 4 Seats greift die Customized-Team-Stufe ab 199 €/Monat — der genaue Preis hängt vom gewählten Seat-Mix ab und wird über den Team-Preis-Konfigurator ermittelt.</p></details>
+    <details><summary>Was ist Whitelabel bei Leadesk?</summary><p>Agenturen können Leadesk unter eigener Marke, eigener Farbe und eigener Subdomain pro Endkunde ausliefern.</p></details>
+    <details><summary>Kann ich mehrere Marken oder Kunden getrennt verwalten?</summary><p>Ja — im Team- bzw. Agentur-Kontext lassen sich Marken und Kunden getrennt führen, in der mobilen App direkt inklusive Team-Wechsel.</p></details>
+    </div>
+    <div class="wrap faq reveal" id="faq-technik">
+    <div class="faq-cat">Technisches, App &amp; Integrationen</div>
+    <details><summary>Gibt es eine mobile App?</summary><p>Ja, kostenlos für iOS 16+, iPadOS, macOS (Apple Silicon) und visionOS — mit CRM, Content-Werkstatt (derselben Brand Voice wie im Web) und Leadly unterwegs. Aktuell ohne Android-Unterstützung.</p></details>
+    <details><summary>Welche Integrationen bietet Leadesk?</summary><p>LinkedIn über die Chrome-Extension, Instagram über die Growth-Suite-Partner-API, Wix per Webhook-Lead-Erfassung, Stripe und sevDesk für Abrechnung/Buchhaltung sowie eine öffentliche REST-API. Details auf der <a href="integrationen.html" style="color:var(--cyan-mid)">Integrationen-Seite</a>.</p></details>
+    <details><summary>Gibt es eine öffentliche API?</summary><p>Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Die vollständige Referenz inklusive Rate-Limits bekommst du auf Anfrage über <a href="mailto:support@leadesk.de" style="color:var(--cyan-mid)">support@leadesk.de</a> — ein Auszug steht auf der <a href="api-docs.html" style="color:var(--cyan-mid)">API-Docs-Seite</a>.</p></details>
+    <details><summary>Wie zuverlässig ist die Verfügbarkeit von Leadesk?</summary><p>Wir betreiben Leadesk nach bestem Bemühen (Best-Effort) auf EU-Infrastruktur, ohne vertraglich garantierte Uptime-SLA. Details dazu in unseren <a href="agb.html" style="color:var(--cyan-mid)">AGB</a>.</p></details>
+    </div>
 </section>
 
 <section class="pad">

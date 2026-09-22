@@ -98,12 +98,12 @@
   #tbBack[hidden],#tbNext[hidden]{display:none}
 
   /* ---- Info-Icon je Seat + Overlay mit Plan-Details ---- */
-  .tb-name-row{display:flex;align-items:center;gap:7px}
+  .tb-name-row{display:flex;align-items:center;gap:8px}
   .tb-info .tb-name-row b{display:inline;font-size:15px;color:var(--ink)}
-  .tb-infobtn{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--muted);background:#fff;color:var(--muted);
-    font-size:11px;font-weight:800;line-height:1;display:inline-flex;align-items:center;justify-content:center;
-    cursor:pointer;padding:0;flex:0 0 auto;transition:border-color .2s var(--ease),color .2s var(--ease)}
-  .tb-infobtn:hover,.tb-infobtn:focus-visible{border-color:var(--cyan);color:var(--cyan-mid)}
+  .tb-infobtn{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg-soft);color:var(--muted);
+    font-size:10.5px;font-weight:800;line-height:1;display:inline-flex;align-items:center;justify-content:center;
+    cursor:pointer;padding:0;flex:0 0 auto;margin-left:6px;transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
+  .tb-infobtn:hover,.tb-infobtn:focus-visible{border-color:var(--cyan);color:var(--cyan-mid);background:#fff}
 
   .tb-modal-backdrop{position:fixed;inset:0;background:rgba(14,22,51,.55);display:flex;align-items:center;
     justify-content:center;padding:20px;z-index:300;opacity:0;visibility:hidden;transition:opacity .2s var(--ease)}

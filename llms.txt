@@ -1,0 +1,63 @@
+# Leadesk
+
+> Leadesk ist eine KI-Suite für Marketing und Vertrieb aus Deutschland. Sie bündelt LinkedIn, Instagram, Content, CRM und Projektumsetzung in einer App, mit Leadly als KI-Agent, der Vorschläge vorbereitet und nur nach Freigabe handelt. Hosting in Deutschland, DSGVO-konform.
+
+## Produkt
+
+- [Leadesk – KI-Suite für Marketing und Vertrieb](https://www.leadesk.de/): Leadesk bündelt LinkedIn, Instagram, Content, CRM und Delivery in einer App — mit Leadly, dem KI-Agenten, der morgens schon für dich gearbeitet hat.
+- [Funktionen](https://www.leadesk.de/funktionen.html): Alle Module von Leadesk auf einen Blick: Leadly, LinkedIn, Content, Instagram, CRM, Projekte und Reporting — in einer Suite.
+- [Leadly — Der KI-Agent](https://www.leadesk.de/leadly.html): Leadly denkt in deiner Pipeline mit, bereitet die nächsten Züge vor und wartet auf dein Go. Nichts wird abgeschickt ohne deine Freigabe.
+- [LinkedIn-Automatisierung & Sales Navigator](https://www.leadesk.de/linkedin.html): Dein LinkedIn-Vertrieb in einer App: Lead-Suche mit Sales Navigator, Cloud-Kampagnen, KI-Nachrichten, Auto-Engagement, Profil-Checker und SSI-Analyse — sicher und persönlich.
+- [Instagram-Suite: Postfach, CRM & Publishing](https://www.leadesk.de/instagram.html): Instagram in Leadesk: DMs und Kommentare in einem Postfach, Gesprächspartner als CRM-Kontakt, neue Follower im Blick und Publishing aus dem Redaktionsplan.
+- [Content-Werkstatt, Editor & Visual Builder](https://www.leadesk.de/content.html): Dokumenten-Editor, Visual Builder, Personal- und Company-Brand-Voice und Wissensdatenbank — KI-Content, der nach dir klingt und aussieht.
+- [CRM: Kontakte, Deals, Aufgaben & Reporting](https://www.leadesk.de/crm.html): Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort.
+- [Projektumsetzung & Delivery](https://www.leadesk.de/projekte.html): Vom Abschluss zur Auslieferung — ohne Tool-Wechsel. Projekte, Zeiterfassung, Anhänge und Rechnungen mit sevDesk-Anbindung.
+- [Reporting & SSI](https://www.leadesk.de/reporting.html): Zahlen, die du morgens verstehst: Aktivitäts- und Conversion-Reports plus SSI-Tracker für deinen LinkedIn Social Selling Index.
+- [KI in Leadesk](https://www.leadesk.de/ki.html): Multi-Provider-KI (Anthropic, OpenAI, Google, Mistral), transparent per Credits — plus KI-Sichtbarkeit: wie gut wirst du in ChatGPT, Claude & Co. gefunden?
+- [Leadesk App: CRM, Content & Leadly mobil](https://www.leadesk.de/app.html): Leadesk als App für iPhone, iPad, Mac und Vision Pro: CRM, Content-Werkstatt und Leadly, dein KI-Agent — jetzt auch mobil. Kostenlos im App Store.
+- [Chrome-Extension](https://www.leadesk.de/chrome-extension.html): Die Leadesk-Extension führt LinkedIn-Aktionen direkt in deinem Browser aus — sicher in deiner Session, kein Scraping über fremde Server.
+- [Integrationen](https://www.leadesk.de/integrationen.html): Leadesk arbeitet mit den Tools, die du schon nutzt: LinkedIn, Instagram, Stripe, sevDesk, Wix und den führenden KI-Anbietern.
+- [API-Dokumentation](https://www.leadesk.de/api-docs.html): Die Leadesk Public API v1: REST-Zugriff auf Kontakte, Unternehmen, Deals, Content und Reports — team-scoped, per API-Key oder OAuth2.
+
+## Anwendungen
+
+- [Leadesk für Sales: Outbound, Pipeline & Abschluss](https://www.leadesk.de/sales.html): Vom ersten LinkedIn-Kontakt bis zum Abschluss — an einem Ort. Sales Navigator, Sequenzen, KI-Lead-Score, Pipeline, Aufgaben und Forecast. Weniger Tools, mehr Abschlüsse.
+- [Leadesk für Marketing: Content, Kanäle & Reichweite](https://www.leadesk.de/marketing.html): Ein Cockpit für Content, Kanäle und Marke: Content-Studio mit Brand Voice, Visual Builder, Redaktionsplan für LinkedIn & Instagram, Corporate Influencer, KI-Sichtbarkeit und Analytics.
+- [Corporate Influencer: dein Team als Stimme der Marke](https://www.leadesk.de/corporate-influencer.html): Mach Mitarbeitende zu glaubwürdigen Corporate Influencern — mit eigener Brand Voice, zentralen Themen, Freigabe-Workflow, Redaktionsplan und Reichweiten-Analytics. Zentral gesteuert, ohne Chaos.
+- [Whitelabel für Agenturen](https://www.leadesk.de/agenturen.html): Deine Marke, unsere Maschine. Betreibe Leadesk unter eigenem Logo, eigener Farbe und Subdomain — mit sauberer Mandantentrennung und zentraler Kundenverwaltung.
+
+## Preise & Unternehmen
+
+- [Preise](https://www.leadesk.de/preise.html): Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.
+- [Sicherheit & Datenschutz](https://www.leadesk.de/sicherheit.html): Sicher gebaut, in Deutschland gehostet: EU-Server, DSGVO, Row-Level-Security, Audit-Trail. ISO-27001-Zertifizierung in Vorbereitung.
+- [Über uns](https://www.leadesk.de/ueber-uns.html): Warum wir Leadesk bauen: eine KI-Suite für Marketing und Vertrieb, die den ganzen Weg abdeckt — mit Kontrolle beim Menschen und Daten in Europa.
+- [Support](https://www.leadesk.de/support.html): Hilfe rund um Leadesk: Antworten auf häufige Fragen, Anleitungen und direkter Kontakt zum Support.
+- [Changelog](https://www.leadesk.de/changelog.html): Was ist neu in Leadesk? Alle Updates, Verbesserungen und Fixes an einem Ort.
+- [Kontakt & Demo](https://www.leadesk.de/kontakt.html): Buch eine Demo oder schreib uns. Wir zeigen dir Leadesk an deinem echten Use-Case.
+- [Affiliate-Programm](https://www.leadesk.de/affiliate.html): Empfiehl Leadesk und verdiene mit. Faire Provision, transparentes Tracking, monatliche Auszahlung.
+
+## Rechtliches
+
+- [Impressum](https://www.leadesk.de/impressum.html): Impressum der Leadesk UG (haftungsbeschränkt) – Anbieterkennzeichnung, Vertretung und Handelsregister-Angaben gemäß § 5 DDG.
+- [Datenschutz](https://www.leadesk.de/datenschutz.html): Datenschutzerklärung von Leadesk – verarbeitete Daten, Rechtsgrundlagen, Auftragsverarbeiter, KI-Dienste und deine Rechte nach DSGVO.
+- [AGB](https://www.leadesk.de/agb.html): Allgemeine Geschäftsbedingungen von Leadesk – Nutzung der KI-Suite für Marketing und Vertrieb: Testphase, Preise, Laufzeit und Haftung.
+- [AV-Vertrag](https://www.leadesk.de/av-vertrag.html): Auftragsverarbeitungsvertrag (AVV) von Leadesk nach Art. 28 DSGVO – technische Maßnahmen, Unterauftragsverarbeiter und Löschung.
+
+## Blog
+
+- [Instagram-DMs in Kunden verwandeln: ein Leitfaden](https://www.leadesk.de/blog/instagram-dms-kunden-gewinnen.html): Wie aus Instagram-Direktnachrichten und Kommentaren echte Anfragen werden: schnell antworten, Gespräche sauber führen und Kontakte ins CRM übernehmen.
+- [Leadesk vs. Waalaxy: der ehrliche Vergleich (2026)](https://www.leadesk.de/blog/leadesk-vs-waalaxy.html): Leadesk vs. Waalaxy im fairen Vergleich: Funktionen, Preise, Fokus und für wen sich welches Tool eignet. Fokussiertes Outreach oder All-in-one-Suite?
+- [Leadgenerierung über LinkedIn: Strategie für B2B](https://www.leadesk.de/blog/leadgenerierung-linkedin.html): LinkedIn-Leadgenerierung mit System: von der Zielgruppe über Content und Outreach bis zur Übergabe ins CRM — die komplette B2B-Strategie.
+- [LinkedIn-Automatisierung: rechtssicher und DSGVO-konform](https://www.leadesk.de/blog/linkedin-automatisierung-rechtssicher.html): Wie du LinkedIn-Outreach automatisierst, ohne Account-Sperre oder Datenschutz-Ärger: sichere Limits, Rechtsgrundlagen und was du beachten musst.
+- [LinkedIn erste Nachricht: 8 Vorlagen nach dem Connect](https://www.leadesk.de/blog/linkedin-erste-nachricht-vorlagen.html): Die erste Nachricht nach der Vernetzung entscheidet über die Antwort. 8 Vorlagen für den Einstieg ins Gespräch — ohne sofort zu pitchen.
+- [LinkedIn-Follow-up: wann und wie du richtig nachfasst](https://www.leadesk.de/blog/linkedin-follow-up.html): Die meisten Deals entstehen erst beim Nachfassen. So baust du eine Follow-up-Sequenz auf LinkedIn auf — mit Timing, Vorlagen und ohne zu nerven.
+- [LinkedIn „Über mich“ schreiben: Aufbau und Beispiele](https://www.leadesk.de/blog/linkedin-info-ueber-mich.html): Der Info-Text („Über mich“) ist deine Verkaufsseite. So baust du ihn auf: Hook, Problem, Ergebnis, nächster Schritt — mit Beispielen.
+- [LinkedIn-Outreach: der komplette Leitfaden für B2B (2026)](https://www.leadesk.de/blog/linkedin-outreach-leitfaden.html): LinkedIn-Outreach Schritt für Schritt: Zielgruppe finden, vernetzen, Nachrichten schreiben, nachfassen und sicher automatisieren. Der komplette Leitfaden für planbaren B2B-Vertrieb.
+- [LinkedIn-Post schreiben: Hooks, Struktur und Reichweite](https://www.leadesk.de/blog/linkedin-post-schreiben.html): So schreibst du LinkedIn-Posts, die gelesen werden: der Hook, die richtige Struktur, Formate und wie der Algorithmus Reichweite verteilt.
+- [LinkedIn-Profil optimieren: die Checkliste für mehr Anfragen (2026)](https://www.leadesk.de/blog/linkedin-profil-optimieren.html): LinkedIn-Profil optimieren mit klarer Checkliste: Foto, Banner, Slogan, Info-Text, Erfahrung, SSI. Schritt für Schritt zu einem Profil, das Anfragen in Antworten verwandelt.
+- [LinkedIn-Slogan (Headline): Formel und Beispiele](https://www.leadesk.de/blog/linkedin-slogan-headline.html): Deine LinkedIn-Headline erscheint überall. So schreibst du einen Slogan, der Klicks und Anfragen bringt — mit klarer Formel und Beispielen.
+- [LinkedIn SSI verbessern: Social Selling Index steigern](https://www.leadesk.de/blog/linkedin-ssi-verbessern.html): Was der LinkedIn SSI wirklich misst und wie du ihn gezielt steigerst — die vier Bausteine, konkrete Hebel und warum der Wert als Frühindikator taugt.
+- [LinkedIn-Vernetzungsanfrage: 12 Vorlagen, die angenommen werden](https://www.leadesk.de/blog/linkedin-vernetzungsanfrage-vorlagen.html): 12 erprobte Vorlagen für die LinkedIn-Vernetzungsanfrage — für jede Situation, plus die Prinzipien einer guten Notiz und die häufigsten Fehler. Direkt anwendbar.
+- [Sales Navigator: Guide für gezielte Lead-Suche](https://www.leadesk.de/blog/sales-navigator-guide.html): LinkedIn Sales Navigator richtig nutzen: Filter, gespeicherte Suchen und wie du daraus eine saubere Prospect-Liste für dein Outreach machst.
+- [Social Selling: was es ist und wie es funktioniert](https://www.leadesk.de/blog/social-selling.html): Social Selling einfach erklärt: Definition, warum es im B2B funktioniert und wie du es in vier Schritten aufbaust — mit LinkedIn im Zentrum.
+- [Waalaxy-Alternative: worauf es ankommt + Leadesk im Überblick (2026)](https://www.leadesk.de/blog/waalaxy-alternative.html): Auf der Suche nach einer Waalaxy-Alternative? Worauf du achten solltest — und warum Leadesk als All-in-one-Suite für LinkedIn, Content, CRM und mehr eine starke Alternative ist.

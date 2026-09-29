@@ -73,7 +73,7 @@ body.nav-locked{overflow:hidden}
 .gal-dots button.on{background:var(--grad);transform:scale(1.35)}
 
 /* ---------- 7) Segmentierte Zielgruppen-Tabs (nutzt bestehendes .seg) ---------- */
-.persona-tabs .seg{margin-bottom:28px}
+.persona-tabs .seg{margin-bottom:28px;max-width:100%;flex-wrap:wrap}
 .persona-panels{position:relative}
 .persona-panel{display:none;background:#fff;border:1px solid var(--border);border-radius:var(--radius);
   padding:36px;box-shadow:var(--shadow);border-top:3px solid var(--acc,var(--navy))}

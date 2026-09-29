@@ -60,6 +60,48 @@
           "item": "https://www.leadesk.de/integrationen.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.leadesk.de/integrationen.html#faq",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/integrationen.html#webpage"
+      },
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie wird LinkedIn angebunden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Über die Leadesk-Chrome-Extension: Vernetzung, Nachrichten und Sales Navigator laufen über deine eigene LinkedIn-Session, Kampagnen zusätzlich serverseitig in der Cloud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird Instagram angebunden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du verbindest dein Konto einmal unter Einstellungen → Instagram. Postfach, Veröffentlichen und Analysen laufen danach über denselben Anschluss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Leads von meiner Website übernehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Für Wix gibt es eine Lead-Erfassung per Webhook, die Anfragen direkt ins CRM schreibt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es eine öffentliche API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Einen Auszug findest du in den API-Docs, die vollständige Referenz gibt es auf Anfrage."
+          }
+        }
+      ]
     }
   ]
 }
@@ -152,20 +194,33 @@
   <div class="wrap center-head reveal"><div class="eyebrow center">Billing & Buchhaltung</div><h2 class="big">Vom Deal zur Rechnung.</h2></div>
   <div class="wrap grid3">
     <div class="card reveal" style="--acc:#635BFF;--accbg:#eeedff"><div class="ic">💳</div><h3>Stripe</h3><p>Subscription-Billing und Zahlungen — sicher und automatisiert.</p></div>
-    <div class="card reveal d1" style="--acc:var(--success);--accbg:#e4f6ee"><div class="ic">🧾</div><h3>sevDesk</h3><p>Deutsche Buchhaltung: Rechnungen fließen direkt aus der Projektumsetzung.</p></div>
+    <div class="card reveal d1" style="--acc:var(--success);--accbg:#e4f6ee"><div class="ic">🧾</div><h3>sevDesk</h3><p>Deutsche Buchhaltung: Rechnungen fließen direkt aus der <a href="projekte.html" style="color:var(--cyan-mid)">Projektumsetzung</a>.</p></div>
     <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🔌</div><h3>Public API</h3><p>Eigene Anbindungen über die REST-API — siehe <a href="api-docs.html" style="color:var(--cyan-mid)">API-Docs</a>.</p></div>
   </div>
 </section>
 
 <section class="pad">
   <div class="wrap center-head reveal"><div class="eyebrow center">KI-Anbieter</div><h2 class="big">Die besten Modelle, integriert.</h2></div>
-  <div class="wrap grid2" style="grid-template-columns:repeat(4,1fr)">
+  <div class="wrap grid4">
     <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🅰️</div><h3>Anthropic</h3><p>Claude Opus & Sonnet.</p></div>
     <div class="card reveal d1" style="--acc:var(--success);--accbg:#e4f6ee"><div class="ic">🧠</div><h3>OpenAI</h3><p>GPT-5 & Bild-Modelle.</p></div>
     <div class="card reveal d2" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic">🔷</div><h3>Google</h3><p>Gemini 2.5 Pro.</p></div>
     <div class="card reveal d3" style="--acc:var(--orange);--accbg:#fdefe4"><div class="ic">🌬️</div><h3>Mistral</h3><p>Schnelle EU-Modelle.</p></div>
   </div>
   <div class="wrap" style="text-align:center;margin-top:16px"><a class="btn btn-ghost" href="ki.html">Mehr zur KI →</a></div>
+</section>
+
+<section class="pad">
+  <div class="wrap center-head reveal" style="margin-bottom:24px">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="big">Fragen zu <span class="grad-text">Integrationen.</span></h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open><summary>Wie wird LinkedIn angebunden?</summary><p>Über die Leadesk-Chrome-Extension: Vernetzung, Nachrichten und Sales Navigator laufen über deine eigene LinkedIn-Session, Kampagnen zusätzlich serverseitig in der Cloud.</p></details>
+    <details><summary>Wie wird Instagram angebunden?</summary><p>Du verbindest dein Konto einmal unter Einstellungen → Instagram. Postfach, Veröffentlichen und Analysen laufen danach über denselben Anschluss.</p></details>
+    <details><summary>Kann ich Leads von meiner Website übernehmen?</summary><p>Ja. Für Wix gibt es eine Lead-Erfassung per Webhook, die Anfragen direkt ins CRM schreibt.</p></details>
+    <details><summary>Gibt es eine öffentliche API?</summary><p>Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Einen Auszug findest du in den API-Docs, die vollständige Referenz gibt es auf Anfrage.</p></details>
+  </div>
 </section>
 
 <section class="pad soft">

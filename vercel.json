@@ -1,8 +1,225 @@
 {
   "redirects": [
-    { "source": "/datenschutz", "destination": "/datenschutz.html", "permanent": false },
-    { "source": "/agb",         "destination": "/agb.html",         "permanent": false },
-    { "source": "/impressum",   "destination": "/impressum.html",   "permanent": false }
+    {
+      "source": "/datenschutz",
+      "destination": "/datenschutz.html",
+      "permanent": true
+    },
+    {
+      "source": "/agb",
+      "destination": "/agb.html",
+      "permanent": true
+    },
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html",
+      "permanent": true
+    },
+    {
+      "source": "/affiliate",
+      "destination": "/affiliate.html",
+      "permanent": true
+    },
+    {
+      "source": "/agenturen",
+      "destination": "/agenturen.html",
+      "permanent": true
+    },
+    {
+      "source": "/api-docs",
+      "destination": "/api-docs.html",
+      "permanent": true
+    },
+    {
+      "source": "/app",
+      "destination": "/app.html",
+      "permanent": true
+    },
+    {
+      "source": "/av-vertrag",
+      "destination": "/av-vertrag.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/instagram-dms-kunden-gewinnen",
+      "destination": "/blog/instagram-dms-kunden-gewinnen.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/leadesk-vs-waalaxy",
+      "destination": "/blog/leadesk-vs-waalaxy.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/leadgenerierung-linkedin",
+      "destination": "/blog/leadgenerierung-linkedin.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-automatisierung-rechtssicher",
+      "destination": "/blog/linkedin-automatisierung-rechtssicher.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-erste-nachricht-vorlagen",
+      "destination": "/blog/linkedin-erste-nachricht-vorlagen.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-follow-up",
+      "destination": "/blog/linkedin-follow-up.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-info-ueber-mich",
+      "destination": "/blog/linkedin-info-ueber-mich.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-outreach-leitfaden",
+      "destination": "/blog/linkedin-outreach-leitfaden.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-post-schreiben",
+      "destination": "/blog/linkedin-post-schreiben.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-profil-optimieren",
+      "destination": "/blog/linkedin-profil-optimieren.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-slogan-headline",
+      "destination": "/blog/linkedin-slogan-headline.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-ssi-verbessern",
+      "destination": "/blog/linkedin-ssi-verbessern.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/linkedin-vernetzungsanfrage-vorlagen",
+      "destination": "/blog/linkedin-vernetzungsanfrage-vorlagen.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sales-navigator-guide",
+      "destination": "/blog/sales-navigator-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/social-selling",
+      "destination": "/blog/social-selling.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/waalaxy-alternative",
+      "destination": "/blog/waalaxy-alternative.html",
+      "permanent": true
+    },
+    {
+      "source": "/changelog",
+      "destination": "/changelog.html",
+      "permanent": true
+    },
+    {
+      "source": "/chrome-extension",
+      "destination": "/chrome-extension.html",
+      "permanent": true
+    },
+    {
+      "source": "/content",
+      "destination": "/content.html",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-influencer",
+      "destination": "/corporate-influencer.html",
+      "permanent": true
+    },
+    {
+      "source": "/crm",
+      "destination": "/crm.html",
+      "permanent": true
+    },
+    {
+      "source": "/funktionen",
+      "destination": "/funktionen.html",
+      "permanent": true
+    },
+    {
+      "source": "/instagram",
+      "destination": "/instagram.html",
+      "permanent": true
+    },
+    {
+      "source": "/integrationen",
+      "destination": "/integrationen.html",
+      "permanent": true
+    },
+    {
+      "source": "/ki",
+      "destination": "/ki.html",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/kontakt.html",
+      "permanent": true
+    },
+    {
+      "source": "/leadly",
+      "destination": "/leadly.html",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin",
+      "destination": "/linkedin.html",
+      "permanent": true
+    },
+    {
+      "source": "/marketing",
+      "destination": "/marketing.html",
+      "permanent": true
+    },
+    {
+      "source": "/preise",
+      "destination": "/preise.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte",
+      "destination": "/projekte.html",
+      "permanent": true
+    },
+    {
+      "source": "/reporting",
+      "destination": "/reporting.html",
+      "permanent": true
+    },
+    {
+      "source": "/sales",
+      "destination": "/sales.html",
+      "permanent": true
+    },
+    {
+      "source": "/sicherheit",
+      "destination": "/sicherheit.html",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-uns",
+      "destination": "/ueber-uns.html",
+      "permanent": true
+    }
   ],
   "headers": [
     {

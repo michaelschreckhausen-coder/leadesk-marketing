@@ -145,6 +145,26 @@ body.nav-locked{overflow:hidden}
    das Karussell scrollt weiterhin intern. */
 .split > * { min-width: 0 }
 
+/* ---------- 12) Affiliate: Download-Karten fuer Vertriebsunterlagen (#unterlagen) ----------
+   Vorschaubild links, Text rechts; ab 860px untereinander. Nur Variablen aus leadesk.css. */
+.dl-group{font-size:15px;font-weight:700;color:var(--navy);margin:40px 0 14px}
+.dl-group:first-child{margin-top:0}
+.dl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.dl-card{display:flex;gap:18px;align-items:stretch;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);color:var(--ink);text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.dl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.dl-card:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.dl-card img{flex:0 0 112px;width:112px;height:auto;align-self:flex-start;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.dl-body{display:flex;flex-direction:column;gap:5px;min-width:0}
+.dl-no{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan-mid)}
+.dl-title{font-size:17px;font-weight:700;line-height:1.3}
+.dl-text{font-size:14.5px;color:var(--muted);line-height:1.5}
+.dl-meta{margin-top:auto;padding-top:8px;font-size:13px;font-weight:600;color:var(--navy)}
+.dl-meta::after{content:"  \2193 Herunterladen";color:var(--cyan-mid)}
+.dl-note{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+@media(max-width:860px){.dl-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){.dl-card img{flex-basis:84px;width:84px}}
+@media(prefers-reduced-motion:reduce){.dl-card,.dl-card:hover{transition:none;transform:none}}
+
 @media(prefers-reduced-motion:reduce){
   .word-reveal .w{opacity:1!important}
 }

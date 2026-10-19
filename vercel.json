@@ -206,6 +206,11 @@
       "permanent": true
     },
     {
+      "source": "/services",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
       "source": "/sicherheit",
       "destination": "/sicherheit.html",
       "permanent": true

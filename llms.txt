@@ -26,6 +26,26 @@
 - [Corporate Influencer: dein Team als Stimme der Marke](https://www.leadesk.de/corporate-influencer.html): Mach Mitarbeitende zu glaubwürdigen Corporate Influencern — mit eigener Brand Voice, zentralen Themen, Freigabe-Workflow, Redaktionsplan und Reichweiten-Analytics. Zentral gesteuert, ohne Chaos.
 - [Whitelabel für Agenturen](https://www.leadesk.de/agenturen.html): Deine Marke, unsere Maschine. Betreibe Leadesk unter eigenem Logo, eigener Farbe und Subdomain — mit sauberer Mandantentrennung und zentraler Kundenverwaltung.
 
+## Services
+
+- [Services: Onboarding, Strategie & Workshops](https://www.leadesk.de/services.html): Onboarding, Vertriebsstrategie, LinkedIn-Workshops und digitale Sprechstunden: Das Leadesk-Team bringt dich und dein Team schneller zu Ergebnissen.
+- [Quickstart-Onboarding](https://www.leadesk.de/services/quickstart-onboarding.html): Quickstart-Onboarding für Leadesk: In 60 Minuten 1:1 von null zur laufenden LinkedIn-Kampagne und den ersten geplanten Posts. Im All-In- und Team-Plan inklusive.
+- [Team-Onboarding](https://www.leadesk.de/services/team-onboarding.html): Team-Onboarding für Leadesk: In drei Sessions über zwei Wochen richtet dein ganzes Team Leadesk ein, mit Rollen, Sequenzen, Content-Plan und gemeinsamem Reporting.
+- [Wechsel- & Integrationsservice](https://www.leadesk.de/services/wechsel-service.html): Wechsel zu Leadesk ohne Datenverlust: Wir übernehmen Kontakte, Kampagnen und Notizen aus Waalaxy, Lemlist, Expandi oder Excel und binden deine Tools an.
+- [Social-Selling-Audit](https://www.leadesk.de/services/social-selling-audit.html): Social-Selling-Audit: Analyse von LinkedIn-Profil, Netzwerk und Aktivität der letzten 90 Tage mit zehn priorisierten Maßnahmen und 45 Minuten Besprechung.
+- [KI-Sichtbarkeits-Check](https://www.leadesk.de/services/ki-sichtbarkeits-check.html): KI-Sichtbarkeits-Check: Wir testen, ob ChatGPT, Perplexity, Gemini und Google AI Overviews dein Unternehmen bei Kundenfragen nennen, im Vergleich zu drei Wettbewerbern.
+- [Content-Strategie](https://www.leadesk.de/services/content-strategie.html): Workshop Content-Strategie: Positionierung, Themensäulen und Formate für LinkedIn und Instagram. Ergebnis ist ein Redaktionsplan für drei Monate in Leadesk.
+- [Vertriebsstrategie](https://www.leadesk.de/services/vertriebsstrategie-workshop.html): Workshop Vertriebsstrategie für LinkedIn: Zielkunden, Personas, Botschaften, Pipeline im CRM und zwei startklare Outreach-Sequenzen mit Leadly.
+- [LinkedIn-Workshop](https://www.leadesk.de/services/linkedin-workshop.html): LinkedIn-Workshop für Teams: Social Selling, Buyer Journey, Algorithmus, Profil-Optimierung, Netzwerkaufbau, Content und persönlicher Aktionsplan. Mit LinkedIn-Weiterbildungszertifikat.
+- [Social-Selling-Workshop](https://www.leadesk.de/services/social-selling-workshop.html): Social-Selling-Workshop für Vertriebsteams: Profil als Vertriebswerkzeug, Sales Navigator, Zielkundensuche, Ansprache, Tagesroutine und eigene Lead-Listen. Mit LinkedIn-Weiterbildungszertifikat.
+- [Instagram-Workshop](https://www.leadesk.de/services/instagram-workshop.html): Instagram-Workshop für Marketing-Teams und Agenturen: Profil, Reels, Stories, DMs, Redaktionsplan und Auswertung mit der Leadesk-Instagram-Suite.
+- [Corporate-Influencer-Programm](https://www.leadesk.de/services/corporate-influencer-programm.html): Corporate-Influencer-Programm: In zehn Wochen werden 5 bis 15 Mitarbeitende zu sichtbaren Stimmen deines Unternehmens auf LinkedIn, mit Guideline, Workshop, Feedback und Reporting.
+- [Leadesk Academy](https://www.leadesk.de/services/leadesk-academy.html): Leadesk Academy: kostenlose Videokurse zu allen Leadesk-Modulen für alle Kunden, dazu die Zertifizierung Leadesk Certified mit Prüfung.
+- [Digitale Sprechstunde](https://www.leadesk.de/services/digitale-sprechstunde.html): Digitale Sprechstunde von Leadesk: jede Woche 45 Minuten live per Video, kostenlos und ohne Anmeldung für alle Kunden. Dazu buchbare 1:1-Sprechstunden.
+- [Coaching-Abo](https://www.leadesk.de/services/coaching.html): LinkedIn-Coaching-Abo: zwei 1:1-Termine pro Monat und Feedback auf Posts und Nachrichten per Chat, für Vertriebler, Gründer und Führungskräfte.
+- [Content-Service](https://www.leadesk.de/services/content-service.html): Content-Service für LinkedIn: acht Posts pro Monat, gemeinsam entwickelt aus einem kurzen Interview, mit Leadly entworfen und fertig im Kalender geplant.
+- [Managed Outreach](https://www.leadesk.de/services/managed-outreach.html): Managed Outreach: Das Leadesk-Team betreibt deine LinkedIn-Kampagnen, pflegt Lead-Listen, testet Sequenzen, qualifiziert Antworten vor und übergibt dir Termine.
+
 ## Preise & Unternehmen
 
 - [Preise](https://www.leadesk.de/preise.html): Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.

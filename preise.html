@@ -556,10 +556,13 @@
       document.querySelectorAll('.plan-group').forEach(function(el){ el.hidden = el.getAttribute('data-g')!==g; });
       aud.querySelectorAll('span[data-g]').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-g')===g); });
     }
+    window.LD_setBilling = setBilling;
     function setBilling(p){
       document.querySelectorAll('.amt').forEach(function(a){
         var mo=parseFloat(a.getAttribute('data-mo'));
-        a.textContent = p==='yr' ? Math.round(mo*0.8) : mo;
+        var jr=(window.LD_JAHRESRABATT==null?20:window.LD_JAHRESRABATT)/100;
+        var v = p==='yr' ? mo*(1-jr) : mo;
+        a.textContent = (Math.round(v*100)/100).toLocaleString('de-DE', {minimumFractionDigits: (Math.round(v*100)%100)?2:0, maximumFractionDigits:2});
       });
       document.querySelectorAll('.per').forEach(function(e){ e.textContent = p==='yr' ? ' / Monat, jährl.' : ' / Monat'; });
       bill.querySelectorAll('span[data-p]').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-p')===p); });
@@ -622,9 +625,28 @@
   function sbGet(path){
     return fetch(SB_URL + '/rest/v1/' + path, {headers:{apikey:SB_ANON, Authorization:'Bearer ' + SB_ANON}}).then(function(r){ return r.ok ? r.json() : null; });
   }
-  Promise.all([sbGet('mengenrabatt_staffel?select=ab_plaetze,rabatt_prozent&order=ab_plaetze'), sbGet('preis_parameter?select=schluessel,wert')]).then(function(res){
+  Promise.all([sbGet('mengenrabatt_staffel?select=ab_plaetze,rabatt_prozent&order=ab_plaetze'), sbGet('preis_parameter?select=schluessel,wert'), sbGet('plans?select=slug,price_monthly&slug=in.(sales,marketing,all-in)')]).then(function(res){
     if(res[0] && res[0].length){ staffel = res[0].map(function(z){ return {ab:Number(z.ab_plaetze), p:Number(z.rabatt_prozent)}; }); }
     if(res[1]){ res[1].forEach(function(z){ if(z.schluessel === 'jahresrabatt_prozent') jahresrabatt = Number(z.wert); }); }
+    window.LD_JAHRESRABATT = jahresrabatt;
+    // Listenpreise aus plans: Karten, Konfigurator-Zeilen und Info-Dialoge
+    // zeigen dieselbe Zahl, die Stripe berechnet (Review 29.10.2026).
+    if(res[2] && res[2].length){
+      res[2].forEach(function(z){
+        var mo = Number(z.price_monthly); if(!(mo > 0)) return;
+        var type = z.slug === 'all-in' ? 'allin' : z.slug;
+        prices[type] = mo;
+        var row = document.querySelector('.tb-row[data-seat="' + type + '"]');
+        if(row){ row.setAttribute('data-price', String(mo)); var each = row.querySelector('.tb-price-each'); if(each) each.textContent = eur(mo) + ' € / Monat pro Seat'; }
+        var btn = document.querySelector('[data-buchen="' + z.slug + '"]');
+        var card = btn ? btn.closest('.plan') : null;
+        var amt = card ? card.querySelector('.amt[data-mo]') : null;
+        if(amt){ amt.setAttribute('data-mo', String(mo)); }
+        window.LD_PLAN_PREISE = window.LD_PLAN_PREISE || {}; window.LD_PLAN_PREISE[z.slug] = mo;
+      });
+      var on = document.querySelector('#billing span.on[data-p]');
+      if(on && typeof window.LD_setBilling === 'function') window.LD_setBilling(on.getAttribute('data-p'));
+    }
     var sub = document.getElementById('tbSub');
     if(sub) sub.textContent = 'Alle Preise netto · jährliche Zahlung spart zusätzlich ' + jahresrabatt + ' %';
     recalc();
@@ -834,7 +856,7 @@
     var bStatus = document.getElementById('buchenStatus'), bSubmit = document.getElementById('buchenSubmit');
     var bStatusStart = bStatus.innerHTML;
     var planLabel = {sales:'Sales', marketing:'Marketing', 'all-in':'All-In'};
-    var planPreis = {sales: prices.sales, marketing: prices.marketing, 'all-in': prices.allin};
+    var planPreis = {get sales(){ return prices.sales; }, get marketing(){ return prices.marketing; }, get 'all-in'(){ return prices.allin; }};
     document.querySelectorAll('[data-buchen]').forEach(function(btn){
       btn.addEventListener('click', function(){
         var slug = btn.getAttribute('data-buchen');
@@ -936,7 +958,9 @@
     var data = PLAN_INFO[key];
     if(!data || !backdrop) return;
     titleEl.textContent = data.title;
-    priceEl.textContent = data.price;
+    var slug = key === 'allin' ? 'all-in' : key;
+    var live = window.LD_PLAN_PREISE && window.LD_PLAN_PREISE[slug];
+    priceEl.textContent = live ? ((Math.round(live*100)/100).toLocaleString('de-DE', {maximumFractionDigits:2}) + ' € / Monat pro Seat') : data.price;
     listEl.innerHTML = data.items.map(function(html){ return '<li><span>' + html + '</span></li>'; }).join('');
     lastTrigger = trigger || null;
     backdrop.classList.add('open');

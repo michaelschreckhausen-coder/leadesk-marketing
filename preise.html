@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Preise | Leadesk</title>
-<meta name="description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
+<meta name="description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, direkt buchen — Konto und Plätze sind nach der Zahlung sofort da.">
 <link rel="canonical" href="https://www.leadesk.de/preise.html">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Leadesk">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Preise | Leadesk">
-<meta property="og:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
+<meta property="og:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, direkt buchen — Konto und Plätze sind nach der Zahlung sofort da.">
 <meta property="og:url" content="https://www.leadesk.de/preise.html">
 <meta property="og:image" content="https://www.leadesk.de/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Preise | Leadesk">
-<meta name="twitter:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, wir richten den Plan persönlich ein.">
+<meta name="twitter:description" content="Drei Single-Lizenzen zum Sofort-Start. Für Teams: eigenen Seat-Mix zusammenstellen, Mengenrabatt live sehen, direkt buchen — Konto und Plätze sind nach der Zahlung sofort da.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
 <meta name="theme-color" content="#0A6FB0">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -197,7 +197,7 @@
       "name": "Wie funktioniert der Team-Plan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr schickt die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein."
+        "text": "Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr bucht direkt und zahlt sicher über Stripe; danach legen wir Konto, Team und Plätze automatisch an und schicken die Einladung per E-Mail. Wer lieber erst sprechen möchte, schickt die Zusammenstellung als Anfrage."
       }
     }
   ]
@@ -254,7 +254,7 @@
       <div class="mark-wrap med" style="margin:0 auto 18px"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
       <div class="eyebrow center">Preise & Pläne</div>
       <h1>Ein Tool.<br><span class="grad-text">Transparente Credits.</span></h1>
-      <p class="lead" style="margin:0 auto 8px">Für Einzelpersonen: drei Lizenzen, sofort startklar. Für Teams: euren Seat-Mix selbst zusammenstellen, Mengenrabatt live sehen — wir richten den Plan danach persönlich für euch ein. KI-Verbrauch wird transparent in Credits abgerechnet, keine versteckten Limits.</p>
+      <p class="lead" style="margin:0 auto 8px">Für Einzelpersonen: drei Lizenzen, sofort startklar. Für Teams: euren Seat-Mix selbst zusammenstellen, Mengenrabatt live sehen und direkt buchen — Konto, Team und Plätze stehen nach der Zahlung sofort bereit. KI-Verbrauch wird transparent in Credits abgerechnet, keine versteckten Limits.</p>
       <div class="seg-row reveal d1">
         <div class="seg" id="audience"><span class="on" data-g="single">Einzelperson</span><span data-g="team">Team</span></div>
         <div class="seg" id="billing"><span class="on" data-p="mo">Monatlich</span><span data-p="yr">Jährlich</span><span class="save">−20 %</span></div>
@@ -374,14 +374,28 @@
 
         <!-- Schritt 3: Kontakt -->
         <div class="tb-panel" data-step="3" hidden>
+          <!-- Direktkauf (28.10.2026): Firma, Name, Mail, Land → Zahlungsseite.
+               Nach der Zahlung werden Konto, Team und Plätze automatisch angelegt,
+               die Einladung kommt per Mail. "Nur Anfrage senden" bleibt als
+               zweiter Weg über /api/contact. -->
           <form id="teamForm" class="form">
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
             <input type="hidden" id="tbMessage" name="message">
-            <div><label for="tbName">Name</label><input id="tbName" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
-            <div><label for="tbEmail">E-Mail</label><input id="tbEmail" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
             <div><label for="tbCompany">Unternehmen</label><input id="tbCompany" name="company" type="text" placeholder="Firma" autocomplete="organization" required></div>
-            <button class="btn btn-primary" type="submit">Anfrage senden</button>
-            <p id="tbFormStatus" role="status" aria-live="polite" style="font-size:12.5px;color:var(--muted)">Wir melden uns in der Regel innerhalb eines Werktags und richten den Plan gemeinsam mit euch ein.</p>
+            <div><label for="tbName">Name</label><input id="tbName" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
+            <div><label for="tbEmail">E-Mail (Zugang und Rechnung)</label><input id="tbEmail" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
+            <div><label for="tbLand">Land</label>
+              <select id="tbLand" name="land">
+                <option value="DE" selected>Deutschland</option><option value="AT">Österreich</option><option value="CH">Schweiz</option>
+                <option value="NL">Niederlande</option><option value="BE">Belgien</option><option value="LU">Luxemburg</option>
+                <option value="FR">Frankreich</option><option value="IT">Italien</option><option value="ES">Spanien</option>
+                <option value="PL">Polen</option><option value="DK">Dänemark</option><option value="SE">Schweden</option>
+                <option value="GB">Vereinigtes Königreich</option><option value="US">USA</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="button" id="tbBuchen">Jetzt buchen → zur Zahlung</button>
+            <button class="btn btn-ghost" type="submit" id="tbAnfrage">Nur Anfrage senden</button>
+            <p id="tbFormStatus" role="status" aria-live="polite" style="font-size:12.5px;color:var(--muted)">Sichere Zahlung über Stripe (Karte, SEPA). Danach legen wir Konto, Team und Plätze automatisch an — die Einladung kommt per E-Mail. Mit dem Klick akzeptierst du unsere <a href="/agb.html">AGB</a> und <a href="/datenschutz.html">Datenschutzerklärung</a>. Lieber erst sprechen? „Nur Anfrage senden".</p>
           </form>
         </div>
 
@@ -453,7 +467,7 @@
     <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic">🎯</div><h3>Sales</h3><p>Solo-Vertriebler und Consultants. Komplettes LinkedIn-Modul plus volles CRM, kein Content-Modul.</p></div>
     <div class="card reveal d1" style="--acc:var(--content);--accbg:#e6f7f1"><div class="ic">✍️</div><h3>Marketing</h3><p>Personal-Brand-Builder und Content-Creator. Komplettes Content-Modul mit Personal &amp; Company Brand, kein CRM, kein LinkedIn-Modul.</p></div>
     <div class="card reveal d2" style="--acc:var(--cyan);--accbg:var(--tint-cyan)"><div class="ic">🚀</div><h3>All-In</h3><p>Solo-Founder, die selbst verkaufen und Marketing machen; Berater, die den ganzen Funnel betreiben. LinkedIn-Modul, CRM und Content-Modul in einem Plan.</p></div>
-    <div class="card reveal" style="--acc:var(--purple);--accbg:#efedff"><div class="ic">🧩</div><h3>Team</h3><p>Ab 2 Personen: stellt euren eigenen Mix aus Sales-, Marketing- und All-In-Seats zusammen — mit Mengenrabatt und persönlichem Einrichten statt festem Bundle.</p></div>
+    <div class="card reveal" style="--acc:var(--purple);--accbg:#efedff"><div class="ic">🧩</div><h3>Team</h3><p>Ab 2 Personen: stellt euren eigenen Mix aus Sales-, Marketing- und All-In-Seats zusammen — mit Mengenrabatt, direkt buchbar — Konto und Plätze sofort nach der Zahlung.</p></div>
   </div>
 </section>
 
@@ -473,7 +487,7 @@
     <details><summary>Bekomme ich eine Rechnung für die Buchhaltung?</summary><p>Ja, automatisch als PDF per E-Mail. USt-ausweisbar, mit Firmenadresse und Steuernummer. Für EU-Unternehmen mit gültiger USt-ID stellen wir Reverse-Charge aus.</p></details>
     <details><summary>Gibt es Rabatte für Non-Profits oder Startups?</summary><p>Ja. Gemeinnützige Organisationen erhalten 50 % Rabatt, Frühphasen-Startups (pre-Series A) 30 %. Schreib uns einfach an.</p></details>
     <details><summary>Helft ihr beim Einrichten?</summary><p>Ja. Im All-In- und im Team-Plan ist ein Onboarding-Termin enthalten. Dazu gibt es Workshops, Strategie-Beratung und eine wöchentliche, kostenlose Sprechstunde. <a href="services.html">Alle Services ansehen →</a></p></details>
-    <details><summary>Wie funktioniert der Team-Plan?</summary><p>Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr schickt die Zusammenstellung als Anfrage ab, wir melden uns in der Regel innerhalb eines Werktags und richten den Plan persönlich für euch ein.</p></details>
+    <details><summary>Wie funktioniert der Team-Plan?</summary><p>Statt fester Pakete stellt ihr euch euren Seat-Mix aus Sales-, Marketing- und All-In-Seats selbst zusammen. Der Preis inklusive Mengenrabatt wird sofort angezeigt. Ihr bucht direkt und zahlt sicher über Stripe; danach legen wir Konto, Team und Plätze automatisch an und schicken die Einladung per E-Mail. Wer lieber erst sprechen möchte, schickt die Zusammenstellung als Anfrage.</p></details>
   </div>
 </section>
 
@@ -556,13 +570,29 @@
     });
   });
 
+  // Preislogik aus der Datenbank (28.10.2026): dieselbe Staffel, die Admin,
+  // Zahlungslink und Rechnung benutzen. Die Werte hier sind nur der Rückfall,
+  // falls der Abruf scheitert.
+  var SB_URL = 'https://supabase.leadesk.de';
+  var SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzc2ODYyNDcyLCJleHAiOjIwOTIyMjI0NzJ9.w8HbycX4Dx5Uu1UCp9ER__cv4T3oldej3BDHgck_WC8';
+  var staffel = [{ab:2,p:10},{ab:3,p:15},{ab:5,p:20},{ab:10,p:25}];
+  var jahresrabatt = 20;
   function discountFor(total){
-    if(total >= 10) return 0.25;
-    if(total >= 5) return 0.20;
-    if(total >= 3) return 0.15;
-    if(total >= 2) return 0.10;
-    return 0;
+    var r = 0;
+    for(var i=0;i<staffel.length;i++){ if(total >= staffel[i].ab && staffel[i].p > r) r = staffel[i].p; }
+    return r / 100;
   }
+  function sbGet(path){
+    return fetch(SB_URL + '/rest/v1/' + path, {headers:{apikey:SB_ANON, Authorization:'Bearer ' + SB_ANON}}).then(function(r){ return r.ok ? r.json() : null; });
+  }
+  Promise.all([sbGet('mengenrabatt_staffel?select=ab_plaetze,rabatt_prozent&order=ab_plaetze'), sbGet('preis_parameter?select=schluessel,wert')]).then(function(res){
+    if(res[0] && res[0].length){ staffel = res[0].map(function(z){ return {ab:Number(z.ab_plaetze), p:Number(z.rabatt_prozent)}; }); }
+    if(res[1]){ res[1].forEach(function(z){ if(z.schluessel === 'jahresrabatt_prozent') jahresrabatt = Number(z.wert); }); }
+    var sub = document.getElementById('tbSub');
+    if(sub) sub.textContent = 'Alle Preise netto · jährliche Zahlung spart zusätzlich ' + jahresrabatt + ' %';
+    recalc();
+  }).catch(function(){});
+  function eur(n){ return (Math.round(n*100)/100).toLocaleString('de-DE', {minimumFractionDigits: (Math.round(n*100) % 100) ? 2 : 0, maximumFractionDigits: 2}); }
 
   function currentBillingMode(){
     var on = billSeg.querySelector('span.on[data-p]');
@@ -622,7 +652,7 @@
     var discount = discountFor(total);
     var discounted = raw * (1 - discount);
     var mode = currentBillingMode();
-    var displayed = Math.round(mode === 'yr' ? discounted * 0.8 : discounted);
+    var displayed = eur(mode === 'yr' ? discounted * (1 - jahresrabatt/100) : discounted);
 
     amtEl.setAttribute('data-mo', discounted.toFixed(2));
     amtEl.textContent = displayed;
@@ -638,8 +668,8 @@
     } else if(total === 1){
       metaEl.textContent = 'Für 1 Person lohnt sich meist eine Single-Lizenz oben — der Team-Rabatt greift ab 2 Seats.';
     } else {
-      var saved = Math.round(raw - discounted);
-      metaEl.textContent = 'Mengenrabatt: −' + Math.round(discount*100) + ' % · spart ' + saved + ' €/Monat gegenüber Einzelpreisen';
+      var saved = raw - discounted;
+      metaEl.textContent = 'Mengenrabatt: −' + Math.round(discount*100) + ' % · spart ' + eur(saved) + ' €/Monat gegenüber Einzelpreisen';
     }
 
     updateSelectionList(total);
@@ -663,7 +693,7 @@
     lines.push('Seats gesamt: ' + total);
     lines.push('Listenpreis vor Rabatt: ' + Math.round(raw) + ' €/Monat');
     lines.push('Mengenrabatt: ' + (discount > 0 ? ('−' + Math.round(discount*100) + ' %') : 'keiner (ab 2 Seats)'));
-    lines.push('Geschätzter Preis: ' + Math.round(mode === 'yr' ? discounted*0.8 : discounted) + ' €/Monat (netto, ' + (mode === 'yr' ? 'jährliche Zahlung' : 'monatliche Zahlung') + ')');
+    lines.push('Geschätzter Preis: ' + eur(mode === 'yr' ? discounted*(1 - jahresrabatt/100) : discounted) + ' €/Monat (netto, ' + (mode === 'yr' ? 'jährliche Zahlung' : 'monatliche Zahlung') + ')');
     lines.push('SSO / dedizierter Ansprechpartner gewünscht: ' + (ssoEl.checked ? 'Ja' : 'Nein'));
     if(notesEl && notesEl.value.trim()){
       lines.push('');
@@ -719,6 +749,38 @@
         ts.style.color = '#c0392b';
         ts.textContent = 'Netzwerkfehler — schreib uns bitte direkt an hello@leadesk.de.';
         btn.disabled = false;
+      });
+    });
+  }
+
+  // Direktkauf: Seat-Mix + Kontaktdaten an website-team-checkout, Antwort ist
+  // die Zahlungsseite (dauerhafter Zahlungslink → Stripe Checkout).
+  var buchenEl = document.getElementById('tbBuchen');
+  if(buchenEl && tf){
+    buchenEl.addEventListener('click', function(){
+      var ts = document.getElementById('tbFormStatus');
+      if(!tf.reportValidity()) return;
+      var total = counts.sales + counts.marketing + counts.allin;
+      if(total < 2){ ts.style.color = '#c0392b'; ts.textContent = 'Bitte mindestens zwei Seats wählen — für eine Person passt eine Einzellizenz oben.'; return; }
+      buchenEl.disabled = true; ts.style.color = 'var(--muted)'; ts.textContent = 'Zahlungsseite wird vorbereitet …';
+      var data = Object.fromEntries(new FormData(tf).entries());
+      fetch(SB_URL + '/functions/v1/website-team-checkout', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', apikey: SB_ANON, Authorization: 'Bearer ' + SB_ANON},
+        body: JSON.stringify({
+          seats: {sales: counts.sales, marketing: counts.marketing, 'all-in': counts.allin},
+          intervall: currentBillingMode() === 'yr' ? 'jahr' : 'monat',
+          firma: data.company, name: data.name, email: data.email, land: data.land, _honey: data._honey || ''
+        })
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if(j && j.ok && j.url){ ts.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
+        ts.style.color = '#c0392b';
+        ts.textContent = (j && j.error) ? j.error : 'Das hat leider nicht geklappt. Schreib uns bitte an support@leadesk.de.';
+        buchenEl.disabled = false;
+      }).catch(function(){
+        ts.style.color = '#c0392b';
+        ts.textContent = 'Netzwerkfehler — bitte noch einmal versuchen oder an support@leadesk.de schreiben.';
+        buchenEl.disabled = false;
       });
     });
   }

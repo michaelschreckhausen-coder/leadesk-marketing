@@ -278,7 +278,10 @@
         <li><span>250 Unternehmen · 1.000 Kontakte · <b>5.000 KI-Credits</b> / Monat · 5 GB</span></li>
         <li><span>1 LinkedIn-Vernetzungsanfrage pro Lizenz · Premium-AI als Add-On (+15 €/Mo)</span></li>
       </ul>
-      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=sales">3 Tage testen</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" data-buchen="sales">Jetzt buchen</button>
+        <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=sales">3 Tage testen</a>
+      </div>
     </div>
     <div class="plan pop reveal d1">
       <h3>Marketing</h3>
@@ -291,7 +294,10 @@
         <li><span>Zielgruppen-Profile, Ideen-Generator &amp; Redaktionsplan (Posting zu LinkedIn &amp; Instagram)</span></li>
         <li><span><b>15.000 KI-Credits</b> / Monat · 25 GB · <b>Premium-AI inkludiert</b> (Opus, GPT-5, Gemini Pro)</span></li>
       </ul>
-      <a class="btn btn-primary" href="https://app.leadesk.de/register?plan=marketing">3 Tage testen</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" data-buchen="marketing">Jetzt buchen</button>
+        <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=marketing">3 Tage testen</a>
+      </div>
     </div>
     <div class="plan reveal d2">
       <h3>All-In</h3>
@@ -304,7 +310,10 @@
         <li><span><b>Premium-KI komplett</b>: Opus 4.7, GPT-5, Gemini 2.5 Pro + Premium-Bild-Modelle</span></li>
         <li><span>Projektumsetzung + Zeiterfassung · Prioritäts-Support · 1 LinkedIn-Vernetzungsanfrage pro Lizenz</span></li>
       </ul>
-      <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=all-in">3 Tage testen</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" data-buchen="all-in">Jetzt buchen</button>
+        <a class="btn btn-ghost" href="https://app.leadesk.de/register?plan=all-in">3 Tage testen</a>
+      </div>
     </div>
   </div>
 
@@ -418,6 +427,34 @@
 
 <!-- REDESIGN: Overlay mit Plan-Details, geöffnet über das Info-Icon je Seat im
      Team-Konfigurator. Ein gemeinsames Modal, Inhalt wird per JS aus PLAN_INFO befüllt. -->
+<!-- Einzellizenz direkt buchen (29.10.2026): dasselbe Formular wie im Team-
+     Konfigurator, ein Platz. Nach der Zahlung: Konto, Zugang, Rechnung automatisch. -->
+<div class="tb-modal-backdrop" id="buchenBackdrop" aria-hidden="true">
+  <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="buchenTitle">
+    <button type="button" class="tb-modal-close" id="buchenClose" aria-label="Schließen">✕</button>
+    <h3 id="buchenTitle">Jetzt buchen</h3>
+    <div class="tb-modal-price" id="buchenPreis"></div>
+    <form id="buchenForm" class="form" style="margin-top:12px">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <input type="hidden" name="plan" id="buchenPlan">
+      <div><label for="bCompany">Unternehmen</label><input id="bCompany" name="company" type="text" placeholder="Firma oder dein Name" autocomplete="organization" required></div>
+      <div><label for="bName">Name</label><input id="bName" name="name" type="text" placeholder="Dein Name" autocomplete="name" required></div>
+      <div><label for="bEmail">E-Mail (Zugang und Rechnung)</label><input id="bEmail" name="email" type="email" placeholder="du@firma.de" autocomplete="email" required></div>
+      <div><label for="bLand">Land</label>
+        <select id="bLand" name="land">
+          <option value="DE" selected>Deutschland</option><option value="AT">Österreich</option><option value="CH">Schweiz</option>
+          <option value="NL">Niederlande</option><option value="BE">Belgien</option><option value="LU">Luxemburg</option>
+          <option value="FR">Frankreich</option><option value="IT">Italien</option><option value="ES">Spanien</option>
+          <option value="PL">Polen</option><option value="DK">Dänemark</option><option value="SE">Schweden</option>
+          <option value="GB">Vereinigtes Königreich</option><option value="US">USA</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit" id="buchenSubmit">Weiter zur Zahlung →</button>
+      <p id="buchenStatus" role="status" aria-live="polite" style="font-size:12.5px;color:var(--muted)">Sichere Zahlung über Stripe. Danach legen wir dein Konto automatisch an — die Einladung kommt per E-Mail. Mit dem Klick akzeptierst du unsere <a href="/agb.html">AGB</a> und <a href="/datenschutz.html">Datenschutzerklärung</a>. Schon Kunde? Dann <a href="https://app.leadesk.de/settings/konto">in der App buchen</a>.</p>
+    </form>
+  </div>
+</div>
+
 <div class="tb-modal-backdrop" id="tbInfoBackdrop" aria-hidden="true">
   <div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbInfoTitle">
     <button type="button" class="tb-modal-close" id="tbInfoClose" aria-label="Schließen">✕</button>
@@ -774,6 +811,11 @@
         })
       }).then(function(r){ return r.json(); }).then(function(j){
         if(j && j.ok && j.url){ ts.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
+        if(j && j.ok && j.bestandskunde){
+          ts.style.color = 'var(--ink)';
+          ts.innerHTML = (j.hinweis || 'Mit dieser Adresse gibt es schon ein Leadesk-Konto.') + ' <a href="' + j.login_url + '" style="font-weight:700">Einloggen und dort buchen →</a>';
+          buchenEl.disabled = false; return;
+        }
         ts.style.color = '#c0392b';
         ts.textContent = (j && j.error) ? j.error : 'Das hat leider nicht geklappt. Schreib uns bitte an support@leadesk.de.';
         buchenEl.disabled = false;
@@ -781,6 +823,56 @@
         ts.style.color = '#c0392b';
         ts.textContent = 'Netzwerkfehler — bitte noch einmal versuchen oder an support@leadesk.de schreiben.';
         buchenEl.disabled = false;
+      });
+    });
+  }
+
+  // ── Einzellizenz direkt buchen ─────────────────────────────────────────────
+  var bb = document.getElementById('buchenBackdrop'), bf = document.getElementById('buchenForm');
+  if(bb && bf){
+    var bPlan = document.getElementById('buchenPlan'), bTitle = document.getElementById('buchenTitle'), bPreis = document.getElementById('buchenPreis');
+    var bStatus = document.getElementById('buchenStatus'), bSubmit = document.getElementById('buchenSubmit');
+    var bStatusStart = bStatus.innerHTML;
+    var planLabel = {sales:'Sales', marketing:'Marketing', 'all-in':'All-In'};
+    var planPreis = {sales: prices.sales, marketing: prices.marketing, 'all-in': prices.allin};
+    document.querySelectorAll('[data-buchen]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var slug = btn.getAttribute('data-buchen');
+        bPlan.value = slug;
+        bTitle.textContent = planLabel[slug] + ' buchen';
+        var yr = currentBillingMode() === 'yr';
+        var mo = planPreis[slug] * (yr ? (1 - jahresrabatt/100) : 1);
+        bPreis.textContent = eur(mo) + ' € / Monat netto' + (yr ? ' · jährliche Zahlung (' + eur(mo*12) + ' € / Jahr)' : ' · monatlich kündbar');
+        bStatus.style.color = 'var(--muted)'; bStatus.innerHTML = bStatusStart; bSubmit.disabled = false;
+        bb.classList.add('open'); bb.setAttribute('aria-hidden','false');
+        var f = document.getElementById('bCompany'); if(f) f.focus({preventScroll:true});
+      });
+    });
+    function buchenSchliessen(){ bb.classList.remove('open'); bb.setAttribute('aria-hidden','true'); }
+    document.getElementById('buchenClose').addEventListener('click', buchenSchliessen);
+    bb.addEventListener('click', function(e){ if(e.target === bb) buchenSchliessen(); });
+    bf.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = Object.fromEntries(new FormData(bf).entries());
+      var seats = {sales:0, marketing:0, 'all-in':0}; seats[data.plan] = 1;
+      bSubmit.disabled = true; bStatus.style.color = 'var(--muted)'; bStatus.textContent = 'Zahlungsseite wird vorbereitet …';
+      fetch(SB_URL + '/functions/v1/website-team-checkout', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', apikey: SB_ANON, Authorization: 'Bearer ' + SB_ANON},
+        body: JSON.stringify({ seats: seats, intervall: currentBillingMode() === 'yr' ? 'jahr' : 'monat',
+          firma: data.company, name: data.name, email: data.email, land: data.land, _honey: data._honey || '' })
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if(j && j.ok && j.url){ bStatus.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
+        if(j && j.ok && j.bestandskunde){
+          bStatus.style.color = 'var(--ink)';
+          bStatus.innerHTML = (j.hinweis || '') + ' <a href="' + j.login_url + '" style="font-weight:700">Einloggen und dort buchen →</a>';
+          bSubmit.disabled = false; return;
+        }
+        bStatus.style.color = '#c0392b';
+        bStatus.textContent = (j && j.error) ? j.error : 'Das hat leider nicht geklappt. Schreib uns bitte an support@leadesk.de.';
+        bSubmit.disabled = false;
+      }).catch(function(){
+        bStatus.style.color = '#c0392b'; bStatus.textContent = 'Netzwerkfehler — bitte noch einmal versuchen.'; bSubmit.disabled = false;
       });
     });
   }

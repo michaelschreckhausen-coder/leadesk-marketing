@@ -1,7 +1,7 @@
 /* =========================================================================
    Leadesk — „Signal“ für alle Unterseiten: Interaktionen
    Ergänzt leadesk.js / leadesk-redesign.js. Kein Framework.
-   Erzeugt Korn, Cursor, Signalfeld + Geisterwort im Page-Hero selbst,
+   Erzeugt Korn, Cursor-Ring, Signalfeld + Geisterwort im Page-Hero selbst,
    damit die 45 Seiten kein zusätzliches Markup brauchen.
    prefers-reduced-motion: alles statisch, kein eigener Cursor.
    ========================================================================= */
@@ -18,16 +18,6 @@
   var mouse = {x:-9999, y:-9999, on:false};
   window.addEventListener('mousemove', function(e){ mouse.x = e.clientX; mouse.y = e.clientY; mouse.on = true; if(cur) cur.classList.add('live'); }, {passive:true});
   document.addEventListener('mouseleave', function(){ mouse.on = false; });
-
-  /* ---------- Emojis aus dem sichtbaren Text entfernen (passen nicht zum Look) ---------- */
-  try{
-    var emo = /[\u{1F1E6}-\u{1F1FF}]|\p{Extended_Pictographic}|\uFE0F|\u200D/gu;
-    var tw = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, {acceptNode:function(n){
-      var p = n.parentNode; if(!p || /^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
-      emo.lastIndex = 0; return emo.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; }});
-    var hits = []; while(tw.nextNode()) hits.push(tw.currentNode);
-    hits.forEach(function(n){ n.nodeValue = n.nodeValue.replace(emo,'').replace(/^\s+(?=\S)/, function(m){ return n.previousSibling ? m : ''; }); });
-  }catch(e){}
 
   /* ---------- Korn + Cursor einfügen ---------- */
   var grain = document.createElement('div'); grain.className = 'grain'; grain.setAttribute('aria-hidden','true'); body.appendChild(grain);

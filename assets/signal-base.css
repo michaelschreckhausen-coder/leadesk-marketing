@@ -18,15 +18,22 @@ body.sig ::selection,body.sig-sub ::selection{background:var(--sig);color:var(--
 .grain::before{content:"";position:absolute;inset:-50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain .9s steps(4) infinite}
 @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(1%,3%)}}
-.cur{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;mix-blend-mode:difference;display:none}
-.cur-dot{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#fff}
-.cur-ring{position:absolute;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1px solid #fff;
-  display:grid;place-items:center;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s var(--ease)}
-.cur-ring em{font-family:var(--fm)!important;font-style:normal!important;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#000!important;opacity:0;transition:opacity .2s}
-.cur.hover .cur-ring{width:86px;height:86px;margin:-43px 0 0 -43px;background:#fff}
-.cur.hover .cur-ring em{opacity:1}
-html.has-cur, html.has-cur a, html.has-cur button, html.has-cur [tabindex]{cursor:none}
-html.has-cur .cur{display:block}
+/* Cursor-Begleiter: Der echte Mauszeiger bleibt IMMER sichtbar. Darüber liegt ein
+   Ring, der dem Zeiger leicht verzögert folgt und ruhig pulsiert, damit man sofort
+   sieht, wo man ist. Über Links wächst er und zeigt rechts ein kleines Label. */
+.sgc{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;display:none}
+.sgc-dot{display:none}
+.sgc-ring{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;
+  border:1.5px solid var(--sig);background:rgba(22,168,220,.08);box-shadow:0 0 0 1px rgba(7,9,26,.25),0 0 18px rgba(22,168,220,.35);
+  transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s var(--ease),border-color .35s}
+.sgc-ring::before{content:"";position:absolute;inset:-1.5px;border-radius:50%;border:1.5px solid var(--sig);animation:curPulse 1.8s var(--ease) infinite}
+@keyframes curPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+.sgc-ring em{position:absolute;left:100%;top:50%;margin-left:12px;transform:translateY(-50%);white-space:nowrap;
+  font-family:var(--fm)!important;font-style:normal!important;font-weight:600!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.06em!important;
+  background:var(--sig);color:var(--k)!important;padding:4px 8px;opacity:0;transition:opacity .2s}
+.sgc.hover .sgc-ring{width:72px;height:72px;margin:-36px 0 0 -36px;background:rgba(22,168,220,.16)}
+.sgc-ring em{display:none}
+html.has-cur .sgc{display:block}
 
 /* ---------- Header / Footer auf dunkel ---------- */
 :is(.sig,.sig-sub) header{background:transparent;border-bottom:1px solid transparent}
@@ -61,6 +68,7 @@ html.has-cur .cur{display:block}
 .b-line:hover::before{transform:translateX(6px)}
 
 :is(.sig,.sig-sub) header .nav-links a.active,:is(.sig,.sig-sub) header .nav-trigger.active,:is(.sig,.sig-sub) header .nav-group:hover .nav-trigger{color:var(--sig)}
-.cur{opacity:0;transition:opacity .3s}.cur.live{opacity:1}
 /* Formular-Elemente erben die Schrift nicht von selbst (sonst Browser-Standard, z. B. Arial) */
 :is(.sig,.sig-sub) :is(button,input,select,textarea){font-family:inherit}
+
+.sgc{opacity:0;transition:opacity .3s}.sgc.live{opacity:1}

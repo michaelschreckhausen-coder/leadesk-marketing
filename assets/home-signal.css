@@ -13,7 +13,7 @@ body.sig{
   background:var(--k);color:var(--p);font-family:var(--fd);overflow-x:hidden}
 body.sig ::selection{background:var(--sig);color:var(--k)}
 .sig .mono{font-family:var(--fm);font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:400}
-.sig em{font-family:var(--fd);font-style:normal;font-weight:200;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em;color:var(--sig)}
+.sig em{font-family:var(--fd);font-style:normal;font-weight:300;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em;color:var(--sig)}
 .sig .wx{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
 .sig .dark{background:var(--k);color:var(--p)}
 .sig .paper{background:var(--p);color:var(--k)}
@@ -329,3 +329,8 @@ body.sig ::selection{background:var(--sig);color:var(--k)}
 @media(max-width:1000px){.hero-main{grid-template-columns:1fr}.hero-side .ctas{justify-self:start}}
 @media(max-width:700px){.hero-meta{grid-template-columns:1fr auto}.hero-meta span:nth-child(2),.hero-meta span:nth-child(3){display:none}}
 .s-sec{overflow:hidden}
+/* „Null Überblick.“ muss frei stehen: Fenster weg von der Headline */
+@media(max-width:1000px){.win{top:calc(46% + var(--y) * .5)}}
+@media(max-width:700px){.win{top:calc(54% + var(--y) * .42)}.core{top:74%}}
+@media(min-width:1001px){.chaos-head{max-width:min(58vw,800px)}}
+.chaos-head .h2x{line-height:.95}

@@ -30,7 +30,7 @@ body.sig-sub{
 .sig-sub h1,.sig-sub h2,.sig-sub h3,.sig-sub h4{font-family:var(--fd);color:var(--ink)}
 .sig-sub .grad-text{background:none;-webkit-text-fill-color:currentColor;color:var(--sig2)}
 .sig-sub :is(.page-hero,.mock,.cust,.plan.pop) .grad-text{color:var(--sig)}
-.sig-sub :is(h1,h2,h3) .grad-text{font-family:var(--fd);font-style:normal;font-weight:200;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.sig-sub :is(h1,h2,h3) .grad-text{font-family:var(--fd);font-style:normal;font-weight:300;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
 .sig-sub .lead{color:var(--muted);font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.55}
 .sig-sub p{line-height:1.6}
 
@@ -219,7 +219,7 @@ body.sig-sub{
 /* ---------- Sonstiges aus leadesk-redesign.css ---------- */
 .sig-sub .marquee-track .mitem{font-family:var(--fm);font-weight:400;text-transform:uppercase;font-size:12.5px;letter-spacing:.05em;color:var(--ink)}
 .sig-sub .word-reveal{font-stretch:80%;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;font-size:clamp(2rem,4.6vw,4.2rem)}
-.sig-sub .word-reveal .w.grad{background:none;-webkit-text-fill-color:var(--sig2);font-family:var(--fd);font-style:normal;font-weight:200;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.sig-sub .word-reveal .w.grad{background:none;-webkit-text-fill-color:var(--sig2);font-family:var(--fd);font-style:normal;font-weight:300;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
 .sig-sub .story-panel{border-radius:0;border:1px solid var(--ink)}
 .sig-sub .story-panel.tinted{background:var(--p2)}
 .sig-sub .persona-panel{border-radius:0;border:1px solid var(--ink);box-shadow:none}

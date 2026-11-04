@@ -116,8 +116,8 @@ body.sig ::selection{background:var(--sig);color:var(--k)}
 .tl.prop strong{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--p)}
 .tl.prop small{opacity:.6;font-size:12px}
 .tl.prop .acts{display:flex;gap:14px;margin-top:6px}
-.tl.prop .acts a{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--k);background:var(--p);padding:4px 9px}
-.tl.prop .acts a+a{background:transparent;color:var(--p);border:1px solid var(--line)}
+.tl.prop .acts span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--k);background:var(--p);padding:4px 9px}
+.tl.prop .acts span+span{background:transparent;color:var(--p);border:1px solid var(--line)}
 .tl.wait{color:#3ddc84}
 .caret{display:inline-block;width:8px;height:15px;background:#3ddc84;margin-left:4px;animation:blink 1s steps(1) infinite;transform:translateY(3px)}
 @keyframes blink{50%{opacity:0}}

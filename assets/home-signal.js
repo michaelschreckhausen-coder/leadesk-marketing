@@ -300,7 +300,7 @@
       var r = c.getBoundingClientRect(), cx = r.left + r.width/2, cy = r.top + r.height/2, k;
       if(auto){ k = (Math.sin(t*0.002 - i*0.35) + 1)/2; }
       else { var d = Math.hypot(mx-cx, my-cy); k = clamp(1 - d/320, 0, 1); }
-      if(c.closest('.em')){ c.style.setProperty('--ty', (-k*26).toFixed(1)+'px'); c.style.setProperty('--rt', (-k*10).toFixed(1)+'deg'); }
+      if(c.closest('.em')){ c.style.setProperty('--w', (62 + k*63).toFixed(0)); c.style.setProperty('--g', (200 + k*700).toFixed(0)); }
       else { c.style.setProperty('--w', (62 + k*63).toFixed(0)); c.style.setProperty('--g', (900 - k*700).toFixed(0)); }
     });
   }

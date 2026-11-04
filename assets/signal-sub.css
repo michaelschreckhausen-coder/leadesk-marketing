@@ -1,0 +1,256 @@
+/* =========================================================================
+   Leadesk — „Signal“ für alle Unterseiten (body.sig-sub)
+   Prinzip: Die bestehenden Komponenten aus leadesk.css bleiben im Markup
+   unverändert. Diese Datei setzt die Design-Tokens neu (Farben, Radien,
+   Schatten) und gibt jeder Komponente den neuen Look. Dunkle Bereiche
+   (Page-Hero, Mocks) definieren die Tokens lokal um — so passen sich auch
+   Inline-Styles wie style="color:var(--muted)" automatisch an.
+   Lädt nach leadesk.css, leadesk-redesign.css und signal-base.css.
+   ========================================================================= */
+
+/* ---------- Tokens: helles Papier als Grundfläche ---------- */
+body.sig-sub{
+  --navy:#07091A; --ink:#07091A; --muted:#4D5063; --cyan:#16A8DC; --cyan-mid:#0A6FB0;
+  --grad:linear-gradient(90deg,#16A8DC,#16A8DC);
+  --bg:#ECEAE3; --bg-soft:#E2DFD5; --border:rgba(7,9,26,.2);
+  --tint-blue:#E2DFD5; --tint-cyan:#E2DFD5; --tint-lav:#E2DFD5; --tint-green:#E2DFD5; --tint-navy:#E2DFD5; --tint-peach:#E2DFD5;
+  --radius:0px; --radius-sm:0px; --radius-btn:0px; --maxw:1320px;
+  --shadow:none; --shadow-hover:none;
+  background:var(--p);color:var(--k);font-family:var(--fd);counter-reset:sec;overflow-x:hidden}
+.sig-sub .wrap{padding:0 var(--gut)}
+
+/* ---------- Dunkle Zonen: Tokens lokal invertieren ---------- */
+.sig-sub :is(.page-hero,.mock,.cust,.tb-summary,.plan.pop,.persona-panel.show){
+  --ink:#ECEAE3; --navy:#ECEAE3; --muted:rgba(236,234,227,.62); --border:rgba(255,255,255,.16); --bg-soft:rgba(255,255,255,.05);
+  --tint-blue:#07091A; --tint-cyan:rgba(255,255,255,.05); --tint-lav:#07091A; --tint-green:#07091A; --tint-navy:#07091A; --tint-peach:#07091A;
+  color:var(--p)}
+.sig-sub .page-hero{background:var(--k)!important}
+
+/* ---------- Typografie ---------- */
+.sig-sub h1,.sig-sub h2,.sig-sub h3,.sig-sub h4{font-family:var(--fd);color:var(--ink)}
+.sig-sub .grad-text{background:none;-webkit-text-fill-color:currentColor;color:var(--sig2)}
+.sig-sub :is(.page-hero,.mock,.cust,.plan.pop) .grad-text{color:var(--sig)}
+.sig-sub :is(h1,h2,h3) .grad-text{font-family:var(--fd);font-style:normal;font-weight:200;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.sig-sub .lead{color:var(--muted);font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.55}
+.sig-sub p{line-height:1.6}
+
+/* Page-Hero: riesige, gestauchte Versalien */
+.sig-sub .page-hero{padding:190px 0 120px;border-bottom:1px solid var(--line);isolation:isolate}
+.sig-sub .page-hero h1{font-size:clamp(2.8rem,7.2vw,7.4rem)!important;font-weight:800;font-stretch:74%;text-transform:uppercase;line-height:.88;
+  letter-spacing:-.035em;margin:6px 0 28px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;color:var(--p)}
+.sig-sub .page-hero .prose h1{font-size:clamp(2.4rem,5.6vw,5.4rem)!important;line-height:.92}
+.sig-sub .page-hero .lead,.sig-sub .page-hero p{color:rgba(236,234,227,.72)}
+.sig-sub .page-hero .ph-grid{gap:clamp(36px,5vw,90px)}
+.ph-field{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.ph-ghost{position:absolute;right:-2vw;bottom:-.18em;z-index:-1;pointer-events:none;white-space:nowrap;font-family:var(--fd);font-weight:900;font-stretch:62%;
+  text-transform:uppercase;font-size:clamp(7rem,24vw,26rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(236,234,227,.11);will-change:transform}
+.ph-meta{position:absolute;left:var(--gut);right:var(--gut);top:96px;display:flex;justify-content:space-between;gap:16px;font-family:var(--fm);font-size:11.5px;
+  text-transform:uppercase;letter-spacing:.05em;color:rgba(236,234,227,.5);border-top:1px solid var(--line);padding-top:12px;z-index:2}
+@media(max-width:700px){.ph-meta span:nth-child(2){display:none}}
+/* Einflug: Headline wird von breit auf schmal gestaucht */
+.js-sub .page-hero h1{animation:phSqueeze 1.3s var(--ease) both .1s}
+@keyframes phSqueeze{0%{font-stretch:125%;opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(30px)}60%{opacity:1}100%{font-stretch:74%;opacity:1;clip-path:inset(0 0 -20% 0);transform:none}}
+
+/* Eyebrow → nummeriertes Mono-Label */
+.sig-sub .eyebrow{font-family:var(--fm);font-weight:400;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:inherit;opacity:.8;gap:10px;margin-bottom:22px}
+.sig-sub .eyebrow::before{content:"(" counter(sec,decimal-leading-zero) ")";counter-increment:sec;width:auto;height:auto;background:none;border-radius:0;opacity:.7}
+.sig-sub .eyebrow a{text-decoration:underline;text-underline-offset:3px}
+
+/* Sektions-Headlines */
+.sig-sub section h2,.sig-sub h2.big{font-size:clamp(2.3rem,5.4vw,5.6rem);font-weight:800;font-stretch:76%;text-transform:uppercase;line-height:.9;letter-spacing:-.03em;hyphens:auto;-webkit-hyphens:auto}
+.sig-sub :is(.card,.plan,.step,.mtile,.gcard,.persona,.lcard,.faq,.form,.cmp,.mock,.dl-card,.svc-card) h2{font-size:clamp(1.4rem,2.2vw,2rem)}
+.sig-sub h3{font-weight:800;font-stretch:86%;letter-spacing:-.015em}
+/* Wisch-Effekt beim Einblenden: cyan Balken fährt über die Headline */
+.js-sub .reveal h2{position:relative;clip-path:inset(0 100% 0 0);transition:clip-path .9s var(--ease) .15s}
+.js-sub .reveal.in h2{clip-path:inset(0 0 -12% 0)}
+.js-sub .reveal h2::after{content:"";position:absolute;inset:0 auto 0 0;width:100%;background:var(--sig);transform-origin:right;transform:scaleX(0);pointer-events:none}
+.js-sub .reveal.in h2::after{animation:barSweep .9s var(--ease) .1s}
+@keyframes barSweep{0%{transform:scaleX(0);transform-origin:left}45%{transform:scaleX(1);transform-origin:left}55%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+
+/* ---------- Layout ---------- */
+.sig-sub .pad{padding:clamp(90px,10vw,150px) 0}
+.sig-sub .pad-s{padding:clamp(70px,7vw,110px) 0}
+.sig-sub section.pad,.sig-sub section.pad-s{border-top:1px solid var(--border)}
+.sig-sub .soft{background:var(--p2)}
+.sig-sub .center-head{max-width:980px}
+.sig-sub .mark-wrap,.sig-sub .blob,.sig-sub .hero-bg{display:none!important}
+.sig-sub .dot-texture::before{display:none}
+
+/* ---------- Buttons ---------- */
+.sig-sub .btn{border-radius:0;font-family:var(--fm);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:17px 24px;
+  box-shadow:none;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s,transform .25s var(--ease);will-change:transform}
+.sig-sub .btn-primary{background:var(--sig);color:var(--k)}
+.sig-sub .btn-primary:hover{background:var(--k);color:var(--p);transform:none;box-shadow:none;filter:none}
+.sig-sub .btn-navy{background:var(--k);color:var(--p)}
+.sig-sub .btn-navy:hover{background:var(--sig);color:var(--k);transform:none;box-shadow:none}
+.sig-sub .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.sig-sub .btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sig-sub .page-hero .btn-primary:hover{background:var(--p);color:var(--k)}
+.sig-sub .page-hero .btn-ghost{color:var(--p);border-color:rgba(236,234,227,.4)}
+.sig-sub .page-hero .btn-ghost:hover{background:var(--p);color:var(--k)}
+.sig-sub header .btn{padding:10px 16px}
+
+/* ---------- Karten-Raster: Haarlinien statt Abstände ---------- */
+.sig-sub :is(.grid2,.grid3,.grid4,.mods,.personas,.steps,.plans){gap:0;counter-reset:card}
+.sig-sub :is(.grid2,.grid3,.grid4,.mods,.personas,.steps,.plans)>*{margin:0 -1px -1px 0}
+.sig-sub :is(.card,.mtile,.persona,.gcard,.step,.plan,.lcard,.svc-card,.dl-card,.vtile,.kb-card){background:transparent;border:1px solid var(--ink);border-radius:0;box-shadow:none;position:relative;overflow:hidden;
+  transition:background .45s var(--ease),color .45s var(--ease)}
+.sig-sub :is(.card,.mtile,.persona){border-top:1px solid var(--ink);box-shadow:inset 0 4px 0 var(--acc,var(--ink));padding:34px 30px 38px;counter-increment:card}
+.sig-sub :is(.card,.mtile,.persona,.gcard,.svc-card,.dl-card):hover{background:var(--k);color:var(--p);transform:none;box-shadow:inset 0 4px 0 var(--acc,var(--sig));
+  --ink:#ECEAE3; --muted:rgba(236,234,227,.65); --navy:#ECEAE3; --border:rgba(255,255,255,.16)}
+.sig-sub :is(.card,.mtile,.persona,.gcard,.svc-card,.dl-card,.plan)::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(22,168,220,.22),transparent 70%)}
+.sig-sub :is(.card,.mtile,.persona,.gcard,.svc-card,.dl-card,.plan):hover::after{opacity:1}
+/* Emoji-Icons → nummerierte Mono-Indizes */
+.sig-sub :is(.card,.mtile,.gcard) .ic{font-size:0;width:auto;height:auto;background:none!important;box-shadow:none;border-radius:0;margin-bottom:34px;justify-content:flex-start;display:block}
+.sig-sub :is(.card,.mtile,.gcard) .ic::before{content:counter(card,decimal-leading-zero) " —";font:400 12px/1 var(--fm);letter-spacing:.06em;color:var(--acc,var(--sig2))}
+.sig-sub .card h3,.sig-sub .mtile h3,.sig-sub .persona h3{font-size:clamp(1.35rem,1.9vw,1.75rem);text-transform:uppercase;font-stretch:80%;line-height:1;margin-bottom:12px}
+.sig-sub .card p,.sig-sub .mtile p,.sig-sub .persona p{font-size:15px}
+
+/* Steps */
+.sig-sub .steps{counter-reset:s}
+.sig-sub .step{padding:34px 30px}
+.sig-sub .step::before{width:auto;height:auto;background:none;border-radius:0;color:var(--sig2);font-family:var(--fd);font-weight:900;font-stretch:66%;
+  font-size:84px;line-height:.8;margin-bottom:22px;justify-content:flex-start;content:counter(s,decimal-leading-zero)}
+
+/* Checklist */
+.sig-sub .checklist li::before{content:"+";background:none;border:1px solid currentColor;border-radius:0;color:var(--sig2);font-family:var(--fm);font-weight:400;width:22px;flex-basis:22px}
+.sig-sub :is(.page-hero,.mock) .checklist li::before{color:var(--sig)}
+
+/* KPIs */
+.sig-sub .kpi .n{font-size:clamp(3.4rem,8vw,7rem);font-weight:900;font-stretch:66%;line-height:.9;letter-spacing:-.03em}
+.sig-sub .kpi .l{font-family:var(--fm);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.sig-sub .kpis{gap:0}.sig-sub .kpi{border:1px solid var(--border);padding:30px 18px;margin:0 -1px -1px 0}
+
+/* ---------- Mocks → Terminal-Fenster ---------- */
+.sig-sub .mock{background:#0B0E22;border:1px solid rgba(255,255,255,.16);box-shadow:16px 16px 0 var(--sig);padding:26px 26px 30px;position:relative}
+.sig-sub .page-hero .mock{box-shadow:0 40px 120px rgba(22,168,220,.16);border-color:rgba(255,255,255,.18)}
+.sig-sub .mock::before{content:"";display:block;height:9px;margin:-6px 0 20px;background:radial-gradient(circle,rgba(255,255,255,.28) 4px,transparent 4.5px) 0 0/16px 9px repeat-x;width:48px}
+.sig-sub .k-lab{font-family:var(--fm);font-weight:400;letter-spacing:.06em;color:var(--sig)}
+.sig-sub .lead-chip{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:0;color:var(--ink);font-family:var(--fm);font-weight:400;font-size:12px}
+.sig-sub .chatline{border-radius:0;background:rgba(255,255,255,.05)!important;color:var(--p)!important;border-left:2px solid var(--sig)}
+.sig-sub .arrow{color:var(--sig)}
+.sig-sub .stat-strip{font-family:var(--fm);font-weight:400;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.sig-sub .stat-strip .count{font-family:var(--fd);font-size:26px;font-weight:800}
+.sig-sub .ig-mock{border-radius:0;box-shadow:16px 16px 0 var(--k)}
+.sig-sub .ig-thumbs span{border-radius:0}
+
+/* ---------- Badges / Hinweise ---------- */
+.sig-sub .tbadge{background:transparent;border:2px solid var(--ink);border-radius:0;box-shadow:none;font-family:var(--fm);font-weight:400;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;padding:12px 16px}
+.sig-sub .tbadge:nth-child(odd){transform:rotate(-1.5deg)}.sig-sub .tbadge:nth-child(even){transform:rotate(1.2deg)}
+.sig-sub .guardrail{border-radius:0;font-family:var(--fm);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.sig-sub .note{background:transparent;border:0;border-left:3px solid var(--sig);border-radius:0;padding:14px 20px}
+
+/* ---------- CTA-Band → cyan Vollfläche ---------- */
+.sig-sub .cta-band{background:var(--sig);color:var(--k);border-radius:0;box-shadow:none;text-align:left;padding:clamp(48px,6vw,90px) clamp(28px,5vw,72px);overflow:hidden;
+  --ink:#07091A;--muted:#07091A}
+.sig-sub .cta-band::before{content:"→";position:absolute;right:clamp(20px,4vw,60px);top:50%;transform:translateY(-50%);font-family:var(--fd);font-weight:300;
+  font-size:clamp(8rem,20vw,20rem);line-height:1;color:rgba(7,9,26,.12);pointer-events:none}
+.sig-sub .cta-band h2{color:var(--k)!important;margin-bottom:18px;max-width:900px}
+.sig-sub .cta-band h2 .grad-text{color:var(--k)}
+.sig-sub .cta-band p{color:var(--k)!important;margin:0 0 30px;opacity:.85}
+.sig-sub .cta-band .hero-cta{justify-content:flex-start!important}
+.sig-sub .cta-band .btn-primary{background:var(--k);color:var(--p)}
+.sig-sub .cta-band .btn-primary:hover{background:var(--p);color:var(--k)}
+.sig-sub .cta-band .btn-ghost{background:transparent;color:var(--k);border-color:var(--k)}
+.sig-sub .cta-band .btn-ghost:hover{background:var(--k);color:var(--p)}
+.js-sub .cta-band{clip-path:inset(var(--wy,0%) var(--wx,0%) round var(--wr,0px))}
+
+/* ---------- Preise ---------- */
+.sig-sub .plan{padding:34px 30px}
+.sig-sub .plan.pop{background:var(--k);border:1px solid var(--k);box-shadow:none}
+.sig-sub .plan.pop::after{border-radius:0;background:var(--sig);color:var(--k);font-family:var(--fm);font-weight:600;text-transform:uppercase;top:0;right:0}
+.sig-sub .plan h3{text-transform:uppercase;font-stretch:80%;font-size:26px}
+.sig-sub .plan .price .amt,.sig-sub .plan .price{font-stretch:70%;font-weight:900}
+.sig-sub .plan .price .amt{font-size:64px}
+.sig-sub .plan li::before{content:"+";color:var(--sig2);font-family:var(--fm);font-weight:400}
+.sig-sub .plan.pop li::before{color:var(--sig)}
+.sig-sub .seg{border-radius:0;background:transparent;border:1px solid var(--ink);padding:3px}
+.sig-sub .seg span{border-radius:0;font-family:var(--fm);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+.sig-sub .seg span.on{background:var(--k);color:var(--p)}
+.sig-sub .cust{background:var(--k)}
+.sig-sub :is(.team-builder,.tb-modal){background:var(--p);border:1px solid var(--ink)}
+.sig-sub .tb-row{background:transparent}
+.sig-sub .tb-stepper button{border-radius:0;background:transparent;border-color:var(--ink)}
+.sig-sub .tb-summary{background:var(--k)}
+.sig-sub .tb-selection-list li{background:rgba(255,255,255,.05)}
+.sig-sub .plan .save-tag{border-radius:0;font-family:var(--fm);font-weight:400}
+
+/* ---------- FAQ ---------- */
+.sig-sub .faq{max-width:980px}
+.sig-sub .faq details{border-bottom:1px solid var(--ink);padding:24px 0}
+.sig-sub .faq details:first-of-type{border-top:1px solid var(--ink)}
+.sig-sub .faq summary{font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:700;font-stretch:88%;gap:20px}
+.sig-sub .faq summary::after{font-family:var(--fm);color:var(--sig2);transition:transform .35s var(--ease)}
+.sig-sub .faq details[open] summary::after{content:"+";transform:rotate(45deg)}
+.sig-sub .faq p{max-width:760px}
+
+/* ---------- Formular ---------- */
+.sig-sub .form{background:transparent;border:1px solid var(--ink);padding:36px}
+.sig-sub .form label{font-family:var(--fm);font-weight:400;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+.sig-sub .form input,.sig-sub .form textarea,.sig-sub .form select{background:transparent;border:0;border-bottom:1px solid var(--ink);border-radius:0;padding:12px 0;font-size:17px;font-family:var(--fd)}
+.sig-sub .form input:focus,.sig-sub .form textarea:focus{border-color:var(--sig);background:transparent;box-shadow:0 1px 0 var(--sig)}
+
+/* ---------- Prosa (Rechtliches, Blog) ---------- */
+.sig-sub .prose{max-width:780px}
+.sig-sub .prose p,.sig-sub .prose ul,.sig-sub .prose ol{color:#2B2E3E;font-size:17px;line-height:1.7}
+.sig-sub .prose h2{font-size:clamp(1.6rem,2.6vw,2.3rem)!important;margin:56px 0 16px;padding-top:18px;border-top:1px solid var(--ink);line-height:1}
+.sig-sub .prose h3{font-size:19px;text-transform:none;margin:28px 0 10px}
+.sig-sub .prose a{color:var(--k);text-decoration:underline;text-decoration-color:var(--sig);text-decoration-thickness:2px;text-underline-offset:3px}
+.sig-sub .prose a:hover{background:var(--sig)}
+.sig-sub .prose b,.sig-sub .prose strong{color:var(--k)}
+.sig-sub .prose ul li::marker{color:var(--sig2)}
+.sig-sub .page-hero .prose .muted{font-family:var(--fm);font-size:12px!important;text-transform:uppercase;letter-spacing:.05em}
+.sig-sub .prose .cta-band{margin:50px 0!important}
+
+/* ---------- Changelog ---------- */
+.sig-sub .log .entry{border-left:1px solid var(--ink)}
+.sig-sub .log .entry::before{border-radius:0;background:var(--sig);border:0;width:11px;height:11px;left:-6px}
+.sig-sub .log .ver{font-size:30px;font-stretch:72%;font-weight:900;text-transform:uppercase}
+.sig-sub .log .date,.sig-sub .log .tag{font-family:var(--fm);font-weight:400;border-radius:0}
+
+/* ---------- Tabellen ---------- */
+.sig-sub .cmp{background:transparent;border:1px solid var(--ink);border-radius:0}
+.sig-sub .cmp thead th{background:var(--k);color:var(--p);font-family:var(--fm);font-weight:400;text-transform:uppercase;font-size:11.5px}
+.sig-sub .cmp th,.sig-sub .cmp td{border-bottom:1px solid var(--border)}
+.sig-sub .cmp .col-pop{background:rgba(22,168,220,.14)}
+.sig-sub .cmp tbody tr:hover{background:rgba(7,9,26,.05)}
+
+/* ---------- Sonstiges aus leadesk-redesign.css ---------- */
+.sig-sub .marquee-track .mitem{font-family:var(--fm);font-weight:400;text-transform:uppercase;font-size:12.5px;letter-spacing:.05em;color:var(--ink)}
+.sig-sub .word-reveal{font-stretch:80%;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;font-size:clamp(2rem,4.6vw,4.2rem)}
+.sig-sub .word-reveal .w.grad{background:none;-webkit-text-fill-color:var(--sig2);font-family:var(--fd);font-style:normal;font-weight:200;font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.sig-sub .story-panel{border-radius:0;border:1px solid var(--ink)}
+.sig-sub .story-panel.tinted{background:var(--p2)}
+.sig-sub .persona-panel{border-radius:0;border:1px solid var(--ink);box-shadow:none}
+.sig-sub .persona-panel.show{background:var(--k)}
+.sig-sub .persona-stat{background:rgba(255,255,255,.05)}
+.sig-sub .gcard .tag,.sig-sub .lcard .k,.sig-sub .svc-tag,.sig-sub .dl-no{font-family:var(--fm);font-weight:400}
+.sig-sub .lcard .act{border-radius:0;font-family:var(--fm);font-weight:400;text-transform:uppercase;font-size:12px}
+.sig-sub .gal-dots button{border-radius:0}
+.sig-sub .tile-preview{border-radius:0;background:transparent}
+.sig-sub .app-shot{border-radius:26px}
+.sig-sub .ai-switch{border-radius:0}.sig-sub .ai-switch::after{border-radius:0}
+.sig-sub .dl-card img{border-radius:0}
+.sig-sub footer::before,.sig footer::before{display:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:860px){
+  .sig-sub .page-hero{padding:150px 0 80px}
+  .sig-sub .mock{box-shadow:10px 10px 0 var(--sig)}
+  .ph-meta{top:76px}
+}
+
+/* ---------- Reduced Motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  .js-sub .page-hero h1{animation:none}
+  .js-sub .reveal h2{clip-path:none}.js-sub .reveal h2::after{display:none}
+  .js-sub .cta-band{clip-path:none}
+  .sig-sub .tbadge{transform:none!important}
+}
+/* ---------- Korrekturen nach erstem Render ---------- */
+.sig-sub .page-hero .ph-grid h1{font-size:clamp(2.4rem,4.8vw,5.2rem)!important}
+.sig-sub .prose .cta-band h2{border-top:0;padding-top:0;margin-top:0}
+.sig-sub .mock .kpi{border:1px solid var(--border);margin:0;padding:12px 14px}
+.sig-sub .mock .kpi .n{font-size:clamp(1.4rem,2.4vw,2rem)}
+.sig-sub .ph-grid>*{min-width:0}

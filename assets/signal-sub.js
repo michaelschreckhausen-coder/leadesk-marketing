@@ -33,9 +33,9 @@
   var grain = document.createElement('div'); grain.className = 'grain'; grain.setAttribute('aria-hidden','true'); body.appendChild(grain);
   var cur = null, ring, dot, label, rx = 0, ry = 0;
   if(fine && !rm){
-    cur = document.createElement('div'); cur.className = 'cur'; cur.setAttribute('aria-hidden','true');
-    cur.innerHTML = '<span class="cur-dot"></span><span class="cur-ring"><em></em></span>';
-    body.appendChild(cur); ring = $('.cur-ring', cur); dot = $('.cur-dot', cur); label = $('em', ring);
+    cur = document.createElement('div'); cur.className = 'sgc'; cur.setAttribute('aria-hidden','true');
+    cur.innerHTML = '<span class="sgc-dot"></span><span class="sgc-ring"><em></em></span>';
+    body.appendChild(cur); ring = $('.sgc-ring', cur); dot = $('.sgc-dot', cur); label = $('em', ring);
     doc.classList.add('has-cur');
     document.addEventListener('mouseover', function(e){
       var a = e.target.closest('a,button,summary,.seg span,[data-cur]');

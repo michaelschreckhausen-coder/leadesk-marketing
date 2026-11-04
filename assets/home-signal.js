@@ -14,7 +14,7 @@
   var $ = function(s,c){ return (c||document).querySelector(s); };
   var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
   var mouse = {x: innerWidth/2, y: innerHeight/2, on:false};
-  window.addEventListener('mousemove', function(e){ mouse.x = e.clientX; mouse.y = e.clientY; mouse.on = true; }, {passive:true});
+  window.addEventListener('mousemove', function(e){ mouse.x = e.clientX; mouse.y = e.clientY; mouse.on = true; var c = document.querySelector('.sgc'); if(c) c.classList.add('live'); }, {passive:true});
   document.addEventListener('mouseleave', function(){ mouse.on = false; });
 
   /* ---------- Text in Zeichen zerlegen (barrierearm: aria-label + aria-hidden) ---------- */
@@ -317,7 +317,7 @@
   }
 
   /* Cursor */
-  var cur = $('.cur'), ring = cur && $('.cur-ring', cur), dot = cur && $('.cur-dot', cur), label = ring && $('em', ring), rx = 0, ry = 0;
+  var cur = $('.sgc'), ring = cur && $('.sgc-ring', cur), dot = cur && $('.sgc-dot', cur), label = ring && $('em', ring), rx = 0, ry = 0;
   if(cur && fine && !rm){
     doc.classList.add('has-cur');
     document.addEventListener('mouseover', function(e){

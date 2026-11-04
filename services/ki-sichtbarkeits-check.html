@@ -20,12 +20,17 @@
 <meta name="twitter:title" content="KI-Sichtbarkeits-Check | Leadesk Services">
 <meta name="twitter:description" content="KI-Sichtbarkeits-Check: Wir testen, ob ChatGPT, Perplexity, Gemini und Google AI Overviews dein Unternehmen bei Kundenfragen nennen, im Vergleich zu drei Wettbewerbern.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
-<meta name="theme-color" content="#0A6FB0">
+<meta name="theme-color" content="#07091A">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/leadesk.css">
 <link rel="stylesheet" href="/assets/leadesk-redesign.css">
+<!-- „Signal“-Look: gemeinsame Basis + Unterseiten-Skin, Schriften self-hosted -->
+<link rel="preload" href="/assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/signal-base.css">
+<link rel="stylesheet" href="/assets/signal-sub.css">
+<script>document.documentElement.classList.add('js-sub')</script>
 <style>
   .crumbs{font-size:13.5px;color:var(--muted);margin-bottom:14px}
   .crumbs a{color:var(--muted)}.crumbs a:hover{color:var(--ink)}
@@ -103,8 +108,11 @@
   ]
 }
 </script>
+<!-- Vercel Web Analytics: cookielose Reichweitenmessung, siehe Datenschutz 3.2 -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body>
+<body class="sig-sub">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
     <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
@@ -259,9 +267,10 @@
     <div><h4>Unternehmen</h4><a href="/agenturen.html">Agenturen</a><a href="/preise.html">Preise</a><a href="/ki.html">KI</a><a href="/sicherheit.html">Sicherheit</a><a href="/ueber-uns.html">Über uns</a><a href="/kontakt.html">Kontakt</a></div>
     <div><h4>Ressourcen</h4><a href="/blog/">Blog</a><a href="/chrome-extension.html">Chrome-Extension</a><a href="/integrationen.html">Integrationen</a><a href="/changelog.html">Changelog</a><a href="/api-docs.html">API-Docs</a><a href="/affiliate.html">Affiliate</a><a href="/support.html">Support</a></div>
   </div>
-  <div class="fbar"><span>© 2026 Leadesk · Made in Germany 🇩🇪</span><span class="legal"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/agb.html">AGB</a> · <a href="/av-vertrag.html">AV-Vertrag</a></span></div>
+  <div class="fbar"><span>© 2026 Leadesk · Made in Germany</span><span class="legal"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/agb.html">AGB</a> · <a href="/av-vertrag.html">AV-Vertrag</a></span></div>
 </div></footer>
 <script src="/assets/leadesk.js"></script>
 <script src="/assets/leadesk-redesign.js"></script>
+<script src="/assets/signal-sub.js"></script>
 </body>
 </html>

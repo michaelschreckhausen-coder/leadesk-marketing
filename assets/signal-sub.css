@@ -254,3 +254,6 @@ body.sig-sub{
 .sig-sub .mock .kpi{border:1px solid var(--border);margin:0;padding:12px 14px}
 .sig-sub .mock .kpi .n{font-size:clamp(1.4rem,2.4vw,2rem)}
 .sig-sub .ph-grid>*{min-width:0}
+/* Keine automatische Silbentrennung: trennte Lehnwörter falsch („OUTRE-ACH“, „WORK-SHOP“).
+   Nur wenn ein Wort wirklich nicht passt, wird es umbrochen. */
+.sig-sub .page-hero h1,.sig-sub section h2,.sig-sub h2.big{hyphens:manual;-webkit-hyphens:manual;overflow-wrap:break-word}

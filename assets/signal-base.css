@@ -62,3 +62,5 @@ html.has-cur .cur{display:block}
 
 :is(.sig,.sig-sub) header .nav-links a.active,:is(.sig,.sig-sub) header .nav-trigger.active,:is(.sig,.sig-sub) header .nav-group:hover .nav-trigger{color:var(--sig)}
 .cur{opacity:0;transition:opacity .3s}.cur.live{opacity:1}
+/* Formular-Elemente erben die Schrift nicht von selbst (sonst Browser-Standard, z. B. Arial) */
+:is(.sig,.sig-sub) :is(button,input,select,textarea){font-family:inherit}

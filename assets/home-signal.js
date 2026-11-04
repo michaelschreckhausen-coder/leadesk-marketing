@@ -107,17 +107,19 @@
     oc.fillStyle = '#fff'; oc.textBaseline = 'middle';
     var cy = top + room/2;
     oc.fillText(word, (cw-w)/2, cy);
-    var data = oc.getImageData(0,0,cw,ch).data, step = mobile() ? 4 : 5, old = P;
+    // nur den Bereich des Wortes auslesen statt der ganzen Fläche (spart beim Laden viel Rechenzeit)
+    var y0 = Math.max(0, Math.floor(cy - fs*0.6)), y1 = Math.min(ch, Math.ceil(cy + fs*0.6)), x0 = Math.max(0, Math.floor((cw-w)/2) - 4), x1 = Math.min(cw, Math.ceil((cw+w)/2) + 4);
+    var rw = Math.max(1, x1-x0), data = oc.getImageData(x0, y0, rw, Math.max(1, y1-y0)).data, step = mobile() ? 5 : 6, old = P;
     P = [];
-    for(var y=0;y<ch;y+=step){ for(var x=0;x<cw;x+=step){
-      if(data[((y|0)*cw + (x|0))*4+3] > 140){
+    for(var y=y0;y<y1;y+=step){ for(var x=x0;x<x1;x+=step){
+      if(data[(((y-y0)|0)*rw + ((x-x0)|0))*4+3] > 140){
         var o = old[P.length];
         P.push({tx:x, ty:y, x: o ? o.x : Math.random()*cw, y: o ? o.y : Math.random()*ch, vx:0, vy:0,
           s: Math.random()<.12 ? 2.2 : 1.4, c: Math.random()<.14 ? 1 : 0, ph: Math.random()*6.28, rx:(Math.random()-.5), ry:(Math.random()-.5)});
       }
     }}
     // Streupunkte im Raum
-    for(var k=0;k<(mobile()?120:320);k++){ P.push({tx:Math.random()*cw, ty:Math.random()*ch, x:Math.random()*cw, y:Math.random()*ch, vx:0, vy:0, s:1, c:2, ph:Math.random()*6.28, rx:0, ry:0, free:1}); }
+    for(var k=0;k<(mobile()?80:200);k++){ P.push({tx:Math.random()*cw, ty:Math.random()*ch, x:Math.random()*cw, y:Math.random()*ch, vx:0, vy:0, s:1, c:2, ph:Math.random()*6.28, rx:0, ry:0, free:1}); }
     if(rm){ drawField(0, 0, true); }
   }
   function drawField(t, disperse, snap){
@@ -154,7 +156,8 @@
     }
   }
   if(canvas){
-    var go = function(){ buildField(); };
+    // Partikelfeld erst nach dem Laden aufbauen, damit es den Seitenaufbau nicht blockiert
+    var go = function(){ var run = function(){ (window.requestIdleCallback || setTimeout)(buildField, {timeout:600}); }; if(document.readyState === 'complete') run(); else window.addEventListener('load', run, {once:true}); };
     if(document.fonts && document.fonts.load){ document.fonts.load('900 100px Archivo').then(go, go); } else { go(); }
     new IntersectionObserver(function(en){ heroVisible = en[0].isIntersecting; }).observe(canvas);
   }

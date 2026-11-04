@@ -38,3 +38,6 @@ Siehe README.md im Repo, Abschnitt „Neue Unterseite anlegen“.
 
 ## Rückweg
 Vor dem Design: Production-Deployment `9e309da` (Vercel-ID 7392016762) bzw. `git revert -m 1` auf die Merge-Commits in umgekehrter Reihenfolge.
+
+## Statistik
+Vercel Web Analytics, cookielos, Dashboard: Vercel → leadesk-marketing → Analytics. Snippet im `<head>` jeder Seite (`/_vercel/insights/script.js`). Datenschutzerklärung 3.2 beschreibt das; Text vor Livegang juristisch prüfen lassen. App-Store-Badges liegen lokal in `assets/img/`, damit keine Anfrage an Apple-Server geht.

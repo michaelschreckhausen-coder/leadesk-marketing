@@ -20,12 +20,17 @@
 <meta name="twitter:title" content="Corporate Influencer mit Leadesk">
 <meta name="twitter:description" content="Dein Team als glaubwürdige Stimme der Marke — zentral gesteuert, ohne Chaos.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
-<meta name="theme-color" content="#0A6FB0">
+<meta name="theme-color" content="#07091A">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/leadesk.css">
 <link rel="stylesheet" href="assets/leadesk-redesign.css">
+<!-- „Signal“-Look: gemeinsame Basis + Unterseiten-Skin, Schriften self-hosted -->
+<link rel="preload" href="assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/signal-base.css">
+<link rel="stylesheet" href="assets/signal-sub.css">
+<script>document.documentElement.classList.add('js-sub')</script>
 <style>
   .mrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:8px}
   .mrow .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px}
@@ -75,7 +80,7 @@
 }
 </script>
 </head>
-<body>
+<body class="sig-sub">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
     <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
@@ -333,5 +338,6 @@
 </div></footer>
 <script src="assets/leadesk.js"></script>
 <script src="assets/leadesk-redesign.js"></script>
+<script src="assets/signal-sub.js"></script>
 </body>
 </html>

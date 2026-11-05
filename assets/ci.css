@@ -1,0 +1,196 @@
+/* =========================================================================
+   Leadesk — CI-Look für die Website (body.ci)
+   Angelehnt an den aktuellen Look der App (app.leadesk.de, data-look="2026"):
+   Lexend Deca für Überschriften und Bedienelemente, Inter für Fließtext,
+   ruhige helle Flächen, klare Linien statt Schatten, 4px-Radien,
+   Navy #003060 als Primärfarbe, Cyan #16A8DC / #0A6FB0 als Akzent.
+   Lädt NACH leadesk.css und leadesk-redesign.css und setzt deren Tokens neu.
+   Schriften liegen lokal in assets/fonts (keine Anfrage an Google Fonts).
+   ========================================================================= */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-400.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-600.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-700.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/inter-800.woff2) format('woff2')}
+@font-face{font-family:'Lexend Deca';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/lexend-deca-latin-400.woff2) format('woff2')}
+@font-face{font-family:'Lexend Deca';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/lexend-deca-latin-500.woff2) format('woff2')}
+@font-face{font-family:'Lexend Deca';font-style:normal;font-weight:600 900;font-display:swap;src:url(fonts/lexend-deca-latin-600.woff2) format('woff2')}
+
+/* ---------- Tokens ---------- */
+body.ci{
+  --navy:#003060; --ink:#213343; --muted:#516F90; --cyan:#16A8DC; --cyan-mid:#0A6FB0;
+  --grad:linear-gradient(120deg,#16A8DC 0%,#0A6FB0 48%,#003060 100%);
+  --bg:#FFFFFF; --bg-soft:#EEF2F6; --border:#DFE3EB; --border-strong:#CBD6E2; --selected:#EEF5FB;
+  --tint-blue:#EEF2F6; --tint-cyan:#EEF5FB; --tint-lav:#EEF2F6; --tint-green:#EEF2F6; --tint-navy:#EEF2F6; --tint-peach:#EEF2F6;
+  --radius:4px; --radius-sm:4px; --radius-btn:4px; --maxw:1200px;
+  --shadow:none; --shadow-hover:none;
+  --fh:'Lexend Deca','Inter',system-ui,sans-serif; --fb:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:var(--fb);color:var(--ink);background:#fff;font-size:16px}
+
+/* ---------- Typografie ---------- */
+.ci h1,.ci h2,.ci h3,.ci h4{font-family:var(--fh);color:var(--ink);font-weight:600;letter-spacing:-.02em}
+.ci h1{font-weight:700}
+.ci .page-hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.1}
+.ci h2.big,.ci section h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.15}
+.ci h3{font-weight:600;letter-spacing:-.01em}
+.ci .lead{color:var(--muted);line-height:1.6}
+.ci p{line-height:1.6}
+.ci .eyebrow{font-family:var(--fh);font-weight:600;font-size:12px;letter-spacing:.1em;color:var(--cyan-mid)}
+.ci .eyebrow::before{width:20px;height:2px;border-radius:0;background:var(--cyan)}
+.ci .nav-links,.ci .nav-menu a,.ci .nav-overlay-list{font-family:var(--fh)}
+.ci .logo{font-family:var(--fh)}
+
+/* ---------- Layout: klare Abschnitte mit Linien ---------- */
+.ci section.pad,.ci section.pad-s{border-top:1px solid var(--border)}
+.ci .pad{padding:104px 0}
+.ci .pad-s{padding:80px 0}
+.ci .blob{display:none}
+.ci .page-hero{border-bottom:1px solid var(--border)}
+
+/* ---------- Buttons ---------- */
+.ci .btn{font-family:var(--fh);font-weight:600;font-size:15px;border-radius:var(--radius-btn);padding:12px 20px;box-shadow:none;transform:none}
+.ci .btn-primary{background:var(--navy);color:#fff}
+.ci .btn-primary:hover{background:var(--cyan-mid);box-shadow:none;transform:none;filter:none}
+.ci .btn-navy{background:var(--navy)}
+.ci .btn-navy:hover{background:var(--cyan-mid);box-shadow:none;transform:none}
+.ci .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--border-strong)}
+.ci .btn-ghost:hover{border-color:var(--navy);color:var(--navy);background:#fff}
+.ci header.scrolled{background:rgba(255,255,255,.96);border-bottom:1px solid var(--border)}
+
+/* ---------- Karten: weiß, Linie, kein Schatten ---------- */
+.ci :is(.card,.mtile,.gcard,.persona,.step,.plan,.lcard,.mock,.form,.persona-panel,.svc-card,.dl-card,.tbadge,.cmp,.team-builder,.tb-modal){
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:none}
+.ci :is(.card,.mtile,.persona){border-top:3px solid var(--acc,var(--navy))}
+.ci :is(.card,.mtile,.gcard,.lcard,.svc-card,.dl-card):hover{transform:translateY(-2px);box-shadow:none;border-color:var(--border-strong)}
+.ci :is(.card,.mtile,.persona) h3{font-size:18px}
+/* Icon-Platz in Karten: statt Emoji eine ruhige Nummer */
+.ci :is(.grid2,.grid3,.grid4,.mods,.personas){counter-reset:ci}
+.ci :is(.card,.mtile){counter-increment:ci}
+.ci :is(.card,.mtile,.gcard) .ic{width:36px;height:36px;border-radius:var(--radius);background:var(--selected)!important;color:var(--cyan-mid);
+  font-family:var(--fh);font-weight:600;font-size:14px;box-shadow:none;margin-bottom:16px}
+.ci :is(.card,.mtile) .ic:empty::before{content:counter(ci,decimal-leading-zero)}
+.ci .step::before{border-radius:var(--radius);background:var(--navy);font-family:var(--fh)}
+.ci .plan.pop{border:2px solid var(--cyan-mid)}
+.ci .plan.pop::after{border-radius:var(--radius);background:var(--cyan-mid)}
+.ci .plan .price,.ci .plan .price .amt{font-family:var(--fh)}
+.ci .kpi .n{font-family:var(--fh);font-weight:700}
+
+/* ---------- Kleinteile ---------- */
+.ci .lead-chip{border-radius:var(--radius);background:var(--selected);border-color:var(--border);color:var(--ink)}
+.ci .chatline{border-radius:var(--radius)}
+.ci .checklist li::before{background:var(--selected);color:var(--cyan-mid)}
+.ci .tbadge{font-family:var(--fh);font-weight:500}
+.ci .guardrail{border-radius:var(--radius)}
+.ci .note{border-radius:var(--radius);background:var(--selected);border-color:var(--border)}
+.ci .seg{border-radius:var(--radius);background:#fff;border-color:var(--border-strong)}
+.ci .seg span{border-radius:3px;font-family:var(--fh);font-weight:500}
+.ci .seg span.on{background:var(--navy)}
+.ci .cmp thead th{background:var(--bg-soft);font-family:var(--fh)}
+.ci .faq summary{font-family:var(--fh);font-weight:600}
+.ci .form input,.ci .form textarea{border-radius:var(--radius);background:#fff;border-color:var(--border-strong)}
+.ci .form label{font-family:var(--fh);font-weight:500}
+.ci .marquee-track .mitem{font-family:var(--fh);font-weight:500}
+.ci .tile-preview,.ci .app-shot .as-row,.ci .as-chat,.ci .as-kpi{border-radius:var(--radius)}
+.ci .ig-mock{border-radius:var(--radius);box-shadow:none}
+.ci .ig-thumbs span{border-radius:var(--radius)}
+.ci .story-panel{border-radius:var(--radius);border:1px solid var(--border)}
+.ci .prose a{color:var(--cyan-mid);text-decoration:underline;text-underline-offset:3px}
+.ci .prose h2{font-size:clamp(1.3rem,2vw,1.6rem)}
+.ci .log .ver{font-family:var(--fh)}
+
+/* ---------- CTA-Band: Navy-Fläche ---------- */
+.ci .cta-band{background:var(--navy);border-radius:var(--radius);box-shadow:none}
+.ci .cta-band h2{color:#fff}
+.ci .cta-band .btn-primary{background:#fff;color:var(--navy)}
+.ci .cta-band .btn-primary:hover{background:var(--cyan);color:var(--navy)}
+.ci .cta-band .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.ci .cta-band .btn-ghost:hover{border-color:#fff;color:#fff}
+
+/* ---------- Footer ---------- */
+.ci footer h4{font-family:var(--fh);font-weight:600}
+
+/* =========================================================================
+   Startseite
+   ========================================================================= */
+.ci-hero{padding:148px 0 84px;background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);border-bottom:1px solid var(--border)}
+.ci-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.ci-hero h1{font-size:clamp(2.3rem,4.3vw,3.7rem);line-height:1.08;margin:6px 0 20px}
+.ci-hero h1 .grad-text{display:block;font-weight:600;font-size:.62em;line-height:1.25;margin-top:10px;letter-spacing:-.01em}
+.ci-hero .lead{max-width:600px;font-size:clamp(1.02rem,1.3vw,1.15rem)}
+.ci-steps{list-style:none;margin:26px 0 30px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));counter-reset:st;border-top:1px solid var(--border)}
+.ci-steps li{counter-increment:st;display:flex;flex-direction:column;gap:3px;padding:14px 14px 0 0}
+.ci-steps li+li{padding-left:14px;border-left:1px solid var(--border)}
+.ci-steps li::before{content:counter(st,decimal-leading-zero);font-family:var(--fh);font-weight:600;font-size:12px;color:var(--cyan-mid)}
+.ci-steps b{font-family:var(--fh);font-weight:600;font-size:16px;color:var(--ink)}
+.ci-steps span{font-size:14px;color:var(--muted);line-height:1.45}
+.ci-hero .hero-cta{justify-content:flex-start;margin-top:0}
+.ci-hero .trustline{margin-top:18px}
+
+/* Beispielansicht der App (heller App-Look) */
+.ci-app{background:#fff;border:1px solid var(--border);border-radius:6px;box-shadow:0 24px 60px rgba(0,48,96,.10);font-family:var(--fh);font-size:13px;color:var(--ink);overflow:hidden}
+.ci-app-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--border);background:var(--bg-soft)}
+.ci-app-bar i{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
+.ci-app-bar span{margin-left:10px;color:var(--muted);font-size:12px}
+.ci-app-bar em{margin-left:auto;font-style:normal;font-size:11px;font-weight:600;color:var(--cyan-mid);background:var(--selected);border:1px solid var(--border);padding:2px 8px;border-radius:var(--radius)}
+.ci-app-body{display:grid;grid-template-columns:120px 1fr;min-height:360px}
+.ci-app-nav{display:flex;flex-direction:column;gap:2px;padding:12px 8px;border-right:1px solid var(--border);background:#fbfcfd}
+.ci-app-nav span{padding:7px 10px;border-radius:var(--radius);color:var(--muted);font-weight:500}
+.ci-app-nav span.on{background:var(--selected);color:var(--navy);font-weight:600;box-shadow:inset 2px 0 0 var(--cyan-mid)}
+.ci-app-main{padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;background:var(--bg-soft)}
+.ci-app-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.ci-app-h b{font-size:18px;font-weight:600}
+.ci-app-h span{font-size:12px;color:var(--cyan-mid);font-weight:500}
+.ci-app-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;min-width:0}
+.ci-app-card .ct{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.ci-app .ar{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--border)}
+.ci-app .ar:first-child{border-top:0}
+.ci-app .ar span{font-size:11px;font-weight:600;color:var(--c)}
+.ci-app .ar b{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci-app .ar em{font-style:normal;font-size:11px;font-weight:600;color:#fff;background:var(--navy);padding:4px 9px;border-radius:var(--radius)}
+.ci-app-row{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+.ci-app .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ci-app .cols div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.ci-app .cols span{font-size:10.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci-app .cols i{font-style:normal;font-size:11.5px;padding:6px 7px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci-app .cols i.hot{border-color:var(--cyan-mid);background:var(--selected);color:var(--navy);font-weight:600}
+.ci-app .days{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:10px}
+.ci-app .days span{text-align:center;font-size:11px;padding:7px 0;border:1px solid var(--border);border-radius:var(--radius);color:var(--muted)}
+.ci-app .days .li{background:rgba(46,107,230,.12);border-color:#2E6BE6;color:#2E6BE6;font-weight:600}
+.ci-app .days .ig{background:rgba(221,42,123,.10);border-color:#DD2A7B;color:#DD2A7B;font-weight:600}
+.ci-app .legend{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--muted)}
+.ci-app .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.ci-app .legend i.li{background:#2E6BE6}.ci-app .legend i.ig{background:#DD2A7B}
+
+.ci-trust{padding:22px 0;border-bottom:1px solid var(--border);background:#fff}
+.ci-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;font-family:var(--fh);font-weight:500;font-size:14px;color:var(--muted)}
+.ci-trust-row span{display:inline-flex;align-items:center;gap:8px}
+.ci-trust-row span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+
+/* Problem-Grafik: Tool-Kacheln mit Text statt Emoji */
+.ci .tool{font-family:var(--fh);font-weight:600;font-size:12px;color:var(--ink);border-radius:var(--radius)}
+.ci .merged{border-radius:var(--radius);font-family:var(--fh)}
+.ci .lcard{border-radius:var(--radius)}
+.ci .lcard .act{border-radius:var(--radius);font-family:var(--fh);font-weight:600}
+
+@media(max-width:960px){
+  .ci-hero-grid{grid-template-columns:1fr}
+  .ci-hero{padding:120px 0 64px}
+}
+@media(max-width:600px){
+  .ci-steps{grid-template-columns:1fr}
+  .ci-steps li+li{padding-left:0;border-left:0;border-top:1px solid var(--border)}
+  .ci-steps li{padding:12px 0}
+  .ci-app-body{grid-template-columns:1fr}
+  .ci-app-nav{flex-direction:row;overflow:hidden;border-right:0;border-bottom:1px solid var(--border);padding:8px}
+  .ci-app-nav span{white-space:nowrap;padding:5px 8px}
+  .ci-app-row{grid-template-columns:1fr}
+  .ci-app .ar{grid-template-columns:60px 1fr auto}
+}
+
+/* Lange deutsche Wörter auf kleinen Bildschirmen sauber trennen */
+@media(max-width:600px){
+  .ci h1,.ci h2{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+  .ci .page-hero h1{font-size:clamp(1.9rem,8.4vw,2.4rem)}
+  .ci h2.big,.ci section h2{font-size:clamp(1.6rem,7vw,2rem)}
+}
+.ci .ph-grid>*,.ci .split>*{min-width:0}

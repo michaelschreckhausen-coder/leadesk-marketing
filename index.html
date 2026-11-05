@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Leadesk — Sichtbar werden. Kunden gewinnen.">
 <meta name="twitter:description" content="Leadesk bündelt LinkedIn, Instagram, Content, CRM und Delivery in einer App — mit Leadly, dem KI-Agenten, der morgens schon für dich gearbeitet hat.">
 <meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
-<meta name="theme-color" content="#07091A">
+<meta name="theme-color" content="#003060">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,11 +28,9 @@
 <!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.css. Für den echten Rollout
      Inhalt später in leadesk.css zusammenführen (wie bei PR#2 additiv verfahren). -->
 <link rel="stylesheet" href="assets/leadesk-redesign.css">
-<!-- STARTSEITE „SIGNAL“: eigener Look nur für index.html, Schriften self-hosted -->
-<link rel="preload" href="assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/signal-base.css">
-<link rel="stylesheet" href="assets/home-signal.css">
-<script>document.documentElement.classList.add('js-sig')</script>
+<!-- CI-Look (an app.leadesk.de angelehnt): Lexend Deca + Inter, self-hosted -->
+<link rel="preload" href="assets/fonts/lexend-deca-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/ci.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,7 +87,7 @@
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="sig">
+<body class="ci home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
     <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
@@ -135,330 +133,326 @@
   </div>
 </div>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="sgc" aria-hidden="true"><span class="sgc-dot"></span><span class="sgc-ring"><em></em></span></div>
-
-<main id="sig">
-
-<!-- ============ HERO ============ -->
-<!-- Klarheit vor Effekt: In den ersten Sekunden muss klar sein, WAS Leadesk ist.
-     Links: Kategorie, Nutzen, drei Schritte. Rechts: Beispielansicht der App. -->
-<section class="s-hero v2 dark" id="top">
-  <canvas class="field" data-word="off" aria-hidden="true"></canvas>
-  <div class="v2-grid">
-    <div class="v2-copy">
-      <div class="v2-kicker mono">Software für Vertrieb &amp; Marketing auf LinkedIn</div>
-      <h1 class="mega" id="megaH1">
-        <span class="row r1">Kunden gewinnen über LinkedIn.</span>
-        <span class="row r2"><em>Content, Outreach &amp; CRM in einer App.</em></span>
-      </h1>
-      <p class="v2-lead">Mit Leadesk schreibst und planst du Posts mit KI, sprichst passende Kontakte auf LinkedIn und Instagram gezielt an und führst jeden Lead im CRM bis zum Abschluss. Leadly, dein KI-Agent, schlägt dir jeden Morgen die nächsten Schritte vor.</p>
-      <ol class="v2-steps">
+<!-- HERO: in fünf Sekunden klar, was Leadesk ist. Links Nutzen, rechts die App. -->
+<section class="ci-hero" id="top">
+  <div class="wrap ci-hero-grid">
+    <div class="ci-hero-copy reveal">
+      <div class="eyebrow">Software für Vertrieb &amp; Marketing auf LinkedIn</div>
+      <h1>Kunden gewinnen über LinkedIn. <span class="grad-text">Content, Outreach und CRM in einer App.</span></h1>
+      <p class="lead">Mit Leadesk schreibst und planst du Posts mit KI, sprichst passende Kontakte auf LinkedIn und Instagram gezielt an und führst jeden Lead im CRM bis zum Abschluss. Leadly, dein KI-Agent, schlägt dir jeden Morgen die nächsten Schritte vor.</p>
+      <ol class="ci-steps">
         <li><b>Sichtbar werden</b><span>Posts in deiner Stimme schreiben und planen</span></li>
         <li><b>Ansprechen</b><span>Kampagnen und Nachrichten, die nicht nach Bot klingen</span></li>
         <li><b>Abschließen</b><span>Kontakte, Deals und Aufgaben im CRM</span></li>
       </ol>
-      <div class="ctas">
-        <a class="b-solid magnetic" href="https://app.leadesk.de/register" data-cur="Los"><span>Kostenlos testen</span></a>
-        <a class="b-line" href="funktionen.html" data-cur="Funktionen">Alle Funktionen</a>
-      </div>
-      <div class="v2-trust mono">3 Tage kostenlos · Ohne Kreditkarte · EU-Hosting · DSGVO · Made in Germany</div>
+      <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="funktionen.html">Alle Funktionen</a></div>
+      <div class="trustline">3 Tage kostenlos · Ohne Kreditkarte · EU-Hosting · DSGVO-konform · Made in Germany</div>
     </div>
 
-    <div class="v2-app" role="img" aria-label="Beispielansicht der Leadesk-App: Leadly-Vorschläge, Pipeline und Content-Plan auf einen Blick">
-      <div class="app-bar"><i></i><i></i><i></i><span class="mono">app.leadesk.de</span><span class="mono app-ex">Beispiel</span></div>
-      <div class="app-body">
-        <nav class="app-nav mono" aria-hidden="true">
+    <div class="ci-app reveal d1" role="img" aria-label="Beispielansicht der Leadesk-App: Leadly-Vorschläge, Pipeline und Content-Plan auf einen Blick">
+      <div class="ci-app-bar"><i></i><i></i><i></i><span>app.leadesk.de</span><em>Beispiel</em></div>
+      <div class="ci-app-body">
+        <nav class="ci-app-nav" aria-hidden="true">
           <span class="on">Heute</span><span>LinkedIn</span><span>Instagram</span><span>Content</span><span>CRM</span><span>Reporting</span>
         </nav>
-        <div class="app-main">
-          <div class="app-h"><b>Heute</b><span class="mono">Leadly hat 3 Vorschläge</span></div>
-          <div class="app-card leadly">
-            <div class="ar" style="--c:#2E6BE6"><span class="mono">LinkedIn</span><b>Follow-up für Hendrik R.</b><em class="mono">Übernehmen</em></div>
-            <div class="ar" style="--c:#7A5AF8"><span class="mono">Import</span><b>3 neue Leads aus Sales Navigator</b><em class="mono">Ins CRM</em></div>
-            <div class="ar" style="--c:#12B886"><span class="mono">Content</span><b>Post für Donnerstag ist fertig</b><em class="mono">Ansehen</em></div>
+        <div class="ci-app-main">
+          <div class="ci-app-h"><b>Heute</b><span>Leadly hat 3 Vorschläge</span></div>
+          <div class="ci-app-card">
+            <div class="ar" style="--c:var(--li)"><span>LinkedIn</span><b>Follow-up für Hendrik R.</b><em>Übernehmen</em></div>
+            <div class="ar" style="--c:var(--purple)"><span>Import</span><b>3 neue Leads aus Sales Navigator</b><em>Ins CRM</em></div>
+            <div class="ar" style="--c:var(--content)"><span>Content</span><b>Post für Donnerstag ist fertig</b><em>Ansehen</em></div>
           </div>
-          <div class="app-row">
-            <div class="app-card pipe">
-              <div class="app-ct mono">Pipeline</div>
+          <div class="ci-app-row">
+            <div class="ci-app-card">
+              <div class="ct">Pipeline</div>
               <div class="cols">
-                <div><span class="mono">Neu</span><i>Horizont AG</i><i>Nordkap</i></div>
-                <div><span class="mono">Qualifiz.</span><i class="hot">Auralis · 86</i></div>
-                <div><span class="mono">Angebot</span><i>Marketing-Lead</i></div>
+                <div><span>Neu</span><i>Horizont AG</i><i>Nordkap</i></div>
+                <div><span>Qualifiz.</span><i class="hot">Auralis · 86</i></div>
+                <div><span>Angebot</span><i>Marketing-Lead</i></div>
               </div>
             </div>
-            <div class="app-card cplan">
-              <div class="app-ct mono">Content-Plan</div>
-              <div class="days mono"><span>Mo</span><span class="p li">Di</span><span>Mi</span><span class="p li">Do</span><span class="p ig">Fr</span></div>
-              <div class="cplan-l mono"><span><i class="li"></i>LinkedIn-Post</span><span><i class="ig"></i>Reel</span></div>
+            <div class="ci-app-card">
+              <div class="ct">Content-Plan</div>
+              <div class="days"><span>Mo</span><span class="li">Di</span><span>Mi</span><span class="li">Do</span><span class="ig">Fr</span></div>
+              <div class="legend"><span><i class="li"></i>LinkedIn-Post</span><span><i class="ig"></i>Reel</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="hero-ticker mono" aria-hidden="true">
-    <span class="live-dot"></span><span>Beispiel-Workspace</span>
-    <span class="tk" data-ticker>Kontaktanfrage angenommen — Geschäftsführerin, Agentur</span>
-    <span class="tk-count"><b data-n="128">128</b> Signale</span>
+</section>
+
+<!-- Vertrauensleiste -->
+<section class="ci-trust">
+  <div class="wrap ci-trust-row">
+    <span>EU-Hosting</span><span>DSGVO-konform</span><span>LinkedIn Sales Navigator</span><span>Row-Level-Security</span><span>ISO 27001 in Vorbereitung</span>
   </div>
 </section>
 
-<!-- ============ VELOCITY MARQUEE ============ -->
-<div class="vmarq" aria-hidden="true">
-  <div class="vm-row"><div class="vm-track" data-dir="1">
-    <span>LinkedIn</span><b>✳</b><span class="o">Instagram</span><b>✳</b><span>Content</span><b>✳</b><span class="o">CRM</span><b>✳</b><span>Leadly</span><b>✳</b><span class="o">KI-Sichtbarkeit</span><b>✳</b>
-    <span>LinkedIn</span><b>✳</b><span class="o">Instagram</span><b>✳</b><span>Content</span><b>✳</b><span class="o">CRM</span><b>✳</b><span>Leadly</span><b>✳</b><span class="o">KI-Sichtbarkeit</span><b>✳</b>
-  </div></div>
-  <div class="vm-row alt"><div class="vm-track" data-dir="-1">
-    <span class="o">Eine App</span><b>/</b><span>Ein Login</span><b>/</b><span class="o">Ein Überblick</span><b>/</b><span>Made in Germany</span><b>/</b>
-    <span class="o">Eine App</span><b>/</b><span>Ein Login</span><b>/</b><span class="o">Ein Überblick</span><b>/</b><span>Made in Germany</span><b>/</b>
-  </div></div>
-</div>
-
-<!-- ============ PROBLEM: Chaos → Leadesk ============ -->
-<section class="s-chaos paper" id="problem">
-  <div class="pin">
-    <div class="chaos-head">
-      <span class="mono lab" data-scramble>(01) Das Problem</span>
-      <h2 class="h2x">Sechs Tools.<br>Vier Logins.<br><em>Null Überblick.</em></h2>
-      <p>LinkedIn hier, Content-Tool dort, CRM woanders, Rechnungen im vierten Tab. Zwischen den Tools verschwinden die Leads — und deine Zeit. Leadesk räumt auf.</p>
+<!-- PROBLEM -->
+<section class="pad">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Das Problem</div>
+      <h2 class="big">Sechs Tools.<br>Vier Logins.<br><span class="grad-text">Null Überblick.</span></h2>
+      <p class="lead" style="margin-top:18px">LinkedIn hier, Content-Tool dort, CRM woanders, Rechnungen im vierten Tab. Zwischen den Tools verschwinden die Leads — und deine Zeit. Leadesk räumt auf.</p>
     </div>
-
-    <div class="win" style="--x:64%;--y:6%;--r:-6deg;--d:0">
-      <div class="wbar"><i></i><i></i><i></i><span>leads_FINAL_v7(2).xlsx</span></div>
-      <div class="wbody sheet"><b></b><b></b><b></b><b class="hl"></b><b></b><b></b><b></b><b></b><b class="hl"></b><b></b><b></b><b></b></div>
-    </div>
-    <div class="win" style="--x:76%;--y:18%;--r:5deg;--d:1">
-      <div class="wbar"><i></i><i></i><i></i><span>Posteingang</span></div>
-      <div class="wbody inbox"><div><strong>(214)</strong> ungelesen</div><div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>
-    </div>
-    <div class="win" style="--x:67%;--y:46%;--r:3deg;--d:2">
-      <div class="wbar"><i></i><i></i><i></i><span>crm.irgendwo.app</span></div>
-      <div class="wbody err"><div class="mono">Sitzung abgelaufen.</div><div class="mono s">Bitte erneut anmelden.</div><div class="fakebtn">Login</div></div>
-    </div>
-    <div class="win" style="--x:84%;--y:52%;--r:-8deg;--d:3">
-      <div class="wbar"><i></i><i></i><i></i><span>Notizen — Follow-ups??</span></div>
-      <div class="wbody notes"><span>Hendrik anschreiben!!</span><span class="x">Post Do. fertig?</span><span>Angebot Auralis</span></div>
-    </div>
-    <div class="win" style="--x:66%;--y:74%;--r:-3deg;--d:4">
-      <div class="wbar"><i></i><i></i><i></i><span>Rechnung_März_neu.pdf</span></div>
-      <div class="wbody pdf"><div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="tot mono">Σ ———</div></div>
-    </div>
-    <div class="win" style="--x:88%;--y:82%;--r:7deg;--d:5">
-      <div class="wbar"><i></i><i></i><i></i><span>Kalender</span></div>
-      <div class="wbody cal"><b></b><b></b><b class="hl"></b><b></b><b></b><b></b><b></b><b class="hl"></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
-    </div>
-
-    <div class="core" aria-hidden="true">
-      <svg viewBox="0 0 40 30" fill="none"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" stroke="currentColor" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="currentColor"/></svg>
-      <span>Leadesk</span>
-    </div>
-    <div class="chaos-count mono" aria-hidden="true"><span data-tabs>6</span> Tabs offen</div>
-  </div>
-</section>
-
-<!-- ============ LEADLY: Terminal ============ -->
-<section class="s-leadly dark wipe" id="leadly">
-  <div class="wx grid2">
-    <div class="ld-copy">
-      <span class="mono lab" data-scramble>(02) Leadly · KI-Agent</span>
-      <h2 class="h2x">Guten Morgen.<br>Ich hab schon <em>angefangen.</em></h2>
-      <p>Leadly liest deine Pipeline, deinen Content-Plan und deine LinkedIn-Aktivität — und schlägt jeden Morgen die drei Züge vor, die heute zählen.</p>
-      <div class="ld-facts mono">
-        <div><b>1</b><span>App für LinkedIn, Instagram, Content und CRM</span></div>
-        <div><b>4</b><span>KI-Anbieter, transparent über Credits</span></div>
-        <div><b>0</b><span>Aktionen ohne deine Freigabe</span></div>
-      </div>
-      <a class="b-line light" href="leadly.html" data-cur="Mehr">Wie Leadly arbeitet</a>
-    </div>
-    <div class="term" data-term>
-      <div class="term-bar mono"><i></i><i></i><i></i><span>leadly — morgenroutine</span></div>
-      <div class="term-body mono">
-        <div class="tl"><time>06:58:01</time> › Pipeline gelesen <u></u> ok</div>
-        <div class="tl"><time>06:58:02</time> › Content-Plan geprüft <u></u> ok</div>
-        <div class="tl"><time>06:58:04</time> › LinkedIn-Aktivität <u></u> ok</div>
-        <div class="tl dim"><time>06:58:05</time> › 4 Vorschläge für heute</div>
-        <div class="tl prop" style="--c:var(--li)"><span class="tag">LinkedIn</span><strong>Follow-up für Hendrik R.</strong><small>Hendrik hat dein Profil besucht — die Nachricht liegt als Entwurf bereit.</small><span class="acts"><span>Übernehmen</span><span>Öffnen</span></span></div>
-        <div class="tl prop" style="--c:var(--purple)"><span class="tag">Import-Inbox</span><strong>3 neue Leads aus Sales Navigator</strong><small>Warten auf deine Freigabe zur Übernahme ins CRM.</small><span class="acts"><span>Ins CRM übernehmen</span><span>Öffnen</span></span></div>
-        <div class="tl prop" style="--c:var(--content)"><span class="tag">Content</span><strong>Post für Donnerstag ist fertig</strong><small>Dein LinkedIn-Beitrag liegt im Entwurf. Freigeben?</small><span class="acts"><span>Entwurf ansehen</span><span>Öffnen</span></span></div>
-        <div class="tl prop" style="--c:var(--orange)"><span class="tag">Aufgaben</span><strong>2 Deals ohne nächsten Schritt</strong><small>Soll ich Erinnerungen setzen, damit nichts liegen bleibt?</small><span class="acts"><span>Aufgaben anlegen</span><span>Öffnen</span></span></div>
-        <div class="tl wait"><time>06:58:06</time> › Nichts passiert ohne deine Freigabe<span class="caret"></span></div>
-      </div>
+    <div class="toolstage reveal" id="toolstage">
+      <div class="tool" style="top:18px;left:30px">LinkedIn</div><div class="tool" style="top:40px;left:220px">Mail</div>
+      <div class="tool" style="top:158px;left:12px">Excel</div><div class="tool" style="top:200px;left:240px">Rechnung</div>
+      <div class="tool" style="top:120px;left:132px">Kalender</div><div class="tool" style="top:250px;left:120px">Instagram</div>
+      <div class="merged">Leadesk</div>
     </div>
   </div>
 </section>
 
-<!-- ============ KANÄLE: horizontal ============ -->
-<section class="s-chan" id="kanaele">
-  <div class="pin">
-    <div class="chan-head">
-      <span class="mono lab" data-scramble>(03) Alle Kanäle</span>
-      <h2 class="h2x">Da rausgehen, wo deine <em>Kunden sind.</em></h2>
-      <div class="chan-prog mono" aria-hidden="true"><span data-chan-n>01</span> / 05 <i><b></b></i></div>
+<!-- LEADLY -->
+<section class="pad" style="background:var(--tint-lav)" id="leadly">
+  <div class="wrap leadly-grid">
+    <div class="leadly-sticky">
+      <div class="mark-wrap mini"><span class="ring"></span><span class="ring r2"></span>
+        <svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true">
+        <rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/>
+        <rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+      <div class="eyebrow">Leadly · KI-Agent</div>
+      <h2 class="big">Guten Morgen.<br>Ich hab schon<br><span class="grad-text">angefangen.</span></h2>
+      <p class="lead" style="margin-top:18px">Leadly liest deine Pipeline, deinen Content-Plan und deine LinkedIn-Aktivität — und schlägt jeden Morgen die drei Züge vor, die heute zählen.</p>
+      <a class="btn btn-navy" href="leadly.html" style="margin-top:22px">Wie Leadly arbeitet →</a>
+      <div class="guardrail">Nichts passiert ohne deine Freigabe</div>
     </div>
-    <div class="chan-track">
-      <a class="panel" href="linkedin.html" style="--bg:#2E6BE6" data-cur="LinkedIn">
-        <span class="pn mono">01 — LinkedIn</span>
-        <span class="pt" aria-hidden="true">LinkedIn</span>
-        <div class="pd">
-          <h3>Outbound, das nicht nach Bot klingt.</h3>
-          <p>Lead-Suche mit Sales Navigator, mehrstufige Kampagnen serverseitig in der Cloud, KI-Nachrichten in fünf Typen und geplantes Engagement. Dazu Profil-Checker, KI-Profiltexte und SSI-Tracking.</p>
-          <span class="go mono">LinkedIn-Modul ansehen →</span>
-        </div>
-        <div class="pv chat mono"><span class="who">Erstnachricht · Entwurf</span><span class="typed" data-type="Hi Sarah, dein Beitrag zu Remote-Sales hat mich abgeholt — wir helfen Teams wie deinem, Outbound zu systematisieren. Magst du dich vernetzen?"></span></div>
-      </a>
-      <a class="panel" href="instagram.html" style="--bg:#DD2A7B" data-cur="Instagram">
-        <span class="pn mono">02 — Neu · Instagram</span>
-        <span class="pt" aria-hidden="true">Instagram</span>
-        <div class="pd">
-          <h3>Dein Wachstum kennt jetzt einen zweiten Kanal.</h3>
-          <p>Direktnachrichten, Kommentare, neue Follower und Publishing in derselben App. Gesprächspartner mit einem Klick als Kontakt ins CRM übernehmen.</p>
-          <span class="go mono">Instagram-Suite entdecken →</span>
-        </div>
-        <div class="pv grid9" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </a>
-      <a class="panel" href="content.html" style="--bg:#12B886" data-cur="Content">
-        <span class="pn mono">03 — Content</span>
-        <span class="pt" aria-hidden="true">Content</span>
-        <div class="pd">
-          <h3>Content-Werkstatt in deiner Brand Voice.</h3>
-          <p>Posts in deiner Stimme, Redaktionsplan für LinkedIn und Instagram. Aus einem Thema 70 Ideen.</p>
-          <span class="go mono">Content ansehen →</span>
-        </div>
-        <div class="pv ideas mono" aria-hidden="true"><span>01 Warum Cold Calls tot sind</span><span>02 3 Fehler im Erstkontakt</span><span>03 Unser Q3 in Zahlen</span><span>04 Was Kunden wirklich fragen</span><span>…</span><span class="big">70</span></div>
-      </a>
-      <a class="panel" href="crm.html" style="--bg:#003060" data-cur="CRM">
-        <span class="pn mono">04 — CRM</span>
-        <span class="pt" aria-hidden="true">CRM</span>
-        <div class="pd">
-          <h3>Pipeline im Blick.</h3>
-          <p>Kontakte, Deals, Aufgaben und KI-Lead-Score an einem Ort. Jeder Lead landet automatisch im CRM, jede Antwort ist nachvollziehbar.</p>
-          <span class="go mono">CRM ansehen →</span>
-        </div>
-        <div class="pv score mono" aria-hidden="true"><div><span>Auralis GmbH</span><b style="--w:86%">86</b></div><div><span>Horizont AG</span><b style="--w:72%">72</b></div><div><span>Nordkap</span><b style="--w:58%">58</b></div></div>
-      </a>
-      <a class="panel" href="ki.html" style="--bg:#7A5AF8" data-cur="KI">
-        <span class="pn mono">05 — Neu · KI-Sichtbarkeit</span>
-        <span class="pt" aria-hidden="true">KI-Suche</span>
-        <div class="pd">
-          <h3>Gefunden werden — auch dort, wo heute gesucht wird.</h3>
-          <p>Deine Kunden fragen ChatGPT, Perplexity und die Google-KI, bevor sie kaufen. Leadesk macht deine Marke für diese Antworten auffindbar — mit strukturierten Fakten, Zielgruppen-Kontext und Content, der zitiert wird.</p>
-          <span class="go mono">Mehr zur KI-Sichtbarkeit →</span>
-        </div>
-        <div class="pv prompt mono" aria-hidden="true"><span class="q">› Welches Tool bündelt LinkedIn-Vertrieb und Content?</span><span class="a" data-type="Für Teams im Mittelstand wird häufig eine All-in-one-Suite empfohlen, die LinkedIn, Content und CRM verbindet …"></span><span class="note">Illustration</span></div>
-      </a>
+    <div class="leadly-cards">
+      <div class="lcard li reveal"><div class="k">Vorschlag · LinkedIn</div><h4>Follow-up für Hendrik R.</h4><p>Hendrik hat dein Profil besucht — die Nachricht liegt als Entwurf bereit.</p><div class="row"><span class="act">Übernehmen</span><span class="act2">Öffnen</span></div></div>
+      <div class="lcard deal reveal"><div class="k">Vorschlag · Import-Inbox</div><h4><span class="count" data-to="3">0</span> neue Leads aus Sales Navigator</h4><p>Warten auf deine Freigabe zur Übernahme ins CRM.</p><div class="row"><span class="act">Ins CRM übernehmen</span><span class="act2">Öffnen</span></div></div>
+      <div class="lcard content reveal"><div class="k">Vorschlag · Content</div><h4>Post für Donnerstag ist fertig</h4><p>Dein LinkedIn-Beitrag liegt im Entwurf. Freigeben?</p><div class="row"><span class="act">Entwurf ansehen</span><span class="act2">Öffnen</span></div></div>
+      <div class="lcard aufgabe reveal"><div class="k">Vorschlag · Aufgaben</div><h4>2 Deals ohne nächsten Schritt</h4><p>Soll ich Erinnerungen setzen, damit nichts liegen bleibt?</p><div class="row"><span class="act">Aufgaben anlegen</span><span class="act2">Öffnen</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ ALLES-IN-EINEM: Index ============ -->
-<section class="s-index paper wipe" id="module">
-  <div class="wx">
-    <div class="idx-head">
-      <span class="mono lab" data-scramble>(04) Alles-in-einem</span>
-      <h2 class="h2x">Der ganze Rest ist <em>auch schon da.</em></h2>
-      <p>CRM, Deals, Projekte, Zeiterfassung, Rechnungen, Reporting — kein zusätzliches Tool nötig.</p>
+<!-- LINKEDIN teaser -->
+<section class="pad-s" style="background:var(--tint-blue)">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--li)">LinkedIn</div>
+      <h2 class="big">Outbound, das nicht<br>nach Bot klingt.</h2>
+      <p class="lead" style="margin-top:18px">Lead-Suche mit Sales Navigator, mehrstufige Kampagnen serverseitig in der Cloud, KI-Nachrichten in fünf Typen und geplantes Engagement. Dazu ein Profil-Checker, der Schwachstellen findet, KI-Profiltexte für Headline und Info — und SSI-Tracking. So wird dein Profil zum Verkäufer und dein Outbound systematisch, ohne nach Bot zu klingen.</p>
+      <a class="btn btn-navy" href="linkedin.html" style="margin-top:22px">LinkedIn-Modul ansehen →</a>
     </div>
-    <ol class="idx">
-      <li><a href="content.html" data-prev="Brand Voice, Zielgruppen, KI-Sichtbarkeit, Wissensdatenbank."><span class="mono n">A</span><span class="it">Branding</span><span class="mono ds">Brand Voice · Zielgruppen · Wissen</span><span class="ar">↗</span></a></li>
-      <li><a href="crm.html" data-prev="Kontakte, Deals, Aufgaben, KI-Lead-Intelligence."><span class="mono n">B</span><span class="it">CRM</span><span class="mono ds">Kontakte · Deals · Lead-Score</span><span class="ar">↗</span></a></li>
-      <li><a href="linkedin.html" data-prev="Kampagnen, Nachrichten, Engagement, Sales-Nav, Profil-Checker, SSI."><span class="mono n">C</span><span class="it">LinkedIn</span><span class="mono ds">Kampagnen · Nachrichten · SSI</span><span class="ar">↗</span></a></li>
-      <li><a href="content.html" data-prev="Content-Studio, Redaktionsplan, Instagram-Suite."><span class="mono n">D</span><span class="it">Content</span><span class="mono ds">Studio · Redaktionsplan · Instagram</span><span class="ar">↗</span></a></li>
-      <li><a href="projekte.html" data-prev="Kanban, Zeiterfassung, Anhänge, Rechnungen."><span class="mono n">E</span><span class="it">Projekte</span><span class="mono ds">Kanban · Zeit · Rechnungen</span><span class="ar">↗</span></a></li>
-      <li><a href="reporting.html" data-prev="Aktivitäten, Conversions, SSI-Tracker."><span class="mono n">F</span><span class="it">Reporting</span><span class="mono ds">Aktivitäten · Conversions · SSI</span><span class="ar">↗</span></a></li>
-    </ol>
+    <div class="mock reveal">
+      <div class="k-lab">Sequenz · Erstnachricht</div>
+      <div class="chatline chat-li"><span class="typed" data-typewriter="Hi Sarah, dein Beitrag zu Remote-Sales hat mich abgeholt — wir helfen Teams wie deinem, Outbound zu systematisieren. Magst du dich vernetzen?" data-speed="22"></span></div>
+      <div class="flow"><span class="lead-chip">Sales Navigator</span><span class="arrow">→</span><span class="lead-chip">Kampagne</span><span class="arrow">→</span><span class="lead-chip">CRM</span></div>
+      <div class="stat-strip">Aktivität heute: <span class="count grad-text" data-to="47">0</span> · SSI <span class="count grad-text" data-to="78">0</span></div>
+    </div>
   </div>
-  <div class="idx-float mono" aria-hidden="true"><span></span></div>
 </section>
 
-<!-- ============ APP ============ -->
-<section class="s-app dark wipe" id="app">
-  <div class="wx grid2">
-    <div>
-      <span class="mono lab" data-scramble>(05) Neu · Mobile App</span>
-      <h2 class="h2x">Leadesk jetzt <em>immer in der Tasche.</em></h2>
-      <p>Pipeline, Content-Werkstatt und Leadly, dein KI-Agent — als eigene App für iPhone, iPad, Mac und Vision Pro. Bestätige Leads, checke fällige Aufgaben und lass Leadly Vorschläge erledigen, auch unterwegs.</p>
-      <ul class="app-list mono">
+<!-- INSTAGRAM teaser -->
+<section class="pad-s" style="background:var(--tint-peach)">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow ig-eyebrow">Neu</div>
+      <h2 class="big">Dein Wachstum kennt jetzt einen zweiten Kanal.</h2>
+      <p class="lead" style="margin-top:18px">Die Instagram-Suite bringt Direktnachrichten, Kommentare, neue Follower und Publishing in dieselbe App. Einmal verbinden, Gespräche beantworten und Gesprächspartner mit einem Klick als Kontakt ins CRM übernehmen.</p>
+      <a class="btn" href="instagram.html" style="margin-top:22px;background:linear-gradient(135deg,#F58529,#DD2A7B);color:#fff">Instagram-Suite entdecken →</a>
+    </div>
+    <div class="ig-mock reveal">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-bottom:14px">Postfach → CRM</div>
+      <div class="ig-thumbs"><span></span><span></span><span></span></div>
+      <div style="margin-top:22px;font-size:15px;font-weight:700">Neue Nachrichten <span class="count" data-to="7">0</span> · Neue Follower <span class="count" data-to="23">0</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- KI-SICHTBARKEIT -->
+<section class="pad-s" style="background:var(--tint-lav)">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center" style="color:#7A5AF8">Neu · KI-Sichtbarkeit</div>
+    <h2 class="big">Gefunden werden — auch dort, wo <span class="grad-text">heute gesucht wird.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Deine Kunden fragen längst ChatGPT, Perplexity und die Google-KI, bevor sie kaufen. Leadesk macht deine Marke und deine Inhalte für diese KI-Antworten auffindbar — mit strukturierten Fakten, Zielgruppen-Kontext und Content, der zitiert wird.</p>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Von KI verstanden</h3><p>Strukturierte Marken- und Produktfakten, die KI-Systeme sauber erfassen.</p></div>
+    <div class="card reveal d1" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Antworten statt Keywords</h3><p>Content, der die echten Fragen deiner Zielgruppe beantwortet — statt Keywords zu stapeln.</p></div>
+    <div class="card reveal d2" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Sichtbarkeit messen</h3><p>Sieh nach, wo deine Marke in KI-Antworten schon auftaucht.</p></div>
+  </div>
+  <div class="wrap" style="text-align:center;margin-top:26px"><a class="btn btn-navy" href="ki.html" style="background:#7A5AF8">Mehr zur KI-Sichtbarkeit →</a></div>
+</section>
+
+<!-- MODULES — REDESIGN: 2 Kacheln bekommen eine Fade-Mask-Vorschau (humera-Kernfähigkeiten-Pattern) -->
+<section class="pad soft">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Alles-in-einem</div>
+    <h2 class="big">Der ganze Rest ist <span class="grad-text">auch schon da.</span></h2>
+    <p class="lead" style="margin:14px auto 0">CRM, Deals, Projekte, Zeiterfassung, Rechnungen, Reporting — kein zusätzliches Tool nötig.</p>
+  </div>
+  <div class="wrap mods">
+    <a class="mtile reveal" style="--acc:#7A5AF8" href="content.html"><div class="ic" style="background:#efedff"></div><h3>Branding</h3><p>Brand Voice, Zielgruppen, KI-Sichtbarkeit, Wissensdatenbank.</p></a>
+    <a class="mtile reveal d1" style="--acc:var(--navy)" href="crm.html">
+      <div class="ic" style="background:var(--tint-navy)"></div><h3>CRM</h3><p>Kontakte, Deals, Aufgaben, KI-Lead-Intelligence.</p>
+      <div class="tile-preview" style="--acc:var(--navy)"><div class="tp-row"><span class="dot"></span>Auralis GmbH — Score 86</div><div class="tp-row"><span class="dot"></span>Horizont AG — Score 72</div><div class="tp-row"><span class="dot"></span>Nordkap — Score 58</div></div>
+    </a>
+    <a class="mtile reveal d2" style="--acc:var(--li)" href="linkedin.html">
+      <div class="ic" style="background:#e8f0fe"></div><h3>LinkedIn</h3><p>Kampagnen, Nachrichten, Engagement, Sales-Nav, Profil-Checker, SSI.</p>
+      <div class="tile-preview" style="--acc:var(--li)"><div class="tp-row"><span class="dot"></span>Follow-up an Hendrik R.</div><div class="tp-row"><span class="dot"></span>SSI-Aktivität heute: 47</div><div class="tp-row"><span class="dot"></span>2 Kampagnen aktiv</div></div>
+    </a>
+    <a class="mtile reveal" style="--acc:var(--content)" href="content.html"><div class="ic" style="background:#e6f7f1"></div><h3>Content</h3><p>Content-Studio, Redaktionsplan, Instagram-Suite.</p></a>
+    <a class="mtile reveal d1" style="--acc:var(--orange)" href="projekte.html"><div class="ic" style="background:#fdefe4"></div><h3>Projekte</h3><p>Kanban, Zeiterfassung, Anhänge, Rechnungen.</p></a>
+    <a class="mtile reveal d2" style="--acc:var(--success)" href="reporting.html"><div class="ic" style="background:#e4f6ee"></div><h3>Reporting</h3><p>Aktivitäten, Conversions, SSI-Tracker.</p></a>
+  </div>
+</section>
+
+<!-- REDESIGN: Mobile-App-Bewerbung — neue Sektion, verlinkt auf die neue App-Landingpage
+     (app.html) und zeigt echte App-Store-Fakten (iOS 16+, kostenlos). -->
+<section class="pad" id="app">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Neu · Mobile App</div>
+      <h2 class="big">Leadesk jetzt <span class="grad-text">immer in der Tasche.</span></h2>
+      <p class="lead" style="margin-top:18px">Pipeline, Content-Werkstatt und Leadly, dein KI-Agent — als eigene App für iPhone, iPad, Mac und Vision Pro. Bestätige Leads, checke fällige Aufgaben und lass Leadly Vorschläge erledigen, auch unterwegs.</p>
+      <ul class="checklist">
         <li>CRM mobil: Kontakte, Firmen und Aufgaben unterwegs verwalten</li>
         <li>Content-Werkstatt: Posts, Texte und KI-Bilder in deiner Brand Voice, direkt vom Handy</li>
         <li>Leadly als App: bestätigt Aktionen oder chattet frei — deine Entscheidung</li>
         <li>Team-Wechsel und persönliches Dashboard, genau wie im Web</li>
       </ul>
-      <div class="app-cta">
-        <a class="app-badge" href="https://apps.apple.com/de/app/leadesk/id6780529331" target="_blank" rel="noopener" data-cur="Laden">
-          <img src="assets/img/app-store-badge-de-white.svg" alt="Leadesk im App Store laden" width="149" height="48" loading="lazy">
+      <div class="hero-cta" style="justify-content:flex-start;margin-top:24px">
+        <a class="app-badge" href="https://apps.apple.com/de/app/leadesk/id6780529331" target="_blank" rel="noopener">
+          <img src="assets/img/app-store-badge-de-black.svg" alt="Leadesk im App Store laden" width="149" height="48" loading="lazy">
         </a>
-        <a class="b-line light" href="app.html" data-cur="Details">Alle Details</a>
+        <a class="btn btn-ghost" href="app.html">Alle Details ansehen →</a>
       </div>
-      <p class="fine mono">Kostenlos · iOS 16 / iPadOS 16 / macOS 13 (Apple Silicon) / visionOS</p>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:14px">Kostenlos · iOS 16 / iPadOS 16 / macOS 13 (Apple Silicon) / visionOS.</p>
     </div>
-    <div class="phone-stage" data-tilt>
-      <div class="phone">
-        <div class="ph-notch"></div>
-        <div class="ph-screen">
-          <div class="ph-title mono">Leadly</div>
-          <div class="ph-msg">Guten Morgen! 3 Leads sind heute reif für den nächsten Schritt.</div>
-          <div class="ph-msg me">Zeig mir Auralis.</div>
-          <div class="ph-msg">Auralis wartet auf dein Angebot — Entwurf vorbereiten?</div>
-          <div class="ph-btns"><span>Ja, vorbereiten</span><span>Später</span></div>
+    <div class="reveal d1">
+      <!-- REDESIGN: gleiche Karussell-Mechanik wie bei der Kanäle-Übersicht oben,
+           nur mit stilisierten App-Screen-Mocks (.app-shot) statt Feature-Karten. -->
+      <div class="gal" id="appHomeGal" data-carousel>
+        <div class="gcard">
+          <div class="tag" style="--acc:var(--navy)">CRM</div><h3>Pipeline in der Tasche</h3>
+          <div class="app-shot"><span class="as-notch"></span>
+            <div class="as-inner">
+              <div class="as-title">Kontakte</div>
+              <div class="as-row"><span class="as-dot" style="background:var(--navy)"></span>Auralis GmbH<b class="grad-text">86</b></div>
+              <div class="as-row"><span class="as-dot" style="background:var(--cyan)"></span>Horizont AG<b class="grad-text">72</b></div>
+              <div class="as-row"><span class="as-dot" style="background:var(--content)"></span>Nordkap<b class="grad-text">58</b></div>
+              <div class="as-tabbar"><span class="on"></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <p>Kontakte, Firmen und Lead-Score — auch ohne Laptop im Blick.</p>
+        </div>
+        <div class="gcard">
+          <div class="tag" style="--acc:var(--content)">Content</div><h3>Content-Werkstatt mobil</h3>
+          <div class="app-shot"><span class="as-notch"></span>
+            <div class="as-inner">
+              <div class="as-title">Content-Werkstatt</div>
+              <div class="as-row"><span class="as-dot" style="background:var(--purple)"></span>Post-Entwurf generiert</div>
+              <div class="as-row"><span class="as-dot" style="background:var(--orange)"></span>KI-Bild wird erstellt …</div>
+              <div class="as-row"><span class="as-dot" style="background:var(--success)"></span>Brand Voice aktiv</div>
+              <div class="as-tabbar"><span></span><span class="on"></span><span></span><span></span></div>
+            </div>
+          </div>
+          <p>Posts und KI-Bilder entwerfen, während du wartest — nicht erst am Schreibtisch.</p>
+        </div>
+        <div class="gcard">
+          <div class="tag" style="--acc:var(--cyan)">Leadly</div><h3>Dein KI-Agent, mobil</h3>
+          <div class="app-shot"><span class="as-notch"></span>
+            <div class="as-inner">
+              <div class="as-title">Leadly</div>
+              <div class="as-chat">Guten Morgen! 3 Leads sind heute reif für den nächsten Schritt.</div>
+              <div class="as-chat me">Zeig mir Auralis.</div>
+              <div class="as-chat">Auralis wartet auf dein Angebot — Entwurf vorbereiten?</div>
+              <div class="as-tabbar"><span></span><span></span><span class="on"></span><span></span></div>
+            </div>
+          </div>
+          <p>Leadly bestätigt Aktionen, statt sie einfach auszuführen — auch vom Handy aus.</p>
+        </div>
+        <div class="gcard">
+          <div class="tag" style="--acc:var(--success)">Dashboard</div><h3>Team-Wechsel &amp; Überblick</h3>
+          <div class="app-shot"><span class="as-notch"></span>
+            <div class="as-inner">
+              <div class="as-title">Dashboard</div>
+              <div class="as-kpis">
+                <div class="as-kpi"><b class="grad-text">12</b><span>Neue Leads</span></div>
+                <div class="as-kpi"><b class="grad-text">5</b><span>Fällig heute</span></div>
+              </div>
+              <div class="as-row"><span class="as-dot" style="background:var(--navy)"></span>Team: Vertrieb DE</div>
+              <div class="as-tabbar"><span></span><span></span><span></span><span class="on"></span></div>
+            </div>
+          </div>
+          <p>Zwischen Teams wechseln, Dashboard bleibt persönlich — wie im Web.</p>
         </div>
       </div>
-      <span class="orb o1 mono">CRM</span><span class="orb o2 mono">Content</span><span class="orb o3 mono">Leadly</span><span class="orb o4 mono">Dashboard</span>
+      <div class="gal-dots" data-dots-for="appHomeGal"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ SICHERHEIT: Stempel ============ -->
-<section class="s-sec paper wipe" id="sicherheit">
-  <div class="wx">
-    <span class="mono lab" data-scramble>(06) Sicherheit</span>
-    <h2 class="h2x">Sicher gebaut.<br>In Deutschland <em>gehostet.</em></h2>
-    <p class="sec-lead">Self-hosted auf EU-Servern, DSGVO-konform, Row-Level-Security auf Datenebene, Audit-Trail für jede Admin-Aktion. ISO-27001-Zertifizierung in Vorbereitung.</p>
-    <div class="stamps">
-      <div class="stamp" style="--r:-7deg"><b>EU</b><span class="mono">Hosting auf EU-Servern</span></div>
-      <div class="stamp" style="--r:4deg"><b>DSGVO</b><span class="mono">konform</span></div>
-      <div class="stamp" style="--r:-3deg"><b>RLS</b><span class="mono">Row-Level-Security</span></div>
-      <div class="stamp pending" style="--r:6deg"><b>ISO 27001</b><span class="mono">in Vorbereitung</span></div>
+<!-- TRUST -->
+<section class="pad" style="background:var(--tint-navy)" id="sicherheit">
+  <div class="wrap reveal" style="max-width:780px">
+    <div class="eyebrow">Sicherheit</div>
+    <h2 class="big">Sicher gebaut.<br>In Deutschland <span class="grad-text">gehostet.</span></h2>
+    <p class="lead" style="margin-top:18px">Self-hosted auf EU-Servern, DSGVO-konform, Row-Level-Security auf Datenebene, Audit-Trail für jede Admin-Aktion. ISO-27001-Zertifizierung in Vorbereitung.</p>
+    <div class="badges">
+      <span class="tbadge reveal"><b>EU-Hosting</b></span><span class="tbadge reveal d1"><b>DSGVO</b></span>
+      <span class="tbadge reveal d2"><b>Row-Level-Security</b></span><span class="tbadge reveal d3"><b>ISO 27001</b> (in Vorbereitung)</span>
     </div>
-    <a class="b-line" href="sicherheit.html" data-cur="Mehr">Mehr zur Sicherheit</a>
+    <div style="margin-top:26px"><a class="btn btn-navy" href="sicherheit.html">Mehr zur Sicherheit →</a></div>
   </div>
 </section>
 
-<!-- ============ FÜR WEN: Akkordeon ============ -->
-<section class="s-pers dark wipe" id="agenturen">
-  <div class="wx">
-    <span class="mono lab" data-scramble>(07) Für wen</span>
-    <h2 class="h2x">Für alle, die auf LinkedIn <em>ernst machen.</em></h2>
-    <div class="acc">
-      <article class="acc-i on" tabindex="0" style="--c:#2E6BE6">
-        <span class="acc-n mono">01</span><h3>Vertriebs&shy;teams</h3>
-        <div class="acc-b"><p>Systematisches Outbound mit Sequenzen, Pipeline und Reporting — ohne Tool-Wildwuchs. Jeder Lead landet automatisch im CRM, jede Antwort ist nachvollziehbar.</p><div class="acc-s"><b>5</b><span class="mono">Nachrichtentypen in deiner Brand Voice</span></div></div>
-      </article>
-      <article class="acc-i" tabindex="0" style="--c:#12B886">
-        <span class="acc-n mono">02</span><h3>Creator &amp; Personal Brands</h3>
-        <div class="acc-b"><p>Regelmäßig posten in deiner Stimme, Reichweite messen, Leads einsammeln — Content-Plan und Analytics in derselben App wie dein Outbound.</p><div class="acc-s"><b>1</b><span class="mono">Redaktionsplan für LinkedIn und Instagram</span></div></div>
-      </article>
-      <article class="acc-i" tabindex="0" style="--c:#7A5AF8">
-        <span class="acc-n mono">03</span><h3>Agenturen</h3>
-        <div class="acc-b"><p>Whitelabel unter eigener Marke, Mandantentrennung, alle Kunden in einem Tool — vom Onboarding bis zum monatlichen Report.</p><div class="acc-s"><b>1</b><span class="mono">Billing-Account für alle Kunden-Teams</span></div></div>
-      </article>
+<!-- PERSONAS — REDESIGN: Segmented-Tabs (nutzt bestehendes .seg) statt statischem 3er-Grid,
+     analog zu humeras "Passend zu deinem Arbeitsalltag"-Rollenumschalter. -->
+<section class="pad" id="agenturen">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Für wen</div>
+    <h2 class="big">Für alle, die auf LinkedIn <span class="grad-text">ernst machen.</span></h2>
+  </div>
+  <div class="wrap persona-tabs reveal">
+    <div class="seg" style="display:flex;justify-content:center;margin:0 auto 28px;width:fit-content">
+      <span class="on" data-target="p-sales">Vertriebsteams</span>
+      <span data-target="p-creator">Creator</span>
+      <span data-target="p-agency">Agenturen</span>
+    </div>
+    <div class="persona-panels">
+      <div class="persona-panel show" id="p-sales" style="--acc:var(--li)">
+        <div>
+          <h3>Vertriebsteams</h3>
+          <p>Systematisches Outbound mit Sequenzen, Pipeline und Reporting — ohne Tool-Wildwuchs. Jeder Lead landet automatisch im CRM, jede Antwort ist nachvollziehbar.</p>
+        </div>
+        <div class="persona-stat"><div class="n grad-text"><span class="count" data-to="5">0</span></div><div class="l">Nachrichtentypen in deiner Brand Voice</div></div>
+      </div>
+      <div class="persona-panel" id="p-creator" style="--acc:var(--content)">
+        <div>
+          <h3>Creator &amp; Personal Brands</h3>
+          <p>Regelmäßig posten in deiner Stimme, Reichweite messen, Leads einsammeln — Content-Plan und Analytics in derselben App wie dein Outbound.</p>
+        </div>
+        <div class="persona-stat"><div class="n grad-text"><span class="count" data-to="1">0</span></div><div class="l">Redaktionsplan für LinkedIn und Instagram</div></div>
+      </div>
+      <div class="persona-panel" id="p-agency" style="--acc:var(--purple)">
+        <div>
+          <h3>Agenturen</h3>
+          <p>Whitelabel unter eigener Marke, Mandantentrennung, alle Kunden in einem Tool — vom Onboarding bis zum monatlichen Report.</p>
+        </div>
+        <div class="persona-stat"><div class="n grad-text"><span class="count" data-to="1">0</span></div><div class="l">Billing-Account für alle Kunden-Teams</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FINALE ============ -->
-<section class="s-fin" id="preise">
-  <div class="fin-top mono"><span data-scramble>(08) Jetzt</span><span>Kostenlos testen · Keine Kreditkarte</span></div>
-  <h2 class="fin-h" data-prox><span class="fl">Sichtbar werden.</span><span class="fl em">Kunden gewinnen.</span></h2>
-  <div class="fin-cta">
-    <a class="b-orb magnetic" href="https://app.leadesk.de/register" data-cur="Los"><span>Kostenlos<br>testen</span></a>
-    <a class="b-line" href="kontakt.html" data-cur="Demo">Demo buchen</a>
-    <a class="b-line" href="preise.html" data-cur="Preise">Preise ansehen</a>
+
+<!-- FINALE -->
+<section class="pad" id="preise">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2>Kunden gewinnen über LinkedIn — mit einer App statt sechs.</h2>
+      <p>3 Tage kostenlos testen, ohne Kreditkarte. Danach ab 39 € im Monat.</p>
+      <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="preise.html">Preise ansehen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+    </div>
   </div>
 </section>
-
-</main>
 
 <footer><div class="wrap">
   <div class="fgrid">
@@ -473,6 +467,5 @@
 <script src="assets/leadesk.js"></script>
 <!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.js -->
 <script src="assets/leadesk-redesign.js"></script>
-<script src="assets/home-signal.js"></script>
 </body>
 </html>

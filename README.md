@@ -8,40 +8,31 @@ Statische Marketing-Website (leadesk.de). Reines HTML + `assets/leadesk.css` + `
 
 **Stand:** Am 14.07.2026 aus der Live-Auslieferung rekonstruiert (der frühere CLI-Deploy-Stand war nicht mehr im Repo) + echte Impressum-/Datenschutz-Seiten ergänzt.
 
-## Design „Signal“ (seit 04.11.2026)
+## Design (CI-Look, seit 05.11.2026)
 
-Seit PR #18/#19 hat die Seite einen eigenen Look: dunkle Page-Heros mit gestauchten Versalien, Papierflächen, Cyan als einzige Signalfarbe, harte Kanten, keine Schatten, **keine Serifen, keine Emojis**.
+Die Website folgt dem Look der App (app.leadesk.de, „2026“-Look): klare helle Flächen, Linien statt Schatten, 4px-Radien, Navy als Primärfarbe, Cyan als Akzent. Ein früherer Entwurf („Signal“, dunkel/futuristisch) war vom 04.–05.11.2026 live und wurde nach Feedback zurückgenommen — er liegt in der Git-Historie (PR #18–#21).
 
 | Datei | Wofür |
 |---|---|
-| `assets/signal-base.css` | gemeinsam: Schriften (self-hosted), Farben, Korn, Cursor-Ring, dunkler Header/Footer, Buttons |
-| `assets/home-signal.css` / `.js` | nur `index.html` (`<body class="sig">`): Partikel-Hero, Scroll-Sequenzen, Kanal-Panels usw. |
-| `assets/signal-sub.css` / `.js` | alle Unterseiten (`<body class="sig-sub">`): Skin für die bestehenden Komponenten aus `leadesk.css` |
-| `assets/fonts/` | Archivo (variabel, wdth 62–125 / wght 100–900) und JetBrains Mono, OFL-Lizenz |
+| `assets/leadesk.css` | Basis-Design-System (Komponenten) |
+| `assets/leadesk-redesign.css` / `.js` | Ergänzungen (Mobile-Nav, Karussell, Tabs …) |
+| `assets/ci.css` | CI-Schicht: Schriften, Farben, Radien, Startseiten-Hero — lädt **nach** den beiden anderen |
+| `assets/fonts/` | Inter (400–800) und Lexend Deca (400–900), aus der App übernommen, self-hosted |
 
-**Farben:** Ink `#07091A` · Papier `#ECEAE3` / `#E2DFD5` · Signal-Cyan `#16A8DC` · Cyan dunkel `#0A6FB0`.
-**Schrift:** Headlines Archivo 800, `font-stretch:74–78%`, Versalien. Akzentwörter (`<span class="grad-text">` in Headlines) werden automatisch zu Archivo 200 / 62 % in Cyan. Labels und Buttons: JetBrains Mono, Versalien.
+**Farben:** Navy `#003060` · Text `#213343` · Text gedämpft `#516F90` · Linie `#DFE3EB` · Fläche `#EEF2F6` · Auswahl `#EEF5FB` · Cyan `#16A8DC` / `#0A6FB0`.
+**Schrift:** Überschriften, Buttons, Navigation in Lexend Deca; Fließtext in Inter.
+**Keine Emojis** — Icon-Plätze in `.card .ic` bleiben leer, dort erscheint automatisch eine Nummer.
 
 ### Neue Unterseite anlegen
 
-Zusätzlich zu den bisherigen Punkten (Header/Footer einkopieren, Meta-Tags, JSON-LD, `sitemap.xml`, verlinken):
+Zusätzlich zu Header/Footer, Meta-Tags, JSON-LD, `sitemap.xml` und Verlinkung:
 
-1. `<body class="sig-sub">`
+1. `<body class="ci">`
 2. Im `<head>` **nach** `leadesk-redesign.css`:
    ```html
-   <link rel="preload" href="assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
-   <link rel="stylesheet" href="assets/signal-base.css">
-   <link rel="stylesheet" href="assets/signal-sub.css">
-   <script>document.documentElement.classList.add('js-sub')</script>
+   <link rel="preload" href="assets/fonts/lexend-deca-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="stylesheet" href="assets/ci.css">
    ```
-   (im Blog mit `/assets/...`)
-3. Am Ende nach `leadesk-redesign.js`: `<script src="assets/signal-sub.js"></script>`
-4. `<meta name="theme-color" content="#07091A">`
-5. Seite mit einem `<section class="page-hero">` beginnen. Die bestehenden Bausteine (`.card`, `.mock`, `.checklist`, `.cta-band`, `.faq`, `.plans` …) bekommen den neuen Look automatisch.
-6. Keine Emojis und keine Serifenschriften verwenden. Icons in `.card .ic` bleiben leer — dort erscheint automatisch eine Nummer.
-
-### Fallstricke
-
-- **Klassennamen:** Der Cursor-Ring heißt `.sgc`. Kurze generische Klassen (`.cur`, `.grain` …) nicht doppelt belegen — `.cur` ist das €-Zeichen auf `preise.html`.
-- **Dunkle Zonen** (`.page-hero`, `.mock`, `.plan.pop`, `.cust`) setzen die Farb-Variablen lokal um. Inline-Styles mit `var(--ink)`, `var(--muted)` passen sich dort an; feste Farben wie `#fff` nicht — `signal-sub.js` dunkelt weiße Flächen in Mocks automatisch ab.
-- **Effekte testen:** Partikel, Ticker und Blobs laufen endlos. Für Screenshot-Vergleiche `reducedMotion: 'reduce'` setzen — dann ist alles statisch.
+   (im Blog und unter `services/` mit `/assets/...`)
+3. Vor `</head>` das Analytics-Snippet (siehe oben „Statistik“).
+4. `<meta name="theme-color" content="#003060">`

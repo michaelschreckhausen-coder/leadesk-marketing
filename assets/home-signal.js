@@ -63,7 +63,7 @@
   var sio = new IntersectionObserver(function(en){
     en.forEach(function(e){ if(e.isIntersecting){ scramble(e.target); sio.unobserve(e.target); } });
   }, {threshold:.6});
-  $$('[data-scramble]').forEach(function(el){ sio.observe(el); });
+  /* Scramble-Effekt bewusst abgeschaltet: wirkte zu technisch/futuristisch */
 
   /* ---------- Uhr ---------- */
   var clock = $('[data-clock]');
@@ -78,7 +78,7 @@
     var pi = 0;
     setInterval(function(){
       if(document.hidden) return;
-      tk.textContent = pool[++pi % pool.length]; scramble(tk);
+      tk.classList.remove('swap'); void tk.offsetWidth; tk.textContent = pool[++pi % pool.length]; tk.classList.add('swap');
       var v = parseInt(tkn.getAttribute('data-n'),10) + 1 + ((Math.random()*3)|0);
       tkn.setAttribute('data-n', v); tkn.textContent = v.toLocaleString('de-DE');
     }, 2800);
@@ -99,14 +99,14 @@
     var meta = $('.hero-meta'), hb = canvas.parentNode.getBoundingClientRect();
     var top = meta ? meta.getBoundingClientRect().bottom - hb.top : ch*0.15, bot = h1 ? h1.getBoundingClientRect().top - hb.top : ch*0.6;
     var room = Math.max(60, bot - top);
-    var word = 'LEADESK', fs = Math.min(cw*0.2, room*0.82);
+    var word = canvas.getAttribute('data-word') || 'LEADESK', fs = Math.min(cw*0.2, room*0.82);
     oc.font = '900 ' + fs + 'px Archivo, sans-serif';
     try{ oc.fontStretch = 'condensed'; }catch(e){}
     var w = oc.measureText(word).width;
     if(w > cw*0.94){ fs *= (cw*0.94)/w; oc.font = '900 ' + fs + 'px Archivo, sans-serif'; w = oc.measureText(word).width; }
     oc.fillStyle = '#fff'; oc.textBaseline = 'middle';
     var cy = top + room/2;
-    oc.fillText(word, (cw-w)/2, cy);
+    if(word !== 'off') oc.fillText(word, (cw-w)/2, cy);
     // nur den Bereich des Wortes auslesen statt der ganzen Fläche (spart beim Laden viel Rechenzeit)
     var y0 = Math.max(0, Math.floor(cy - fs*0.6)), y1 = Math.min(ch, Math.ceil(cy + fs*0.6)), x0 = Math.max(0, Math.floor((cw-w)/2) - 4), x1 = Math.min(cw, Math.ceil((cw+w)/2) + 4);
     var rw = Math.max(1, x1-x0), data = oc.getImageData(x0, y0, rw, Math.max(1, y1-y0)).data, step = mobile() ? 5 : 6, old = P;

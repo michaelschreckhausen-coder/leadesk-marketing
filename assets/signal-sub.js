@@ -43,12 +43,7 @@
     var eb = $('.eyebrow', hero), h1 = $('h1', hero);
     var word = (eb ? eb.textContent : (h1 ? h1.textContent : 'Leadesk')).split(/[·&|—,]/)[0].replace(/\s+/g,' ').trim();
     if(word.length > 16) word = word.split(' ')[0];
-    var meta = document.createElement('div'); meta.className = 'ph-meta'; meta.setAttribute('aria-hidden','true');
-    meta.innerHTML = '<span>(Leadesk)</span><span>' + (document.title.split(/[–—|]/)[0].trim()) + '</span><span data-clock>Berlin --:--:--</span>';
-    hero.appendChild(meta);
-    var clk = $('[data-clock]', meta);
-    var tick = function(){ clk.textContent = 'Berlin ' + new Date().toLocaleTimeString('de-DE',{timeZone:'Europe/Berlin'}); };
-    tick(); setInterval(tick, 1000);
+    /* Meta-Zeile mit Uhr entfernt: wirkte zu futuristisch */
     ghost = document.createElement('div'); ghost.className = 'ph-ghost'; ghost.setAttribute('aria-hidden','true'); ghost.textContent = word;
     hero.appendChild(ghost);
     canvas = document.createElement('canvas'); canvas.className = 'ph-field'; canvas.setAttribute('aria-hidden','true');
@@ -93,7 +88,7 @@
   }
   if(!rm){
     var sio = new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ scramble(e.target); sio.unobserve(e.target); } }); }, {threshold:.8});
-    $$('.eyebrow').forEach(function(el){ if(!el.children.length) sio.observe(el); });
+    /* Scramble-Effekt auf Labels abgeschaltet */
   }
 
   /* ---------- Weiße Flächen in Mocks abdunkeln (seitenspezifische Styles mit #fff) ---------- */

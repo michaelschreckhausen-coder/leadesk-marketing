@@ -141,24 +141,59 @@
 <main id="sig">
 
 <!-- ============ HERO ============ -->
-<section class="s-hero dark" id="top">
-  <canvas class="field" aria-hidden="true"></canvas>
-  <div class="hero-meta mono">
-    <span data-scramble>(LDSK—2026)</span>
-    <span data-scramble>KI-Suite für Marketing und Vertrieb</span>
-    <span data-scramble>EU-Hosting · DSGVO</span>
-    <span class="clock" data-clock>Berlin --:--:--</span>
-  </div>
-  <div class="hero-main">
-    <h1 class="mega" id="megaH1">
-      <span class="row r1" data-stretch>Sichtbar werden.</span>
-      <span class="row r2"><em>Kunden gewinnen.</em></span>
-    </h1>
-    <div class="hero-side">
-      <p>Leadesk bündelt LinkedIn, Instagram, Content, CRM und Delivery in einer App — mit Leadly, einem KI-Agenten, der morgens schon für dich gearbeitet hat.</p>
+<!-- Klarheit vor Effekt: In den ersten Sekunden muss klar sein, WAS Leadesk ist.
+     Links: Kategorie, Nutzen, drei Schritte. Rechts: Beispielansicht der App. -->
+<section class="s-hero v2 dark" id="top">
+  <canvas class="field" data-word="off" aria-hidden="true"></canvas>
+  <div class="v2-grid">
+    <div class="v2-copy">
+      <div class="v2-kicker mono">Software für Vertrieb &amp; Marketing auf LinkedIn</div>
+      <h1 class="mega" id="megaH1">
+        <span class="row r1">Kunden gewinnen über LinkedIn.</span>
+        <span class="row r2"><em>Content, Outreach &amp; CRM in einer App.</em></span>
+      </h1>
+      <p class="v2-lead">Mit Leadesk schreibst und planst du Posts mit KI, sprichst passende Kontakte auf LinkedIn und Instagram gezielt an und führst jeden Lead im CRM bis zum Abschluss. Leadly, dein KI-Agent, schlägt dir jeden Morgen die nächsten Schritte vor.</p>
+      <ol class="v2-steps">
+        <li><b>Sichtbar werden</b><span>Posts in deiner Stimme schreiben und planen</span></li>
+        <li><b>Ansprechen</b><span>Kampagnen und Nachrichten, die nicht nach Bot klingen</span></li>
+        <li><b>Abschließen</b><span>Kontakte, Deals und Aufgaben im CRM</span></li>
+      </ol>
       <div class="ctas">
         <a class="b-solid magnetic" href="https://app.leadesk.de/register" data-cur="Los"><span>Kostenlos testen</span></a>
-        <a class="b-line" href="leadly.html" data-cur="Leadly">Leadly ansehen</a>
+        <a class="b-line" href="funktionen.html" data-cur="Funktionen">Alle Funktionen</a>
+      </div>
+      <div class="v2-trust mono">3 Tage kostenlos · Ohne Kreditkarte · EU-Hosting · DSGVO · Made in Germany</div>
+    </div>
+
+    <div class="v2-app" role="img" aria-label="Beispielansicht der Leadesk-App: Leadly-Vorschläge, Pipeline und Content-Plan auf einen Blick">
+      <div class="app-bar"><i></i><i></i><i></i><span class="mono">app.leadesk.de</span><span class="mono app-ex">Beispiel</span></div>
+      <div class="app-body">
+        <nav class="app-nav mono" aria-hidden="true">
+          <span class="on">Heute</span><span>LinkedIn</span><span>Instagram</span><span>Content</span><span>CRM</span><span>Reporting</span>
+        </nav>
+        <div class="app-main">
+          <div class="app-h"><b>Heute</b><span class="mono">Leadly hat 3 Vorschläge</span></div>
+          <div class="app-card leadly">
+            <div class="ar" style="--c:#2E6BE6"><span class="mono">LinkedIn</span><b>Follow-up für Hendrik R.</b><em class="mono">Übernehmen</em></div>
+            <div class="ar" style="--c:#7A5AF8"><span class="mono">Import</span><b>3 neue Leads aus Sales Navigator</b><em class="mono">Ins CRM</em></div>
+            <div class="ar" style="--c:#12B886"><span class="mono">Content</span><b>Post für Donnerstag ist fertig</b><em class="mono">Ansehen</em></div>
+          </div>
+          <div class="app-row">
+            <div class="app-card pipe">
+              <div class="app-ct mono">Pipeline</div>
+              <div class="cols">
+                <div><span class="mono">Neu</span><i>Horizont AG</i><i>Nordkap</i></div>
+                <div><span class="mono">Qualifiz.</span><i class="hot">Auralis · 86</i></div>
+                <div><span class="mono">Angebot</span><i>Marketing-Lead</i></div>
+              </div>
+            </div>
+            <div class="app-card cplan">
+              <div class="app-ct mono">Content-Plan</div>
+              <div class="days mono"><span>Mo</span><span class="p li">Di</span><span>Mi</span><span class="p li">Do</span><span class="p ig">Fr</span></div>
+              <div class="cplan-l mono"><span><i class="li"></i>LinkedIn-Post</span><span><i class="ig"></i>Reel</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -167,7 +202,6 @@
     <span class="tk" data-ticker>Kontaktanfrage angenommen — Geschäftsführerin, Agentur</span>
     <span class="tk-count"><b data-n="128">128</b> Signale</span>
   </div>
-  <div class="hero-scroll mono" aria-hidden="true">Scroll <i></i></div>
 </section>
 
 <!-- ============ VELOCITY MARQUEE ============ -->

@@ -88,6 +88,7 @@ body.ci{
 .ci .cmp thead th{background:var(--bg-soft);font-family:var(--fh)}
 .ci .faq summary{font-family:var(--fh);font-weight:600}
 .ci .form input,.ci .form textarea{border-radius:var(--radius);background:#fff;border-color:var(--border-strong)}
+.ci .form select{border-radius:var(--radius);background-color:#fff;border-color:var(--border-strong)}
 .ci .form label{font-family:var(--fh);font-weight:500}
 .ci .marquee-track .mitem{font-family:var(--fh);font-weight:500}
 .ci .tile-preview,.ci .app-shot .as-row,.ci .as-chat,.ci .as-kpi{border-radius:var(--radius)}

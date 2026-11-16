@@ -46,4 +46,30 @@
     }, {threshold:0.5});
     tio.observe(el);
   });
+  // Conversion-Events (Vercel Web Analytics). window.va ist auf jeder Seite als
+  // Stub definiert; Fehler im Tracking duerfen die Seite nie stoeren.
+  function track(name, data){
+    try{ if(typeof window.va === 'function'){ window.va('event', data ? {name:name, data:data} : {name:name}); } }catch(e){}
+  }
+  window.lkTrack = track;
+
+  function linkPlace(a){
+    if(a.closest('header')) return 'header';
+    if(a.closest('footer')) return 'footer';
+    if(a.closest('.hero')) return 'hero';
+    return 'content';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('https://app.leadesk.de/register') === 0){
+      var m = href.match(/[?&]plan=([a-z-]+)/);
+      track('signup_click', {place: linkPlace(a), plan: m ? m[1] : 'none'});
+    } else if(href.indexOf('https://app.leadesk.de/login') === 0){
+      track('login_click', {place: linkPlace(a)});
+    } else if(href.indexOf('https://apps.apple.com/') === 0){
+      track('appstore_click', {place: linkPlace(a)});
+    }
+  });
 })();

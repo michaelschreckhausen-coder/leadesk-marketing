@@ -197,7 +197,7 @@
       body:JSON.stringify(data)
     }).then(function(r){return r.json();}).then(function(j){
       if(j.success===true){
-        if(window.lkTrack) window.lkTrack('contact_submit');
+        if(window.lkTrack) window.lkTrack('contact_submit', {page: location.pathname});
         f.reset();
         s.style.color='#0a7d3c';
         s.textContent='Danke! Deine Anfrage ist bei uns — wir melden uns in der Regel innerhalb eines Werktags.';

@@ -56,7 +56,7 @@
   function linkPlace(a){
     if(a.closest('header')) return 'header';
     if(a.closest('footer')) return 'footer';
-    if(a.closest('.hero')) return 'hero';
+    if(a.closest('.ci-hero, .page-hero, .hero')) return 'hero';
     return 'content';
   }
   document.addEventListener('click', function(e){

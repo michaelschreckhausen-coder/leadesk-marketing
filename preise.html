@@ -801,6 +801,7 @@
         body: JSON.stringify(data)
       }).then(function(r){ return r.json(); }).then(function(j){
         if(j.success === true){
+          if(window.lkTrack) window.lkTrack('team_request_submit');
           ts.style.color = '#0a7d3c';
           ts.textContent = 'Danke! Eure Team-Anfrage ist bei uns — wir melden uns in der Regel innerhalb eines Werktags und richten den Plan gemeinsam mit euch ein.';
           tf.querySelectorAll('#tbName,#tbEmail,#tbCompany').forEach(function(i){ i.disabled = true; });
@@ -838,7 +839,7 @@
           firma: data.company, name: data.name, email: data.email, land: data.land, _honey: data._honey || ''
         })
       }).then(function(r){ return r.json(); }).then(function(j){
-        if(j && j.ok && j.url){ ts.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
+        if(j && j.ok && j.url){ if(window.lkTrack) window.lkTrack('checkout_start', {type:'team'}); ts.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
         if(j && j.ok && j.bestandskunde){
           ts.style.color = 'var(--ink)';
           ts.innerHTML = (j.hinweis || 'Mit dieser Adresse gibt es schon ein Leadesk-Konto.') + ' <a href="' + j.login_url + '" style="font-weight:700">Einloggen und dort buchen →</a>';
@@ -890,7 +891,7 @@
         body: JSON.stringify({ seats: seats, intervall: currentBillingMode() === 'yr' ? 'jahr' : 'monat',
           firma: data.company, name: data.name, email: data.email, land: data.land, _honey: data._honey || '' })
       }).then(function(r){ return r.json(); }).then(function(j){
-        if(j && j.ok && j.url){ bStatus.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
+        if(j && j.ok && j.url){ if(window.lkTrack) window.lkTrack('checkout_start', {type:'single', plan: data.plan}); bStatus.textContent = 'Weiter zur Zahlung …'; window.location.href = j.url; return; }
         if(j && j.ok && j.bestandskunde){
           bStatus.style.color = 'var(--ink)';
           bStatus.innerHTML = (j.hinweis || '') + ' <a href="' + j.login_url + '" style="font-weight:700">Einloggen und dort buchen →</a>';

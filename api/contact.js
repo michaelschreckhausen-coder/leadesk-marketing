@@ -33,6 +33,8 @@ module.exports = async function handler(req, res) {
   var email = (body.email || '').toString().trim();
   var company = (body.company || '').toString().trim();
   var message = (body.message || '').toString().trim();
+  // Land nur aus der Team-Anfrage (preise.html), Ländercode aus der Auswahlliste
+  var land = /^[A-Z]{2}$/.test(body.land || '') ? body.land : '';
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, error: 'missing_fields' });
@@ -58,7 +60,8 @@ module.exports = async function handler(req, res) {
     'Neue Anfrage über das Kontaktformular auf leadesk.de\n\n' +
     'Name: ' + name + '\n' +
     'E-Mail: ' + email + '\n' +
-    'Unternehmen: ' + (company || '—') + '\n\n' +
+    'Unternehmen: ' + (company || '—') + '\n' +
+    (land ? 'Land: ' + land + '\n' : '') + '\n' +
     'Nachricht:\n' + message + '\n';
   var htmlBody =
     '<h2 style="margin:0 0 12px">Neue Kontakt-/Demo-Anfrage</h2>' +
@@ -67,6 +70,7 @@ module.exports = async function handler(req, res) {
     '<tr><td style="color:#888">Name</td><td><strong>' + escapeHtml(name) + '</strong></td></tr>' +
     '<tr><td style="color:#888">E-Mail</td><td><a href="mailto:' + escapeHtml(email) + '">' + escapeHtml(email) + '</a></td></tr>' +
     '<tr><td style="color:#888">Unternehmen</td><td>' + escapeHtml(company || '—') + '</td></tr>' +
+    (land ? '<tr><td style="color:#888">Land</td><td>' + escapeHtml(land) + '</td></tr>' : '') +
     '</table>' +
     '<p style="margin:16px 0 6px;color:#888;font-family:Arial,sans-serif;font-size:14px">Nachricht</p>' +
     '<div style="white-space:pre-wrap;font-family:Arial,sans-serif;font-size:14px;line-height:1.5">' + escapeHtml(message) + '</div>';

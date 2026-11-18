@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CRM: Kontakte, Deals, Aufgaben &amp; Reporting | Leadesk</title>
-<meta name="description" content="Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort.">
+<meta name="description" content="Das CRM an deinem Outbound: Kontakte & Unternehmen mit Firmendaten aus der Website, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast.">
 <link rel="canonical" href="https://www.leadesk.de/crm.html">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Leadesk">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="CRM: Kontakte, Deals, Aufgaben &amp; Reporting | Leadesk">
-<meta property="og:description" content="Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — das CRM, das direkt an deinem LinkedIn-Outbound hängt.">
+<meta property="og:description" content="Kontakte & Unternehmen mit Firmendaten aus der Website, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting — das CRM an deinem LinkedIn-Outbound.">
 <meta property="og:url" content="https://www.leadesk.de/crm.html">
 <meta property="og:image" content="https://www.leadesk.de/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -61,6 +61,20 @@
   .bars .b{flex:1;border-radius:7px 7px 0 0;background:linear-gradient(180deg,#16A8DC,#0A6FB0)}
   .bars-x{display:flex;gap:10px;margin-top:6px}
   .bars-x span{flex:1;text-align:center;font-size:11px;color:var(--muted)}
+  /* Unternehmen aus der Website (18.11.2026) – nur vorhandene Variablen */
+  .wf{border:1px solid var(--border);border-radius:12px;background:#fff;padding:16px}
+  .wf-row{display:flex;gap:8px;margin-bottom:10px}
+  .wf-in{flex:1;min-width:0;border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:13px;color:var(--ink)}
+  .wf-btn{border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:700;background:var(--navy);color:#fff;white-space:nowrap}
+  .wf-note{font-size:12px;color:var(--navy);background:var(--tint-navy);border-radius:8px;padding:8px 10px;margin-bottom:12px}
+  .wf-list{margin:0}
+  .wf-list div{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+  .wf-list div:last-child{border-bottom:0}
+  .wf-list dt{font-size:11.5px;font-weight:700;color:var(--muted)}
+  .wf-list dd{margin:0;font-size:13px;color:var(--ink)}
+  .wf-p{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--tint-cyan);color:var(--navy)}
+  .wf-ki{background:var(--tint-navy)}
+  @media (max-width:520px){.wf-list div{grid-template-columns:1fr;gap:2px}}
 </style>
 <script type="application/ld+json">
 {
@@ -71,7 +85,7 @@
       "@id": "https://www.leadesk.de/crm.html#webpage",
       "url": "https://www.leadesk.de/crm.html",
       "name": "CRM: Kontakte, Deals, Aufgaben & Reporting | Leadesk",
-      "description": "Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort.",
+      "description": "Das CRM an deinem Outbound: Kontakte & Unternehmen mit Firmendaten aus der Website, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast.",
       "inLanguage": "de-DE",
       "isPartOf": {
         "@id": "https://www.leadesk.de/#website"
@@ -111,6 +125,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Leads aus deinem LinkedIn-Outbound landen automatisch im CRM und werden mit Person und Unternehmen verknüpft. Instagram-Gesprächspartner übernimmst du mit einem Klick."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Woher kommen die Unternehmensdaten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gib die Website des Unternehmens an. Leadesk liest Startseite und Impressum und schlägt Anschrift, Rechtsform, Handelsregister, Geschäftsführung und USt-IdNr. vor. Übernommen wird nur, was so auf der Website steht, und du prüfst vor dem Speichern. Bestehende Unternehmen gleichst du mit „Aus Website aktualisieren“ ab."
           }
         },
         {
@@ -221,7 +243,7 @@
     <p class="lead" style="margin:14px auto 0">Ein vollwertiges CRM — kein zusätzliches Tool nötig. Von der ersten Vernetzung bis zum gewonnenen Deal läuft alles an einem Ort.</p>
   </div>
   <div class="wrap grid3">
-    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Kontakte &amp; Unternehmen</h3><p>Personen, Firmen und Deals in einem Beziehungsgraph — mit voller Historie.</p></div>
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Kontakte &amp; Unternehmen</h3><p>Personen, Firmen und Deals in einem Beziehungsgraph — Firmendaten füllen sich aus der Website.</p></div>
     <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Deals &amp; Pipeline</h3><p>Drag-&amp;-Drop-Board mit Phasen, Werten, Wahrscheinlichkeit und nächstem Schritt.</p></div>
     <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Aufgaben &amp; Aktivitäten</h3><p>Fällige To-dos und lückenlose Timeline je Kontakt und Deal.</p></div>
     <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)">
@@ -270,8 +292,43 @@
   </div>
 </section>
 
+<!-- UNTERNEHMEN AUS DER WEBSITE (18.11.2026) -->
+<section class="pad" id="website-abgleich">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Unternehmen aus der Website</div>
+    <h2 class="big">Website eingeben. <span class="grad-text">Firmendaten fertig.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Beim Anlegen eines Unternehmens reicht die Website. Leadesk liest Startseite und Impressum und füllt Anschrift, Rechtsform, Handelsregister, Geschäftsführung, USt-IdNr. und eine kurze Beschreibung vor. Du prüfst kurz und legst an — lieber von Hand? Geht weiterhin.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Impressumsdaten automatisch: Anschrift, Rechtsform, Registergericht und -nummer, Geschäftsführung, USt-IdNr. und E-Mail</li>
+        <li>Nur belegte Angaben: Jeder Wert muss so auf der Website stehen — erfunden wird nichts, Fehlendes bleibt leer</li>
+        <li>Abgleich für bestehende Unternehmen: „Aus Website aktualisieren“ zeigt deine Daten und die der Website nebeneinander, du entscheidest Feld für Feld</li>
+        <li>Ganze Listen auf einmal: Unternehmen markieren und im Hintergrund anreichern — gefüllt werden nur leere Felder</li>
+        <li>KI-Vorschläge wie Beschreibung und Branche sind gekennzeichnet, die Credits siehst du vor dem Klick</li>
+      </ul>
+      <div style="margin-top:22px"><a class="btn btn-navy" href="https://app.leadesk.de/register">Kostenlos testen →</a></div>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Unternehmen anlegen</div>
+      <div class="wf">
+        <div class="wf-row"><span class="wf-in">auralis.de</span><span class="wf-btn">Daten holen</span></div>
+        <div class="wf-note">Gefüllt aus auralis.de/impressum und der Startseite. Bitte kurz prüfen.</div>
+        <dl class="wf-list">
+          <div><dt>Name</dt><dd>Auralis GmbH <span class="wf-p">aus Website</span></dd></div>
+          <div><dt>Anschrift</dt><dd>Leopoldstraße 12, 80802 München <span class="wf-p">aus Website</span></dd></div>
+          <div><dt>Handelsregister</dt><dd>Amtsgericht München, HRB 000000 <span class="wf-p">aus Website</span></dd></div>
+          <div><dt>Geschäftsführung</dt><dd>Jonas Brandt <span class="wf-p">aus Website</span></dd></div>
+          <div><dt>Beschreibung</dt><dd>Software für Vertriebsteams im Mittelstand. <span class="wf-p wf-ki">KI-Vorschlag</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- DEALS -->
-<section class="pad" id="deals">
+<section class="pad soft" id="deals">
   <div class="wrap center-head reveal">
     <div class="eyebrow center">Deals &amp; Pipeline</div>
     <h2 class="big">Deine Pipeline, <span class="grad-text">im Griff.</span></h2>
@@ -301,7 +358,7 @@
 </section>
 
 <!-- AUFGABEN -->
-<section class="pad soft" id="aufgaben">
+<section class="pad" id="aufgaben">
   <div class="wrap center-head reveal">
     <div class="eyebrow center">Aufgaben &amp; Aktivitäten</div>
     <h2 class="big">Nichts fällt mehr <span class="grad-text">hinten runter.</span></h2>
@@ -330,7 +387,7 @@
 </section>
 
 <!-- LEAD INTELLIGENCE -->
-<section class="pad" id="lead-score">
+<section class="pad soft" id="lead-score">
   <div class="wrap split">
     <div class="reveal">
       <div class="eyebrow">KI-Lead-Score</div>
@@ -350,7 +407,7 @@
 </section>
 
 <!-- REPORTING -->
-<section class="pad soft" id="reporting">
+<section class="pad" id="reporting">
   <div class="wrap center-head reveal">
     <div class="eyebrow center">Reporting</div>
     <h2 class="big">Zahlen, die zeigen, <span class="grad-text">was wirkt.</span></h2>
@@ -391,6 +448,7 @@
   </div>
   <div class="wrap faq reveal">
     <details open><summary>Wie kommen neue Leads ins CRM?</summary><p>Leads aus deinem LinkedIn-Outbound landen automatisch im CRM und werden mit Person und Unternehmen verknüpft. Instagram-Gesprächspartner übernimmst du mit einem Klick.</p></details>
+    <details><summary>Woher kommen die Unternehmensdaten?</summary><p>Gib die Website des Unternehmens an. Leadesk liest Startseite und Impressum und schlägt Anschrift, Rechtsform, Handelsregister, Geschäftsführung und USt-IdNr. vor. Übernommen wird nur, was so auf der Website steht, und du prüfst vor dem Speichern. Bestehende Unternehmen gleichst du mit „Aus Website aktualisieren“ ab.</p></details>
     <details><summary>Was ist der KI-Lead-Score?</summary><p>Leadesk reichert neue Leads an und vergibt einen Score aus echten Signalen, laufend aktualisiert. Du kannst die Pipeline danach sortieren und filtern, auch in gespeicherten Sichten.</p></details>
     <details><summary>Kann ich die Phasen der Pipeline selbst festlegen?</summary><p>Ja. Das Kanban-Board hat frei definierbare Phasen, jeder Deal trägt Wert, Abschluss-Wahrscheinlichkeit, nächsten Schritt und Fälligkeit. Verlorene Deals erfasst du mit Grund.</p></details>
     <details><summary>Ist das CRM auch mobil nutzbar?</summary><p>Ja, über die kostenlose Leadesk-App für iOS, iPadOS und macOS — mit denselben Berechtigungen wie in der Web-App.</p></details>

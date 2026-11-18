@@ -6,6 +6,7 @@
 
 - [Leadesk – KI-Suite für Marketing und Vertrieb](https://www.leadesk.de/): Leadesk bündelt LinkedIn, Instagram, Content, CRM und Delivery in einer App — mit Leadly, dem KI-Agenten, der morgens schon für dich gearbeitet hat.
 - [Funktionen](https://www.leadesk.de/funktionen.html): Alle Module von Leadesk auf einen Blick: Leadly, LinkedIn, Content, Instagram, CRM, Projekte und Reporting — in einer Suite. Leadesk lässt sich als Connector mit Claude verbinden (Kontakte, Deals, Aufgaben, Redaktionsplan, Postfach; Anmeldung mit dem Leadesk-Konto).
+- [Leadesk in Claude](https://www.leadesk.de/claude.html): Leadesk als Connector in Claude — Kontakte, Deals, Aufgaben, Redaktionsplan und Postfach direkt im KI-Assistenten, Anmeldung mit dem Leadesk-Konto, gleiche Rechte wie in der App.
 - [Leadly — Der KI-Agent](https://www.leadesk.de/leadly.html): Leadly denkt in deiner Pipeline mit, bereitet die nächsten Züge vor und wartet auf dein Go. Nichts wird abgeschickt ohne deine Freigabe.
 - [LinkedIn-Automatisierung & Sales Navigator](https://www.leadesk.de/linkedin.html): Dein LinkedIn-Vertrieb in einer App: Lead-Suche mit Sales Navigator, Cloud-Kampagnen, KI-Nachrichten, Auto-Engagement, Profil-Checker und SSI-Analyse — sicher und persönlich.
 - [Instagram-Suite: Postfach, CRM & Publishing](https://www.leadesk.de/instagram.html): Instagram in Leadesk: DMs und Kommentare in einem Postfach, Gesprächspartner als CRM-Kontakt, neue Follower im Blick und Publishing aus dem Redaktionsplan.

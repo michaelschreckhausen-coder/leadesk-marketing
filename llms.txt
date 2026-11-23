@@ -11,7 +11,7 @@
 - [LinkedIn-Automatisierung & Sales Navigator](https://www.leadesk.de/linkedin.html): Dein LinkedIn-Vertrieb in einer App: Lead-Suche mit Sales Navigator, Cloud-Kampagnen, KI-Nachrichten, Auto-Engagement, Profil-Checker und SSI-Analyse — sicher und persönlich.
 - [Instagram-Suite: Postfach, CRM & Publishing](https://www.leadesk.de/instagram.html): Instagram in Leadesk: DMs und Kommentare in einem Postfach, Gesprächspartner als CRM-Kontakt, neue Follower im Blick und Publishing aus dem Redaktionsplan.
 - [Content-Werkstatt, Editor & Visual Builder](https://www.leadesk.de/content.html): Dokumenten-Editor, Visual Builder, Personal- und Company-Brand-Voice und Wissensdatenbank — KI-Content, der nach dir klingt und aussieht.
-- [CRM: Kontakte, Deals, Aufgaben & Reporting](https://www.leadesk.de/crm.html): Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen mit Firmendaten aus der Website, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort.
+- [CRM: Kontakte, Deals, Aufgaben & Reporting](https://www.leadesk.de/crm.html): Das CRM, das an deinem Outbound hängt: Kontakte & Unternehmen mit Firmendaten aus der Website, Deal-Pipeline, Aufgaben, KI-Lead-Score und Reporting mit Forecast — alles an einem Ort. Mit Outlook-Anbindung: E-Mails am Kontakt und E-Mail-Versand aus dem CRM.
 - [Projektumsetzung & Delivery](https://www.leadesk.de/projekte.html): Vom Abschluss zur Auslieferung — ohne Tool-Wechsel. Projekte, Zeiterfassung, Anhänge und Rechnungen mit sevDesk-Anbindung.
 - [Reporting & SSI](https://www.leadesk.de/reporting.html): Zahlen, die du morgens verstehst: Aktivitäts- und Conversion-Reports plus SSI-Tracker für deinen LinkedIn Social Selling Index.
 - [KI in Leadesk](https://www.leadesk.de/ki.html): Multi-Provider-KI (Anthropic, OpenAI, Google, Mistral), transparent per Credits — plus KI-Sichtbarkeit: wie gut wirst du in ChatGPT, Claude & Co. gefunden?
@@ -25,7 +25,7 @@
 - [Leadesk für Sales: Outbound, Pipeline & Abschluss](https://www.leadesk.de/sales.html): Vom ersten LinkedIn-Kontakt bis zum Abschluss — an einem Ort. Sales Navigator, Sequenzen, KI-Lead-Score, Pipeline, Aufgaben und Forecast. Weniger Tools, mehr Abschlüsse.
 - [Leadesk für Marketing: Content, Kanäle & Reichweite](https://www.leadesk.de/marketing.html): Ein Cockpit für Content, Kanäle und Marke: Content-Studio mit Brand Voice, Visual Builder, Redaktionsplan für LinkedIn & Instagram, Corporate Influencer, KI-Sichtbarkeit und Analytics.
 - [Corporate Influencer: dein Team als Stimme der Marke](https://www.leadesk.de/corporate-influencer.html): Mach Mitarbeitende zu glaubwürdigen Corporate Influencern — mit eigener Brand Voice, zentralen Themen, Freigabe-Workflow, Redaktionsplan und Reichweiten-Analytics. Zentral gesteuert, ohne Chaos.
-- [Whitelabel für Agenturen](https://www.leadesk.de/agenturen.html): Deine Marke, unsere Maschine. Betreibe Leadesk unter eigenem Logo, eigener Farbe und Subdomain — mit sauberer Mandantentrennung und zentraler Kundenverwaltung.
+- [Whitelabel für Agenturen](https://www.leadesk.de/agenturen.html): Deine Marke, unsere Maschine. Betreibe Leadesk unter eigenem Logo, eigener Farbe und Subdomain — mit sauberer Mandantentrennung und zentraler Kundenverwaltung. Agenturen binden Personal Brands ihrer Kunden per Einladungslink an, ohne Leadesk-Zugang für den Kunden; Beiträge gibt der Kunde im Freigabeprozess des Redaktionsplans per Link frei.
 
 ## Services
 

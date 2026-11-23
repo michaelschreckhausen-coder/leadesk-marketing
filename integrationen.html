@@ -111,6 +111,14 @@
             "@type": "Answer",
             "text": "Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Einen Auszug findest du in den API-Docs, die vollständige Referenz gibt es auf Anfrage."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird Outlook angebunden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du verbindest dein Outlook-Konto mit Leadesk. Danach erscheinen E-Mails am Kontakt und am Deal, du sendest E-Mails direkt aus dem CRM, Termine laufen als Aktivitäten mit und Outlook-Kontakte lassen sich ins CRM übernehmen."
+          }
         }
       ]
     }
@@ -186,10 +194,12 @@
     <div class="marquee-track">
       <span class="mitem">LinkedIn</span>
       <span class="mitem">Instagram</span>
+      <span class="mitem">Outlook</span>
       <span class="mitem">Stripe</span>
       <span class="mitem">sevDesk</span>
       <span class="mitem">LinkedIn</span>
       <span class="mitem">Instagram</span>
+      <span class="mitem">Outlook</span>
       <span class="mitem">Stripe</span>
       <span class="mitem">sevDesk</span>
     </div>
@@ -202,6 +212,26 @@
     <div class="card reveal" style="--acc:var(--li);--accbg:#e8f0fe"><div class="ic"></div><h3>LinkedIn</h3><p>Vernetzung, Nachrichten und Sales Navigator über die Chrome-Extension.</p></div>
     <div class="card reveal d1" style="--acc:var(--pink);--accbg:#fdeaf4"><div class="ic"></div><h3>Instagram</h3><p>Ein Anschluss für Postfach, Publishing und Analysen — direkt angebunden an Instagram.</p></div>
     <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Wix</h3><p>Lead-Capture von der Marketing-Site direkt ins CRM per Webhook.</p></div>
+  </div>
+</section>
+
+<section class="pad" id="outlook" style="background:var(--tint-blue)">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Neu · E-Mail &amp; Kalender</div>
+      <h2 class="big">Outlook, <span class="grad-text">direkt im CRM.</span></h2>
+      <p class="lead" style="margin-top:18px">Verbinde dein Outlook-Konto: E-Mails, Termine und Kontakte hängen automatisch am richtigen Kontakt und Deal.</p>
+      <ul class="checklist"><li>E-Mails automatisch am Kontakt</li><li>E-Mails direkt aus Leadesk senden</li><li>Kalender-Sync für Termine und Meetings</li><li>Kontakte-Sync ins CRM</li></ul>
+      <div style="margin-top:22px"><a class="btn btn-navy" href="crm.html#outlook">Mehr zum CRM →</a></div>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Outlook · verbunden</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">E-Mails <b style="color:var(--success)">aktiv ✓</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">Kalender <b style="color:var(--success)">aktiv ✓</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">Kontakte <b style="color:var(--success)">aktiv ✓</b></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -233,6 +263,7 @@
   <div class="wrap faq reveal">
     <details open><summary>Wie wird LinkedIn angebunden?</summary><p>Über die Leadesk-Chrome-Extension: Vernetzung, Nachrichten und Sales Navigator laufen über deine eigene LinkedIn-Session, Kampagnen zusätzlich serverseitig in der Cloud.</p></details>
     <details><summary>Wie wird Instagram angebunden?</summary><p>Du verbindest dein Konto einmal unter Einstellungen → Instagram. Postfach, Veröffentlichen und Analysen laufen danach über denselben Anschluss.</p></details>
+    <details><summary>Wie wird Outlook angebunden?</summary><p>Du verbindest dein Outlook-Konto mit Leadesk. Danach erscheinen E-Mails am Kontakt und am Deal, du sendest E-Mails direkt aus dem CRM, Termine laufen als Aktivitäten mit und Outlook-Kontakte lassen sich ins CRM übernehmen.</p></details>
     <details><summary>Kann ich Leads von meiner Website übernehmen?</summary><p>Ja. Für Wix gibt es eine Lead-Erfassung per Webhook, die Anfragen direkt ins CRM schreibt.</p></details>
     <details><summary>Kann ich Leadesk mit Claude verbinden?</summary><p>Ja. Du fügst Leadesk in Claude als Connector hinzu und meldest dich mit deinem Leadesk-Konto an. Danach arbeitet Claude mit deinen Kontakten, Deals, Aufgaben und deinem Redaktionsplan — mit denselben Rechten wie in der App. Mehr unter <a href="claude.html" style="color:var(--cyan-mid)">Leadesk in Claude</a>.</p></details>
     <details><summary>Gibt es eine öffentliche API?</summary><p>Ja, die Leadesk Public API v1 (REST, team-scoped) mit Authentifizierung per API-Key oder OAuth2. Einen Auszug findest du in den API-Docs, die vollständige Referenz gibt es auf Anfrage.</p></details>

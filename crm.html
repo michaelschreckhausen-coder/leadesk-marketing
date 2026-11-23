@@ -158,6 +158,14 @@
             "@type": "Answer",
             "text": "Ja, über die kostenlose Leadesk-App für iOS, iPadOS und macOS — mit denselben Berechtigungen wie in der Web-App."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Outlook mit dem CRM verbinden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Du verbindest dein Outlook-Konto mit Leadesk. Ein- und ausgehende E-Mails erscheinen danach automatisch am Kontakt und am Deal, du schreibst E-Mails direkt aus dem CRM über dein eigenes Postfach, Outlook-Termine laufen als Aktivitäten mit und Outlook-Kontakte übernimmst du ins CRM."
+          }
         }
       ]
     }
@@ -245,7 +253,7 @@
   <div class="wrap grid3">
     <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Kontakte &amp; Unternehmen</h3><p>Personen, Firmen und Deals in einem Beziehungsgraph — Firmendaten füllen sich aus der Website.</p></div>
     <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Deals &amp; Pipeline</h3><p>Drag-&amp;-Drop-Board mit Phasen, Werten, Wahrscheinlichkeit und nächstem Schritt.</p></div>
-    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Aufgaben &amp; Aktivitäten</h3><p>Fällige To-dos und lückenlose Timeline je Kontakt und Deal.</p></div>
+    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Aufgaben &amp; Aktivitäten</h3><p>Fällige To-dos und lückenlose Timeline je Kontakt und Deal — mit E-Mails und Terminen aus Outlook.</p></div>
     <div class="card reveal" style="--acc:var(--cyan);--accbg:var(--tint-cyan)">
       <div class="ic"></div><h3>Lead Intelligence</h3><p>KI reichert Leads an und vergibt einen Lead-Score — automatisch, aktuell.</p>
       <!-- REDESIGN: Fade-Mask-Vorschau, analog zu humeras Kernfähigkeiten-Karten. -->
@@ -368,7 +376,7 @@
     <div class="reveal">
       <ul class="checklist">
         <li>Aufgaben je Kontakt und Deal — mit Fälligkeit und Zuständigkeit</li>
-        <li>Aktivitäts-Timeline: Nachrichten, Anrufe, Notizen, Statuswechsel</li>
+        <li>Aktivitäts-Timeline: Nachrichten, Anrufe, Notizen, Statuswechsel — dazu E-Mails und Termine aus <a href="#outlook" style="color:var(--cyan-mid)">Outlook</a></li>
         <li>Erinnerungen und Vorschläge über Leadly, den KI-Agenten</li>
         <li>Bulk-Actions: Status, Tags und Zuweisungen für viele Einträge auf einmal</li>
       </ul>
@@ -382,6 +390,34 @@
         <li><span class="box"></span>Marketing-Lead nachfassen<span class="due">Fr</span></li>
       </ul>
       <div class="stat-strip">Leadly schlägt <span class="count grad-text" data-to="3">0</span> nächste Schritte vor</div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTLOOK -->
+<section class="pad" id="outlook" style="background:var(--tint-blue)">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Neu · Outlook-Anbindung</div>
+    <h2 class="big">Dein Postfach, <span class="grad-text">direkt am Kontakt.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Verbinde dein Outlook-Konto mit Leadesk. E-Mails, Termine und Kontakte landen dort, wo du sie brauchst — am Kontakt und am Deal, nicht in einem zweiten Fenster.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>E-Mails am Kontakt: ein- und ausgehende Outlook-Mails erscheinen automatisch an Kontakt und Deal</li>
+        <li>Aus Leadesk senden: E-Mails direkt im CRM schreiben — verschickt über dein eigenes Outlook-Postfach</li>
+        <li>Kalender-Sync: Outlook-Termine laufen als Aktivitäten mit, Meetings planst du direkt aus Leadesk</li>
+        <li>Kontakte-Sync: Outlook-Kontakte ins CRM übernehmen und abgleichen</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Kranich GmbH · Aktivitäten</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">E-Mail erhalten · AW: Angebot <b>09:12</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">E-Mail gesendet · Angebot <b>gestern</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">Termin · Demo mit Kranich <b>Do 14:00</b></div>
+      </div>
+      <div class="stat-strip">E-Mails, Termine und Kontakte aus <span class="grad-text">deinem Outlook</span></div>
     </div>
   </div>
 </section>
@@ -451,6 +487,7 @@
     <details><summary>Woher kommen die Unternehmensdaten?</summary><p>Gib die Website des Unternehmens an. Leadesk liest Startseite und Impressum und schlägt Anschrift, Rechtsform, Handelsregister, Geschäftsführung und USt-IdNr. vor. Übernommen wird nur, was so auf der Website steht, und du prüfst vor dem Speichern. Bestehende Unternehmen gleichst du mit „Aus Website aktualisieren“ ab.</p></details>
     <details><summary>Was ist der KI-Lead-Score?</summary><p>Leadesk reichert neue Leads an und vergibt einen Score aus echten Signalen, laufend aktualisiert. Du kannst die Pipeline danach sortieren und filtern, auch in gespeicherten Sichten.</p></details>
     <details><summary>Kann ich die Phasen der Pipeline selbst festlegen?</summary><p>Ja. Das Kanban-Board hat frei definierbare Phasen, jeder Deal trägt Wert, Abschluss-Wahrscheinlichkeit, nächsten Schritt und Fälligkeit. Verlorene Deals erfasst du mit Grund.</p></details>
+    <details><summary>Kann ich Outlook mit dem CRM verbinden?</summary><p>Ja. Du verbindest dein Outlook-Konto mit Leadesk. Ein- und ausgehende E-Mails erscheinen danach automatisch am Kontakt und am Deal, du schreibst E-Mails direkt aus dem CRM über dein eigenes Postfach, Outlook-Termine laufen als Aktivitäten mit und Outlook-Kontakte übernimmst du ins CRM.</p></details>
     <details><summary>Ist das CRM auch mobil nutzbar?</summary><p>Ja, über die kostenlose Leadesk-App für iOS, iPadOS und macOS — mit denselben Berechtigungen wie in der Web-App.</p></details>
   </div>
 </section>

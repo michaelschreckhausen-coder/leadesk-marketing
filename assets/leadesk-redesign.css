@@ -30,7 +30,8 @@
 .nav-overlay-list > a,.nav-overlay-list > div > .nav-ov-trigger{display:flex;align-items:center;justify-content:space-between;
   padding:18px 2px;font-size:23px;font-weight:800;color:var(--ink);border-bottom:1px solid var(--border);letter-spacing:-.01em}
 .nav-overlay-list .nav-ov-sub{display:flex;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
-.nav-overlay-list .nav-ov-group.open .nav-ov-sub{max-height:400px}
+.nav-overlay-list .nav-ov-group.open .nav-ov-sub{max-height:1100px}
+.nav-overlay-list .nav-ov-lab{padding:14px 2px 6px 14px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .nav-overlay-list .nav-ov-sub a{padding:12px 2px 12px 14px;font-size:16.5px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border)}
 .nav-overlay-list .nav-ov-trigger svg{transition:transform .25s var(--ease);color:var(--muted)}
 .nav-overlay-list .nav-ov-group.open .nav-ov-trigger svg{transform:rotate(180deg)}
@@ -168,3 +169,10 @@ body.nav-locked{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .word-reveal .w{opacity:1!important}
 }
+
+/* Startseite: Ablauf-Schritte in den Segment-Panels (Vertrieb / Marketing) */
+.flow-steps{list-style:none;margin:0;padding:0;counter-reset:fs;display:flex;flex-direction:column;gap:10px}
+.flow-steps li{counter-increment:fs;display:flex;gap:12px;align-items:flex-start;background:var(--bg-soft);border-radius:var(--radius-sm);padding:12px 14px}
+.flow-steps li::before{content:counter(fs);flex:0 0 24px;height:24px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.flow-steps b{display:block;font-size:14.5px;color:var(--ink)}
+.flow-steps span{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}

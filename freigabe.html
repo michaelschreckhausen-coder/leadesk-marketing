@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freigabeprozess: Beiträge per Link freigeben, ohne Login | Leadesk</title>
+<meta name="description" content="Beiträge aus dem Redaktionsplan per Link zur Freigabe senden. Kunden und Corporate Influencer geben frei oder kommentieren, ohne Login und ohne Leadesk-Zugang.">
+<link rel="canonical" href="https://www.leadesk.de/freigabe.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Leadesk">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Freigabeprozess: Beiträge per Link freigeben, ohne Login | Leadesk">
+<meta property="og:description" content="Freigabe per Link statt E-Mail-Pingpong: freigeben oder kommentieren, ohne Login. Für Agenturen und Corporate-Influencer-Programme.">
+<meta property="og:url" content="https://www.leadesk.de/freigabe.html">
+<meta property="og:image" content="https://www.leadesk.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Freigabeprozess per Link | Leadesk">
+<meta name="twitter:description" content="Freigabe per Link statt E-Mail-Pingpong: freigeben oder kommentieren, ohne Login. Für Agenturen und Corporate-Influencer-Programme.">
+<meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
+<meta name="theme-color" content="#003060">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/leadesk.css">
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.css -->
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
+<!-- CI-Look (an app.leadesk.de angelehnt): Lexend Deca + Inter, self-hosted -->
+<link rel="preload" href="assets/fonts/lexend-deca-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/ci.css">
+<style>
+  .mrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:8px;font-size:14px;color:var(--ink)}
+  .mrow .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;background:linear-gradient(135deg,#16A8DC,#003060)}
+  .mrow .nm{font-weight:700}.mrow .rl{font-size:12px;color:var(--muted)}
+  .mrow .rc{margin-left:auto;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+  .soon{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--tint-peach);color:var(--orange);margin-bottom:12px}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .slot{border:1px solid var(--border);border-radius:9px;padding:9px 0;text-align:center;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff}
+  .slot.on{background:var(--grad);color:#fff;border-color:transparent}.slot.off{color:#c3c7d2;text-decoration:line-through}
+  .bub{max-width:82%;padding:10px 13px;border-radius:14px;font-size:14px;margin-bottom:8px;background:#eef2f8;color:var(--ink)}
+  .bub.me{margin-left:auto;background:#dcf5e7}
+  .bub.ai{border:1px dashed var(--cyan);background:#fff;color:var(--cyan-mid);font-weight:600}
+  .kb5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media (max-width:860px){.kb5{grid-template-columns:repeat(2,1fr)}}
+  .kb-col{background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:8px;min-height:120px}
+  .kb-h{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .kb-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 9px;margin-bottom:7px;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .kb-col.hl{border-color:#7A5AF8;background:#efedff}.kb-col.hl .kb-h{color:#7A5AF8}
+  .pricebox{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .pricebox .p{font-size:40px;font-weight:800;line-height:1;white-space:nowrap}.pricebox .p span{font-size:15px;color:var(--muted);font-weight:600}
+  .pricebox .t{flex:1;min-width:240px;font-size:15px;color:var(--muted)}.pricebox .t b{color:var(--ink)}
+  .qm{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .qm div{border-radius:10px;padding:14px;font-size:13px;font-weight:700;color:var(--ink);border:1px solid var(--border);background:#fff}
+  .qm div b{display:block;font-size:22px;margin-bottom:2px}
+  .qm .q1{background:#e5f4e4}.qm .q4{background:var(--bg-soft);color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.leadesk.de/freigabe.html#webpage",
+      "url": "https://www.leadesk.de/freigabe.html",
+      "name": "Freigabeprozess: Beiträge per Link freigeben, ohne Login | Leadesk",
+      "description": "Beiträge aus dem Redaktionsplan per Link zur Freigabe senden. Kunden und Corporate Influencer geben frei oder kommentieren, ohne Login und ohne Leadesk-Zugang.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/#website"
+      },
+      "publisher": {
+        "@id": "https://www.leadesk.de/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.leadesk.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freigabeprozess: Beiträge per Link freigeben, ohne Login | Leadesk",
+          "item": "https://www.leadesk.de/freigabe.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.leadesk.de/freigabe.html#faq",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/freigabe.html#webpage"
+      },
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Braucht die freigebende Person einen Leadesk-Zugang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Sie bekommt einen Link, sieht den Beitrag und gibt ihn frei oder kommentiert ihn. Ohne Login, ohne Passwort, ohne Einarbeitung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer gibt im Corporate-Influencer-Programm frei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Immer der Ambassador selbst, also die Person, über deren LinkedIn-Profil der Beitrag veröffentlicht wird. Nichts erscheint unter einem Namen, ohne dass die Person zugestimmt hat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer gibt bei Agenturen frei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dein Kunde. Du bereitest die Beiträge in deinem Redaktionsplan vor und schickst sie per Link zur Freigabe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert nach der Freigabe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Beitrag wandert im Redaktionsplan auf „Eingeplant“ und wird zum gewählten Termin automatisch veröffentlicht. Kommentiert die Person stattdessen, siehst du den Kommentar am Beitrag und überarbeitest ihn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für welche Kanäle gilt der Freigabeprozess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für die Beiträge aus deinem Redaktionsplan, also LinkedIn und Instagram."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie verbindet ein Ambassador oder Kunde sein LinkedIn-Profil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Über einen Einladungslink. Die Person verbindet ihr Profil einmal selbst, ebenfalls ohne eigenen Leadesk-Zugang."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics: cookielose Reichweitenmessung, siehe Datenschutz 3.2 -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="ci">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
+    <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
+  </linearGradient>
+</defs></svg>
+
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+  <nav class="nav-links">
+    <div class="nav-group"><span class="nav-trigger">Lösungen <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega"><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="sales.html">Sales</a></div><div class="nav-col"><span class="nav-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div></div></div>
+    <div class="nav-group"><span class="nav-trigger active">Plattform <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega nav-mega-4"><div class="nav-col"><span class="nav-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a></div><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a></div><div class="nav-col"><span class="nav-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a></div><div class="nav-col"><span class="nav-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div></div></div>
+    <a href="leadly.html">Leadly</a><a href="preise.html">Preise</a><a href="services.html">Services</a>
+  </nav>
+  <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div></header>
+
+<!-- REDESIGN: dieselbe Vollbild-Mobile-Nav wie auf der Startseite — einmal gebaut,
+     gilt für alle Unterseiten, da Header/Footer ohnehin pro Seite kopiert werden. -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Lösungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Vertrieb</span><a href="sales.html">Sales</a><span class="nav-ov-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Plattform <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><span class="nav-ov-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a><span class="nav-ov-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a><span class="nav-ov-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="preise.html">Preise</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero" style="background:var(--tint-lav)">
+  <div class="wrap ph-grid">
+    <div class="reveal">
+      <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+      <div class="eyebrow"><span style="color:#7A5AF8">Freigabeprozess</span></div>
+      <h1>Freigabe per Link.<br><span class="grad-text">Kein Hin und Her.</span></h1>
+      <p class="lead">Schluss mit Screenshots per E-Mail und „passt so“ im Chat. Du schickst den Beitrag aus dem Redaktionsplan zur Freigabe, die andere Seite gibt per Link frei oder kommentiert. Ohne Login, ohne Leadesk-Zugang.</p>
+      <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+    </div>
+    <div class="mock reveal d1">
+      <div class="k-lab" style="color:#7A5AF8">Freigabe · Beitrag „Produktlaunch“</div>
+      <div style="border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--ink);margin-bottom:12px">„Drei Monate Entwicklung, ein Ziel: weniger Klicks bis zum Angebot. Heute geht es live.“</div>
+      <div class="flow" style="margin-top:0"><span class="lead-chip" style="background:#e5f4e4;border-color:#bfe3bd">Freigeben</span><span class="lead-chip">Kommentieren</span></div>
+      <div class="stat-strip">Per Link geöffnet, <span class="grad-text">ohne Login</span></div>
+    </div>
+  </div>
+</section>
+<!-- SCHRITTE -->
+<section class="pad">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">So funktioniert es</div>
+    <h2 class="big">Drei Schritte bis <span class="grad-text">zum fertigen Beitrag.</span></h2>
+  </div>
+  <div class="wrap steps">
+    <div class="step reveal"><h3>Zur Freigabe senden</h3><p>Im Beitrag klickst du auf „Zur Freigabe senden“. Der Beitrag wandert im Redaktionsplan in die Spalte „Zur Freigabe“.</p></div>
+    <div class="step reveal d1"><h3>Freigeben oder kommentieren</h3><p>Die freigebende Person öffnet den Link, liest den Beitrag und gibt frei oder hinterlässt einen Kommentar. Ohne Login.</p></div>
+    <div class="step reveal d2"><h3>Eingeplant und veröffentlicht</h3><p>Nach der Freigabe steht der Beitrag auf „Eingeplant“ und wird zum Termin automatisch veröffentlicht.</p></div>
+  </div>
+</section>
+
+<!-- BOARD -->
+<section class="pad soft" id="redaktionsplan">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Im Redaktionsplan</div>
+    <h2 class="big">Jeder Beitrag hat <span class="grad-text">einen klaren Status.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Das Board zeigt auf einen Blick, was noch Idee ist, was auf Freigabe wartet und was als Nächstes live geht.</p>
+  </div>
+  <div class="wrap reveal"><div class="mock" style="min-height:0">
+      <div class="kb5">
+        <div class="kb-col"><div class="kb-h">Ideen</div><div class="kb-card">Messe-Rückblick</div></div>
+        <div class="kb-col"><div class="kb-h">In Arbeit</div><div class="kb-card">Kundenstory Q4</div></div>
+        <div class="kb-col hl"><div class="kb-h">Zur Freigabe</div><div class="kb-card">Produktlaunch</div><div class="kb-card">Team-Einblick</div></div>
+        <div class="kb-col"><div class="kb-h">Eingeplant</div><div class="kb-card">Discovery-Calls</div></div>
+        <div class="kb-col"><div class="kb-h">Veröffentlicht</div><div class="kb-card">Jahresausblick</div></div>
+      </div>
+  </div></div>
+  <div class="wrap grid3" style="margin-top:20px">
+    <div class="card reveal" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Kommentare am Beitrag</h3><p>Rückmeldungen, Notizen und Kommentare stehen direkt am Beitrag, nicht in einem Mail-Thread.</p></div>
+    <div class="card reveal d1" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Vorschau wie auf LinkedIn</h3><p>Vor dem Senden siehst du, wie der Beitrag auf LinkedIn aussehen wird.</p></div>
+    <div class="card reveal d2" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>KI-Kennzeichnung</h3><p>Bei Bedarf wählst du beim Veröffentlichen eine KI-Kennzeichnung für den Beitrag.</p></div>
+  </div>
+</section>
+
+<!-- EINSATZ -->
+<section class="pad" id="einsatz">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Für wen</div>
+    <h2 class="big">Zwei Einsätze. <span class="grad-text">Ein Ablauf.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Der Freigabeprozess ist derselbe, nur die freigebende Person ist eine andere.</p>
+  </div>
+  <div class="wrap grid2">
+    <div class="card reveal" style="--acc:#7A5AF8;--accbg:#efedff"><div class="ic"></div><h3>Für Corporate-Influencer-Programme</h3><p>Das Marketing bereitet den Beitrag vor. Freigegeben wird immer vom Ambassador selbst, über dessen LinkedIn-Profil veröffentlicht wird. Nichts erscheint unter einem Namen, ohne dass die Person zugestimmt hat.</p><p style="margin-top:14px"><a class="btn btn-navy" href="corporate-influencer.html">Zu den Programmen →</a></p></div>
+    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Für Agenturen</h3><p>Du planst die Beiträge für die Personal Brands deiner Kunden in deinem Redaktionsplan. Dein Kunde gibt per Link frei oder kommentiert, ohne eigenen Leadesk-Zugang.</p><p style="margin-top:14px"><a class="btn btn-navy" href="agenturen.html">Zur Agentur-Lösung →</a></p></div>
+  </div>
+</section>
+
+<!-- ANBINDEN -->
+<section class="pad soft" id="anbinden">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Anbinden</div>
+    <h2 class="big">Auch das Profil kommt <span class="grad-text">per Link.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Damit du im Namen einer Person planen kannst, verbindet sie ihr LinkedIn-Profil einmal selbst. Auch dafür braucht sie keinen Leadesk-Zugang.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Einladungslink verschicken, die Person verbindet ihr LinkedIn-Profil selbst</li>
+        <li>Kein Leadesk-Account, kein Passwort und keine Einarbeitung auf der anderen Seite</li>
+        <li>Jede Person bekommt eine eigene Personal Brand mit eigener Stimme</li>
+        <li>Beiträge für jede Personal Brand planst du in deinem Redaktionsplan</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab" style="color:#7A5AF8">Personal Brands</div>
+      <div class="mrow"><span class="av" style="background:linear-gradient(135deg,#7A5AF8,#4F7BFF)">SK</span><div><div class="nm">Sarah K.</div><div class="rl">Sales</div></div><span class="rc" style="color:var(--success)">Verbunden</span></div>
+      <div class="mrow"><span class="av">TM</span><div><div class="nm">Tobias M.</div><div class="rl">Product</div></div><span class="rc" style="color:var(--success)">Verbunden</span></div>
+      <div class="mrow"><span class="av" style="background:linear-gradient(135deg,#12B886,#0e7c5a)">LR</span><div><div class="nm">Lena R.</div><div class="rl">Recruiting</div></div><span class="rc" style="color:var(--orange)">Link gesendet</span></div>
+      <div class="stat-strip">Logins auf der anderen Seite: <span class="grad-text">keine</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq">
+  <div class="wrap center-head reveal" style="margin-bottom:24px">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="big">Fragen zur <span class="grad-text">Freigabe.</span></h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open><summary>Braucht die freigebende Person einen Leadesk-Zugang?</summary><p>Nein. Sie bekommt einen Link, sieht den Beitrag und gibt ihn frei oder kommentiert ihn. Ohne Login, ohne Passwort, ohne Einarbeitung.</p></details>
+    <details><summary>Wer gibt im Corporate-Influencer-Programm frei?</summary><p>Immer der Ambassador selbst, also die Person, über deren LinkedIn-Profil der Beitrag veröffentlicht wird. Nichts erscheint unter einem Namen, ohne dass die Person zugestimmt hat.</p></details>
+    <details><summary>Wer gibt bei Agenturen frei?</summary><p>Dein Kunde. Du bereitest die Beiträge in deinem Redaktionsplan vor und schickst sie per Link zur Freigabe.</p></details>
+    <details><summary>Was passiert nach der Freigabe?</summary><p>Der Beitrag wandert im Redaktionsplan auf „Eingeplant“ und wird zum gewählten Termin automatisch veröffentlicht. Kommentiert die Person stattdessen, siehst du den Kommentar am Beitrag und überarbeitest ihn.</p></details>
+    <details><summary>Für welche Kanäle gilt der Freigabeprozess?</summary><p>Für die Beiträge aus deinem Redaktionsplan, also LinkedIn und Instagram.</p></details>
+    <details><summary>Wie verbindet ein Ambassador oder Kunde sein LinkedIn-Profil?</summary><p>Über einen Einladungslink. Die Person verbindet ihr Profil einmal selbst, ebenfalls ohne eigenen Leadesk-Zugang.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad soft">
+  <div class="wrap"><div class="cta-band reveal" style="background:linear-gradient(135deg,#7A5AF8,#4F7BFF)">
+    <h2>Freigaben in Minuten statt Tagen.</h2>
+    <p>Beiträge per Link freigeben lassen, ohne Login auf der anderen Seite. Kostenlos testen, keine Kreditkarte.</p>
+    <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+  </div></div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><a class="logo" href="index.html"><span>Lea</span><svg class="mk" width="34" height="26" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+      <p style="max-width:280px;margin-top:12px">Die All-in-One-Plattform für Vertrieb und Marketing. LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App.</p></div>
+    <div><h4>Plattform</h4><a href="funktionen.html">Funktionen</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="content.html">Content</a><a href="freigabe.html">Freigabeprozess</a><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">Mobile App</a></div>
+    <div><h4>Lösungen &amp; Unternehmen</h4><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="corporate-influencer.html">Corporate Influencer</a><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a><a href="services.html">Services</a><a href="ki.html">KI</a><a href="sicherheit.html">Sicherheit</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a></div>
+    <div><h4>Ressourcen</h4><a href="/blog/">Blog</a><a href="chrome-extension.html">Chrome-Extension</a><a href="integrationen.html">Integrationen</a><a href="changelog.html">Changelog</a><a href="api-docs.html">API-Docs</a><a href="affiliate.html">Affiliate</a><a href="support.html">Support</a></div>
+  </div>
+  <div class="fbar"><span>© 2026 Leadesk · Made in Germany</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
+</div></footer>
+<script src="assets/leadesk.js"></script>
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.js -->
+<script src="assets/leadesk-redesign.js"></script>
+</body>
+</html>

@@ -338,3 +338,8 @@ footer a{display:block;margin-bottom:8px}footer a:hover{color:var(--cyan-mid)}
 .nav-menu::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
 .nav-menu a{display:block;padding:9px 14px;border-radius:9px;font-size:14.5px;color:var(--ink);font-weight:600;white-space:nowrap}
 .nav-menu a:hover{background:var(--bg-soft);color:var(--cyan-mid)}
+/* Mega-Menue: Gruppen mit Spaltentitel (Loesungen, Plattform) */
+.nav-menu.nav-mega{flex-direction:row;align-items:flex-start;gap:4px;padding:12px}
+.nav-menu .nav-col{display:flex;flex-direction:column;gap:2px;min-width:168px}
+.nav-menu .nav-lab{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:6px 14px}
+@media(max-width:1240px){.nav-menu.nav-mega-4{display:grid;grid-template-columns:1fr 1fr;gap:10px 4px}}

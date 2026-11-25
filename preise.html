@@ -563,11 +563,14 @@
       aud.querySelectorAll('span[data-g]').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-g')===g); });
     }
     window.LD_setBilling = setBilling;
+    // Jahrespreis je Seat in glatten Euro, abgerundet (25.11.2026): 39 → 31, 79 → 63, 119 → 95 bei 20 %.
+    // Gleiche Regel wie in der App (team_preis_berechnen, platzpreise.ts) und in Stripe.
+    window.LD_jahrSeat = function(mo){ var jr=(window.LD_JAHRESRABATT==null?20:window.LD_JAHRESRABATT)/100; return Math.floor(mo*(1-jr)+1e-9); };
     function setBilling(p){
       document.querySelectorAll('.amt').forEach(function(a){
         var mo=parseFloat(a.getAttribute('data-mo'));
-        var jr=(window.LD_JAHRESRABATT==null?20:window.LD_JAHRESRABATT)/100;
-        var v = p==='yr' ? mo*(1-jr) : mo;
+        var yrAttr=a.getAttribute('data-yr');   // Konfigurator: fertiger Jahres-Monatswert inkl. Mengenrabatt
+        var v = p==='yr' ? (yrAttr!=null ? parseFloat(yrAttr) : window.LD_jahrSeat(mo)) : mo;
         a.textContent = (Math.round(v*100)/100).toLocaleString('de-DE', {minimumFractionDigits: (Math.round(v*100)%100)?2:0, maximumFractionDigits:2});
       });
       document.querySelectorAll('.per').forEach(function(e){ e.textContent = p==='yr' ? ' / Monat, jährl.' : ' / Monat'; });
@@ -623,6 +626,8 @@
   var SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzc2ODYyNDcyLCJleHAiOjIwOTIyMjI0NzJ9.w8HbycX4Dx5Uu1UCp9ER__cv4T3oldej3BDHgck_WC8';
   var staffel = [{ab:2,p:10},{ab:3,p:15},{ab:5,p:20},{ab:10,p:25}];
   var jahresrabatt = 20;
+  function jahrSeat(mo){ return Math.floor(mo*(1 - jahresrabatt/100) + 1e-9); }   // glatte Euro, abgerundet (25.11.2026)
+  function jahrMonat(){ return counts.sales*jahrSeat(prices.sales) + counts.marketing*jahrSeat(prices.marketing) + counts.allin*jahrSeat(prices.allin); }
   function discountFor(total){
     var r = 0;
     for(var i=0;i<staffel.length;i++){ if(total >= staffel[i].ab && staffel[i].p > r) r = staffel[i].p; }
@@ -717,9 +722,11 @@
     var discount = discountFor(total);
     var discounted = raw * (1 - discount);
     var mode = currentBillingMode();
-    var displayed = eur(mode === 'yr' ? discounted * (1 - jahresrabatt/100) : discounted);
+    var jahr = jahrMonat() * (1 - discount);   // Σ Seats × glatter Jahrespreis, danach Mengenrabatt (wie team_preis_berechnen)
+    var displayed = eur(mode === 'yr' ? jahr : discounted);
 
     amtEl.setAttribute('data-mo', discounted.toFixed(2));
+    amtEl.setAttribute('data-yr', jahr.toFixed(2));
     amtEl.textContent = displayed;
 
     rows.forEach(function(row){
@@ -758,7 +765,7 @@
     lines.push('Seats gesamt: ' + total);
     lines.push('Listenpreis vor Rabatt: ' + Math.round(raw) + ' €/Monat');
     lines.push('Mengenrabatt: ' + (discount > 0 ? ('−' + Math.round(discount*100) + ' %') : 'keiner (ab 2 Seats)'));
-    lines.push('Geschätzter Preis: ' + eur(mode === 'yr' ? discounted*(1 - jahresrabatt/100) : discounted) + ' €/Monat (netto, ' + (mode === 'yr' ? 'jährliche Zahlung' : 'monatliche Zahlung') + ')');
+    lines.push('Geschätzter Preis: ' + eur(mode === 'yr' ? jahrMonat()*(1 - discount) : discounted) + ' €/Monat (netto, ' + (mode === 'yr' ? 'jährliche Zahlung' : 'monatliche Zahlung') + ')');
     lines.push('SSO / dedizierter Ansprechpartner gewünscht: ' + (ssoEl.checked ? 'Ja' : 'Nein'));
     if(notesEl && notesEl.value.trim()){
       lines.push('');
@@ -870,7 +877,7 @@
         bPlan.value = slug;
         bTitle.textContent = planLabel[slug] + ' buchen';
         var yr = currentBillingMode() === 'yr';
-        var mo = planPreis[slug] * (yr ? (1 - jahresrabatt/100) : 1);
+        var mo = yr ? jahrSeat(planPreis[slug]) : planPreis[slug];
         bPreis.textContent = eur(mo) + ' € / Monat netto' + (yr ? ' · jährliche Zahlung (' + eur(mo*12) + ' € / Jahr)' : ' · monatlich kündbar');
         bStatus.style.color = 'var(--muted)'; bStatus.innerHTML = bStatusStart; bSubmit.disabled = false;
         bb.classList.add('open'); bb.setAttribute('aria-hidden','false');

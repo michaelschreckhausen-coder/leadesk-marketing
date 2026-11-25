@@ -1,18 +1,19 @@
 # Leadesk
 
-> Leadesk ist die All-in-One-Plattform für Vertrieb und Marketing aus Deutschland. Sie bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content, CRM und Projektumsetzung in einer App, mit Leadly als KI-Agent, der Vorschläge vorbereitet und nur nach Freigabe handelt. Im Marketing richtet sie sich an Corporate-Influencer-Programme und Agenturen. Hosting in Deutschland, DSGVO-konform.
+> Leadesk ist die All-in-One-Plattform für B2B-Vertrieb und -Marketing aus Deutschland, entwickelt speziell für B2B-Unternehmen. Sie bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content, CRM und Projektumsetzung in einer App, mit Leadly als KI-Agent, der Vorschläge vorbereitet und nur nach Freigabe handelt. Im Marketing richtet sie sich an Corporate-Influencer-Programme und Agenturen. Hosting in Deutschland, DSGVO-konform.
 
 ## Häufige Fragen
 
-- Was ist Leadesk? Eine All-in-One-Plattform für Vertrieb und Marketing aus Deutschland. Sie bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App.
-- Für wen? Vertriebsteams, Marketing-Teams mit Corporate-Influencer-Programmen und Agenturen.
+- Was ist Leadesk? Eine All-in-One-Plattform für Vertrieb und Marketing, entwickelt speziell für B2B-Unternehmen in Deutschland. Sie bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App.
+- Für wen? B2B-Unternehmen: Vertriebsteams, Marketing-Teams mit Corporate-Influencer-Programmen und Agenturen.
+- Warum B2B? Mehrere Entscheider, lange Zyklen, LinkedIn als Hauptkanal: Kontakte hängen an Unternehmen, Firmendaten kommen aus der Website, Deals laufen über Phasen, LinkedIn, WhatsApp und E-Mail stehen in einem Verlauf.
 - DSGVO? Hosting auf Servern in Deutschland, Daten je Team per Row-Level-Security getrennt, Audit-Trail, AV-Vertrag nach Art. 28 DSGVO.
 - Alternative zu Waalaxy? Ja, wenn mehr als LinkedIn-Outreach gebraucht wird: Content, CRM, Instagram, WhatsApp und E-Mail in einer App. Vergleich: https://www.leadesk.de/blog/leadesk-vs-waalaxy.html
 - Preis? Ab 39 € im Monat, 3 Tage kostenlos ohne Kreditkarte. WhatsApp und E-Mail als Add-on für je 7,99 € im Monat.
 
 ## Produkt
 
-- [Leadesk: Die All-in-One-Plattform für Vertrieb und Marketing](https://www.leadesk.de/): Leadesk bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App. Für Vertriebsteams, Corporate-Influencer-Programme und Agenturen, mit Leadly als KI-Agent.
+- [Leadesk: All-in-One-Plattform für B2B-Vertrieb & Marketing](https://www.leadesk.de/): Entwickelt für B2B-Unternehmen. Leadesk bündelt LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App. Für Vertriebsteams, Corporate-Influencer-Programme und Agenturen, mit Leadly als KI-Agent.
 - [Funktionen](https://www.leadesk.de/funktionen.html): Alle Module von Leadesk auf einen Blick: Leadly, LinkedIn, Instagram, WhatsApp, E-Mail, Content, CRM, Projekte und Reporting, in einer App. Leadesk lässt sich als Connector mit Claude verbinden (Kontakte, Deals, Aufgaben, Redaktionsplan, Postfach; Anmeldung mit dem Leadesk-Konto).
 - [Leadesk in Claude](https://www.leadesk.de/claude.html): Leadesk als Connector in Claude, Kontakte, Deals, Aufgaben, Redaktionsplan und Postfach direkt im KI-Assistenten, Anmeldung mit dem Leadesk-Konto, gleiche Rechte wie in der App.
 - [Leadly: Der KI-Agent](https://www.leadesk.de/leadly.html): Leadly denkt in deiner Pipeline mit, bereitet die nächsten Züge vor und wartet auf dein Go. Nichts wird abgeschickt ohne deine Freigabe.
@@ -34,8 +35,8 @@
 
 ## Anwendungen
 
-- [Leadesk für Sales](https://www.leadesk.de/sales.html): Vom ersten LinkedIn-Kontakt bis zum Abschluss: Sales Navigator, Kampagnen, WhatsApp und E-Mail am Kontakt, Buchungsseiten, KI-Lead-Score, Pipeline und Forecast.
-- [Leadesk für Marketing](https://www.leadesk.de/marketing.html): Content-Werkstatt mit Brand Voice, Redaktionsplan mit Freigabe per Link und Beitragsanalyse. Für Marketing-Teams, Corporate-Influencer-Programme und Agenturen.
+- [Leadesk für B2B-Vertrieb](https://www.leadesk.de/sales.html): Vom ersten LinkedIn-Kontakt bis zum Abschluss: Sales Navigator, Kampagnen, WhatsApp und E-Mail am Kontakt, Buchungsseiten, KI-Lead-Score, Pipeline und Forecast.
+- [Leadesk für B2B-Marketing](https://www.leadesk.de/marketing.html): Content-Werkstatt mit Brand Voice, Redaktionsplan mit Freigabe per Link und Beitragsanalyse. Für Marketing-Teams, Corporate-Influencer-Programme und Agenturen.
 - [Corporate-Influencer-Programme](https://www.leadesk.de/corporate-influencer.html): Mitarbeitende verbinden ihr LinkedIn-Profil per Einladungslink, ohne eigenen Leadesk-Zugang. Beiträge gibt der Ambassador selbst per Link frei, über dessen Profil veröffentlicht wird. Die Beitragsanalyse misst jeden Beitrag am eigenen Median der Person und ordnet ihn nach Thema und Text ein.
 - [Leadesk für Agenturen](https://www.leadesk.de/agenturen.html): Deine Marke, unsere Maschine. Betreibe Leadesk unter eigenem Logo, eigener Farbe und Subdomain, mit sauberer Mandantentrennung und zentraler Kundenverwaltung. Agenturen binden Personal Brands ihrer Kunden per Einladungslink an, ohne Leadesk-Zugang für den Kunden; Beiträge gibt der Kunde im Freigabeprozess des Redaktionsplans per Link frei.
 
@@ -63,7 +64,7 @@
 
 - [Preise](https://www.leadesk.de/preise.html): Pläne ab 39 € im Monat, 3 Tage kostenlos testen ohne Kreditkarte. Für Teams eigenen Seat-Mix zusammenstellen. E-Mail und WhatsApp als Add-on für je 7,99 € im Monat.
 - [Sicherheit & Datenschutz](https://www.leadesk.de/sicherheit.html): Sicher gebaut, in Deutschland gehostet: EU-Server, DSGVO, Row-Level-Security, Audit-Trail. ISO-27001-Zertifizierung in Vorbereitung.
-- [Über uns](https://www.leadesk.de/ueber-uns.html): Warum wir Leadesk bauen: eine All-in-One-Plattform für Vertrieb und Marketing, mit Kontrolle beim Menschen und Daten in Europa.
+- [Über uns](https://www.leadesk.de/ueber-uns.html): Warum wir Leadesk bauen: eine All-in-One-Plattform für B2B-Vertrieb und -Marketing, mit Kontrolle beim Menschen und Daten in Europa.
 - [Support](https://www.leadesk.de/support.html): Hilfe rund um Leadesk: Antworten auf häufige Fragen, Anleitungen und direkter Kontakt zum Support.
 - [Changelog](https://www.leadesk.de/changelog.html): Was ist neu in Leadesk? Alle Updates, Verbesserungen und Fixes an einem Ort.
 - [Kontakt & Demo](https://www.leadesk.de/kontakt.html): Buch eine Demo oder schreib uns. Wir zeigen dir Leadesk an deinem echten Use-Case.

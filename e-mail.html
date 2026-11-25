@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Mail im CRM: Outlook-Postfach, Kalender &amp; Buchungsseiten | Leadesk</title>
+<meta name="description" content="Verbinde dein Outlook-Postfach mit Leadesk: E-Mails und Termine am Kontakt und am Deal, Senden mit KI-Entwurf, Buchungsseiten inklusive. Gmail und IMAP folgen.">
+<link rel="canonical" href="https://www.leadesk.de/e-mail.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Leadesk">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="E-Mail im CRM: Outlook-Postfach, Kalender &amp; Buchungsseiten | Leadesk">
+<meta property="og:description" content="Dein Postfach direkt am Kontakt: E-Mails, Termine und Buchungsseiten im CRM. Heute mit Outlook, Gmail und IMAP folgen.">
+<meta property="og:url" content="https://www.leadesk.de/e-mail.html">
+<meta property="og:image" content="https://www.leadesk.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="E-Mail im CRM: Postfach, Kalender &amp; Buchungsseiten | Leadesk">
+<meta name="twitter:description" content="Dein Postfach direkt am Kontakt: E-Mails, Termine und Buchungsseiten im CRM. Heute mit Outlook, Gmail und IMAP folgen.">
+<meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
+<meta name="theme-color" content="#003060">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/leadesk.css">
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.css -->
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
+<!-- CI-Look (an app.leadesk.de angelehnt): Lexend Deca + Inter, self-hosted -->
+<link rel="preload" href="assets/fonts/lexend-deca-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/ci.css">
+<style>
+  .mrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:8px;font-size:14px;color:var(--ink)}
+  .mrow .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;background:linear-gradient(135deg,#16A8DC,#003060)}
+  .mrow .nm{font-weight:700}.mrow .rl{font-size:12px;color:var(--muted)}
+  .mrow .rc{margin-left:auto;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+  .soon{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--tint-peach);color:var(--orange);margin-bottom:12px}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .slot{border:1px solid var(--border);border-radius:9px;padding:9px 0;text-align:center;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff}
+  .slot.on{background:var(--grad);color:#fff;border-color:transparent}.slot.off{color:#c3c7d2;text-decoration:line-through}
+  .bub{max-width:82%;padding:10px 13px;border-radius:14px;font-size:14px;margin-bottom:8px;background:#eef2f8;color:var(--ink)}
+  .bub.me{margin-left:auto;background:#dcf5e7}
+  .bub.ai{border:1px dashed var(--cyan);background:#fff;color:var(--cyan-mid);font-weight:600}
+  .kb5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media (max-width:860px){.kb5{grid-template-columns:repeat(2,1fr)}}
+  .kb-col{background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:8px;min-height:120px}
+  .kb-h{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .kb-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 9px;margin-bottom:7px;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .kb-col.hl{border-color:#7A5AF8;background:#efedff}.kb-col.hl .kb-h{color:#7A5AF8}
+  .pricebox{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .pricebox .p{font-size:40px;font-weight:800;line-height:1;white-space:nowrap}.pricebox .p span{font-size:15px;color:var(--muted);font-weight:600}
+  .pricebox .t{flex:1;min-width:240px;font-size:15px;color:var(--muted)}.pricebox .t b{color:var(--ink)}
+  .qm{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .qm div{border-radius:10px;padding:14px;font-size:13px;font-weight:700;color:var(--ink);border:1px solid var(--border);background:#fff}
+  .qm div b{display:block;font-size:22px;margin-bottom:2px}
+  .qm .q1{background:#e5f4e4}.qm .q4{background:var(--bg-soft);color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.leadesk.de/e-mail.html#webpage",
+      "url": "https://www.leadesk.de/e-mail.html",
+      "name": "E-Mail im CRM: Outlook-Postfach, Kalender & Buchungsseiten | Leadesk",
+      "description": "Verbinde dein Outlook-Postfach mit Leadesk: E-Mails und Termine am Kontakt und am Deal, Senden mit KI-Entwurf, Buchungsseiten inklusive. Gmail und IMAP folgen.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/#website"
+      },
+      "publisher": {
+        "@id": "https://www.leadesk.de/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.leadesk.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "E-Mail im CRM: Outlook-Postfach, Kalender & Buchungsseiten | Leadesk",
+          "item": "https://www.leadesk.de/e-mail.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.leadesk.de/e-mail.html#faq",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/e-mail.html#webpage"
+      },
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Postfächer kann ich verbinden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Heute verbindest du ein Outlook-Postfach. Gmail und IMAP sind in Vorbereitung und folgen in Kürze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werden alle meine E-Mails in Leadesk gespeichert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Gespeichert werden nur E-Mails von und an Kontakte, die mit E-Mail-Adresse in deinem CRM stehen. E-Mails an alle anderen Adressen werden nicht gespeichert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Über welches Postfach werden E-Mails verschickt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Über dein eigenes Outlook-Postfach. Du schreibst in Leadesk, am Kontakt oder am Deal, und die E-Mail geht aus deinem Postfach raus, mit deiner Signatur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind Buchungsseiten enthalten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Mit dem Add-on „E-Mail & Kalender“ legst du Buchungsseiten an, über die Kontakte selbst einen freien Termin aus deinem Outlook-Kalender wählen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sehe ich, ob eine E-Mail geöffnet oder geklickt wurde?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Öffnungs- und Klickrate je E-Mail sind in Vorbereitung und folgen in Kürze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die E-Mail-Anbindung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das Add-on „E-Mail & Kalender“ kostet 7,99 € im Monat und enthält einen Postfach-Platz für das ganze Konto. Jeder weitere Postfach-Platz kostet 5,99 € im Monat. Gebucht wird im Marketplace."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics: cookielose Reichweitenmessung, siehe Datenschutz 3.2 -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="ci">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
+    <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
+  </linearGradient>
+</defs></svg>
+
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+  <nav class="nav-links">
+    <div class="nav-group"><span class="nav-trigger">Lösungen <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega"><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="sales.html">Sales</a></div><div class="nav-col"><span class="nav-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div></div></div>
+    <div class="nav-group"><span class="nav-trigger active">Plattform <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega nav-mega-4"><div class="nav-col"><span class="nav-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a></div><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a></div><div class="nav-col"><span class="nav-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a></div><div class="nav-col"><span class="nav-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div></div></div>
+    <a href="leadly.html">Leadly</a><a href="preise.html">Preise</a><a href="services.html">Services</a>
+  </nav>
+  <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div></header>
+
+<!-- REDESIGN: dieselbe Vollbild-Mobile-Nav wie auf der Startseite — einmal gebaut,
+     gilt für alle Unterseiten, da Header/Footer ohnehin pro Seite kopiert werden. -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Lösungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Vertrieb</span><a href="sales.html">Sales</a><span class="nav-ov-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Plattform <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><span class="nav-ov-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a><span class="nav-ov-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a><span class="nav-ov-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="preise.html">Preise</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero" style="background:var(--tint-navy)">
+  <div class="wrap ph-grid">
+    <div class="reveal">
+      <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+      <div class="eyebrow">E-Mail &amp; Kalender</div>
+      <h1>Dein Postfach,<br>direkt am <span class="grad-text">Kontakt.</span></h1>
+      <p class="lead">Verbinde dein Outlook-Postfach mit Leadesk. E-Mails und Termine stehen dort, wo du sie brauchst: im Verlauf des Kontakts und am Deal, neben deinen LinkedIn- und WhatsApp-Nachrichten. Gmail und IMAP folgen.</p>
+      <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+    </div>
+    <div class="mock reveal d1">
+      <div class="k-lab">CRM · Postfach</div>
+      <div class="mrow"><span class="av">SA</span><div><div class="nm">Sarah Adler</div><div class="rl">AW: Angebot Team-Lizenz</div></div><span class="rc">09:12</span></div>
+      <div class="mrow"><span class="av">HR</span><div><div class="nm">Hendrik Roth</div><div class="rl">Termin nächste Woche</div></div><span class="rc">gestern</span></div>
+      <div class="mrow"><span class="av">LK</span><div><div class="nm">Lena Krug</div><div class="rl">Unterlagen zum Erstgespräch</div></div><span class="rc">Mo</span></div>
+      <div class="stat-strip">Neben jeder Mail: Kontakt, Deals und <span class="grad-text">LinkedIn-Verlauf</span></div>
+    </div>
+  </div>
+</section>
+<!-- OVERVIEW -->
+<section class="pad">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Was drinsteckt</div>
+    <h2 class="big">E-Mail, die zu deinem <span class="grad-text">Vertrieb gehört.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Kein zweites Fenster, kein Kopieren ins CRM. Dein Postfach arbeitet dort mit, wo deine Kontakte und Deals liegen.</p>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Postfach im CRM</h3><p>Posteingang, Gesendet und Archiv direkt in Leadesk, filterbar nach E-Mail-Adresse.</p></div>
+    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Verlauf am Kontakt</h3><p>E-Mails von und an deine Kontakte stehen im Verlauf des Kontakts und am zugehörigen Deal.</p></div>
+    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Senden aus Leadesk</h3><p>Schreiben und Antworten am Kontakt und am Deal, verschickt über dein eigenes Postfach.</p></div>
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>KI-Entwurf</h3><p>Ein Stichwort genügt, die KI schlägt dir den Entwurf vor. Du prüfst und sendest.</p></div>
+    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Kalender</h3><p>Outlook-Termine mit Kontakten erscheinen im Verlauf, neue Termine legst du am Kontakt und am Deal an.</p></div>
+    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3>Buchungsseiten</h3><p>Kontakte wählen selbst einen freien Termin aus deinem Kalender. Im Add-on enthalten.</p></div>
+  </div>
+</section>
+
+<!-- POSTFACH -->
+<section class="pad soft" id="postfach">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Postfach</div>
+    <h2 class="big">Jede Mail <span class="grad-text">im Zusammenhang.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Öffne eine E-Mail und du siehst daneben, mit wem du es zu tun hast: den Kontakt, die offenen Deals und die letzten LinkedIn-Nachrichten.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Posteingang, Gesendet und Archiv in einer Ansicht im CRM</li>
+        <li>Neben jeder zugeordneten Mail: Kontakt, offene Deals und die letzten LinkedIn-Nachrichten</li>
+        <li>Unbekannte Adressen ordnest du von Hand einem Kontakt zu</li>
+        <li>Im Deal siehst du den E-Mail-Verlauf des zugeordneten Kontakts</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Kranich GmbH · Aktivitäten</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">E-Mail erhalten · AW: Angebot <b>09:12</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">LinkedIn-Nachricht · Rückfrage <b>gestern</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">Termin · Demo mit Sarah Adler <b>Di</b></div>
+        <div class="lead-chip" style="width:100%;justify-content:space-between;margin:0">E-Mail gesendet · Erstkontakt <b>Mo</b></div>
+      </div>
+      <div class="stat-strip">Ein Verlauf für <span class="grad-text">alle Kanäle</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SENDEN -->
+<section class="pad" id="senden">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Schreiben</div>
+    <h2 class="big">Antworten, ohne <span class="grad-text">das CRM zu verlassen.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Du schreibst direkt am Kontakt oder am Deal. Die E-Mail geht über dein eigenes Postfach raus und steht danach im Verlauf.</p>
+  </div>
+  <div class="wrap split">
+    <div class="mock reveal">
+      <div class="k-lab">Neue E-Mail · an Sarah Adler</div>
+      <div style="border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:13.5px;color:var(--muted)">Worum soll es gehen? <b style="color:var(--ink)">Angebot nachfassen, Termin vorschlagen</b></div>
+      <div class="chatline chat-li"><span class="typed" data-typewriter="Hallo Sarah, hattest du schon Gelegenheit, dir das Angebot anzusehen? Gern gehen wir die offenen Punkte kurz gemeinsam durch." data-speed="20"></span></div>
+      <div class="flow"><span class="lead-chip">Entwurf mit KI</span><span class="arrow">→</span><span class="lead-chip">Prüfen</span><span class="arrow">→</span><span class="lead-chip">Senden</span></div>
+    </div>
+    <div class="reveal" style="order:1">
+      <ul class="checklist">
+        <li>Entwurf mit KI: Stichwort eingeben, Vorschlag erhalten, anpassen, senden</li>
+        <li>Cc, Bcc und Dateianhänge wie gewohnt</li>
+        <li>Signatur einmal hinterlegen, sie steht unter jeder E-Mail aus Leadesk</li>
+        <li>Versand über dein eigenes Outlook-Postfach, die Antwort landet wieder am Kontakt</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KALENDER -->
+<section class="pad soft" id="kalender">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Kalender &amp; Buchungsseiten</div>
+    <h2 class="big">Vom Postfach <span class="grad-text">zum Termin.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Mit dem Postfach kommt dein Outlook-Kalender. Termine mit Kontakten stehen im Verlauf, und über Buchungsseiten wählen Kontakte ihren Termin selbst.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Outlook-Termine mit Kontakten erscheinen im Verlauf des Kontakts</li>
+        <li>Termine direkt am Kontakt und am Deal anlegen, auf Wunsch mit Teams-Besprechung</li>
+        <li>Buchungsseiten mit Dauer, Puffer, Arbeitszeiten und Erinnerungen</li>
+        <li>Wer bucht und noch nicht im CRM steht, wird auf Wunsch automatisch als Lead angelegt</li>
+      </ul>
+      <a class="btn btn-navy" href="buchungsseiten.html" style="margin-top:22px">Buchungsseiten ansehen →</a>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Buchungsseite · Erstgespräch 30 Min</div>
+      <div class="slots"><span class="slot off">09:00</span><span class="slot">09:30</span><span class="slot on">10:00</span><span class="slot">11:30</span><span class="slot off">13:00</span><span class="slot">14:30</span></div>
+      <div class="stat-strip">Freie Zeiten aus <span class="grad-text">deinem Outlook-Kalender</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- KOMMT IN KUERZE -->
+<section class="pad" id="roadmap">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Kommt in Kürze</div>
+    <h2 class="big">Was als <span class="grad-text">Nächstes kommt.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Diese Funktionen sind in Vorbereitung und noch nicht verfügbar.</p>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:var(--orange);--accbg:var(--tint-peach)"><div class="ic"></div><span class="soon">In Kürze</span><h3>Öffnungsrate</h3><p>Sieh, ob und wann deine E-Mail geöffnet wurde, direkt am Kontakt.</p></div>
+    <div class="card reveal d1" style="--acc:var(--orange);--accbg:var(--tint-peach)"><div class="ic"></div><span class="soon">In Kürze</span><h3>Klickrate</h3><p>Erkenne, welche Links in deiner E-Mail geklickt wurden.</p></div>
+    <div class="card reveal d2" style="--acc:var(--orange);--accbg:var(--tint-peach)"><div class="ic"></div><span class="soon">In Kürze</span><h3>Gmail &amp; IMAP</h3><p>Neben Outlook lassen sich bald auch Gmail- und IMAP-Postfächer verbinden.</p></div>
+  </div>
+</section>
+
+<!-- DATENSCHUTZ -->
+<section class="pad" id="datenschutz" style="background:var(--tint-navy)">
+  <div class="wrap reveal" style="max-width:780px">
+    <div class="eyebrow">Datenschutz</div>
+    <h2 class="big">Gespeichert wird nur, <span class="grad-text">was dazugehört.</span></h2>
+    <p class="lead" style="margin-top:18px">Leadesk speichert ausschließlich E-Mails von und an Kontakte, die mit E-Mail-Adresse in deinem CRM stehen. E-Mails an alle anderen Adressen werden nicht gespeichert. Das Postfach trennst du jederzeit wieder in den Einstellungen.</p>
+    <div class="badges">
+      <span class="tbadge reveal"><b>EU-Hosting</b></span><span class="tbadge reveal d1"><b>DSGVO</b></span>
+      <span class="tbadge reveal d2"><b>Nur Kontakt-Mails</b></span><span class="tbadge reveal d3"><b>Jederzeit trennbar</b></span>
+    </div>
+    <div style="margin-top:26px"><a class="btn btn-navy" href="sicherheit.html">Mehr zur Sicherheit →</a></div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="pad soft" id="preis">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Preis</div>
+    <h2 class="big">Ein Add-on. <span class="grad-text">Klarer Preis.</span></h2>
+  </div>
+  <div class="wrap"><div class="pricebox reveal">
+    <div class="p grad-text">7,99 € <span>im Monat</span></div>
+    <div class="t"><b>Add-on „E-Mail &amp; Kalender“</b> aus dem Marketplace, zusätzlich zu deinem Plan. Enthält einen Postfach-Platz für das ganze Konto, den Kalender und die Buchungsseiten. Jeder weitere Postfach-Platz kostet 5,99 € im Monat.</div>
+    <a class="btn btn-navy" href="preise.html#addons">Alle Add-ons ansehen →</a>
+  </div></div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq">
+  <div class="wrap center-head reveal" style="margin-bottom:24px">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="big">Fragen zu <span class="grad-text">E-Mail.</span></h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open><summary>Welche Postfächer kann ich verbinden?</summary><p>Heute verbindest du ein Outlook-Postfach. Gmail und IMAP sind in Vorbereitung und folgen in Kürze.</p></details>
+    <details><summary>Werden alle meine E-Mails in Leadesk gespeichert?</summary><p>Nein. Gespeichert werden nur E-Mails von und an Kontakte, die mit E-Mail-Adresse in deinem CRM stehen. E-Mails an alle anderen Adressen werden nicht gespeichert.</p></details>
+    <details><summary>Über welches Postfach werden E-Mails verschickt?</summary><p>Über dein eigenes Outlook-Postfach. Du schreibst in Leadesk, am Kontakt oder am Deal, und die E-Mail geht aus deinem Postfach raus, mit deiner Signatur.</p></details>
+    <details><summary>Sind Buchungsseiten enthalten?</summary><p>Ja. Mit dem Add-on „E-Mail & Kalender“ legst du Buchungsseiten an, über die Kontakte selbst einen freien Termin aus deinem Outlook-Kalender wählen.</p></details>
+    <details><summary>Sehe ich, ob eine E-Mail geöffnet oder geklickt wurde?</summary><p>Öffnungs- und Klickrate je E-Mail sind in Vorbereitung und folgen in Kürze.</p></details>
+    <details><summary>Was kostet die E-Mail-Anbindung?</summary><p>Das Add-on „E-Mail & Kalender“ kostet 7,99 € im Monat und enthält einen Postfach-Platz für das ganze Konto. Jeder weitere Postfach-Platz kostet 5,99 € im Monat. Gebucht wird im Marketplace.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad soft">
+  <div class="wrap"><div class="cta-band reveal">
+    <h2>Hol dein Postfach ins CRM.</h2>
+    <p>E-Mails, Termine und Buchungsseiten direkt am Kontakt. Kostenlos testen, keine Kreditkarte.</p>
+    <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+  </div></div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><a class="logo" href="index.html"><span>Lea</span><svg class="mk" width="34" height="26" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+      <p style="max-width:280px;margin-top:12px">Die All-in-One-Plattform für Vertrieb und Marketing. LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App.</p></div>
+    <div><h4>Plattform</h4><a href="funktionen.html">Funktionen</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="content.html">Content</a><a href="freigabe.html">Freigabeprozess</a><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">Mobile App</a></div>
+    <div><h4>Lösungen &amp; Unternehmen</h4><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="corporate-influencer.html">Corporate Influencer</a><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a><a href="services.html">Services</a><a href="ki.html">KI</a><a href="sicherheit.html">Sicherheit</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a></div>
+    <div><h4>Ressourcen</h4><a href="/blog/">Blog</a><a href="chrome-extension.html">Chrome-Extension</a><a href="integrationen.html">Integrationen</a><a href="changelog.html">Changelog</a><a href="api-docs.html">API-Docs</a><a href="affiliate.html">Affiliate</a><a href="support.html">Support</a></div>
+  </div>
+  <div class="fbar"><span>© 2026 Leadesk · Made in Germany</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
+</div></footer>
+<script src="assets/leadesk.js"></script>
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.js -->
+<script src="assets/leadesk-redesign.js"></script>
+</body>
+</html>

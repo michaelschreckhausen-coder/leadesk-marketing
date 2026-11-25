@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp im CRM: Chats am Kontakt beantworten | Leadesk</title>
+<meta name="description" content="Verbinde deine WhatsApp-Nummer mit Leadesk: Chat-Verlauf am Kontakt, Antworten mit Anhang und Antwortvorschläge von Leadly. Gespeichert werden nur Chats mit Kontakten.">
+<link rel="canonical" href="https://www.leadesk.de/whatsapp.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Leadesk">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="WhatsApp im CRM: Chats am Kontakt beantworten | Leadesk">
+<meta property="og:description" content="WhatsApp direkt am Kontakt: Verlauf im CRM, Antworten aus Leadesk und Vorschläge von Leadly.">
+<meta property="og:url" content="https://www.leadesk.de/whatsapp.html">
+<meta property="og:image" content="https://www.leadesk.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhatsApp im CRM | Leadesk">
+<meta name="twitter:description" content="WhatsApp direkt am Kontakt: Verlauf im CRM, Antworten aus Leadesk und Vorschläge von Leadly.">
+<meta name="twitter:image" content="https://www.leadesk.de/og-image.png">
+<meta name="theme-color" content="#003060">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/leadesk.css">
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.css -->
+<link rel="stylesheet" href="assets/leadesk-redesign.css">
+<!-- CI-Look (an app.leadesk.de angelehnt): Lexend Deca + Inter, self-hosted -->
+<link rel="preload" href="assets/fonts/lexend-deca-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/ci.css">
+<style>
+  .mrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:8px;font-size:14px;color:var(--ink)}
+  .mrow .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;background:linear-gradient(135deg,#16A8DC,#003060)}
+  .mrow .nm{font-weight:700}.mrow .rl{font-size:12px;color:var(--muted)}
+  .mrow .rc{margin-left:auto;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+  .soon{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--tint-peach);color:var(--orange);margin-bottom:12px}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .slot{border:1px solid var(--border);border-radius:9px;padding:9px 0;text-align:center;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff}
+  .slot.on{background:var(--grad);color:#fff;border-color:transparent}.slot.off{color:#c3c7d2;text-decoration:line-through}
+  .bub{max-width:82%;padding:10px 13px;border-radius:14px;font-size:14px;margin-bottom:8px;background:#eef2f8;color:var(--ink)}
+  .bub.me{margin-left:auto;background:#dcf5e7}
+  .bub.ai{border:1px dashed var(--cyan);background:#fff;color:var(--cyan-mid);font-weight:600}
+  .kb5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media (max-width:860px){.kb5{grid-template-columns:repeat(2,1fr)}}
+  .kb-col{background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:8px;min-height:120px}
+  .kb-h{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .kb-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 9px;margin-bottom:7px;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .kb-col.hl{border-color:#7A5AF8;background:#efedff}.kb-col.hl .kb-h{color:#7A5AF8}
+  .pricebox{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .pricebox .p{font-size:40px;font-weight:800;line-height:1;white-space:nowrap}.pricebox .p span{font-size:15px;color:var(--muted);font-weight:600}
+  .pricebox .t{flex:1;min-width:240px;font-size:15px;color:var(--muted)}.pricebox .t b{color:var(--ink)}
+  .qm{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .qm div{border-radius:10px;padding:14px;font-size:13px;font-weight:700;color:var(--ink);border:1px solid var(--border);background:#fff}
+  .qm div b{display:block;font-size:22px;margin-bottom:2px}
+  .qm .q1{background:#e5f4e4}.qm .q4{background:var(--bg-soft);color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.leadesk.de/whatsapp.html#webpage",
+      "url": "https://www.leadesk.de/whatsapp.html",
+      "name": "WhatsApp im CRM: Chats am Kontakt beantworten | Leadesk",
+      "description": "Verbinde deine WhatsApp-Nummer mit Leadesk: Chat-Verlauf am Kontakt, Antworten mit Anhang und Antwortvorschläge von Leadly. Gespeichert werden nur Chats mit Kontakten.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/#website"
+      },
+      "publisher": {
+        "@id": "https://www.leadesk.de/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.leadesk.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "WhatsApp im CRM: Chats am Kontakt beantworten | Leadesk",
+          "item": "https://www.leadesk.de/whatsapp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.leadesk.de/whatsapp.html#faq",
+      "isPartOf": {
+        "@id": "https://www.leadesk.de/whatsapp.html#webpage"
+      },
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Nummer verbinde ich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deine bestehende WhatsApp-Nummer. Du verbindest sie einmal in den Einstellungen, so wie du es von WhatsApp Web kennst. Dein Handy bleibt dabei eingeschaltet und online, sonst kommen Nachrichten verspätet an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werden meine privaten Chats gespeichert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Gespeichert werden nur Chats mit Kontakten aus deinem CRM. Alle anderen Unterhaltungen bleiben außen vor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo finde ich den Verlauf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am Kontakt im Reiter „WhatsApp“. Ältere Nachrichten lädst du bei Bedarf aus WhatsApp nach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum brauche ich eine Einwilligung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bevor du einen Kontakt zum ersten Mal über WhatsApp anschreibst, vermerkst du seine Einwilligung am Kontakt. Ohne sie lässt sich die erste Nachricht nicht senden. So bleibt dein Vorgehen sauber dokumentiert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum gibt es nach dem Verbinden eine Wartezeit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Neue Unterhaltungen sind erst nach einer kurzen Wartezeit möglich. Das schützt deine Nummer vor einer Sperre. Auf eingehende Nachrichten kannst du sofort antworten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet WhatsApp in Leadesk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das Add-on „WhatsApp am Kontakt“ kostet 7,99 € im Monat zusätzlich zu deinem Plan. Gebucht wird im Marketplace."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics: cookielose Reichweitenmessung, siehe Datenschutz 3.2 -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="ci">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="3" y1="4" x2="37" y2="26">
+    <stop offset="0" stop-color="#16A8DC"/><stop offset="0.5" stop-color="#0A6FB0"/><stop offset="1" stop-color="#003060"/>
+  </linearGradient>
+</defs></svg>
+
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="index.html" aria-label="Leadesk"><span>Lea</span><svg class="mk" width="36" height="27" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+  <nav class="nav-links">
+    <div class="nav-group"><span class="nav-trigger">Lösungen <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega"><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="sales.html">Sales</a></div><div class="nav-col"><span class="nav-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div></div></div>
+    <div class="nav-group"><span class="nav-trigger active">Plattform <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="nav-menu nav-mega nav-mega-4"><div class="nav-col"><span class="nav-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a></div><div class="nav-col"><span class="nav-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a></div><div class="nav-col"><span class="nav-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a></div><div class="nav-col"><span class="nav-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div></div></div>
+    <a href="leadly.html">Leadly</a><a href="preise.html">Preise</a><a href="services.html">Services</a>
+  </nav>
+  <div class="nav-cta"><a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a></div>
+  <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navOverlay" aria-label="Hauptnavigation öffnen">
+    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div></header>
+
+<!-- REDESIGN: dieselbe Vollbild-Mobile-Nav wie auf der Startseite — einmal gebaut,
+     gilt für alle Unterseiten, da Header/Footer ohnehin pro Seite kopiert werden. -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="wrap">
+    <nav class="nav-overlay-list">
+      <div class="nav-ov-group">
+        <span class="nav-ov-trigger">Lösungen <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Vertrieb</span><a href="sales.html">Sales</a><span class="nav-ov-lab">Marketing</span><a href="marketing.html">Marketing-Teams</a><a href="corporate-influencer.html">Corporate-Influencer-Programme</a><a href="agenturen.html">Agenturen</a></div>
+      </div>
+      <div class="nav-ov-group open">
+        <span class="nav-ov-trigger">Plattform <svg width="13" height="8" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-ov-sub"><span class="nav-ov-lab">Kanäle</span><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><span class="nav-ov-lab">Vertrieb</span><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="reporting.html">Reporting</a><span class="nav-ov-lab">Content</span><a href="content.html">Content-Werkstatt</a><a href="freigabe.html">Freigabeprozess</a><a href="content.html#beitragsanalyse">Beitragsanalyse</a><span class="nav-ov-lab">KI &amp; mobil</span><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">App</a></div>
+      </div>
+      <a href="leadly.html">Leadly</a>
+      <a href="preise.html">Preise</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <div class="nav-overlay-cta">
+      <a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://app.leadesk.de/login">Anmelden</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero" style="background:var(--tint-green)">
+  <div class="wrap ph-grid">
+    <div class="reveal">
+      <div class="mark-wrap med"><span class="ring"></span><span class="ring r2"></span><svg class="mark-graphic" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg></div>
+      <div class="eyebrow">WhatsApp</div>
+      <h1>WhatsApp,<br>direkt am <span class="grad-text">Kontakt.</span></h1>
+      <p class="lead">Viele Kundengespräche laufen längst über WhatsApp, nur dein CRM weiß nichts davon. Verbinde deine Nummer mit Leadesk: Der Verlauf steht am Kontakt, du antwortest aus der App und Leadly schlägt dir die passende Antwort vor.</p>
+      <div class="hero-cta"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+    </div>
+    <div class="mock reveal d1">
+      <div class="k-lab">Sarah Adler · WhatsApp</div>
+      <div class="bub">Hi, passt Donnerstag 10 Uhr für die Demo?</div>
+      <div class="bub me">Passt. Ich schicke dir gleich die Einladung.</div>
+      <div class="bub">Super, bringt ihr auch das Angebot mit?</div>
+      <div class="bub ai">Vorschlag von Leadly: „Ja, das Angebot liegt bis morgen in deinem Postfach.“</div>
+      <div class="stat-strip">Verlauf am Kontakt, <span class="grad-text">Antwort aus Leadesk</span></div>
+    </div>
+  </div>
+</section>
+<!-- SCHRITTE -->
+<section class="pad">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">So funktioniert es</div>
+    <h2 class="big">In drei Schritten <span class="grad-text">verbunden.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Was du von WhatsApp Web kennst, läuft in Leadesk dort, wo deine Kontakte und Deals liegen.</p>
+  </div>
+  <div class="wrap steps">
+    <div class="step reveal"><h3>Nummer verbinden</h3><p>Du verbindest deine bestehende WhatsApp-Nummer einmal in den Einstellungen. Dein Handy bleibt eingeschaltet und online.</p></div>
+    <div class="step reveal d1"><h3>Verlauf am Kontakt</h3><p>Jeder Kontakt bekommt einen eigenen Reiter „WhatsApp“. Ältere Nachrichten lädst du aus WhatsApp nach.</p></div>
+    <div class="step reveal d2"><h3>Antworten aus Leadesk</h3><p>Du schreibst direkt am Kontakt, auch mit Anhang. Leadly schlägt dir Antworten vor, du entscheidest.</p></div>
+  </div>
+</section>
+
+<!-- AM KONTAKT -->
+<section class="pad soft" id="kontakt">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Am Kontakt</div>
+    <h2 class="big">Das Gespräch dort, wo <span class="grad-text">der Deal liegt.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Kein Suchen im Handy, kein Screenshot für die Kollegin. Die WhatsApp-Unterhaltung steht neben Notizen, Aufgaben und Deals.</p>
+  </div>
+  <div class="wrap split">
+    <div class="reveal">
+      <ul class="checklist">
+        <li>Eigener Reiter „WhatsApp“ an jedem Kontakt</li>
+        <li>Senden und Antworten direkt aus Leadesk, auch mit Anhang</li>
+        <li>Antwortvorschläge von Leadly, nichts geht ohne dich raus</li>
+        <li>Verlauf aus WhatsApp nachladen, wenn die Unterhaltung schon läuft</li>
+      </ul>
+    </div>
+    <div class="mock reveal">
+      <div class="k-lab">Kontakt · Sarah Adler</div>
+      <div class="flow" style="margin:0 0 14px"><span class="lead-chip">Aktivitäten</span><span class="lead-chip" style="background:#dcf5e7;border-color:#b6e6cc">WhatsApp</span><span class="lead-chip">Notizen</span><span class="lead-chip">Aufgaben</span><span class="lead-chip">Deals</span></div>
+      <div class="bub">Können wir die Lizenzen auf 12 erhöhen?</div>
+      <div class="bub me">Klar, ich passe das Angebot an.</div>
+      <div class="stat-strip">Deal „Kranich · Team-Lizenz“ <span class="grad-text">im selben Fenster</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEITPLANKEN -->
+<section class="pad" id="sicherheit">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Sauber und sicher</div>
+    <h2 class="big">WhatsApp im Vertrieb, <span class="grad-text">mit Leitplanken.</span></h2>
+    <p class="lead" style="margin:14px auto 0">Leadesk achtet darauf, dass du nur schreibst, wem du schreiben darfst, und dass deine Nummer geschützt bleibt.</p>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:var(--success);--accbg:var(--tint-green)"><div class="ic"></div><h3>Einwilligung am Kontakt</h3><p>Du vermerkst die Einwilligung am Kontakt. Ohne sie lässt sich die erste Nachricht nicht senden.</p></div>
+    <div class="card reveal d1" style="--acc:var(--success);--accbg:var(--tint-green)"><div class="ic"></div><h3>Schutz vor Sperren</h3><p>Nach dem Verbinden gilt eine kurze Wartezeit für neue Unterhaltungen. Auf eingehende Nachrichten antwortest du sofort.</p></div>
+    <div class="card reveal d2" style="--acc:var(--success);--accbg:var(--tint-green)"><div class="ic"></div><h3>Nur Chats mit Kontakten</h3><p>Gespeichert werden ausschließlich Unterhaltungen mit Kontakten aus deinem CRM. Privates bleibt privat.</p></div>
+  </div>
+</section>
+
+<!-- KANAELE -->
+<section class="pad soft">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Alle Kanäle</div>
+    <h2 class="big">Ein Kontakt. <span class="grad-text">Ein Verlauf.</span></h2>
+    <p class="lead" style="margin:14px auto 0">WhatsApp ist ein Kanal von vier. Am Kontakt siehst du, was wo besprochen wurde.</p>
+  </div>
+  <div class="wrap grid3">
+    <div class="card reveal" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3><a href="linkedin.html">LinkedIn</a></h3><p>Vernetzung, Nachrichten und Kampagnen aus deinem Outbound.</p></div>
+    <div class="card reveal d1" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3><a href="instagram.html">Instagram</a></h3><p>Direktnachrichten und Kommentare, Gesprächspartner mit einem Klick als Kontakt.</p></div>
+    <div class="card reveal d2" style="--acc:var(--navy);--accbg:var(--tint-navy)"><div class="ic"></div><h3><a href="e-mail.html">E-Mail</a></h3><p>Dein Outlook-Postfach am Kontakt und am Deal, mit Kalender und Buchungsseiten.</p></div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="pad" id="preis">
+  <div class="wrap center-head reveal">
+    <div class="eyebrow center">Preis</div>
+    <h2 class="big">Ein Add-on. <span class="grad-text">Klarer Preis.</span></h2>
+  </div>
+  <div class="wrap"><div class="pricebox reveal">
+    <div class="p grad-text">7,99 € <span>im Monat</span></div>
+    <div class="t"><b>Add-on „WhatsApp am Kontakt“</b> aus dem Marketplace, zusätzlich zu deinem Plan. Enthält die Verbindung deiner WhatsApp-Nummer, den Verlauf am Kontakt, Senden mit Anhang und Antwortvorschläge von Leadly.</div>
+    <a class="btn btn-navy" href="preise.html#addons">Alle Add-ons ansehen →</a>
+  </div></div>
+</section>
+
+<!-- FAQ -->
+<section class="pad soft" id="faq">
+  <div class="wrap center-head reveal" style="margin-bottom:24px">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="big">Fragen zu <span class="grad-text">WhatsApp.</span></h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open><summary>Welche Nummer verbinde ich?</summary><p>Deine bestehende WhatsApp-Nummer. Du verbindest sie einmal in den Einstellungen, so wie du es von WhatsApp Web kennst. Dein Handy bleibt dabei eingeschaltet und online, sonst kommen Nachrichten verspätet an.</p></details>
+    <details><summary>Werden meine privaten Chats gespeichert?</summary><p>Nein. Gespeichert werden nur Chats mit Kontakten aus deinem CRM. Alle anderen Unterhaltungen bleiben außen vor.</p></details>
+    <details><summary>Wo finde ich den Verlauf?</summary><p>Am Kontakt im Reiter „WhatsApp“. Ältere Nachrichten lädst du bei Bedarf aus WhatsApp nach.</p></details>
+    <details><summary>Warum brauche ich eine Einwilligung?</summary><p>Bevor du einen Kontakt zum ersten Mal über WhatsApp anschreibst, vermerkst du seine Einwilligung am Kontakt. Ohne sie lässt sich die erste Nachricht nicht senden. So bleibt dein Vorgehen sauber dokumentiert.</p></details>
+    <details><summary>Warum gibt es nach dem Verbinden eine Wartezeit?</summary><p>Neue Unterhaltungen sind erst nach einer kurzen Wartezeit möglich. Das schützt deine Nummer vor einer Sperre. Auf eingehende Nachrichten kannst du sofort antworten.</p></details>
+    <details><summary>Was kostet WhatsApp in Leadesk?</summary><p>Das Add-on „WhatsApp am Kontakt“ kostet 7,99 € im Monat zusätzlich zu deinem Plan. Gebucht wird im Marketplace.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad">
+  <div class="wrap"><div class="cta-band reveal">
+    <h2>Hol WhatsApp ins CRM.</h2>
+    <p>Verlauf am Kontakt, Antworten aus Leadesk, Vorschläge von Leadly. Kostenlos testen, keine Kreditkarte.</p>
+    <div class="hero-cta" style="justify-content:center"><a class="btn btn-primary" href="https://app.leadesk.de/register">Kostenlos testen</a><a class="btn btn-ghost" href="kontakt.html">Demo buchen</a></div>
+  </div></div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><a class="logo" href="index.html"><span>Lea</span><svg class="mk" width="34" height="26" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="2.7" y="2.7" width="34.6" height="24.6" rx="12.3" fill="none" stroke="url(#lg)" stroke-width="5.2"/><rect x="17.4" y="0.1" width="5.2" height="29.8" fill="url(#lg)"/></svg><span>esk</span></a>
+      <p style="max-width:280px;margin-top:12px">Die All-in-One-Plattform für Vertrieb und Marketing. LinkedIn, Instagram, WhatsApp, E-Mail, Content und CRM in einer App.</p></div>
+    <div><h4>Plattform</h4><a href="funktionen.html">Funktionen</a><a href="linkedin.html">LinkedIn</a><a href="instagram.html">Instagram</a><a href="whatsapp.html">WhatsApp</a><a href="e-mail.html">E-Mail</a><a href="crm.html">CRM</a><a href="buchungsseiten.html">Buchungsseiten</a><a href="content.html">Content</a><a href="freigabe.html">Freigabeprozess</a><a href="leadly.html">Leadly</a><a href="claude.html">Claude</a><a href="app.html">Mobile App</a></div>
+    <div><h4>Lösungen &amp; Unternehmen</h4><a href="sales.html">Sales</a><a href="marketing.html">Marketing</a><a href="corporate-influencer.html">Corporate Influencer</a><a href="agenturen.html">Agenturen</a><a href="preise.html">Preise</a><a href="services.html">Services</a><a href="ki.html">KI</a><a href="sicherheit.html">Sicherheit</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a></div>
+    <div><h4>Ressourcen</h4><a href="/blog/">Blog</a><a href="chrome-extension.html">Chrome-Extension</a><a href="integrationen.html">Integrationen</a><a href="changelog.html">Changelog</a><a href="api-docs.html">API-Docs</a><a href="affiliate.html">Affiliate</a><a href="support.html">Support</a></div>
+  </div>
+  <div class="fbar"><span>© 2026 Leadesk · Made in Germany</span><span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="av-vertrag.html">AV-Vertrag</a></span></div>
+</div></footer>
+<script src="assets/leadesk.js"></script>
+<!-- REDESIGN-ENTWURF: additive Datei, ergänzt leadesk.js -->
+<script src="assets/leadesk-redesign.js"></script>
+</body>
+</html>
